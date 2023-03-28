@@ -64,7 +64,7 @@ displayed if the 'eventbrite' field in the header is not set.
 {% endcomment %}
 
 ## Registration
-**[Register here]([https://forms.gle/S3yohew3MnM22JtZ6])**   
+**[Register here](https://forms.gle/S3yohew3MnM22JtZ6)**   
 **Cost:** $100; payment can be coordinated through chart fields
 
 {% if page.eventbrite %}
