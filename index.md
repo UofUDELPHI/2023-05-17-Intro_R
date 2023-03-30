@@ -13,7 +13,7 @@ humandate: "May 17-18, 2023"    # human-readable dates for the workshop (e.g., "
 humantime: "9:00 am - 5:00 pm MDT"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2023-05-17      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2023-05-18        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["Rebecca Barter", "George Vega Yon", "Someone else"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+instructor: ["Rebecca Barter", "George Vega Yon"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["TBD"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["penny.atkins@hsc.utah.edu", "rebecca.barter@hsc.utah.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
@@ -174,13 +174,13 @@ Modify the block below if there are any special requirements.
 <p id="requirements">
   <strong>Requirements:</strong>
   {% if online == "false" %}
-    Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+    Participants should bring a laptop with a
+    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. Note: posit cloud access will be available for participants who do not have installation issues.
   {% else %}
     Participants must have access to a computer with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  For instructions on installing R and RStudio, see the "Setup" section (<a href="#setup">below</a>).
 </p>
 
 {% comment %}
