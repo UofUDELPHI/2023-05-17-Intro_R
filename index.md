@@ -67,6 +67,11 @@ displayed if the 'eventbrite' field in the header is not set.
 **[Register here](https://forms.gle/S3yohew3MnM22JtZ6)**   
 **Cost:** $100; payment can be coordinated through chart fields
 
+<p>
+  Please note there is an opportunity for needs-based scholarships for this workshop. 
+  You can indicate your desire to be considered when registering for the workshop.
+</p>
+
 {% if page.eventbrite %}
 <strong>Some adblockers block the registration window. If you do not see the
   registration box below, please check your adblocker settings.</strong>
