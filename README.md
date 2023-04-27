@@ -1,6 +1,11 @@
 [![Website](https://github.com/carpentries/workshop-template/actions/workflows/website.yml/badge.svg)](https://github.com/carpentries/workshop-template/actions/workflows/website.yml)
 
+
+
 # The Carpentries Workshop Template
+
+The website for this workshop has been rendered here: [https://uofudelphi.github.io/2023-05-17-Intro_R/](https://uofudelphi.github.io/2023-05-17-Intro_R/)
+
 
 This repository is The Carpentries' ([Software Carpentry][swc-site], [Data Carpentry][dc-site], and
 [Library Carpentry][lc-site]'s) template for creating websites for workshops.
