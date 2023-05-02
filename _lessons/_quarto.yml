@@ -1,34 +1,29 @@
 project:
-  type: website
+  type: book
+
+book:
+  title: "Software Carpentry R Workshop"
+  subtitle: "University of Utah, May 17-18"
+  chapters:
+    - index.qmd
+    - 01-rstudio-quarto.qmd
+    - 02-project-intro.qmd
+    - 03-r-intro.qmd
+    - 04-data-structures-part1.qmd
+    - 05-data-structures-part2.qmd
+    - 06-data-subsetting.qmd
+    - 07-control-flow.qmd
+    - 08-vectorization.qmd
+    - 09-functions.qmd
+    - 10-dplyr.qmd
+    - 11-plot-ggplot2.qmd
+    - 12-tidyr.qmd
 
 format:
   html:
     theme: cosmo
-    toc: true
+  pdf:
+    documentclass: scrreprt
 
-website:
-  page-navigation: true
-  sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: "Basics"
-        contents:
-          - 01-rstudio-quarto.qmd 
-          - 02-project-intro.qmd
-          - 03-r-intro.qmd
-      - section: "Data structures"
-        contents:
-          - 04-data-structures-part1.qmd
-          - 05-data-structures-part2.qmd
-          - 06-data-subsetting.qmd
-      - section: "Working with data structures"  
-        contents:
-          - 08-vectorization.qmd
-          - 09-functions.qmd
-      - section: "Tidyverse"
-        contents:
-          - 10-dplyr.qmd
-          - 11-plot-ggplot2.qmd
-          - 12-tidyr.qmd
+
 

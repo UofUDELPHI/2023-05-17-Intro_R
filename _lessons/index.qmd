@@ -1,0 +1,6 @@
+# Introduction {.unnumbered}
+
+This page contains the content for the R Software Carpentry workshop taught at the University of Utah on May 17-18.
+
+
+These materials have been adapted from the original [Software Carpentry R for Reproducible Scientific Analysis workshop](https://swcarpentry.github.io/r-novice-gapminder/).
