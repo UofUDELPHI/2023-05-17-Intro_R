@@ -178,7 +178,7 @@ continent since we would have removed it in the previous step.
 Now, we were supposed to be reducing the error prone repetitiveness of what can
 be done with base R, but up to now we haven't done that since we would have to
 repeat the above for each continent. Instead of `filter()`, which will only pass
-observations that meet your criteria (in the above: `continent=="Europe"`), we
+observations that meet your criteria (in the above: `continent == "Europe"`), we
 can use `group_by()`, which will essentially use every unique criteria that you
 could have used in filter.
 
@@ -330,8 +330,8 @@ We can also create new variables prior to (or even after) summarizing informatio
 
 ```{r}
 gdp_pop_bycontinents_byyear <- gapminder |>
-    mutate(gdp_billion = gdpPercap*pop/10^9) |>
-    group_by(continent,year) |>
+    mutate(gdp_billion = gdpPercap * pop / 10^9) |>
+    group_by(continent, year) |>
     summarize(mean_gdpPercap = mean(gdpPercap),
               sd_gdpPercap = sd(gdpPercap),
               mean_pop = mean(pop),
@@ -381,14 +381,14 @@ for each continent. Then arrange the continent names in reverse order.
 similar syntax to other dplyr functions.
 
 ::: {.callout collapse=true}
-
 ## Solution to Advanced Challenge
+
 ```{r}
 lifeExp_2countries_bycontinents <- gapminder |>
-    filter(year==2002) |>
+    filter(year == 2002) |>
     group_by(continent) |>
     sample_n(2) |>
-    summarize(mean_lifeExp=mean(lifeExp)) |>
+    summarize(mean_lifeExp = mean(lifeExp)) |>
     arrange(desc(mean_lifeExp))
 ```
 :::
