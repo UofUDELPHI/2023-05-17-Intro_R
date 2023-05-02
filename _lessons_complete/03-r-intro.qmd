@@ -105,6 +105,8 @@ has auto-completion abilities that allow you to more easily
 look up functions, their arguments, and the values that they
 take.
 
+### Help files
+
 Typing a `?` before the name of a command will open the help page
 for that command. When using RStudio, this will open the 'Help' pane;
 if using R in the terminal, the help page will open in your browser.
