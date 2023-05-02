@@ -1,3 +1,11 @@
+project:
+  type: website
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
 website:
   page-navigation: true
   sidebar:
