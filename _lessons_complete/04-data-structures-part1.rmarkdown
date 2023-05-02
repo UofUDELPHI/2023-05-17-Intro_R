@@ -1,0 +1,1184 @@
+---
+title: "Data Structures"
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+# We don't want factors
+options(stringsAsFactors = FALSE)
+
+## Save the data. Do not create factors from strings (explicit argument
+## only necessary for R < 4.0.0)
+cats_orig <- data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1),
+                   stringsAsFactors = FALSE)
+cats_bad <- data.frame(coat = c("calico", "black", "tabby", "tabby"),
+                   weight = c(2.1, 5.0, 3.2, '2.3 or 2.4'),
+                   likes_string = c(1, 0, 1, 1), 
+                   stringsAsFactors = FALSE)
+cats <- cats_orig
+```
+
+
+One of R's most powerful features is its ability to deal with tabular data -
+such as you may already have in a spreadsheet or a CSV file. 
+
+Let's start by using R to create a dataset, which we will then save in our `data/` directory in a file called `feline-data.csv`. 
+First, let's create the dataset in R using the `data.frame()` function:
+
+
+```{r}
+cats <- data.frame(coat = c("calico", "black", "tabby"),
+                    weight = c(2.1, 5.0, 3.2),
+                    likes_string = c(1, 0, 1))
+```
+
+
+Then we can save `cats` as a CSV file. It is good practice to call the argument 
+names explicitly so the function knows what default values you are changing. Here we 
+are setting `row.names = FALSE`. Recall you can use `?write.csv` to pull
+up the help file to check out the argument names and their default values. 
+
+
+```{r}
+write.csv(x = cats, file = "data/feline-data.csv", row.names = FALSE)
+```
+
+
+You should now see that you have a new file, `feline-data.csv`, in your `data/` folder, whose contents look like:
+
+
+```{r, eval=FALSE}
+coat,weight,likes_string
+calico,2.1,1
+black,5.0,0
+tabby,3.2,1
+```
+
+
+::: {.callout-tip}
+
+## Tip: Editing Text files in R
+
+Alternatively, you can create `data/feline-data.csv` using a text editor (Nano),
+or within RStudio with the **File -> New File -> Text File** menu item.
+:::
+
+We can then load this .csv file into R via the following:
+
+
+```{r}
+cats <- read.csv(file = "data/feline-data.csv")
+cats
+```
+
+
+
+::: {.callout-tip}
+## Tip: `read.table()` and delimiters
+
+The `read.table` function is used for reading in tabular data stored in a text
+file where the columns of data are separated by punctuation characters such as
+.csv files (csv = comma-separated values). Tabs and commas are the most common
+punctuation characters used to separate or delimit data points in csv files.
+For convenience R provides 2 other versions of `read.table`. These are: `read.csv`
+for files where the data are separated with commas and `read.delim` for files
+where the data are separated with tabs. Of these three functions `read.csv` is
+the most commonly used.  If needed it is possible to override the default
+delimiting punctuation marks for both `read.csv` and `read.delim`.
+:::
+
+There are lots of things we can do with our `cats` data object, such as extracting individual columns using the `$` operator:
+
+
+```{r}
+cats$weight
+cats$coat
+```
+
+
+Note that each column is a *vector*. 
+
+We can do other operations on the columns, such as:
+
+
+```{r}
+## Say we discovered that the scale weighs two Kg light:
+cats$weight + 2
+paste("My cat is", cats$coat)
+```
+
+
+But what about:
+
+
+```{r}
+#| error: true
+cats$weight + cats$coat
+```
+
+
+Understanding what happened here is key to successfully analyzing data in R.
+
+## Data Types
+
+If you guessed that the last command will return an error because `2.1` plus
+`"black"` is nonsense, you're right - and you already have some intuition for an
+important concept in programming called *data types*. We can ask what type or "class" of
+data something is:
+
+
+```{r}
+class(cats$weight)
+```
+
+
+You will typically encounter the following main types: `numeric` (which encompasses `double` and `integer`), `logical`, `character` (and `factor`, but we won't encounter these until later). There are others too (such as `complex`), but you're unlikely to encounter them in your data analysis journeys.
+
+Let's identify the class of several values:
+
+
+```{r}
+class(3.14)
+class(TRUE)
+class("banana")
+```
+
+
+No matter how complicated our analyses become, all data in R is interpreted as one of these
+basic data types. This strictness has some really important consequences.
+
+A user has added details of another cat. This information is in the file
+`data/feline-data_v2.csv`.
+
+
+
+```{r, eval=FALSE}
+file.show("data/feline-data_v2.csv")
+```
+
+```{r, eval=FALSE}
+coat,weight,likes_string
+calico,2.1,1
+black,5.0,0
+tabby,3.2,1
+tabby,2.3 or 2.4,1
+```
+
+
+Load the new cats data like before, and check what type of data we find in the
+`weight` column:
+
+
+```{r}
+cats_v2 <- read.csv(file="data/feline-data_v2.csv")
+class(cats_v2$weight)
+```
+
+
+Oh no, our weights aren't the numeric class anymore! If we try to do the same math
+we did on them before, we run into trouble:
+
+
+```{r}
+#| error: true
+cats_v2$weight + 2
+```
+
+
+What happened? 
+
+The `cats` data we are working with is something called a *data frame*. Data frames
+are one of the most common and versatile types of *data structures* we will work with in R.
+
+A given column in a data frame can only contain one single data type (but each column can be of a different type).
+
+In this case, R does not read everything in the data frame column `weight` as *numeric* (specifically, R reads the entry `2.3 or 2.4` as a character), therefore the entire column data type changes to something that is suitable for everything in the column.
+
+When R reads a csv file, it reads it in as a *data frame*. Thus, when we loaded the `cats`
+csv file, it is stored as a data frame. We can recognize data frames by the first row that 
+is written by the `str()` function:
+
+
+```{r}
+str(cats)
+```
+
+
+*Data frames* are composed of rows and columns, where each column has the 
+same number of rows. Different columns in a data frame can be made up of different 
+data types (this is what makes them so versatile), but everything in a given
+column needs to be the same type (e.g., numeric, character, logical, etc).
+
+Let's explore more about different data structures and how they behave. 
+For now, let's go back to working with the original `feline-data.csv` file
+while we investigate this behavior further:
+
+`feline-data.csv`:
+
+```
+coat,weight,likes_string
+calico,2.1,1
+black,5.0,0
+tabby,3.2,1
+```
+
+
+
+
+```{r}
+cats <- read.csv(file = "data/feline-data.csv")
+cats
+```
+
+
+
+
+## Vectors and Type Coercion
+
+To better understand this behavior, let's learn more about the *vector*. A vector in R is essentially an ordered collection of values, with the special
+condition that *everything in the vector must be the same basic data type*. 
+
+A vector can be created with the `c()` "combine" function:
+
+
+```{r}
+c(1, 8, 1.2)
+```
+
+
+
+The *columns of a data frame are also vectors*:
+
+
+```{r}
+cats$weight
+```
+
+
+The fact that everything in a vector must be the same type is the root of why R forces everything in a column to be the same basic data type.
+
+
+### Coercion by combining vectors
+
+Because all entries in a vector must have the same type, `c()` will *coerce* the type of each element to a common type. Given what we've learned so far, what do you think the following will produce?
+
+
+```{r}
+quiz_vector <- c(2, 6, '3')
+```
+
+
+This is something called *type coercion*, and it is the source of many surprises
+and the reason why we need to be aware of the basic data types and how R will
+interpret them. When R encounters a mix of types (here numeric and character) to
+be combined into a single vector, it will force them all to be the same
+type. Consider:
+
+
+```{r}
+coercion_vector <- c('a', TRUE)
+coercion_vector
+another_coercion_vector <- c(0, TRUE)
+another_coercion_vector
+```
+
+
+### The type hierarchy
+
+The coercion rules go: `logical` -> `numeric` -> `character`, where -> can be read as "*are transformed into*". For
+example, combining `logical` and `character` transforms the result to
+`character`:
+
+
+```{r}
+c('a', TRUE)
+```
+
+
+::: {.callout-tip}
+
+A quick way to recognize `character` vectors is by the quotes that enclose them
+when they are printed.
+:::
+
+You can try to force coercion against this flow using the `as.` functions:
+
+
+```{r}
+character_vector_example <- c('0', '2', '4')
+character_vector_example
+character_coerced_to_numeric <- as.numeric(character_vector_example)
+character_coerced_to_numeric
+numeric_coerced_to_logical <- as.logical(character_coerced_to_numeric)
+numeric_coerced_to_logical
+```
+
+
+As you can see, some surprising things can happen when R forces one basic data
+type into another! Nitty-gritty of type coercion aside, the point is: if your
+data doesn't look like what you thought it was going to look like, type coercion
+may well be to blame; make sure everything is the same type in your vectors and
+your columns of data.frames, or you will get nasty surprises!
+
+But coercion can also be very useful! For example, in our `cats` data
+`likes_string` is numeric, but we know that the 1s and 0s actually represent
+`TRUE` and `FALSE` (a common way of representing them). We should use the
+`logical` datatype here, which has two states: `TRUE` or `FALSE`, which is
+exactly what our data represents. We can 'coerce' this column to be `logical` by
+using the `as.logical` function:
+
+
+```{r}
+cats$likes_string
+cats$likes_string <- as.logical(cats$likes_string)
+cats$likes_string
+```
+
+
+
+
+::: {.callout}
+## Challenge 1
+
+An important part of every data analysis is cleaning the input data. If you 
+know that the input data is all of the same format, (e.g. numbers), your 
+analysis is much easier! In this exercise, you will clean the cat data set from the chapter about 
+type coercion.
+
+### Copy the code template 
+
+In your quarto file in RStudio, start a new code chunk and copy and paste the following code. Then
+move on to the tasks below, which will help you to fill in the gaps (______).
+
+
+```{r}
+#| eval: false
+# Read data
+cats <- read.csv("data/feline-data_v2.csv")
+# 1. Print the data
+_____
+
+# 2. Show an overview of the table that prints out the type of each column
+_____(cats)
+
+# 3. The "weight" column has the incorrect data type __________.
+#    The correct data type is: ____________.
+
+# 4. Correct the 4th weight data point with the mean of the two given values
+cats$weight[4] <- 2.35
+#    print the data again to see the effect
+cats
+
+# 5. Convert the weight to the right data type
+cats$weight <- ______________(cats$weight)
+
+#    Calculate the mean to test yourself
+mean(cats$weight)
+
+# If you see the correct mean value (and not NA), you did the exercise
+# correctly!
+```
+
+
+## Instructions for the tasks
+
+### 1. Print the data
+Execute the first statement (`read.csv(...)`). Then print the data to the
+console
+
+::: {.callout-tip}
+## Tip 1.1
+Print the contents of any variable by typing its name. 
+:::
+
+::: {.callout collapse=true}
+## Solution to Challenge 1.1
+Two correct solutions:
+
+
+```{r}
+cats
+print(cats)
+```
+
+:::
+
+### 2. Overview of the data types
+Use a function we saw earlier to print out the "type" of all columns of the
+`cats` table.
+
+::: {.callout-tip}
+## Tip 1.2
+In the chapter "Data types" we saw two functions that can show data types. 
+One printed just a single word, the data type name. The other printed
+a short form of the data type, and the first few values. We recommend the second
+here. 
+:::
+
+::: {.callout collapse=true}
+## Solution to Challenge 1.2
+
+```{r}
+str(cats)
+```
+
+:::
+
+### 3. Which data type do we need?
+The shown data type is not the right one for this data (weight of 
+a cat). Which data type do we need? 
+
+* Why did the `read.csv()` function not choose the correct data type?
+* Fill in the gap in the comment with the correct data type for cat weight!
+
+::: {.callout-tip}
+## Tip 1.3
+Scroll up to the section about the [type hierarchy](#the-type-hierarchy)
+to review the available data types
+:::
+
+::: {.callout}
+## Solution to Challenge 1.3
+
+* Weight is expressed on a continuous scale (real numbers). The R
+ data type for this is "numeric".
+* The fourth row has the value "2.3 or 2.4". That is not a number
+ but two, and an english word. Therefore, the "character" data type
+ is chosen. The whole column is now text, because all values in the same
+ columns have to be the same data type.
+:::
+
+### 4. Correct the problematic value
+The code to assign a new weight value to the problematic fourth row is given. 
+Think first and then execute it: What will be the data type after assigning
+a number like in this example?
+You can check the data type after executing to see if you were right.
+
+
+::: {.callout-tip}
+## Tip 1.4
+Revisit the hierarchy of data types when two different data types are 
+combined.
+:::
+
+::: {.callout collapse=true}
+## Solution to challenge 1.4
+
+The data type of the column "weight" is "character". The assigned data
+type is "numeric". Combining two data types yields the data type that is
+higher in the following hierarchy: 
+
+```{r}
+#| eval: false
+logical < numeric < character
+```
+
+Therefore, the column is still of type character! We need to manually
+convert it to "numeric".
+:::
+
+### 5. Convert the column "weight" to the correct data type
+
+Cat weight are numbers. But the column does not have this data type yet. 
+Coerce the column to floating point numbers. 
+
+::: {.callout-tip}
+## Tip 1.5
+The functions to convert data types start with `as.`. You can look
+for the function further up in the manuscript or use the RStudio 
+auto-complete function: Type "`as.`" and then press the TAB key.
+:::
+
+::: {.callout collapse=true}
+## Solution to Challenge 1.5
+
+```{r}
+cats$weight <- as.numeric(cats$weight)
+```
+
+:::
+
+:::
+
+
+## Some basic vector functions
+
+The combine function, `c()`, can also be used both to create a new vector as well as to append things to an existing vector:
+
+
+```{r}
+ab_vector <- c('a', 'b')
+ab_vector
+combine_example <- c(ab_vector, 'z')
+combine_example
+```
+
+
+You can also make series of numbers using the `:` syntax as well as the `seq()` function:
+
+
+```{r}
+mySeries <- 1:10
+mySeries
+seq(10)
+seq(1, 10, by = 0.1)
+```
+
+
+The `head()` and `tail()` functions show the first and last few entries of a vector, respectively.
+
+
+```{r}
+sequence_example <- 20:25
+head(sequence_example, n = 2)
+tail(sequence_example, n = 4)
+```
+
+
+The `length()` function computes the number of entries in the vector:
+
+
+```{r}
+length(sequence_example)
+```
+
+
+And the `class()` function reports the class/type of the values in the vector:
+
+
+```{r}
+class(sequence_example)
+```
+
+
+We can extract individual elements of a vector by using the square bracket notation:
+
+
+```{r}
+first_element <- sequence_example[1]
+first_element
+```
+
+
+To change a single element, use the bracket on the other side of the arrow:
+
+
+```{r}
+sequence_example[1] <- 30
+sequence_example
+```
+
+
+::: {.callout}
+## Challenge 2
+
+Start by making a vector with the numbers 5 through 26. Then:
+
+- Print out the first three entries of the vector
+
+- Extract the fourth entry of the vector
+
+- Multiply the vector by 2.
+
+::: {.callout collapse=true}
+
+## Solution to Challenge 2
+
+
+```{r}
+x <- 5:26
+head(x, 3)
+x[4]
+x <- x * 2
+x
+```
+
+:::
+:::
+
+
+
+
+# Names
+
+With names, we can give meaning to elements. It is the first time that we do not
+only have the **data**, but also explaining information. It is *metadata*
+that can be stuck to the object like a label. In R, this is called an
+**attribute**. Some attributes enable us to do more with our
+object, for example, like here, accessing an element by a self-defined name.
+
+## Accessing vectors by name
+
+Each element of a vector can be given a name:
+
+
+```{r}
+pizza_price <- c(pizzasubito = 5.64, pizzafresh = 6.60, callapizza = 4.50)
+```
+
+
+To retrieve a specific named entry from a vector, we can use the square bracket notation:
+
+
+```{r}
+pizza_price["pizzasubito"]
+```
+
+
+which is equivalent to extracting the first entry of the vector:
+
+
+```{r}
+pizza_price[1]
+```
+
+
+
+
+## Accessing and changing names 
+
+If you want to extract just the names of an object, use the `names()` function:
+
+
+```{r}
+names(pizza_price)
+```
+
+
+We have seen how to access and change single elements of a vector. The same is
+possible for names:
+
+
+```{r}
+names(pizza_price)[3]
+names(pizza_price)[3] <- "call-a-pizza"
+pizza_price
+```
+
+
+::: {.callout}
+## Challenge 3
+
+What is the data type of the names of `pizza_price`? You can find out 
+ using the `str()` or `class()` functions.
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 3
+
+You get the names of an object by wrapping the object name inside
+`names(...)`. Similarly, you get the data type of the names by again 
+wrapping the whole code in `class(...)`:
+
+
+```{r}
+class(names(pizza_price))
+```
+
+
+alternatively, use a new variable if this is easier for you to read: 
+
+
+```{r}
+names <- names(pizza_price)
+class(names)
+```
+
+:::
+:::
+
+::: {.callout}
+
+## Challenge 4
+
+Instead of just changing the names of each element of a vector individually, you can
+also set all names of an object by writing code like (replace ALL CAPS text):
+
+
+```{r}
+#| eval: false
+names( OBJECT ) <-  CHARACTER_VECTOR
+```
+
+
+Create a vector that gives the number for each letter in the alphabet!
+
+1. Generate a vector called `letter_no` with the sequence of numbers from 1
+  to 26
+2. R has a built-in object called `LETTERS` (type `LETTERS` in the console. It is a 26-character vector of uppercase letters from 
+  A to Z. Set the names of `letter_no` to these 26 letters
+3. Test yourself by calling `letter_no["B"]`, which should give you the number
+  2!
+  
+::: {.callout collapse=true}
+## Solution to Challenge 4
+
+
+```{r}
+letter_no <- 1:26   # or seq(1,26)
+names(letter_no) <- LETTERS
+letter_no["B"]
+```
+
+:::
+:::
+
+
+# Data frames
+
+We introduced data frames at the very beginning of this lesson, they represent
+a table of data. Recall our `cats` data frame:
+
+
+```{r}
+cats
+```
+
+
+
+Columns of a data frame are vectors of different types, *but of the same length*, that are organized 
+by belonging to the same table.
+
+In our `cats` example, we have an character, a numeric, and a logical column/variable. As
+we have seen already, each column of data.frame is a vector.
+
+### Extracting information from a data frame
+
+There are several ways to extract an individual column in a data frame, including using the `$` notation that we used above:
+
+
+
+```{r}
+cats$coat
+```
+
+
+But a column can also be accessed using the square bracket notation:
+
+
+
+```{r}
+cats[, 1]
+```
+
+
+which returns the column as a vector. 
+
+The syntax `df[i, j]` to extract the `i`th row and the `j`th column from the data frame called `df`. 
+
+A blank `i` or `j` this tells R to extract *all* of the rows or columns, so `df[, 1]` will extract all rows for the 1st column. `df[2, ]`, however, will extract the second row across all columns. `df[3, 1]` will extract the single entry in the third row and first column.
+
+### The square bracket syntax `[ ]`
+
+- `df[, j]` will extract the `j`th *column* from the data frame called `df` as a *vector*.
+
+- `df[i, ]` will extract the `i`th *row* from the data frame called `df` as a *data frame*.
+
+For example the following code extracts the data from the second column of `cats` as a vector
+
+
+```{r}
+cats[, 2]
+```
+
+
+and the following code extracts the second *row* of `cats` as a data frame:
+
+
+```{r}
+cats[2, ]
+```
+
+Note, to extract the $j$th *column* from a data frame as a single-column *data frame*, you can use the single-dimension square bracket syntax: `df[j]`. 
+
+
+```{r}
+cats[2]
+```
+
+
+
+This syntax also works with *named* indexing. 
+
+
+```{r}
+cats["weight"]
+```
+
+
+
+
+We will explain a bit more about why this works momentarily when we introduce lists.
+
+
+
+
+
+::: {.callout}
+
+## Challenge 5
+
+There are several subtly different ways to call variables, observations and
+elements from data.frames:
+
+- `cats[1]`
+- `cats$coat`
+- `cats["coat"]`
+- `cats[1, 1]`
+- `cats[, 1]`
+- `cats[1, ]`
+
+Try out these examples and explain what is returned by each one.
+
+*Hint:* Use the function `class()` to examine what is returned in each case.
+
+::: {.callout collapse=true}
+## Solution to Challenge 5
+
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1]
+```
+
+
+We can think of a data frame as a list of vectors. The single brace `[1]`
+returns the first slice of the list, as another list. In this case it is the
+first column of the data frame.
+
+
+```{r, eval=TRUE, echo=TRUE}
+cats$coat
+```
+
+
+This example uses the `$` character to address items by name. _coat_ is the
+first column of the data frame, again a _vector_ of type _character_.
+
+
+```{r, eval=TRUE, echo=TRUE}
+cats["coat"]
+```
+
+
+Here we are using a single brace `["coat"]` replacing the index number with
+the column name. Like example 1, the returned object is a _list_.
+
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1, 1]
+```
+
+
+This example uses a single brace, but this time we provide row and column
+coordinates. The returned object is the value in row 1, column 1. The object
+is a _vector_ of type _character_.
+
+
+```{r, eval=TRUE, echo=TRUE}
+cats[, 1]
+```
+
+
+Like the previous example we use single braces and provide row and column
+coordinates. The row coordinate is not specified, R interprets this missing
+value as all the elements in this _column_ and returns them as a _vector_.
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1, ]
+```
+
+Again we use the single brace with row and column coordinates. The column
+coordinate is not specified. The return value is a _list_ containing all the
+values in the first row.
+:::
+:::
+
+
+::: {.callout-tip}
+## Tip: Renaming data frame columns
+Like vectors, data frames have column names, which can be accessed with the `names()` function.
+
+
+```{r}
+names(cats)
+```
+
+
+If you want to rename the second column of `cats`, you can assign a new name to the second element of `names(cats)`.
+
+
+```{r}
+names(cats)[2] <- "weight_kg"
+cats
+```
+
+:::
+
+
+```{r, include=FALSE}
+# reverting cats back to original version
+cats <- cats_orig
+```
+
+
+
+
+## Lists
+
+A data frame is technically a special case of an object type *list*
+
+
+A list is simpler in some ways than the other types, because you can put anything you
+want in it: unlike a vector, the elements of a list can have different data types:
+
+
+```{r}
+list_example <- list(1, "a", TRUE)
+list_example
+```
+
+
+When printing the object structure with `str()`, we see the data types of all
+elements:
+
+
+```{r}
+str(list_example)
+```
+
+To retrieve one of the elements of a list, we use the **double bracket** notation:
+
+
+```{r}
+list_example[[2]]
+```
+
+
+The elements of lists also can have **names**, they can be given by prepending
+them to the values, separated by an equals sign:
+
+
+```{r}
+another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE )
+another_list
+```
+
+
+This results in a **named list**. Now we have a new function of our object!
+We can access single elements by an additional way!
+
+
+```{r}
+another_list$title
+```
+
+
+as well as using named indexing in the double square bracket notation.
+
+
+```{r}
+another_list[["title"]]
+```
+
+
+::: {.callout-tip}
+## Tip: extracting entries from a list using single brackets
+
+When you use a single bracket to extract an element of a list, you are extracting a *list* containing the single entry, rather than the single entry itself.
+
+
+```{r}
+another_list["title"]
+```
+
+```{r}
+class(another_list["title"])
+```
+
+
+To extract the actual entry itself, you need to use double brackets
+
+
+```{r}
+another_list[["title"]]
+class(another_list[["title"]])
+```
+
+
+:::
+
+
+Lists, it turns out, can become a lot more complicated than vectors. While each entry of a vector is just a single value, each entry of a list can be any type of object, including vectors and data frames.
+
+
+```{r}
+complicated_list <- list(vec = c(1, 2, 9),
+                         dataframe = cats, 
+                         single_value = "a")
+complicated_list
+```
+
+
+
+
+::: {.callout}
+## Challenge 6
+Create a new character vector contianing the letters "x", "y", "z", and a data frame with two columns that looks like this.
+
+
+```{r}
+#| echo: false
+data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C"))
+```
+
+
+
+Create a list of length two containing the character vector and data frame that you just created and print the output. Your output should look like this:
+
+
+```{r}
+#| echo: false
+list(c("x", "y", "z"),
+     data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C")))
+```
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 6
+
+
+```{r}
+list(c("x", "y", "z"),
+     data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C")))
+```
+
+
+:::
+:::
+
+
+### Data frames as a special case of a list
+
+
+It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
+
+
+
+<!-- ## Matrices -->
+
+<!-- Last but not least is the matrix. We can declare a matrix full of zeros: -->
+
+<!-- ```{r} -->
+<!-- matrix_example <- matrix(0, ncol = 6, nrow = 3) -->
+<!-- matrix_example -->
+<!-- ``` -->
+
+<!-- What makes it special is the `dim()` attribute: -->
+
+<!-- ```{r} -->
+<!-- dim(matrix_example) -->
+<!-- ``` -->
+
+<!-- And similar to other data structures, we can ask things about our matrix: -->
+
+<!-- ```{r} -->
+<!-- class(matrix_example) -->
+<!-- str(matrix_example) -->
+<!-- nrow(matrix_example) -->
+<!-- ncol(matrix_example) -->
+<!-- ``` -->
+
+<!-- ::: {.callout} -->
+<!-- ## Challenge 6 -->
+<!-- What do you think will be the result of -->
+<!-- `length(matrix_example)`? -->
+
+<!-- Try it. -->
+
+<!-- Were you right? Why / why not? -->
+
+<!-- ::: {.callout collapse=true}  -->
+<!-- ## Solution to Challenge 6 -->
+<!-- What do you think will be the result of -->
+<!-- `length(matrix_example)`? -->
+
+<!-- ```{r} -->
+<!-- matrix_example <- matrix(0, ncol = 6, nrow = 3) -->
+<!-- length(matrix_example) -->
+<!-- ``` -->
+
+<!-- Because a matrix is a vector with added dimension attributes, `length` -->
+<!-- gives you the total number of elements in the matrix. -->
+<!-- ::: -->
+<!-- ::: -->
+
+
+<!-- ::: {.callout} -->
+
+<!-- ## Challenge 7 -->
+<!-- Make another matrix, this time containing the numbers 1:50, -->
+<!-- with 5 columns and 10 rows. -->
+<!-- Did the `matrix` function fill your matrix by column, or by -->
+<!-- row, as its default behaviour? -->
+<!-- See if you can figure out how to change this. -->
+<!-- (hint: read the documentation for `matrix`!) -->
+
+<!-- ::: {.callout collapse=true} -->
+<!-- ## Solution to Challenge 7 -->
+<!-- Make another matrix, this time containing the numbers 1:50, -->
+<!-- with 5 columns and 10 rows. -->
+<!-- Did the `matrix` function fill your matrix by column, or by -->
+<!-- row, as its default behaviour? -->
+<!-- See if you can figure out how to change this. -->
+<!-- (hint: read the documentation for `matrix`!) -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- x <- matrix(1:50, ncol = 5, nrow = 10) -->
+<!-- x <- matrix(1:50, ncol = 5, nrow = 10, byrow = TRUE) # to fill by row -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+
+
+
+
+<!-- ::: {.callout} -->
+<!-- ## Challenge 9 -->
+
+<!-- Consider the R output of the matrix below: -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE) -->
+<!-- ``` -->
+
+<!-- What was the correct command used to write this matrix? Examine -->
+<!-- each command and try to figure out the correct one before typing them. -->
+<!-- Think about what matrices the other commands will produce. -->
+
+<!-- 1. `matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)` -->
+<!-- 2. `matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)` -->
+<!-- 3. `matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)` -->
+<!-- 4. `matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)` -->
+
+<!-- ::: {.callout collapse=true} -->
+<!-- ## Solution to Challenge 9 -->
+<!-- Consider the R output of the matrix below: -->
+
+<!-- ```{r, echo=FALSE} -->
+<!-- matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE) -->
+<!-- ``` -->
+
+<!-- What was the correct command used to write this matrix? Examine -->
+<!-- each command and try to figure out the correct one before typing them. -->
+<!-- Think about what matrices the other commands will produce. -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->

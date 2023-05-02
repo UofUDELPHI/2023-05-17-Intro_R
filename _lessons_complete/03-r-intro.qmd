@@ -1,0 +1,485 @@
+---
+title: "Introduction to R"
+output: html
+embed-resources: true
+---
+
+## Introduction
+
+In this lesson you'll receive your first taste of the R programming language. Specifically you'll learn how to use R as a calculator, and the basics of variables, functions, and packages.
+
+
+## Using R as a calculator
+
+When using R as a calculator, the order of operations is the same as you
+would have learned back in school.
+
+From highest to lowest precedence:
+
+ * Parentheses: `(`, `)`
+ * Exponents: `^` or `**`
+ * Multiply: `*`
+ * Divide: `/`
+ * Add: `+`
+ * Subtract: `-`
+
+```{r}
+3 + 5 * 2
+```
+
+Use parentheses to group operations in order to force the order of
+evaluation if it differs from the default, or to make clear what you
+intend.
+
+```{r}
+(3 + 5) * 2
+```
+
+This can get unwieldy when not needed, but clarifies your intentions.
+Remember that others may later read your code.
+
+```{r, eval=FALSE}
+(3 + (5 * (2 ^ 2))) # hard to read
+3 + 5 * 2 ^ 2       # clear, if you remember the rules
+3 + 5 * (2 ^ 2)     # if you forget some rules, this might help
+```
+
+
+The text after each line of code is called a
+"comment". Anything that follows after the hash (or octothorpe) symbol
+`#` is ignored by R when it executes code. (Note the difference between a code comment and a quarto chunk option specified with `|#`)
+
+Really small or large numbers get a scientific notation:
+
+```{r}
+2/10000
+```
+
+Which is shorthand for "multiplied by `10^XX`". So `2e-4`
+is shorthand for `2 * 10^(-4)`.
+
+You can write numbers in scientific notation too:
+
+```{r}
+5e3  # Note the lack of minus here
+```
+
+## Mathematical functions
+
+R has many built in mathematical functions. To call a function,
+we can type its name, followed by open and closing parentheses.
+Functions take arguments as inputs, anything we type inside the parentheses of a function is considered an argument. 
+
+
+Depending on the function, the number of arguments can vary from none to multiple. For example:
+
+```{r}
+#| eval: false
+getwd() #returns an absolute filepath
+```
+
+doesn't require an argument, whereas for the next set of mathematical functions we will need to supply the function a value in order to compute the result.
+
+```{r}
+sin(1)  # trigonometry functions
+```
+
+```{r}
+log(1)  # natural logarithm
+```
+
+```{r}
+log10(10) # base-10 logarithm
+```
+
+```{r}
+exp(0.5) # e^(1/2)
+```
+
+Don't worry about trying to remember every function in R. You
+can look them up on Google, or if you can remember the
+start of the function's name, use the tab completion in RStudio.
+
+This is one advantage that RStudio has over R on its own, it
+has auto-completion abilities that allow you to more easily
+look up functions, their arguments, and the values that they
+take.
+
+Typing a `?` before the name of a command will open the help page
+for that command. When using RStudio, this will open the 'Help' pane;
+if using R in the terminal, the help page will open in your browser.
+The help page will include a detailed description of the command and
+how it works. Scrolling to the bottom of the help page will usually
+show a collection of code examples which illustrate command usage.
+We'll go through an example later.
+
+
+::: {.callout}
+## Challenge 1
+Look at the help page for the `log()` function by typing `?log` in the console. What arguments does `log()` take? Which arguments have a default value set?
+
+::: {.callout collapse=true}
+## Solution to Challenge 1
+
+The `log()` function takes arguments
+
+- `x` (the value we want to take the logarithm of) and 
+
+- `base` (the base of the logarithm calculation). 
+
+There is no default value for `x`, but the default value for `base` is `exp(1)`, which means that you don't need to specify `base`.
+:::
+:::
+
+
+
+## Comparing things
+
+We can also do comparisons in R:
+
+```{r}
+1 == 1  # equality (note two equals signs, read as "is equal to")
+```
+
+```{r}
+1 != 2  # inequality (read as "is not equal to")
+```
+
+```{r}
+1 < 2  # less than
+```
+
+```{r}
+1 <= 1  # less than or equal to
+```
+
+```{r}
+1 > 0  # greater than
+```
+
+```{r}
+1 >= -9 # greater than or equal to
+```
+
+
+## Variables and assignment
+
+We can store values in variables using the assignment operator `<-`, like this:
+
+```{r}
+x <- 1/40
+```
+
+Notice that assignment does not print a value. Instead, we stored it for later
+in something called a **variable**. `x` now contains the **value** `0.025`:
+
+```{r}
+x
+```
+
+
+
+Look for the `Environment` tab in the top right panel of RStudio, and you will see that `x` and its value
+have appeared. Our variable `x` can be used in place of a number in any calculation that expects a number:
+
+```{r}
+log(x)
+```
+
+Notice also that variables can be reassigned:
+
+```{r}
+x <- 100
+```
+
+`x` used to contain the value 0.025 and now it has the value 100.
+
+Assignment values can contain the variable being assigned to:
+
+```{r}
+x <- x + 1 #notice how RStudio updates its description of x on the top right tab
+y <- x * 2
+```
+
+The right hand side of the assignment can be any valid R expression.
+The right hand side is *fully evaluated* before the assignment occurs.
+
+Variable names can contain letters, numbers, underscores and periods but no spaces. They
+must start with a letter. 
+
+It is recommended to use a **consistent** variable naming syntax, such as
+
+  * underscores_between_words
+
+Note that it is also possible to use the `=` operator for assignment:
+
+```{r}
+x = 1/40
+```
+
+But this is much less common among R users and the general recommendation is to use `<-`.
+
+
+::: {.callout} 
+## Challenge 2
+Which of the following are valid R variable names?
+```{r}
+#| eval: false
+min_height
+max.height
+_age
+.mass
+MaxLength
+min-length
+2widths
+celsius2kelvin
+```
+
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 2
+The following variable names are valid:
+```{r}
+#| eval: false
+min_height
+max.height
+MaxLength
+celsius2kelvin
+```
+But only the first one is in the recommended format.
+
+The following creates a hidden variable:
+```{r}
+#| eval: false
+.mass
+```
+:::
+
+
+:::
+
+
+## Vectors
+
+Note that a variable can contain many values at once. For example, a **vector** in R corresponds to a collection of values stored in a certain order and that have the same data type. There are many ways to create vectors. Some examples include:
+
+```{r}
+c(1, 4, 2)
+1:5
+2^(1:5)
+x <- 1:5
+2^x
+```
+
+This is incredibly powerful; we will discuss this further in an
+upcoming lesson.
+
+
+## Managing your environment
+
+There are a few useful commands you can use to interact with the R session.
+
+`ls` will list all of the variables and functions stored in the global environment
+(your working R session):
+
+```{r}
+#| eval: false
+ls()
+```
+```{r}
+#| echo: false
+# If `ls()` is left to run by itself when rendering this Rmd document (as would
+# happen if the code chunk above was evaluated), the output would contain extra
+# items ("args", "dest_md", "op", "src_md") that people following the lesson
+# would not see in their own session.
+#
+# This probably comes from the way the md episodes are generated when the
+# lesson website is built. The solution below uses a temporary environment to
+# mimick what the learners should observe when running `ls()` on their
+# machines.
+
+temp.env <- new.env()
+temp.env$x <- x
+temp.env$y <- y
+ls(temp.env)
+rm(temp.env)
+```
+
+
+
+Note here that we didn't give any arguments to `ls`, but we still
+needed to give the parentheses to tell R to call the function.
+
+If we type `ls` by itself, R prints a bunch of code instead of a listing of objects.
+
+```{r}
+ls
+```
+
+What's going on here?
+
+Like everything in R, `ls` is the name of an object, and entering the name of
+an object by itself prints the contents of the object. The object `x` that we
+created earlier contains `r x`:
+
+```{r}
+x
+```
+
+The object `ls` contains the R code that makes the `ls` function work! We'll talk
+more about how functions work and start writing our own later.
+
+You can use `rm` to delete objects you no longer need:
+
+```{r}
+#| eval: false
+rm(x)
+```
+
+If you have lots of things in your environment and want to delete all of them,
+you can pass the results of `ls` to the `rm` function (or you can click the "broom" icon in the environment panel):
+
+```{r}
+#| eval: false
+rm(list = ls())
+```
+
+
+In this case we've combined the two. Like the order of operations, anything
+inside the innermost parentheses is evaluated first, and so on.
+
+In this case we've specified that the results of `ls` should be used for the
+`list` argument in `rm`. When assigning values to arguments by name, you *must*
+use the `=` operator!!
+
+If instead we use `<-`, there will be unintended side effects, or you may get an error message:
+
+```{r}
+#| error: true
+rm(list <- ls())
+```
+
+
+::: {.callout-tip}
+## Tip: Warnings vs. Errors
+Pay attention when R does something unexpected! Errors, like above,
+are thrown when R cannot proceed with a calculation. 
+
+Warnings on the other hand usually mean that the function has run, but it probably
+hasn't worked as expected.
+
+In both cases, the message that R prints out usually give you clues
+how to fix a problem.
+:::
+
+
+## R Packages
+
+It is possible to add functions to R by writing a package, or by
+obtaining a package written by someone else. As of this writing, there
+are over 10,000 packages available on CRAN (the comprehensive R archive
+network). R and RStudio have functionality for managing packages:
+
+* You can install packages by typing `install.packages("packagename")`,
+  where `packagename` is the package name, in quotes.
+* You can update installed packages by typing `update.packages()`
+* You can make a package available for use with `library(packagename)`
+
+Packages can also be viewed, loaded, and detached in the Packages tab of the lower right panel in RStudio. Clicking on this tab will display all of the installed packages with a checkbox next to them. If the box next to a package name is checked, the package is loaded and if it is empty, the package is not loaded. Click an empty box to load that package and click a checked box to detach that package.
+
+Packages can be installed and updated from the Package tab with the Install and Update buttons at the top of the tab.
+
+::: {.callout} 
+## Challenge 3
+What will be the value of each variable after each line in the following code?
+```{r}
+#| eval: false
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 3
+```{r}
+mass <- 47.5
+```
+This will give a value of `r mass` for the variable mass
+```{r ch2pt2-sol}
+age <- 122
+```
+This will give a value of `r age` for the variable age
+```{r ch2pt3-sol}
+mass <- mass * 2.3
+```
+This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
+`r mass` to the variable mass.
+```{r ch2pt4-sol}
+age <- age - 20
+```
+This will subtract 20 from the existing value of `r age + 20 ` to give a new value
+of `r age` to the variable age.
+:::
+
+
+
+:::
+
+
+::: {.callout} 
+## Challenge 4
+Run the code from the previous challenge, and write a command to
+compare mass to age. Is mass larger than age?
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 4
+One way of answering this question in R is to use the `>` to set up the following:
+```{r ch3-sol}
+mass > age
+```
+This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
+:::
+:::
+
+
+
+::: {.callout} 
+## Challenge 5
+Clean up your working environment by deleting the mass and age
+variables.
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 5
+We can use the `rm` command to accomplish this task
+```{r ch4-sol}
+rm(age, mass)
+```
+:::
+:::
+
+
+
+::: {.callout} 
+## Challenge 6
+Install the following packages: `tidyverse`, `gapminder`
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 6
+
+We can use the `install.packages()` command to install the required packages.
+
+```{r ch5-sol, eval=FALSE}
+install.packages("tidyverse")
+install.packages("gapminder")
+```
+
+An alternate solution, to install multiple packages with a single `install.packages()` command is:
+
+```{r ch5-sol2, eval=FALSE}
+install.packages(c("tidyverse", "gapminder"))
+```
+:::
+
+:::
+

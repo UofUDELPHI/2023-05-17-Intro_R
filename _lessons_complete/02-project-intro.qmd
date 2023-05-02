@@ -1,0 +1,188 @@
+---
+title: "Project Management With RStudio"
+output: html
+embed-resources: true
+---
+
+
+## Introduction
+
+The scientific process is naturally incremental, and many projects
+start life as random notes, some code, then a manuscript, and
+eventually everything is a bit mixed together.
+
+<blockquote class="twitter-tweet"><p>Managing your projects in a reproducible fashion doesn't just make your science reproducible, it makes your life easier.</p>— Vince Buffalo (@vsbuffalo) <a href="https://twitter.com/vsbuffalo/status/323638476153167872">April 15, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Most people tend to organize their projects like this:
+
+![Screenshot of file manager demonstrating bad project organisation](figs/bad_layout.png)
+
+There are many reasons why we should avoid this:
+
+1. It is really hard to tell which version of your data is
+the original and which is the modified;
+
+2. It gets really messy because it mixes files with various
+extensions together;
+
+3. It probably takes you a lot of time to actually find
+things, and relate the correct figures to the exact code
+that has been used to generate it;
+
+A good project layout will ultimately make your life easier:
+
+* It will help ensure the integrity of your data;
+
+* It makes it simpler to share your code with someone else (a lab-mate, collaborator, or supervisor);
+
+* It allows you to easily upload your code with your manuscript submission;
+
+* It makes it easier to pick the project back up after a break.
+
+## A possible solution
+
+Fortunately, there are tools and packages which can help you manage your work effectively.
+
+One of the most powerful and useful aspects of RStudio is its project management
+functionality. We'll be using this today to create a self-contained, reproducible
+project.
+
+
+::: {.callout}
+## Challenge 1: Creating a self-contained project
+
+Create a new project in RStudio:
+
+1. Click the "File" menu button, then "New Project".
+
+2. Click "New Directory".
+
+3. Click "New Project".
+
+4. Type in the name of the directory to store your project, e.g. "my_project".
+
+5. Click the "Create Project" button.
+:::
+
+The simplest way to open an RStudio project once it has been created is to click
+through your file system to get to the directory where it was saved and double
+click on the `.Rproj` file. This will open RStudio and start your R session in the
+same directory as the `.Rproj` file. All your data, plots and scripts will now be
+relative to the project directory. RStudio projects have the added benefit of
+allowing you to open multiple projects at the same time each open to its own
+project directory. This allows you to keep multiple projects open without them
+interfering with each other.
+
+
+::: {.callout}
+## Challenge 2: Opening an RStudio project through the file system
+
+1. Exit RStudio.
+
+2. Navigate to the directory where you created a project in Challenge 1.
+
+3. Double click on the `.Rproj` file in that directory.
+:::
+
+## Best practices for project organization
+
+One of the more effective ways to work with R is to start by writing the code you want to run directly in the code chunks of a quarto document (or in an .R script), and then running the selected lines (either using the keyboard shortcuts in RStudio or clicking the "Run" button) in the interactive R console.
+
+However, it is important to save all of the code that led to your final results, e.g., in quarto documents and R scripts.
+
+Although there is no "best" way to lay out a project, there are some general
+principles to adhere to that will make project management easier:
+
+### Treat data as read only
+
+This is probably the most important goal of setting up a project. Data is
+typically time consuming and/or expensive to collect. Working with them
+interactively (e.g., in Excel) where they can be modified means you are never
+sure of where the data came from, or how it has been modified since collection.
+It is therefore a good idea to treat your data as "read-only".
+
+You should keep an un-modified (read-only) copy of the raw data in a `data/` folder.
+
+
+
+::: {.callout}
+## Challenge 3: download the gapminder data
+
+Download the gapminder data from [here](https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv).
+
+1. Download the file (right mouse click on the link above -> "Save link as" / "Save file as", or click on the link and after the page loads, press <kbd>Ctrl</kbd>+<kbd>S</kbd> or choose File -> "Save page as")
+2. Make sure it's saved under the name `gapminder_data.csv`
+3. Save the file in the `data/` folder within your project.
+
+We will load and inspect these data later.
+:::
+
+### Data Cleaning
+
+In many cases your data will be "dirty": it will need significant preprocessing
+to get into a format R (or any other programming language) will find useful.
+This task is sometimes called "data munging" or "data cleaning". Writing a data cleaning function and
+and saving this function in a standalone R script can help with reproducibility.
+
+
+### Writing functions
+
+However, when you have multiple quarto analysis files, you often want to run the same code (e.g., to load and clean the data) in each quarto file. Rather than repeating your code, it is a good idea to save re-usable code as *functions* in separate R scripts that can be stored in a `functions/` folder.
+
+
+### Treat generated output as disposable
+
+Anything generated by your scripts should be treated as disposable: it should
+all be able to be regenerated from re-compiling your analysis files.
+
+::: {.callout-tip}
+## Tip: Project structure
+
+1. Put each project in its own directory, which is named after the project.
+
+2. Put text documents associated with the project in the `doc/` directory.
+
+3. Put raw data and metadata in the `data/` directory, and files generated during cleanup and analysis in a `results/` directory.
+
+4. Put any scripts containing re-usable functions in the `functions/` directory.
+
+5. Name all files to reflect their content or function and provide numeric prefixes to indicate any underlying ordering of the files.
+:::
+
+
+
+### Working directory
+
+Knowing R's current working directory is important because when you need to access other files (for example, to import a data file), R will look for them relative to the current working directory.
+
+Each time you create a new RStudio Project, it will create a new directory for that project. When you open an existing `.Rproj` file, it will open that project and set R's working directory to the folder that file is in.
+
+
+::: {.callout}
+## Challenge 4: working directory
+
+You can check the current working directory with the `getwd()` command, or by using the menus in RStudio.
+
+1. In the console, type `getwd()` ("wd" is short for "working directory") and hit Enter.
+
+2. In the Files pane, double click on the `data` folder to open it (or navigate to any other folder you wish). To get the Files pane back to the current working directory, click "More" and then select "Go To Working Directory".
+
+You can change the working directory with `setwd()`, or by using RStudio menus.
+
+1. In the console, type `setwd("data")` and hit Enter. Type `getwd()` and hit Enter to see the new working directory.
+
+2. In the menus at the top of the RStudio window, click the "Session" menu button, and then select "Set Working Directory" and then "Choose Directory".
+
+3. In the windows navigator that opens, navigate back to the project directory, and click "Open". Note that a `setwd` command will automatically appear in the console.
+:::
+
+::: {.callout-tip}
+## Tip: File does not exist errors
+
+When you're attempting to reference a file in your R code and you're getting errors saying the file doesn't exist, it's a good idea to check your working directory.
+
+You need to either provide an absolute path to the file, or you need to make sure the file is saved in the working directory (or a subfolder of the working directory) and provide a relative path. 
+:::
+
+

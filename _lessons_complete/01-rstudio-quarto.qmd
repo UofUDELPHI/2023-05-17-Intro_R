@@ -1,0 +1,252 @@
+---
+title: "Introduction to RStudio and quarto"
+output: html
+embed-resources: true
+---
+
+
+
+## Motivation
+
+Science is a multi-step process: once you've designed an experiment and collected
+data, the real fun begins! This lesson will teach you how to start this process using
+R and RStudio. We will begin with raw data, perform exploratory analyses, and learn
+how to plot results graphically. This example starts with a dataset from
+[gapminder.org](https://www.gapminder.org) containing population information for many
+countries through time. Can you read the data into R? Can you plot the population for
+Senegal? Can you calculate the average income for countries on the continent of Asia?
+By the end of these lessons you will be able to do things like plot the populations
+for all of these countries in under a minute!
+
+## Before Starting The Workshop
+
+Please ensure you have the latest version of R, RStudio, and Quarto installed on your machine, or that you are set up with Posit cloud (in which case everything will be installed for you). If you are having trouble installing any of the software on your local machine, we recommend that you use the Posit cloud instance that we have set up. 
+
+Note that if you are working locally, we recommend re-installing R, RStudio, and Quarto to ensure that you have the latest version, as some features and packages used in the workshop may not work correctly (or at all) if your R, RStudio, and quarto are not up to date.
+
+* [Download and install the latest version of R here](https://www.r-project.org/)
+* [Download and install RStudio here](https://posit.co/download/rstudio-desktop/#download)
+* [Download and install Quarto here](https://quarto.org/docs/get-started/)
+
+
+## Introduction to RStudio
+
+
+Throughout this lesson, we're going to teach you some of the fundamentals of
+the R language as well as some best practices for organizing code for
+scientific projects that will make your life easier.
+
+We'll be using RStudio: a free, open-source R Integrated Development
+Environment (IDE). It provides a built-in editor, works on all platforms (including
+on servers) and provides many advantages such as integration with version
+control and project management.
+
+
+**Basic layout**
+
+When you first open RStudio, you will be greeted by three panels:
+
+  * The interactive R console/Terminal (entire left)
+  * Environment/History/Connections (tabbed in upper right)
+  * Files/Plots/Packages/Help/Viewer (tabbed in lower right)
+
+![RStudio layout](figs/01-rstudio.png)
+
+Once you open files, such as R scripts or quarto documents, an editor panel will also open
+in the top left.
+
+![RStudio layout with .R file open](figs/01-rstudio-script.png)
+
+
+## *Quarto documents* 
+
+::: {.callout-tip}
+## Quarto documents
+
+In this workshop, we will be saving our code in "quarto" documents (formerly 
+R markdown documents). Quarto documents let us combine text, code, and output 
+(such as plots and tables) into an html or pdf file.
+Quarto files have `.qmd` at the end of their names.
+:::
+
+
+Quarto documents (like their predecessor, R Markdown documents) allow you to combine text and code, so that rather than having your code standing alone in its own file, your code and its output can instead lie nestled in between narrative text that describes the analysis that you're conducting and summarizes the results. Quarto documents are mind-blowingly versatile, and while they are mostly used to create simple html or pdf documents, they can also be used to make websites, blog posts, and books!
+
+Since we want to practice *reproducible* data science, it is important that we keep detailed records of the code that we wrote which led us to our data-driven answers. Quarto provides us with an easy way of doing that, plus since you can surround your code with text narrative, it can be used to communicate your analysis and results to other people: Quarto lets us feed two birds with one seed!
+
+To start a new quarto document:
+
+-   Hit the "New file" icon with a green plus in the top-right-hand corner of the RStudio application and select "Quarto document". The following window should pop up:
+
+```{r}
+#| echo: false
+knitr::include_graphics("figs/new_quarto.png")
+```
+
+- Choose a title (e.g., "My first quarto document"), and make yourself the author.
+
+- Select the HTML output option.
+
+- Select the "knitr" engine from the drop-down menu.
+
+- Un-check "Use visual markdown editor" (if it is checked).
+
+- Hit the "*Create*" button to create your file.
+
+This will open up a new quarto template document in the documents panel:
+
+
+```{r}
+#| echo: false
+knitr::include_graphics("figs/new_quarto_qmd.png")
+```
+
+
+### Rendering quarto documents
+
+The quarto file that you've just created contains a very brief summary of how quarto documents work. Note the instructions "*When you click the **Render** button a document will be generated that includes both content and the output of embedded code*." 
+
+If you hit "Render" button while your quarto document is open, you should see that some code appeared very quickly in your console panel and your web browser opened up with a new (html) webpage titled "*My first quarto document*" that looks like this:
+
+```{r}
+#| echo: false
+knitr::include_graphics("figs/render_doc.png")
+```
+
+
+If you're using RStudio in the cloud (or you have different settings to me), you may have instead found that the window opened in the "Viewer" panel of your RStudio application. If no window opened anywhere, find the `analysis.html` file on your computer that was created when you hit "Render", and open it in your web browser.
+
+Hitting the "Render" button "renders" your *interactive* quarto (.qmd) document as a *static* html (.html) file. This is like saving your interactive word document file as a static pdf file. Compare the original quarto (`.qmd`) document with the rendered web-browser page (`.html`). If you're viewing the `.qmd` file in visual mode, they should look fairly similar.
+
+
+::: {.callout-tip}
+## Simplifying quarto output files
+
+When you compile quarto document, you will find that a number of superfluous files are created in a `xx_files/` folder, and this folder is required for the .html output to be rendered properly (i.e., the formatting in the .html file will be lost if you separate the .html output file from the `xx_files/` folder). 
+
+You can fix this by "embedding" these resource files inside the rendered html output document by specifying `embed-resources: true` in the "yaml" (document settings) at the top of the quarto document. 
+
+```{verbatim}
+---
+title: "Introduction to R and RStudio"
+output: html
+embed-resources: true
+---
+```
+
+
+With this option, the `xx_files/` folder will no longer be created and the html file will be properly rendered as a stand-alone file.
+:::
+
+#### Markdown text
+
+Based on the html output, let's try to make some sense of the syntax used in the original quarto (.qmd) document. The text in a quarto document uses *markdown* syntax.
+
+Can you figure out what the `##` syntax does (if you can't see the `##` syntax, ensure that you are viewing the quarto document using "Source" rather than "Visual" in the top-right corner of the document)? The pound symbols are **markdown** syntax for creating headers: `#` will create a top-level header, `##` will create a level-2 header, `###` will create a level-3 header, etc.
+
+Notice that the word "**Render**" is shown in bold in the rendered html file. By looking at the .qmd file, can you figure out what the markdown syntax is for creating bold-face text?
+
+To learn more about markdown syntax, see [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/).
+
+
+
+## Writing code in quarto documents
+
+### Code chunks
+
+At this stage, much of quarto's power (like its predecessor, R Markdown) lies in combining text with "**code chunks**". Take a look at your analysis.qmd file. This file already contains two code chunks indicated by the following syntax:
+
+
+```{{r}}
+
+```
+
+` ```{r} ` tells quarto that you're beginning an R "code chunk", i.e., you're about to write some R code, and ` ``` ` tells quarto that you're done with R and are going back to writing regular (markdown) text. 
+
+Note in the compiled markdown document, this R code chunk rendered as:
+
+```{r}
+1 + 1
+```
+
+In the rendered html file, the output (`[1] 2`) of the R code being evaluated (`1 + 1`) is shown below the code itself (note also that while the code is shown in the html output, the backtick syntax is hidden). 
+
+Why is there a `[1]` before the output (`[1] 2`)? This is just specifying that `2` is the first "entry" of the output.
+
+
+Note that in the second code chunk, there is a "code chunk option" specified: `#| echo: false` .
+
+``` {{r}}
+#| echo: false
+2 * 2
+```
+
+This `#|` syntax at the beginning of a code chunk corresponds to various options for when the code chunk is "rendered" into html (or pdf).
+
+By looking at the output html file, can you figure out what `#| echo: false` does?
+
+It hides the code from the html output file, while still showing the output (`[1] 4`). Sometimes, depending on the type of document you're creating and who your intended audience is, it is often helpful to hide the code, but still show the output (e.g., figures or tables) of your R code in the document.
+
+### Code comments
+
+Note that another use of the `#` symbol in an R code chunk is as a **code comment** (in this case, `#` will not be followed by `|`). Code comments will be shown with your code chunk but don't do anything other than add some text alongside your code, which is often helpful for explaining what a piece of code is doing when it's not obvious.
+
+```{r}
+#| echo: false
+
+# this code is computing the product of 2 and 2
+2 * 2
+```
+
+
+## The console
+
+
+Rather than compiling your quarto document every time you want to look at the output of the code in your quarto document, you can instead run individual chunks of your code in the R console.
+
+::: {.callout-tip}
+## Tip: Running segments of your code in the console
+RStudio offers you great flexibility in running code from within the editor
+window. There are buttons, menu choices, and keyboard shortcuts. To run the
+current line of code inside a code chunk, you can
+1. click on the `Run` button above the editor panel, or
+2. select "Run Lines" from the "Code" menu, or
+3. hit <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Windows or Linux
+or <kbd>&#8984;</kbd>+<kbd>Return</kbd> on OS X.
+(This shortcut can also be seen by hovering
+the mouse over the button). 
+:::
+
+
+The first thing you will see in the R console (interactive session) is a bunch
+of information, followed by a ">" and a blinking cursor. In many ways
+this is similar to the shell environment you learned about during the
+shell lessons: it operates on the same idea of a "Read, evaluate,
+print loop": you type in commands, R tries to execute them, and then
+returns a result.
+
+If you type in an incomplete command, R will wait for you to
+complete it. If you are familiar with Unix Shell's bash, you may recognize this  
+behavior from bash.
+
+
+
+```{r}
+#| echo: false
+knitr::include_graphics("figs/incomplete.png")
+```
+
+Any time you hit return and the R session shows a "+" instead of a ">", it
+means it's waiting for you to complete the command. If you want to cancel
+a command you can hit <kbd>Esc</kbd> and RStudio will give you back the ">" prompt.
+
+::: {.callout-tip}
+## Tip: Canceling commands
+If you're using R from the command line instead of from within RStudio,
+you need to use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead of <kbd>Esc</kbd>
+to cancel the command. This applies to Mac users as well!
+Canceling a command isn't only useful for killing incomplete commands:
+you can also use it to tell R to stop running code (for example if it's
+taking much longer than you expect), or to get rid of the code you're
+currently writing.
+:::
