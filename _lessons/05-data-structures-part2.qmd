@@ -148,8 +148,7 @@ We will cover subsetting with logical operators like `%in%` in more detail in th
 
 ## Appending to a data frame
 
-The key to remember when adding data to a data frame is that *columns are
-vectors and rows are data frames.* We can also glue two data frames
+The key to remember when adding data to a data frame is that *columns are vectors and rows are data frames.* We can also glue two data frames
 together with `rbind`:
 
 ```{r}
@@ -158,8 +157,6 @@ cats
 ```
 
 
-::: {.callout}
-## Challenge 2
 
 You can create a new data frame right from within R with the following syntax:
 
@@ -168,6 +165,11 @@ df <- data.frame(id = c("a", "b", "c"),
                 x = 1:3,
                 y = c(TRUE, TRUE, FALSE))
 ```
+
+
+
+::: {.callout}
+## Challenge 2
 
 Make a data frame that holds the following information for yourself:
 
@@ -178,7 +180,7 @@ Make a data frame that holds the following information for yourself:
 Then use `rbind` to add an entry for the people sitting beside you.
 Finally, use `cbind` to add a column with each person's answer to the question, "Do you like piezza?"
 
-Your final data frame should look like this:
+Your final data frame should look something like this:
 
 ```{r}
 #| echo: false
@@ -208,46 +210,6 @@ df
 
 
 
-## Factors
-
-Let's consider a new data type: the factor. 
-
-For an object containing the data type `factor`, each different value represents what is called a `level`, and is often how categorical variables/columns whose values can have a finite set of options will be formatted. 
-
-Can you identify any categorical variables in the `cats` data frame? What about the `coat` variables?
-
-```{r}
-cats$coat
-```
-
-
-The `coat` variable is currently formatted as a character variable
-
-```{r}
-class(cats$coat)
-```
-
-but we can convert it to a factor using the `as.factor()` function:
-
-```{r}
-cats$coat <- as.factor(cats$coat)
-class(cats$coat)
-```
-
-Let's take a look at the factor-formatted `coat` column:
-
-```{r}
-cats$coat
-```
-
-
-It looks very similar to the character format, but now our output tells us that there are four "levels": "black", "calico", "tabby", and "tortoiseshell". 
-
-
-One common pitfall occurs when converting numerically coded factors to numeric type. 
-
-
-
 
 
 
@@ -264,48 +226,39 @@ gapminder <- read.csv("data/gapminder_data.csv")
 ```
 
 ::: {.callout-tip}
-## Miscellaneous Tips
+## Tip: Loading files from the internet
 
-* Another type of file you might encounter are tab-separated value files (.tsv). To specify a tab as a separator, use `"\\t"` or `read.delim()`.
+You can also read in files directly into R from the Internet by replacing the file paths with a web address in `read.csv`. Note that in doing this no local copy of the csv file is first saved onto your computer. For example,
 
-* Files can also be downloaded directly from the Internet into a local folder of your choice onto your computer using the `download.file` function.
-
-The `read.csv` function can then be executed to read the downloaded file from the download location, for example,
-
-```{r eval=FALSE, echo=TRUE}
-download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
-gapminder <- read.csv("data/gapminder_data.csv", stringsAsFactors = TRUE)
+```{r}
+#| eval: FALSE
+gapminder <- read.csv("<INSERT URL HERE>")
 ```
+:::
 
-* Alternatively, you can also read in files directly into R from the Internet by replacing the file paths with a web address in `read.csv`. One should note that in doing this no local copy of the csv file is first saved onto your computer. For example,
 
-```{r eval=FALSE, echo=TRUE}
-gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", stringsAsFactors = TRUE)
-```
+::: {.callout-tip}
+## Tip: Loading excel files
 
-* You can read directly from excel spreadsheets without
-converting them to plain text first by using the [readxl](https://cran.r-project.org/package=readxl) package.
+You can read directly from excel spreadsheets using the [readxl](https://cran.r-project.org/package=readxl) package.
 :::
 
 Let's investigate gapminder a bit; the first thing we should always do is check
-out what the data looks like with `str`:
+out what the data looks like with `head()` and `str()`:
+
+
+```{r}
+head(gapminder)
+```
 
 ```{r}
 str(gapminder)
 ```
 
-An additional method for examining the structure of gapminder is to use the `summary` function. This function can be used on various objects in R. For data frames, `summary` yields a numeric, tabular, or descriptive summary of each column. Factor columns are summarized by the number of items in each level, numeric or integer columns by the descriptive statistics (quartiles and mean), and character columns by its length, class, and mode.  
+An additional method for examining the structure of gapminder is to use the `summary()` function. `summary` yields a numeric, tabular, or descriptive summary of each column. Factor columns are summarized by the number of items in each level, numeric or integer columns by the descriptive statistics (quartiles and mean), and character columns by its length, class, and mode.  
 
 ```{r}
-summary(gapminder$country)
-```
-
-Along with the `str()` and `summary()` functions, we can examine individual columns of the data frame with our `class()` function:
-
-```{r}
-class(gapminder$year)
-class(gapminder$country)
-str(gapminder$country)
+summary(gapminder)
 ```
 
 We can also interrogate the data frame for information about its dimensions;
@@ -318,8 +271,8 @@ length(gapminder)
 
 A fair guess would have been to say that the length of a data frame would be the
 number of rows it has (1704), but this is not the case; remember, a data frame
-is a *list of vectors and factors*. When `length` gave us 6, it's because gapminder is built out of a list of 6
-columns. To get the number of rows and columns in our dataset, try:
+is a *list of vectors*. When `length` gave us 6, it's because gapminder is built out of a list of 6
+vectors. To get the number of rows and columns in our dataset, try:
 
 ```{r}
 nrow(gapminder)
@@ -346,12 +299,6 @@ into bad surprises down the road, using what we've learned about how R
 interprets data, and the importance of *strict consistency* in how we record our
 data.
 
-Once we're happy that the data types and structures seem reasonable, it's time
-to start digging into our data proper. Check out the first few lines:
-
-```{r}
-head(gapminder)
-```
 
 ::: {.callout}
 
@@ -383,57 +330,37 @@ gapminder[sample(nrow(gapminder), 5), ]
 :::
 
 
+
+
 ::: {.callout}
 
+## Challenge 3
+It's good practice to also check the last few lines of your data too. How would you do this?
+
+::: {.callout collapse=true}
+## Solution to Challenge 3
+
+To check the last few lines it's relatively simple as R already has a function for this:
+
+```{r}
+tail(gapminder)
+tail(gapminder, n = 15)
+```
+:::
+:::
+
+
+
+::: {.callout}
 ## Challenge 4
 
-Go to file -> new file -> R script, and write an R script
-to load in the gapminder dataset. Put it in the `scripts/`
-directory and add it to version control.
+Go to file -> new file -> R script, and write an R script called `load.R` which contains R code that loads the gapminder dataset. Save `load.R` in the `functions/` directory.
 
-Run the script using the `source` function, using the file path
-as its argument (or by pressing the "source" button in RStudio).
+Run the script in a chunk in your quarto document using the `source()` function, using the file path as its argument:
 
-::: {.callout collapse=true}
-## Solution to Challenge 4
-The `source` function can be used to use a script within a script.
-Assume you would like to load the same type of file over and over
-again and therefore you need to specify the arguments to fit the
-needs of your file. Instead of writing the necessary argument again
-and again you could just write it once and save it as a script. Then,
-you can use `source("Your_Script_containing_the_load_function")` in a new
-script to use the function of that script without writing everything again.
-Check out `?source` to find out more.
-
-```{r eval = FALSE}
-download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
-gapminder <- read.csv(file = "data/gapminder_data.csv", stringsAsFactors = TRUE)
-```
-
-To run the script and load the data into the `gapminder` variable:
-
-```{r eval = FALSE}
-source(file = "scripts/load-gapminder.R")
+```{r}
+#| eval: false
+source("functions/load.R")
 ```
 :::
-:::
 
-
-::: {.callout}
-
-## Challenge 5
-Read the output of `str(gapminder)` again;
-this time, use what you've learned about factors, lists and vectors,
-as well as the output of functions like `colnames` and `dim`
-to explain what everything that `str` prints out for gapminder means.
-If there are any parts you can't interpret, discuss with your neighbors!
-
-::: {.callout collapse=true}
-## Solution to Challenge 5
-The object `gapminder` is a data frame with columns
-- `country` and `continent` are factors.
-- `year` is an integer vector.
-- `pop`, `lifeExp`, and `gdpPercap` are numeric vectors.
-
-:::
-:::
