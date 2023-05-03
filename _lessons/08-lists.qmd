@@ -4,6 +4,7 @@ embed-resources: true
 ---
 
 
+
 ## Lists
 
 Another data structure is the *list*.
@@ -60,6 +61,18 @@ another_list[["title"]]
 
 
 Lists, it turns out, can become a lot more complicated than vectors. While each entry of a vector is just a single value, each entry of a list can be any type of object, including vectors and data frames. For example, the following list of length three contains three entries: a numeric vector, a data frame, and a single character value:
+
+
+
+```{r}
+# define the cats data frame:
+cats <- data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1),
+                   stringsAsFactors = FALSE)
+```
+
+
 
 ```{r}
 complicated_list <- list(vec = c(1, 2, 9),
