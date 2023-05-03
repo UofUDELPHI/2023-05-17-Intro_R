@@ -657,7 +657,7 @@ by belonging to the same table.
 In our `cats` example, we have an character, a numeric, and a logical column/variable. As
 we have seen already, each column of data.frame is a vector.
 
-### Extracting information from a data frame
+## Extracting information from a data frame
 
 There are several ways to extract an individual column in a data frame, including using the `$` notation that we used above:
 

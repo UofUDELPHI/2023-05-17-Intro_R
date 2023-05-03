@@ -1,5 +1,5 @@
 ---
-title: "Data Frame Manipulation with tidyr"
+title: "Reshaping data frames with tidyr"
 embed-resources: true
 ---
 
@@ -187,6 +187,7 @@ gap_long$year <- as.integer(gap_long$year)
 Using `gap_long`, calculate the mean life expectancy, population, and gdpPercap for each continent.
 *Hint:** use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
 
+::: {.callout collapse=true}
 ## Solution to Challenge 2
 
 ```{r}
@@ -300,9 +301,6 @@ str(gap_wide_betterID)
 
 all.equal(gap_wide, gap_wide_betterID)
 ```
-
-There and back again!
-
 
 ## Other great resources
 

@@ -114,7 +114,7 @@ gets that from the previous pipe. **Fun Fact**: There is a good chance you have
 encountered pipes before in the shell. In R, a pipe symbol is `|>` while in the
 shell it is `|` but the concept is the same!
 
-::: {.callout}
+::: {.callout-tip}
 ## Tip: Renaming data frame columns in dplyr
 
 In Chapter 4 we covered how you can rename columns with base R by assigning a value to the output of the `names()` function.

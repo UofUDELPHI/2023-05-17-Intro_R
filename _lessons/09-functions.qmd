@@ -509,7 +509,7 @@ comfortable writing functions in R, you can learn more by reading the
 [chapter]: http://adv-r.had.co.nz/Environments.html
 [adv-r]: http://adv-r.had.co.nz/
 
-::: {.callout}
+::: {.callout-tip}
 ## Tip: Testing and documenting
 
 It's important to both test functions and document them:

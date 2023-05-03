@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Software Carpentry R Workshop - 5&nbsp; Exploring Data Frames</title>
+<title>Software Carpentry R Workshop - 5&nbsp; Adding/removing data from data frames</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3995,7 +3995,7 @@ vertical-align: -.125em;
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploring Data Frames</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adding/removing data from data frames</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -4045,7 +4045,7 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-data-structures-part2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploring Data Frames</span></a>
+  <a href="./05-data-structures-part2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adding/removing data from data frames</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -4075,12 +4075,12 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Creating Publication-Quality Graphics with ggplot2</span></a>
+  <a href="./11-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data visualization with ggplot2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data Frame Manipulation with tidyr</span></a>
+  <a href="./12-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reshaping data frames with tidyr</span></a>
   </div>
 </li>
     </ul>
@@ -4097,7 +4097,7 @@ vertical-align: -.125em;
   <li><a href="#removing-rows" id="toc-removing-rows" class="nav-link" data-scroll-target="#removing-rows"><span class="toc-section-number">5.3</span>  Removing rows</a></li>
   <li><a href="#removing-columns" id="toc-removing-columns" class="nav-link" data-scroll-target="#removing-columns"><span class="toc-section-number">5.4</span>  Removing columns</a></li>
   <li><a href="#appending-to-a-data-frame" id="toc-appending-to-a-data-frame" class="nav-link" data-scroll-target="#appending-to-a-data-frame"><span class="toc-section-number">5.5</span>  Appending to a data frame</a></li>
-  <li><a href="#realistic-example" id="toc-realistic-example" class="nav-link" data-scroll-target="#realistic-example"><span class="toc-section-number">5.6</span>  Realistic example</a></li>
+  <li><a href="#data-example" id="toc-data-example" class="nav-link" data-scroll-target="#data-example"><span class="toc-section-number">5.6</span>  Data example</a></li>
   </ul>
 </nav>
     </div>
@@ -4106,7 +4106,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploring Data Frames</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adding/removing data from data frames</span></h1>
 </div>
 
 
@@ -4414,8 +4414,8 @@ Solution to Challenge 2
 </div>
 </div>
 </section>
-<section id="realistic-example" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="realistic-example"><span class="header-section-number">5.6</span> Realistic example</h2>
+<section id="data-example" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="data-example"><span class="header-section-number">5.6</span> Data example</h2>
 <p>So far, you have seen the basics of manipulating data frames with our cat data; now let’s use those skills to digest a more realistic dataset. Let’s read in the <code>gapminder</code> dataset that we downloaded previously:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gapminder_data.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4661,12 +4661,12 @@ Solution to Challenge 3
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="fu">sample</span>(<span class="fu">nrow</span>(gapminder), <span class="dv">5</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         country year      pop continent lifeExp gdpPercap
-1648     Vietnam 1967 39463910      Asia  47.838  637.1233
-1419       Spain 1962 31158061    Europe  69.690 5693.8439
-473  El Salvador 1972  3790903  Americas  58.207 4520.2460
-623       Guinea 2002  8807818    Africa  53.676  945.5836
-285        Chile 1992 13572994  Americas  74.126 7596.1260</code></pre>
+<pre><code>       country year      pop continent lifeExp gdpPercap
+1506    Taiwan 1977 16785196      Asia  70.590 5596.5198
+1279   Romania 1982 22356726    Europe  69.660 9605.3141
+1361 Singapore 1972  2152400      Asia  69.521 8597.7562
+1071     Nepal 1962 10332057      Asia  39.393  652.3969
+1538      Togo 1957  1357445    Africa  41.208  925.9083</code></pre>
 </div>
 </div>
 </section>

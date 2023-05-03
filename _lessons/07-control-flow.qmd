@@ -286,7 +286,7 @@ output_vector2 <- as.vector(output_matrix)
 output_vector2
 ```
 
-::: {.callout}
+::: {.callout-tip}
 
 ## Tip: While loops
 Sometimes you will find yourself needing to repeat an operation as long as a certain

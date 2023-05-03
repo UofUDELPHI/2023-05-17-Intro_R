@@ -1,11 +1,11 @@
 # Introduction {.unnumbered}
 
-[Original homepage](https://uofudelphi.github.io/2023-05-17-Intro_R/)
+[Workshop homepage](https://uofudelphi.github.io/2023-05-17-Intro_R/)
 
 
-This page contains the content for the R Software Carpentry workshop taught at the University of Utah on May 17-18.
+This page contains the content for the R [Software Carpentry](https://www.google.com/search?q=software+carpentry&oq=software+carpentry+&aqs=chrome..69i57j69i59l3j35i39j69i61l3.4031j0j7&sourceid=chrome&ie=UTF-8) workshop taught at the University of Utah on May 17-18.
 
 
 **Instructors**: Rebecca Barter, George Vega Yon
 
-These materials have been adapted from the original [Software Carpentry R for Reproducible Scientific Analysis workshop](https://swcarpentry.github.io/r-novice-gapminder/).
+These materials on this page have been adapted from the original [Software Carpentry R for Reproducible Scientific Analysis workshop](https://swcarpentry.github.io/r-novice-gapminder/).

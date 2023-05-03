@@ -1,5 +1,5 @@
 ---
-title: Creating Publication-Quality Graphics with ggplot2
+title: Data visualization with ggplot2
 embed-resources: true
 ---
 

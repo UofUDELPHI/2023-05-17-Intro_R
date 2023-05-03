@@ -14,7 +14,7 @@ To update a lesson:
 
 - Edit the relevant .qmd file in the `_lessons/` folder
 
-- Knit the `index.qmd` file (this will recompile the entire lesson "book")
+- Knit the relevant `.qmd` lesson file to update the lesson's "book chapter"
 
 - Push changes to github (assuming that you're making changes locally)
 

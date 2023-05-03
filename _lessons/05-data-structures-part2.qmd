@@ -1,5 +1,5 @@
 ---
-title: "Exploring Data Frames"
+title: "Adding/removing data from data frames"
 output: html
 embed-resources: true
 ---
@@ -210,7 +210,8 @@ df <- cbind(df, coffeetime = c(TRUE,TRUE))
 :::
 
 
-## Realistic example
+## Data example
+
 So far, you have seen the basics of manipulating data frames with our cat data;
 now let's use those skills to digest a more realistic dataset. Let's read in the
 `gapminder` dataset that we downloaded previously:
