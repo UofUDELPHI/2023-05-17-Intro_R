@@ -4172,32 +4172,49 @@ vertical-align: -.125em;
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
-<p>So for it to work we need to have <code>nrow(cats)</code> = <code>length(age)</code>. Let’s overwrite the content of cats with our new data frame.</p>
+<p>So for it to work we need to have <code>nrow(cats)</code> == <code>length(age)</code>. Let’s overwrite the content of cats with our new data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">cbind</span>(cats, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now how about adding rows?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>newRow <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"tortoiseshell"</span>, <span class="fl">3.3</span>, <span class="cn">TRUE</span>, <span class="dv">9</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">rbind</span>(cats, newRow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in `[&lt;-.factor`(`*tmp*`, ri, value = "tortoiseshell"): invalid factor
-level, NA generated</code></pre>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip: mutate
 </div>
 </div>
-<p>Looks like our attempt to use the <code>rbind()</code> function returns a <em>warning.</em> Recall that, unlike errors, warnings do not necessarily stop a function from performing its intended action. You can confirm this by taking a look at the <code>cats</code> data frame.</p>
+<div class="callout-body-container callout-body">
+<p>In the dplyr lesson, you will learn another method of adding a column to a data frame using the <code>mutate()</code> function from the dplyr package in the tidyverse suite.</p>
+</div>
+</div>
+<p>Now how about adding rows? Since each row is itself a data frame, to add a new row, we need to create a data frame containing the new information.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>newRow <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">coat =</span> <span class="st">"tortoiseshell"</span>, <span class="at">weight =</span> <span class="fl">3.3</span>, <span class="at">likes_string =</span> <span class="cn">TRUE</span>, <span class="at">age =</span> <span class="dv">9</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">rbind</span>(cats, newRow)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>cats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    coat weight likes_string age
-1 calico    2.1            1   2
-2  black    5.0            0   3
-3  tabby    3.2            1   5
-4   &lt;NA&gt;    3.3            1   9</code></pre>
+<pre><code>           coat weight likes_string age
+1        calico    2.1            1   2
+2         black    5.0            0   3
+3         tabby    3.2            1   5
+4 tortoiseshell    3.3            1   9</code></pre>
 </div>
 </div>
-<p>Notice that not only did we successfully add a new row, but there is <code>NA</code> in the column <em>coats</em> where we expected “tortoiseshell” to be. Why did this happen?</p>
+<!-- Looks like our attempt to use the `rbind()` function returns a *warning.*  Recall that, unlike errors, warnings do not necessarily stop a function from performing its intended action.  You can confirm this by taking a look at the `cats` data frame. -->
+<!-- ```{r} -->
+<!-- cats -->
+<!-- ``` -->
+<!-- Notice that not only did we successfully add a new row, but there is `NA` in the column *coats* where we expected "tortoiseshell" to be.  Why did this happen? -->
+<p>Let’s take a look at the <code>coat</code> column. Specifically at what it’s type is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
 </section>
 <section id="factors" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="factors"><span class="header-section-number">5.2</span> Factors</h2>
@@ -4206,7 +4223,7 @@ level, NA generated</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "black"  "calico" "tabby" </code></pre>
+<pre><code>[1] "black"         "calico"        "tabby"         "tortoiseshell"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(cats<span class="sc">$</span>coat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">levels</span>(cats<span class="sc">$</span>coat), <span class="st">"tortoiseshell"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> <span class="fu">rbind</span>(cats, <span class="fu">list</span>(<span class="st">"tortoiseshell"</span>, <span class="fl">3.3</span>, <span class="cn">TRUE</span>, <span class="dv">9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4216,7 +4233,7 @@ level, NA generated</code></pre>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   5 obs. of  4 variables:
- $ coat        : Factor w/ 4 levels "black","calico",..: 2 1 3 NA 4
+ $ coat        : Factor w/ 4 levels "black","calico",..: 2 1 3 4 4
  $ weight      : num  2.1 5 3.2 3.3 3.3
  $ likes_string: int  1 0 1 1 1
  $ age         : num  2 3 5 9 9</code></pre>
@@ -4225,7 +4242,7 @@ level, NA generated</code></pre>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   5 obs. of  4 variables:
- $ coat        : chr  "calico" "black" "tabby" NA ...
+ $ coat        : chr  "calico" "black" "tabby" "tortoiseshell" ...
  $ weight      : num  2.1 5 3.2 3.3 3.3
  $ likes_string: int  1 0 1 1 1
  $ age         : num  2 3 5 9 9</code></pre>
@@ -4248,7 +4265,7 @@ Challenge 1
 <li>Convert <code>human_age</code> back to a numeric vector using the <code>as.numeric()</code> function. Now divide it by 7 to get the original ages back. Explain what happened.</li>
 </ol>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4257,7 +4274,7 @@ Solution to Challenge 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>human_age &lt;- cats$age * 7</code></li>
@@ -4280,7 +4297,7 @@ Solution to Challenge 1
 1        calico    2.1            1   2
 2         black    5.0            0   3
 3         tabby    3.2            1   5
-4          &lt;NA&gt;    3.3            1   9
+4 tortoiseshell    3.3            1   9
 5 tortoiseshell    3.3            1   9</code></pre>
 </div>
 </div>
@@ -4308,7 +4325,7 @@ Solution to Challenge 1
 1        calico    2.1            1
 2         black    5.0            0
 3         tabby    3.2            1
-4          &lt;NA&gt;    3.3            1
+4 tortoiseshell    3.3            1
 5 tortoiseshell    3.3            1</code></pre>
 </div>
 </div>
@@ -4322,7 +4339,7 @@ Solution to Challenge 1
 1        calico    2.1            1
 2         black    5.0            0
 3         tabby    3.2            1
-4          &lt;NA&gt;    3.3            1
+4 tortoiseshell    3.3            1
 5 tortoiseshell    3.3            1</code></pre>
 </div>
 </div>
@@ -4339,12 +4356,12 @@ Solution to Challenge 1
 1         calico    2.1            1   2
 2          black    5.0            0   3
 3          tabby    3.2            1   5
-4           &lt;NA&gt;    3.3            1   9
+4  tortoiseshell    3.3            1   9
 5  tortoiseshell    3.3            1   9
 6         calico    2.1            1   2
 7          black    5.0            0   3
 8          tabby    3.2            1   5
-9           &lt;NA&gt;    3.3            1   9
+9  tortoiseshell    3.3            1   9
 10 tortoiseshell    3.3            1   9</code></pre>
 </div>
 </div>
@@ -4357,12 +4374,12 @@ Solution to Challenge 1
 1         calico    2.1            1   2
 2          black    5.0            0   3
 3          tabby    3.2            1   5
-4           &lt;NA&gt;    3.3            1   9
+4  tortoiseshell    3.3            1   9
 5  tortoiseshell    3.3            1   9
 6         calico    2.1            1   2
 7          black    5.0            0   3
 8          tabby    3.2            1   5
-9           &lt;NA&gt;    3.3            1   9
+9  tortoiseshell    3.3            1   9
 10 tortoiseshell    3.3            1   9</code></pre>
 </div>
 </div>
@@ -4390,7 +4407,7 @@ Challenge 2
 </ul>
 <p>Then use <code>rbind</code> to add an entry for the people sitting beside you. Finally, use <code>cbind</code> to add a column with each person’s answer to the question, “Is it time for coffee break?”</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4399,7 +4416,7 @@ Solution to Challenge 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">first =</span> <span class="fu">c</span>(<span class="st">"Grace"</span>),</span>
@@ -4610,7 +4627,7 @@ Challenge 3
 <div class="callout-body-container callout-body">
 <p>It’s good practice to also check the last few lines of your data and some in the middle. How would you do this? Searching for ones specifically in the middle isn’t too hard, but we could ask for a few lines at random. How would you code this?</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4619,7 +4636,7 @@ Solution to Challenge 3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To check the last few lines it’s relatively simple as R already has a function for this:</p>
 <div class="cell">
@@ -4661,12 +4678,12 @@ Solution to Challenge 3
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="fu">sample</span>(<span class="fu">nrow</span>(gapminder), <span class="dv">5</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       country year      pop continent lifeExp gdpPercap
-1506    Taiwan 1977 16785196      Asia  70.590 5596.5198
-1279   Romania 1982 22356726    Europe  69.660 9605.3141
-1361 Singapore 1972  2152400      Asia  69.521 8597.7562
-1071     Nepal 1962 10332057      Asia  39.393  652.3969
-1538      Togo 1957  1357445    Africa  41.208  925.9083</code></pre>
+<pre><code>          country year      pop continent lifeExp  gdpPercap
+1135      Nigeria 1982 73039376    Africa  45.826  1576.9738
+1355 Sierra Leone 2002  5359092    Africa  41.012   699.4897
+1593       Uganda 1992 18252190    Africa  48.825   644.1708
+117       Belgium 1992 10045622    Europe  76.460 25575.5707
+134       Bolivia 1957  3211738  Americas  41.890  2127.6863</code></pre>
 </div>
 </div>
 </section>
@@ -4688,7 +4705,7 @@ Challenge 4
 <p>Go to file -&gt; new file -&gt; R script, and write an R script to load in the gapminder dataset. Put it in the <code>scripts/</code> directory and add it to version control.</p>
 <p>Run the script using the <code>source</code> function, using the file path as its argument (or by pressing the “source” button in RStudio).</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4697,7 +4714,7 @@ Solution to Challenge 4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <code>source</code> function can be used to use a script within a script. Assume you would like to load the same type of file over and over again and therefore you need to specify the arguments to fit the needs of your file. Instead of writing the necessary argument again and again you could just write it once and save it as a script. Then, you can use <code>source("Your_Script_containing_the_load_function")</code> in a new script to use the function of that script without writing everything again. Check out <code>?source</code> to find out more.</p>
 <div class="cell">
@@ -4725,7 +4742,7 @@ Challenge 5
 <div class="callout-body-container callout-body">
 <p>Read the output of <code>str(gapminder)</code> again; this time, use what you’ve learned about factors, lists and vectors, as well as the output of functions like <code>colnames</code> and <code>dim</code> to explain what everything that <code>str</code> prints out for gapminder means. If there are any parts you can’t interpret, discuss with your neighbors!</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4734,7 +4751,7 @@ Solution to Challenge 5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The object <code>gapminder</code> is a data frame with columns - <code>country</code> and <code>continent</code> are factors. - <code>year</code> is an integer vector. - <code>pop</code>, <code>lifeExp</code>, and <code>gdpPercap</code> are numeric vectors.</p>
 </div>

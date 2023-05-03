@@ -453,6 +453,71 @@ cats$weight <- as.numeric(cats$weight)
 :::
 
 
+
+
+## Factors
+
+Let's consider a new data type: the factor. 
+
+For an object containing the data type `factor`, each different value represents what is called a `level`, and is often how categorical variables/columns whose values can have a finite set of options will be formatted. 
+
+Can you identify any categorical variables in the `cats` data frame? What about the `coat` variables?
+
+```{r}
+cats$coat
+```
+
+
+The `coat` variable is currently formatted as a character variable
+
+```{r}
+class(cats$coat)
+```
+
+but we can convert it to a factor using the `as.factor()` function:
+
+```{r}
+cats$coat <- as.factor(cats$coat)
+class(cats$coat)
+```
+
+Let's take a look at the factor-formatted `coat` column:
+
+```{r}
+cats$coat
+```
+
+
+It looks very similar to the character format, but now our output tells us that there are four "levels": "black", "calico", "tabby", and "tortoiseshell". 
+
+
+One common pitfall occurs when converting numerically coded factors to numeric type. 
+
+If we convert a `coat` to a numeric type, it replaces each level with a number in the order that the levels are defined (the default is alphabetical order):
+
+```{r}
+as.numeric(cats$coat)
+```
+
+But if the factor levels are themselves numbers, 
+
+```{r}
+factor_weight <- as.factor(cats$weight)
+factor_weight
+```
+
+and we convert this numeric factor to a numeric type, the numeric information will be lost:
+
+```{r}
+as.numeric(factor_weight)
+```
+
+
+Fortunately, factor and character types behave fairly similarly across most applications, so it *usually* won't matter which format your categorical variables are encoded as, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.
+
+
+
+
 ## Some basic functions for creating vectors
 
 The combine function, `c()`, can also be used both to create a new vector as well as to append things to an existing vector:
@@ -675,9 +740,9 @@ cats[, 1]
 
 which returns the column as a vector. 
 
-The syntax `df[i, j]` to extract the `i`th row and the `j`th column from the data frame called `df`. 
+The syntax `df[i, j]` to extract the entry in the `i`th row and the `j`th column from the data frame called `df`.  For example, `df[3, 1]` will extract the single entry in the third row and first column.
 
-A blank `i` or `j` this tells R to extract *all* of the rows or columns, so `df[, 1]` will extract all rows for the 1st column. `df[2, ]`, however, will extract the second row across all columns. `df[3, 1]` will extract the single entry in the third row and first column.
+A blank `i` or `j` this tells R to extract *all* of the rows or columns, respectively. That is, `df[, 1]` will extract all rows for the 1st column, and `df[2, ]` will extract the second row across all columns.
 
 ### The square bracket syntax `[ ]`
 
@@ -696,6 +761,7 @@ and the following code extracts the second *row* of `cats` as a data frame:
 ```{r}
 cats[2, ]
 ```
+
 Note, to extract the $j$th *column* from a data frame as a single-column *data frame*, you can use the single-dimension square bracket syntax: `df[j]`. 
 
 ```{r}
@@ -710,7 +776,7 @@ cats["weight"]
 ```
 
 
-We will explain a bit more about why this works momentarily when we introduce lists.
+We will explain a bit more about this momentarily.
 
 
 ::: {.callout}
@@ -806,7 +872,7 @@ cats <- cats_orig
 
 ## Lists
 
-A data frame is technically a special case of a *list*.
+Another data structure is the *list*.
 
 
 List are very flexible because you can put anything you want in it: unlike a vector, the elements of a list can have different data types. For example:
@@ -921,7 +987,7 @@ Note that the `df[i, j]` index notation is specific to data frames (and does not
 
 
 
-We will learn more about extracting information from vectors, lists and data frames shortly.
+You will learn more about extracting information from vectors, lists and data frames in the advanced subsetting lesson.
 
 <!-- ## Matrices -->
 

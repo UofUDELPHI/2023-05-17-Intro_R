@@ -2,6 +2,8 @@
 title: "Adding/removing data from data frames"
 output: html
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -18,8 +20,10 @@ data are consistent in type throughout the columns. As such, if we want to add a
 new column, we can start by making a new vector:
 
 ```{r, echo = FALSE}
-cats <- read.csv("data/feline-data.csv", stringsAsFactors = TRUE)
+cats <- read.csv("data/feline-data.csv")
 ```
+
+
 
 ```{r}
 age <- c(2, 3, 5)
@@ -50,55 +54,30 @@ nrow(cats)
 length(age)
 ```
 
-So for it to work we need to have `nrow(cats)` = `length(age)`. Let's overwrite the content of cats with our new data frame.
+So for it to work we need to have `nrow(cats)` == `length(age)`. Let's overwrite the content of cats with our new data frame.
 
 ```{r}
 age <- c(2, 3, 5)
 cats <- cbind(cats, age)
 ```
 
-Now how about adding rows? 
+::: {.callout-tip}
+## Tip: mutate
+
+In the dplyr lesson, you will learn another method of adding a column to a data frame using the `mutate()` function from the dplyr package in the tidyverse suite.
+:::
+
+
+Now how about adding rows? Since each row is itself a data frame, to add a new row, we need to create a data frame containing the new information.
 
 ```{r}
-newRow <- list("tortoiseshell", 3.3, TRUE, 9)
+newRow <- data.frame(coat = "tortoiseshell", weight = 3.3, likes_string = TRUE, age = 9)
 cats <- rbind(cats, newRow)
-```
-
-Looks like our attempt to use the `rbind()` function returns a *warning.*  Recall that, unlike errors, warnings do not necessarily stop a function from performing its intended action.  You can confirm this by taking a look at the `cats` data frame.
-
-```{r}
 cats
 ```
 
-Notice that not only did we successfully add a new row, but there is `NA` in the column *coats* where we expected "tortoiseshell" to be.  Why did this happen?
 
 
-
-## Factors
-
-For an object containing the data type `factor`, each different value represents what is called a `level`. In our case, the `factor` "coat" has 3 levels: "black", "calico", and "tabby". R will only accept values that match one of the levels. If you add a new value, it will become `NA`.
-
-The warning is telling us that we unsuccessfully added "tortoiseshell" to our
-*coat* factor, but 3.3 (a numeric), TRUE (a logical), and 9 (a numeric) were
-successfully added to *weight*, *likes_string*, and *age*, respectively, since
-those variables are not factors. To successfully add a cat with a
-"tortoiseshell" *coat*, add "tortoiseshell" as a possible *level* of the factor:
-
-```{r}
-levels(cats$coat)
-levels(cats$coat) <- c(levels(cats$coat), "tortoiseshell")
-cats <- rbind(cats, list("tortoiseshell", 3.3, TRUE, 9))
-```
-
-Alternatively, we can change a factor into a character vector; we lose the
-handy categories of the factor, but we can subsequently add any word we want to the
-column without babysitting the factor levels:
-
-```{r}
-str(cats)
-cats$coat <- as.character(cats$coat)
-str(cats)
-```
 
 ::: {.callout}
 ## Challenge 1
@@ -117,17 +96,17 @@ Let's imagine that 1 cat year is equivalent to 7 human years.
 :::
 :::
 
-## Removing rows
 
-We now know how to add rows and columns to our data frame in R—but in our
-first attempt to add a "tortoiseshell" cat to the data frame we have accidentally
-added a garbage row:
+
+
+## Removing rows by index
+
 
 ```{r}
 cats
 ```
 
-We can ask for a data frame minus this offending row:
+We now know how to add rows and columns to our data frame in R, but how do we *remove* rows. For instance, if we wanted to now *remove* the "tortoiseshell" row, we can ask for a data frame minus this offending row using the `-` syntax:
 
 ```{r}
 cats[-4, ]
@@ -141,7 +120,8 @@ inside of a vector using `c()`: `cats[c(-4,-5), ]`
 
 ## Removing columns  
 
-We can also remove columns in our data frame. What if we want to remove the column "age". We can remove it in two ways, by variable number or by index.  
+We can also remove columns in our data frame. What if we want to remove the column "age". We can remove it by index:
+
 
 ```{r}
 cats[, -4]
@@ -149,32 +129,34 @@ cats[, -4]
 
 Notice the comma with nothing before it, indicating we want to keep all of the rows.  
 
-Alternatively, we can drop the column by using the index name and the `%in%` operator. The `%in%` operator goes through each element of its left argument, in this case the names of `cats`, and asks, "Does this element occur in the second argument?"
+However, using the column name syntax doesn't work here:
+
+```{r}
+#| error: true
+cats[, -"age"]
+```
+
+
+To drop a column using the column name, we can instead use the `%in%` operator. The `%in%` operator goes through each element of its left argument, in this case the names of `cats`, and asks, "Does this element occur in the second argument?"
 
 ```{r}
 drop <- names(cats) %in% c("age")
 cats[, !drop]
 ```
 
-We will cover subsetting with logical operators like `%in%` in more detail in the next episode. See the section [Subsetting through other logical operations](../06-data-subsetting/#logical-operations)
+We will cover subsetting with logical operators like `%in%` in more detail in the next lesson.
 
 ## Appending to a data frame
 
 The key to remember when adding data to a data frame is that *columns are
-vectors and rows are lists.* We can also glue two data frames
+vectors and rows are data frames.* We can also glue two data frames
 together with `rbind`:
 
 ```{r}
 cats <- rbind(cats, cats)
 cats
 ```
-But now the row names are unnecessarily complicated. We can remove the rownames,
-and R will automatically re-name them sequentially:
 
-```{r}
-rownames(cats) <- NULL
-cats
-```
 
 ::: {.callout}
 ## Challenge 2
@@ -189,12 +171,26 @@ df <- data.frame(id = c("a", "b", "c"),
 
 Make a data frame that holds the following information for yourself:
 
-- first name
-- last name
-- lucky number
+- Your first name
+- Your last name
+- The year you were born
 
 Then use `rbind` to add an entry for the people sitting beside you.
-Finally, use `cbind` to add a column with each person's answer to the question, "Is it time for coffee break?"
+Finally, use `cbind` to add a column with each person's answer to the question, "Do you like piezza?"
+
+Your final data frame should look like this:
+
+```{r}
+#| echo: false
+df <- data.frame(first = c("Grace"),
+                last = c("Hopper"),
+                year = 1906)
+df <- rbind(df, data.frame(first = "Marie", last = "Curie", year = 1867) )
+df <- cbind(df, pizza = c(TRUE, FALSE))
+df
+
+```
+
 
 ::: {.callout collapse=true}
 ## Solution to Challenge 2
@@ -202,12 +198,59 @@ Finally, use `cbind` to add a column with each person's answer to the question, 
 ```{r}
 df <- data.frame(first = c("Grace"),
                 last = c("Hopper"),
-                lucky_number = c(0))
-df <- rbind(df, list("Marie", "Curie", 238) )
-df <- cbind(df, coffeetime = c(TRUE,TRUE))
+                year = 1906)
+df <- rbind(df, data.frame(first = "Marie", last = "Curie", year = 1867) )
+df <- cbind(df, pizza = c(TRUE, FALSE))
+df
 ```
 :::
 :::
+
+
+
+## Factors
+
+Let's consider a new data type: the factor. 
+
+For an object containing the data type `factor`, each different value represents what is called a `level`, and is often how categorical variables/columns whose values can have a finite set of options will be formatted. 
+
+Can you identify any categorical variables in the `cats` data frame? What about the `coat` variables?
+
+```{r}
+cats$coat
+```
+
+
+The `coat` variable is currently formatted as a character variable
+
+```{r}
+class(cats$coat)
+```
+
+but we can convert it to a factor using the `as.factor()` function:
+
+```{r}
+cats$coat <- as.factor(cats$coat)
+class(cats$coat)
+```
+
+Let's take a look at the factor-formatted `coat` column:
+
+```{r}
+cats$coat
+```
+
+
+It looks very similar to the character format, but now our output tells us that there are four "levels": "black", "calico", "tabby", and "tortoiseshell". 
+
+
+One common pitfall occurs when converting numerically coded factors to numeric type. 
+
+
+
+
+
+
 
 
 ## Data example
@@ -217,7 +260,7 @@ now let's use those skills to digest a more realistic dataset. Let's read in the
 `gapminder` dataset that we downloaded previously:
 
 ```{r}
-gapminder <- read.csv("data/gapminder_data.csv", stringsAsFactors = TRUE)
+gapminder <- read.csv("data/gapminder_data.csv")
 ```
 
 ::: {.callout-tip}
