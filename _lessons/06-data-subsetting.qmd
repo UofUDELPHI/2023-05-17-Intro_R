@@ -2,6 +2,8 @@
 title: Advanced subsetting
 output: html
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include=FALSE}
@@ -21,13 +23,6 @@ x
 ```
 
 
-::: {.callout}
-## Atomic vectors
-
-In R, simple vectors containing character strings, numbers, or logical values are called *atomic* vectors because they can't be further simplified.
-:::
-
-
 So now that we've created a toy vector to play with, how do we get at its
 contents?
 
@@ -44,21 +39,21 @@ x[1]
 x[4]
 ```
 
-It may look different, but the square brackets operator is a function. For vectors, it means "get me the nth element".
+The square brackets operator is a function. For vectors, it means "get me the nth element".
 
-We can ask for multiple elements at once:
+We can ask for multiple elements at once by providing a vector if indices:
 
 ```{r}
 x[c(1, 3)]
 ```
 
-Or slices of the vector:
+Or "slices" of the vector using a sequential integer vector index:
 
 ```{r}
 x[1:4]
 ```
 
-the `:` operator creates a sequence of numbers from the left element to the right.
+Recall that the `:` operator creates a sequence of numbers from the left element to the right.
 ```{r}
 1:4
 c(1, 2, 3, 4)
@@ -137,8 +132,7 @@ x[-(1:3)]
 :::
 
 
-To remove elements from a vector, we need to assign the result back
-into the variable:
+To remove elements from a vector, we need to re-assign the variable to our result:
 
 ```{r}
 x <- x[-4]
@@ -171,13 +165,18 @@ x[2:4]
 ```
 
 ```{r}
-x[-c(1,5)]
+x[-c(1, 5)]
 ```
 
 ```{r}
-x[c(2,3,4)]
+x[c(2, 3, 4)]
+```
+
+```{r}
+x[c("b", "c", "d")]
 ```
 :::
+
 :::
 
 ## Subsetting by name
@@ -217,11 +216,12 @@ We can use `==` to mimic the previous method of indexing by name
 (remember you have to use `==` rather than `=` for comparisons):
 
 ```{r}
+names(x) == "a"
 x[names(x) == "a"]
 ```
 
-::: {.callout-tip}
-## Tip: Combining logical conditions
+
+## Combining logical conditions
 
 We often want to combine multiple logical
 criteria. For example, we might want to find all the countries that are
@@ -237,8 +237,7 @@ range. Several operations for combining logical vectors exist in R:
 You may sometimes see `&&` and `||` instead of `&` and `|`. These two-character operators
 only look at the first element of each vector and ignore the
 remaining elements. In general you should not use the two-character
-operators in data analysis; save them
-for programming, i.e. deciding whether to execute a statement.
+operators in data analysis.
 
 * `!`, the "logical NOT" operator: converts `TRUE` to `FALSE` and `FALSE` to
   `TRUE`. It can negate a single logical condition (eg `!TRUE` becomes
@@ -249,12 +248,43 @@ Additionally, you can compare the elements within a single vector using the
 `all` function (which returns `TRUE` if every element of the vector is `TRUE`)
 and the `any` function (which returns `TRUE` if one or more elements of the
 vector are `TRUE`).
+
+For example, the following code will only return the values of `x` that are equal to either 5.4 or 7 (since there is no value equal to 7, only the value equal to 5.4 will be returned):
+
+```{r}
+(x == 5.4) | (x == 7)
+
+x[(x == 5.4) | (x == 7)]
+```
+
+
+
+
+## The in operator `%in%`
+
+
+Another way to do this is to ask R to subset the values of `x` that are "in" a vector of values.
+
+
+```{r}
+x %in% c(5.4, 7)
+
+x[x %in% c(5.4, 7)]
+```
+
+::: {.callout-tip}
+## Tip: Getting help for operators
+
+Remember you can search for help on operators by wrapping them in quotes:
+`help("%in%")` or `?"%in%"`.
 :::
 
-::: {.callout}
 
+::: {.callout}
 ## Challenge 2
+
 Given the following code:
+
 ```{r}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
@@ -266,8 +296,7 @@ Write a subsetting command to return the values in x that are greater than 4 and
 ## Solution to challenge 2
 
 ```{r}
-x_subset <- x[x<7 & x>4]
-print(x_subset)
+x[x < 7 & x > 4]
 ```
 :::
 :::
@@ -277,10 +306,8 @@ print(x_subset)
 
 ## Tip: Non-unique names
 
-You should be aware that it is possible for multiple elements in a
-vector to have the same name. (For a data frame, columns can have
-the same name --- although R tries to avoid this --- but row names
-must be unique.) Consider these examples:
+It is possible for multiple elements in a vector to have the same name. (For a data frame, columns can have
+the same name too.) Consider these examples:
 
 ```{r}
 x <- 1:3
@@ -292,12 +319,6 @@ x[names(x) == 'a']  # returns all three values
 ```
 :::
 
-::: {.callout-tip}
-## Tip: Getting help for operators
-
-Remember you can search for help on operators by wrapping them in quotes:
-`help("%in%")` or `?"%in%"`.
-:::
 
 ## Removing named elements
 
@@ -351,72 +372,60 @@ Because in this case the longer vector length (5) isn't a multiple of the shorte
 The way to get R to do what we really want (match *each* element of the left argument with *all* of the elements of the right argument) it to use the `%in%` operator. The `%in%` operator goes through each element of its left argument, in this case the names of `x`, and asks, "Does this element occur in the second argument?". Here, since we want to *exclude* values, we also need a `!` operator to change "in" to "not in":
 
 ```{r}
-x[! names(x) %in% c("a", "c") ]
+x[!(names(x) %in% c("a", "c"))]
 ```
 
 
 ::: {.callout}
 
 ## Challenge 3
-Selecting elements of a vector that match any of a list of components
-is a very common data analysis task. For example, the gapminder data set
-contains `country` and `continent` variables, but no information between
-these two scales. Suppose we want to pull out information from southeast
-Asia: how do we set up an operation to produce a logical vector that
-is `TRUE` for all of the countries in southeast Asia and `FALSE` otherwise?
-Suppose you have these data:
+Selecting elements of a vector that match "any of" a list of components
+is a very common data analysis task. 
 
-```{r}
-seAsia <- c("Myanmar", "Thailand", "Cambodia", "Vietnam", "Laos")
-## read in the gapminder data that we downloaded in episode 2
-gapminder <- read.csv("data/gapminder_data.csv", header=TRUE)
-## extract the `country` column from a data frame (we'll see this later);
-## convert from a factor to a character;
-## and get just the non-repeated elements
-countries <- unique(as.character(gapminder$country))
-```
+Suppose we want to pull out information from Southeast Asia, which includes the countries of Myanmar, Thailand, Cambodia, Vietnam, and Laos. 
 
-There's a wrong way (using only `==`), which will give you a warning;
-a clunky way (using the logical operators `==` and `|`); and
-an elegant way (using `%in%`). See whether you can come up with all three
-and explain how they (don't) work.
+Your task is to subset the data just to the rows that include the countries in Southeast Asia
+
+1. Define a logical vector that is `TRUE` for all of the countries in southeast Asia and `FALSE` otherwise. 
+
+2. Use this logical vector to extract just the rows for Southeast Asia from the gapminder dataset.
+
 
 ::: {.callout collapse=true}
 ## Solution to challenge 3
 
-- The **wrong** way to do this problem is `countries==seAsia`. This
-gives a warning (`"In countries == seAsia : longer object length is not a multiple of shorter object length"`) and the wrong answer (a vector of all
-`FALSE` values), because none of the recycled values of `seAsia` happen
-to line up correctly with matching values in `country`.
-
-- The **clunky** (but technically correct) way to do this problem is
-
-```{r results="hide"}
-(countries == "Myanmar" | countries == "Thailand" |
-countries == "Cambodia" | countries == "Vietnam" | countries == "Laos")
+```{r}
+se_asia = gapminder$country %in% c("Myanmar", "Thailand", "Cambodia", "Vietnam", "Laos")
+gapminder[se_asia, ]
 ```
-(or `countries == seAsia[1] | countries == seAsia[2] | ...`). This
-gives the correct values, but hopefully you can see how awkward it
-is (what if we wanted to select countries from a much longer list?).
-- The best way to do this problem is `countries %in% seAsia`, which
-is both correct and easy to type (and read).
+
 :::
 :::
 
+::: {.callout-tip}
+## Tip: filter
 
-## Handling special values
+In the dplyr lesson, you will learn another method of filtering to rows of a data frame that satisfy a certain condition using the `filter()` function from the dplyr package in the tidyverse suite.
+:::
 
-At some point you will encounter functions in R that cannot handle missing, infinite,
-or undefined data.
 
-There are a number of special functions you can use to filter out this data:
+<!-- ## Handling special values -->
 
- * `is.na` will return all positions in a vector, matrix, or data.frame
-   containing `NA` (or `NaN`)
- * likewise, `is.nan`, and `is.infinite` will do the same for `NaN` and `Inf`.
- * `is.finite` will return all positions in a vector, matrix, or data.frame
-   that do not contain `NA`, `NaN` or `Inf`.
- * `na.omit` will filter out all missing values from a vector
+<!-- At some point you will encounter functions in R that cannot handle missing, infinite, -->
+<!-- or undefined data. -->
+
+<!-- There are a number of special functions you can use to filter out this data: -->
+
+<!--  * `is.na` will return all positions in a vector, matrix, or data.frame -->
+<!--    containing `NA` (or `NaN`) -->
+<!--  * likewise, `is.nan`, and `is.infinite` will do the same for `NaN` and `Inf`. -->
+<!--  * `is.finite` will return all positions in a vector, matrix, or data.frame -->
+<!--    that do not contain `NA`, `NaN` or `Inf`. -->
+<!--  * `na.omit` will filter out all missing values from a vector -->
+
+
+
+ 
 
 ## Factor subsetting
 
@@ -593,12 +602,15 @@ xlist$data
 
 ::: {.callout}
 ## Challenge 5
+
 Given the following list:
-```{r, eval=FALSE}
+
+```{r}
 xlist <- list(a = "Software Carpentry", b = 1:10, data = head(mtcars))
+xlist
 ```
-Using your knowledge of both list and vector subsetting, extract the number 2 from xlist.
-Hint: the number 2 is contained within the "b" item in the list.
+
+Using list and vector subsetting, extract the second entry in the second element of the list (i.e., extract the number `2` from the `b` entry from xlist`). There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?
 
 ::: {.callout collapse=true}
 
@@ -630,7 +642,14 @@ element corresponds to a column. The resulting object will be a data frame:
 head(gapminder[3])
 ```
 
-Similarly, `[[` will act to extract *a single column*:
+Similarly, `[[` will act to extract *a single column* as a *vector*:
+
+
+```{r}
+head(gapminder[[3]])
+```
+
+Notice the difference in the way the two results are presented (the first is a data frame, the second is a vector)
 
 ```{r}
 head(gapminder[["lifeExp"]])
@@ -642,26 +661,37 @@ And `$` provides a convenient shorthand to extract columns by name:
 head(gapminder$year)
 ```
 
-With two arguments, `[` behaves the same way as for matrices:
+With two arguments, `[` behaves lets us extract multiple rows and columns:
 
 ```{r}
-gapminder[1:3,]
+gapminder[1:3, ]
 ```
 
 If we subset a single row, the result will be a data frame (because
-the elements are mixed types):
+the elements are mixed types, they can't be a vector):
 
 ```{r}
-gapminder[3,]
+gapminder[3, ]
 ```
 
-But for a single column the result will be a vector (this can
+For a single column the result will be a *vector* (this can
 be changed with the third argument, `drop = FALSE`).
 
-::: {.callout}
+```{r}
+head(gapminder[, 2])
+```
 
+which is equivalent to
+
+```{r}
+head(gapminder[[2]])
+```
+
+
+::: {.callout}
 ## Challenge 6
-Fix each of the following common data frame subsetting errors:
+
+Each of the following pieces of code are incorrect. Identify the error and fix each of the following common data frame subsetting errors:
 
 1. Extract observations collected for the year 1957
   
@@ -729,6 +759,7 @@ gapminder[1, c(4, 5)]
 ```{r, eval=FALSE}
 # gapminder[gapminder$year == 2002 | 2007, ]
 gapminder[gapminder$year == 2002 | gapminder$year == 2007, ]
+# or
 gapminder[gapminder$year %in% c(2002, 2007), ]
 ```
 
@@ -739,18 +770,18 @@ gapminder[gapminder$year %in% c(2002, 2007), ]
 ## Challenge 7
 1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
 
-2. Create a new `data.frame` called `gapminder_small` that only contains rows 1 through 9
-and 19 through 23. You can do this in one or two steps.
+2. Create a new `data.frame` called `gapminder_subset` that only contains rows 1 through 9
+and rows 19 through 23.
 
 ::: {.callout collapse=true}
 ## Solution to challenge 7
 
-1.  `gapminder` is a data.frame so needs to be subsetted on two dimensions. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
+1.  `gapminder[1:20]` tries to extract the first 20 columns, but there are not 20 columns. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
 
 2. 
 
 ```{r}
-gapminder_small <- gapminder[c(1:9, 19:23), ]
+gapminder_subset <- gapminder[c(1:9, 19:23), ]
 ```
 :::
 :::

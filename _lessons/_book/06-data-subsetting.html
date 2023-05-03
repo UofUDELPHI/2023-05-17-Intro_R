@@ -4096,14 +4096,15 @@ vertical-align: -.125em;
   <li><a href="#skipping-and-removing-elements" id="toc-skipping-and-removing-elements" class="nav-link" data-scroll-target="#skipping-and-removing-elements"><span class="toc-section-number">6.2</span>  Skipping and removing elements</a></li>
   <li><a href="#subsetting-by-name" id="toc-subsetting-by-name" class="nav-link" data-scroll-target="#subsetting-by-name"><span class="toc-section-number">6.3</span>  Subsetting by name</a></li>
   <li><a href="#subsetting-through-other-logical-operations" id="toc-subsetting-through-other-logical-operations" class="nav-link" data-scroll-target="#subsetting-through-other-logical-operations"><span class="toc-section-number">6.4</span>  Subsetting through other logical operations </a><a name="logical-operations" class="nav-link" data-scroll-target="undefined"></a></li>
-  <li><a href="#removing-named-elements" id="toc-removing-named-elements" class="nav-link" data-scroll-target="#removing-named-elements"><span class="toc-section-number">6.5</span>  Removing named elements</a>
+  <li><a href="#combining-logical-conditions" id="toc-combining-logical-conditions" class="nav-link" data-scroll-target="#combining-logical-conditions"><span class="toc-section-number">6.5</span>  Combining logical conditions</a></li>
+  <li><a href="#the-in-operator-in" id="toc-the-in-operator-in" class="nav-link" data-scroll-target="#the-in-operator-in"><span class="toc-section-number">6.6</span>  The in operator <code>%in%</code></a></li>
+  <li><a href="#removing-named-elements" id="toc-removing-named-elements" class="nav-link" data-scroll-target="#removing-named-elements"><span class="toc-section-number">6.7</span>  Removing named elements</a>
   <ul class="collapse">
-  <li><a href="#recycling" id="toc-recycling" class="nav-link" data-scroll-target="#recycling"><span class="toc-section-number">6.5.1</span>  Recycling</a></li>
+  <li><a href="#recycling" id="toc-recycling" class="nav-link" data-scroll-target="#recycling"><span class="toc-section-number">6.7.1</span>  Recycling</a></li>
   </ul></li>
-  <li><a href="#handling-special-values" id="toc-handling-special-values" class="nav-link" data-scroll-target="#handling-special-values"><span class="toc-section-number">6.6</span>  Handling special values</a></li>
-  <li><a href="#factor-subsetting" id="toc-factor-subsetting" class="nav-link" data-scroll-target="#factor-subsetting"><span class="toc-section-number">6.7</span>  Factor subsetting</a></li>
-  <li><a href="#list-subsetting" id="toc-list-subsetting" class="nav-link" data-scroll-target="#list-subsetting"><span class="toc-section-number">6.8</span>  List subsetting</a></li>
-  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="toc-section-number">6.9</span>  Data frames</a></li>
+  <li><a href="#factor-subsetting" id="toc-factor-subsetting" class="nav-link" data-scroll-target="#factor-subsetting"><span class="toc-section-number">6.8</span>  Factor subsetting</a></li>
+  <li><a href="#list-subsetting" id="toc-list-subsetting" class="nav-link" data-scroll-target="#list-subsetting"><span class="toc-section-number">6.9</span>  List subsetting</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="toc-section-number">6.10</span>  Data frames</a></li>
   </ul>
 </nav>
     </div>
@@ -4138,19 +4139,6 @@ vertical-align: -.125em;
 5.4 6.2 7.1 4.8 7.5 </code></pre>
 </div>
 </div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Atomic vectors
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In R, simple vectors containing character strings, numbers, or logical values are called <em>atomic</em> vectors because they can’t be further simplified.</p>
-</div>
-</div>
 <p>So now that we’ve created a toy vector to play with, how do we get at its contents?</p>
 <section id="accessing-elements-using-their-indices" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="accessing-elements-using-their-indices"><span class="header-section-number">6.1</span> Accessing elements using their indices</h2>
@@ -4169,8 +4157,8 @@ Atomic vectors
 4.8 </code></pre>
 </div>
 </div>
-<p>It may look different, but the square brackets operator is a function. For vectors, it means “get me the nth element”.</p>
-<p>We can ask for multiple elements at once:</p>
+<p>The square brackets operator is a function. For vectors, it means “get me the nth element”.</p>
+<p>We can ask for multiple elements at once by providing a vector if indices:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4178,7 +4166,7 @@ Atomic vectors
 5.4 7.1 </code></pre>
 </div>
 </div>
-<p>Or slices of the vector:</p>
+<p>Or “slices” of the vector using a sequential integer vector index:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4186,7 +4174,7 @@ Atomic vectors
 5.4 6.2 7.1 4.8 </code></pre>
 </div>
 </div>
-<p>the <code>:</code> operator creates a sequence of numbers from the left element to the right.</p>
+<p>Recall that the <code>:</code> operator creates a sequence of numbers from the left element to the right.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4283,7 +4271,7 @@ Order of operations
 </div>
 </div>
 </div>
-<p>To remove elements from a vector, we need to assign the result back into the variable:</p>
+<p>To remove elements from a vector, we need to re-assign the variable to our result:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x[<span class="sc">-</span><span class="dv">4</span>]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4321,7 +4309,7 @@ Challenge 1
 </div>
 <p>After you find 2 different commands, compare notes with your neighbour. Did you have different strategies?</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4330,7 +4318,7 @@ Solution to challenge 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4340,14 +4328,21 @@ Solution to challenge 1
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   c   d 
 6.2 7.1 4.8 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  b   c   d 
+6.2 7.1 4.8 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   c   d 
 6.2 7.1 4.8 </code></pre>
@@ -4363,8 +4358,8 @@ Solution to challenge 1
 <h2 data-number="6.3" class="anchored" data-anchor-id="subsetting-by-name"><span class="header-section-number">6.3</span> Subsetting by name</h2>
 <p>We can extract elements by using their name, instead of extracting by index:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we can name a vector 'on the fly'</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we can name a vector 'on the fly'</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a   c 
 5.4 7.1 </code></pre>
@@ -4376,7 +4371,7 @@ Solution to challenge 1
 <h2 data-number="6.4" class="anchored" data-anchor-id="subsetting-through-other-logical-operations"><span class="header-section-number">6.4</span> Subsetting through other logical operations <a name="logical-operations"></a></h2>
 <p>We can also use any logical vector to subset:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  c   e 
 7.1 7.5 </code></pre>
@@ -4384,7 +4379,7 @@ Solution to challenge 1
 </div>
 <p>Since comparison operators (e.g.&nbsp;<code>&gt;</code>, <code>&lt;</code>, <code>==</code>) evaluate to logical vectors, we can also use them to succinctly subset vectors: the following statement gives the same result as the previous one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x[x <span class="sc">&gt;</span> <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x[x <span class="sc">&gt;</span> <span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  c   e 
 7.1 7.5 </code></pre>
@@ -4393,7 +4388,52 @@ Solution to challenge 1
 <p>Breaking it down, this statement first evaluates <code>x&gt;7</code>, generating a logical vector <code>c(FALSE, FALSE, TRUE, FALSE, TRUE)</code>, and then selects the elements of <code>x</code> corresponding to the <code>TRUE</code> values.</p>
 <p>We can use <code>==</code> to mimic the previous method of indexing by name (remember you have to use <code>==</code> rather than <code>=</code> for comparisons):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">==</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="sc">==</span> <span class="st">"a"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE FALSE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">==</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  a 
+5.4 </code></pre>
+</div>
+</div>
+</section>
+<section id="combining-logical-conditions" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="combining-logical-conditions"><span class="header-section-number">6.5</span> Combining logical conditions</h2>
+<p>We often want to combine multiple logical criteria. For example, we might want to find all the countries that are located in Asia <strong>or</strong> Europe <strong>and</strong> have life expectancies within a certain range. Several operations for combining logical vectors exist in R:</p>
+<ul>
+<li><p><code>&amp;</code>, the “logical AND” operator: returns <code>TRUE</code> if both the left and right are <code>TRUE</code>.</p></li>
+<li><p><code>|</code>, the “logical OR” operator: returns <code>TRUE</code>, if either the left or right (or both) are <code>TRUE</code>.</p></li>
+</ul>
+<p>You may sometimes see <code>&amp;&amp;</code> and <code>||</code> instead of <code>&amp;</code> and <code>|</code>. These two-character operators only look at the first element of each vector and ignore the remaining elements. In general you should not use the two-character operators in data analysis.</p>
+<ul>
+<li><code>!</code>, the “logical NOT” operator: converts <code>TRUE</code> to <code>FALSE</code> and <code>FALSE</code> to <code>TRUE</code>. It can negate a single logical condition (eg <code>!TRUE</code> becomes <code>FALSE</code>), or a whole vector of conditions(eg <code>!c(TRUE, FALSE)</code> becomes <code>c(FALSE, TRUE)</code>).</li>
+</ul>
+<p>Additionally, you can compare the elements within a single vector using the <code>all</code> function (which returns <code>TRUE</code> if every element of the vector is <code>TRUE</code>) and the <code>any</code> function (which returns <code>TRUE</code> if one or more elements of the vector are <code>TRUE</code>).</p>
+<p>For example, the following code will only return the values of <code>x</code> that are equal to either 5.4 or 7 (since there is no value equal to 7, only the value equal to 5.4 will be returned):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">==</span> <span class="fl">5.4</span>) <span class="sc">|</span> (x <span class="sc">==</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    a     b     c     d     e 
+ TRUE FALSE FALSE FALSE FALSE </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>x[(x <span class="sc">==</span> <span class="fl">5.4</span>) <span class="sc">|</span> (x <span class="sc">==</span> <span class="dv">7</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  a 
+5.4 </code></pre>
+</div>
+</div>
+</section>
+<section id="the-in-operator-in" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="the-in-operator-in"><span class="header-section-number">6.6</span> The in operator <code>%in%</code></h2>
+<p>Another way to do this is to ask R to subset the values of <code>x</code> that are “in” a vector of values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE FALSE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>x[x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="dv">7</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a 
 5.4 </code></pre>
@@ -4405,20 +4445,11 @@ Solution to challenge 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip: Combining logical conditions
+Tip: Getting help for operators
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We often want to combine multiple logical criteria. For example, we might want to find all the countries that are located in Asia <strong>or</strong> Europe <strong>and</strong> have life expectancies within a certain range. Several operations for combining logical vectors exist in R:</p>
-<ul>
-<li><p><code>&amp;</code>, the “logical AND” operator: returns <code>TRUE</code> if both the left and right are <code>TRUE</code>.</p></li>
-<li><p><code>|</code>, the “logical OR” operator: returns <code>TRUE</code>, if either the left or right (or both) are <code>TRUE</code>.</p></li>
-</ul>
-<p>You may sometimes see <code>&amp;&amp;</code> and <code>||</code> instead of <code>&amp;</code> and <code>|</code>. These two-character operators only look at the first element of each vector and ignore the remaining elements. In general you should not use the two-character operators in data analysis; save them for programming, i.e.&nbsp;deciding whether to execute a statement.</p>
-<ul>
-<li><code>!</code>, the “logical NOT” operator: converts <code>TRUE</code> to <code>FALSE</code> and <code>FALSE</code> to <code>TRUE</code>. It can negate a single logical condition (eg <code>!TRUE</code> becomes <code>FALSE</code>), or a whole vector of conditions(eg <code>!c(TRUE, FALSE)</code> becomes <code>c(FALSE, TRUE)</code>).</li>
-</ul>
-<p>Additionally, you can compare the elements within a single vector using the <code>all</code> function (which returns <code>TRUE</code> if every element of the vector is <code>TRUE</code>) and the <code>any</code> function (which returns <code>TRUE</code> if one or more elements of the vector are <code>TRUE</code>).</p>
+<p>Remember you can search for help on operators by wrapping them in quotes: <code>help("%in%")</code> or <code>?"%in%"</code>.</p>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -4433,9 +4464,9 @@ Challenge 2
 <div class="callout-body-container callout-body">
 <p>Given the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="fl">6.2</span>, <span class="fl">7.1</span>, <span class="fl">4.8</span>, <span class="fl">7.5</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="fl">6.2</span>, <span class="fl">7.1</span>, <span class="fl">4.8</span>, <span class="fl">7.5</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>)</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 </code></pre>
@@ -4443,7 +4474,7 @@ Challenge 2
 </div>
 <p>Write a subsetting command to return the values in x that are greater than 4 and less than 7.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4452,11 +4483,10 @@ Solution to challenge 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>x_subset <span class="ot">&lt;-</span> x[x<span class="sc">&lt;</span><span class="dv">7</span> <span class="sc">&amp;</span> x<span class="sc">&gt;</span><span class="dv">4</span>]</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x_subset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>x[x <span class="sc">&lt;</span> <span class="dv">7</span> <span class="sc">&amp;</span> x <span class="sc">&gt;</span> <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a   b   d 
 5.4 6.2 4.8 </code></pre>
@@ -4477,25 +4507,25 @@ Tip: Non-unique names
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You should be aware that it is possible for multiple elements in a vector to have the same name. (For a data frame, columns can have the same name — although R tries to avoid this — but row names must be unique.) Consider these examples:</p>
+<p>It is possible for multiple elements in a vector to have the same name. (For a data frame, columns can have the same name too.) Consider these examples:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'a'</span>, <span class="st">'a'</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'a'</span>, <span class="st">'a'</span>)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a a a 
 1 2 3 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">'a'</span>]  <span class="co"># only returns first value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">'a'</span>]  <span class="co"># only returns first value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a 
 1 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">==</span> <span class="st">'a'</span>]  <span class="co"># returns all three values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">==</span> <span class="st">'a'</span>]  <span class="co"># returns all three values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a a a 
 1 2 3 </code></pre>
@@ -4503,33 +4533,20 @@ Tip: Non-unique names
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip: Getting help for operators
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember you can search for help on operators by wrapping them in quotes: <code>help("%in%")</code> or <code>?"%in%"</code>.</p>
-</div>
-</div>
 </section>
-<section id="removing-named-elements" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="removing-named-elements"><span class="header-section-number">6.5</span> Removing named elements</h2>
+<section id="removing-named-elements" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="removing-named-elements"><span class="header-section-number">6.7</span> Removing named elements</h2>
 <p>Removing named elements is a little harder. If we try to remove one named element by negating the string, R complains (slightly obscurely) that it doesn’t know how to take the negative of a string:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we start again by naming a vector 'on the fly'</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we start again by naming a vector 'on the fly'</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in -"a": invalid argument to unary operator</code></pre>
 </div>
 </div>
 <p>However, we can use the <code>!=</code> (not-equals) operator to construct a logical vector that will do what we want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   c   d   e 
 6.2 7.1 4.8 7.5 </code></pre>
@@ -4537,7 +4554,7 @@ Tip: Getting help for operators
 </div>
 <p>Skipping multiple named indices is a little bit harder still. Suppose we want to drop the <code>"a"</code> and <code>"c"</code> elements, so we try this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length</code></pre>
@@ -4549,11 +4566,11 @@ shorter object length</code></pre>
 </div>
 <p>R did <em>something</em>, but it gave us a warning that we ought to pay attention to - and it apparently <em>gave us the wrong answer</em> (the <code>"c"</code> element is still included in the vector)!</p>
 <p>So what does <code>!=</code> actually do in this case? That’s an excellent question.</p>
-<section id="recycling" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="recycling"><span class="header-section-number">6.5.1</span> Recycling</h3>
+<section id="recycling" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="recycling"><span class="header-section-number">6.7.1</span> Recycling</h3>
 <p>Let’s take a look at the comparison component of this code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length</code></pre>
@@ -4579,7 +4596,7 @@ shorter object length</code></pre>
 <p>In this case R <strong>repeats</strong> <code>c("a", "c")</code> as many times as necessary to match <code>names(x)</code>, i.e.&nbsp;we get <code>c("a","c","a","c","a")</code>. Since the recycled <code>"a"</code> doesn’t match the third element of <code>names(x)</code>, the value of <code>!=</code> is <code>TRUE</code>. Because in this case the longer vector length (5) isn’t a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and <code>names(x)</code> had contained six elements, R would <em>silently</em> have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!</p>
 <p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) it to use the <code>%in%</code> operator. The <code>%in%</code> operator goes through each element of its left argument, in this case the names of <code>x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code>!</code> operator to change “in” to “not in”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span> <span class="fu">names</span>(x) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>) ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span>(<span class="fu">names</span>(x) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   d   e 
 6.2 4.8 7.5 </code></pre>
@@ -4595,19 +4612,15 @@ Challenge 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Selecting elements of a vector that match any of a list of components is a very common data analysis task. For example, the gapminder data set contains <code>country</code> and <code>continent</code> variables, but no information between these two scales. Suppose we want to pull out information from southeast Asia: how do we set up an operation to produce a logical vector that is <code>TRUE</code> for all of the countries in southeast Asia and <code>FALSE</code> otherwise? Suppose you have these data:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>seAsia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Myanmar"</span>, <span class="st">"Thailand"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Vietnam"</span>, <span class="st">"Laos"</span>)</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="do">## read in the gapminder data that we downloaded in episode 2</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gapminder_data.csv"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="do">## extract the `country` column from a data frame (we'll see this later);</span></span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="do">## convert from a factor to a character;</span></span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="do">## and get just the non-repeated elements</span></span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">as.character</span>(gapminder<span class="sc">$</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>There’s a wrong way (using only <code>==</code>), which will give you a warning; a clunky way (using the logical operators <code>==</code> and <code>|</code>); and an elegant way (using <code>%in%</code>). See whether you can come up with all three and explain how they (don’t) work.</p>
+<p>Selecting elements of a vector that match “any of” a list of components is a very common data analysis task.</p>
+<p>Suppose we want to pull out information from Southeast Asia, which includes the countries of Myanmar, Thailand, Cambodia, Vietnam, and Laos.</p>
+<p>Your task is to subset the data just to the rows that include the countries in Southeast Asia</p>
+<ol type="1">
+<li><p>Define a logical vector that is <code>TRUE</code> for all of the countries in southeast Asia and <code>FALSE</code> otherwise.</p></li>
+<li><p>Use this logical vector to extract just the rows for Southeast Asia from the gapminder dataset.</p></li>
+</ol>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4616,52 +4629,110 @@ Solution to challenge 3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li><p>The <strong>wrong</strong> way to do this problem is <code>countries==seAsia</code>. This gives a warning (<code>"In countries == seAsia : longer object length is not a multiple of shorter object length"</code>) and the wrong answer (a vector of all <code>FALSE</code> values), because none of the recycled values of <code>seAsia</code> happen to line up correctly with matching values in <code>country</code>.</p></li>
-<li><p>The <strong>clunky</strong> (but technically correct) way to do this problem is</p></li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>(countries <span class="sc">==</span> <span class="st">"Myanmar"</span> <span class="sc">|</span> countries <span class="sc">==</span> <span class="st">"Thailand"</span> <span class="sc">|</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>countries <span class="sc">==</span> <span class="st">"Cambodia"</span> <span class="sc">|</span> countries <span class="sc">==</span> <span class="st">"Vietnam"</span> <span class="sc">|</span> countries <span class="sc">==</span> <span class="st">"Laos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>se_asia <span class="ot">=</span> gapminder<span class="sc">$</span>country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Myanmar"</span>, <span class="st">"Thailand"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Vietnam"</span>, <span class="st">"Laos"</span>)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>gapminder[se_asia, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      country year      pop continent lifeExp gdpPercap
+217  Cambodia 1952  4693836      Asia  39.417  368.4693
+218  Cambodia 1957  5322536      Asia  41.366  434.0383
+219  Cambodia 1962  6083619      Asia  43.415  496.9136
+220  Cambodia 1967  6960067      Asia  45.415  523.4323
+221  Cambodia 1972  7450606      Asia  40.317  421.6240
+222  Cambodia 1977  6978607      Asia  31.220  524.9722
+223  Cambodia 1982  7272485      Asia  50.957  624.4755
+224  Cambodia 1987  8371791      Asia  53.914  683.8956
+225  Cambodia 1992 10150094      Asia  55.803  682.3032
+226  Cambodia 1997 11782962      Asia  56.534  734.2852
+227  Cambodia 2002 12926707      Asia  56.752  896.2260
+228  Cambodia 2007 14131858      Asia  59.723 1713.7787
+1045  Myanmar 1952 20092996      Asia  36.319  331.0000
+1046  Myanmar 1957 21731844      Asia  41.905  350.0000
+1047  Myanmar 1962 23634436      Asia  45.108  388.0000
+1048  Myanmar 1967 25870271      Asia  49.379  349.0000
+1049  Myanmar 1972 28466390      Asia  53.070  357.0000
+1050  Myanmar 1977 31528087      Asia  56.059  371.0000
+1051  Myanmar 1982 34680442      Asia  58.056  424.0000
+1052  Myanmar 1987 38028578      Asia  58.339  385.0000
+1053  Myanmar 1992 40546538      Asia  59.320  347.0000
+1054  Myanmar 1997 43247867      Asia  60.328  415.0000
+1055  Myanmar 2002 45598081      Asia  59.908  611.0000
+1056  Myanmar 2007 47761980      Asia  62.069  944.0000
+1525 Thailand 1952 21289402      Asia  50.848  757.7974
+1526 Thailand 1957 25041917      Asia  53.630  793.5774
+1527 Thailand 1962 29263397      Asia  56.061 1002.1992
+1528 Thailand 1967 34024249      Asia  58.285 1295.4607
+1529 Thailand 1972 39276153      Asia  60.405 1524.3589
+1530 Thailand 1977 44148285      Asia  62.494 1961.2246
+1531 Thailand 1982 48827160      Asia  64.597 2393.2198
+1532 Thailand 1987 52910342      Asia  66.084 2982.6538
+1533 Thailand 1992 56667095      Asia  67.298 4616.8965
+1534 Thailand 1997 60216677      Asia  67.521 5852.6255
+1535 Thailand 2002 62806748      Asia  68.564 5913.1875
+1536 Thailand 2007 65068149      Asia  70.616 7458.3963
+1645  Vietnam 1952 26246839      Asia  40.412  605.0665
+1646  Vietnam 1957 28998543      Asia  42.887  676.2854
+1647  Vietnam 1962 33796140      Asia  45.363  772.0492
+1648  Vietnam 1967 39463910      Asia  47.838  637.1233
+1649  Vietnam 1972 44655014      Asia  50.254  699.5016
+1650  Vietnam 1977 50533506      Asia  55.764  713.5371
+1651  Vietnam 1982 56142181      Asia  58.816  707.2358
+1652  Vietnam 1987 62826491      Asia  62.820  820.7994
+1653  Vietnam 1992 69940728      Asia  67.662  989.0231
+1654  Vietnam 1997 76048996      Asia  70.672 1385.8968
+1655  Vietnam 2002 80908147      Asia  73.017 1764.4567
+1656  Vietnam 2007 85262356      Asia  74.249 2441.5764</code></pre>
 </div>
-<p>(or <code>countries == seAsia[1] | countries == seAsia[2] | ...</code>). This gives the correct values, but hopefully you can see how awkward it is (what if we wanted to select countries from a much longer list?). - The best way to do this problem is <code>countries %in% seAsia</code>, which is both correct and easy to type (and read).</p>
 </div>
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip: filter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the dplyr lesson, you will learn another method of filtering to rows of a data frame that satisfy a certain condition using the <code>filter()</code> function from the dplyr package in the tidyverse suite.</p>
+</div>
+</div>
+<!-- ## Handling special values -->
+<!-- At some point you will encounter functions in R that cannot handle missing, infinite, -->
+<!-- or undefined data. -->
+<!-- There are a number of special functions you can use to filter out this data: -->
+<!--  * `is.na` will return all positions in a vector, matrix, or data.frame -->
+<!--    containing `NA` (or `NaN`) -->
+<!--  * likewise, `is.nan`, and `is.infinite` will do the same for `NaN` and `Inf`. -->
+<!--  * `is.finite` will return all positions in a vector, matrix, or data.frame -->
+<!--    that do not contain `NA`, `NaN` or `Inf`. -->
+<!--  * `na.omit` will filter out all missing values from a vector -->
 </section>
 </section>
-<section id="handling-special-values" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="handling-special-values"><span class="header-section-number">6.6</span> Handling special values</h2>
-<p>At some point you will encounter functions in R that cannot handle missing, infinite, or undefined data.</p>
-<p>There are a number of special functions you can use to filter out this data:</p>
-<ul>
-<li><code>is.na</code> will return all positions in a vector, matrix, or data.frame containing <code>NA</code> (or <code>NaN</code>)</li>
-<li>likewise, <code>is.nan</code>, and <code>is.infinite</code> will do the same for <code>NaN</code> and <code>Inf</code>.</li>
-<li><code>is.finite</code> will return all positions in a vector, matrix, or data.frame that do not contain <code>NA</code>, <code>NaN</code> or <code>Inf</code>.</li>
-<li><code>na.omit</code> will filter out all missing values from a vector</li>
-</ul>
-</section>
-<section id="factor-subsetting" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="factor-subsetting"><span class="header-section-number">6.7</span> Factor subsetting</h2>
+<section id="factor-subsetting" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="factor-subsetting"><span class="header-section-number">6.8</span> Factor subsetting</h2>
 <p>Now that we’ve explored the different ways to subset vectors, how do we subset the other data structures?</p>
 <p>Factor subsetting works the same way as vector subsetting.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>))</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>f[f <span class="sc">==</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>))</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>f[f <span class="sc">==</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] a a
 Levels: a b c d</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>f[f <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>f[f <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] b c c
 Levels: a b c d</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>f[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>f[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] a a b
 Levels: a b c d</code></pre>
@@ -4669,7 +4740,7 @@ Levels: a b c d</code></pre>
 </div>
 <p>Skipping elements will not remove the level even if no more of that category exists in the factor:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>f[<span class="sc">-</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>f[<span class="sc">-</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] a a c c d
 Levels: a b c d</code></pre>
@@ -4745,13 +4816,13 @@ Levels: a b c d</code></pre>
 <!-- ::: -->
 <!-- ::: -->
 </section>
-<section id="list-subsetting" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="list-subsetting"><span class="header-section-number">6.8</span> List subsetting</h2>
+<section id="list-subsetting" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="list-subsetting"><span class="header-section-number">6.9</span> List subsetting</h2>
 <p>Now we’ll introduce some new subsetting operators. There are three functions used to subset lists. We’ve already seen these when learning about atomic vectors and matrices: <code>[</code>, <code>[[</code>, and <code>$</code>.</p>
 <p>Using <code>[</code> will always return a list. If you want to <em>subset</em> a list, but not <em>extract</em> an element, then you will likely use <code>[</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>xlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="st">"Software Carpentry"</span>, <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">data =</span> <span class="fu">head</span>(mtcars))</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>xlist[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>xlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="st">"Software Carpentry"</span>, <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">data =</span> <span class="fu">head</span>(mtcars))</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>xlist[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$a
 [1] "Software Carpentry"</code></pre>
@@ -4760,7 +4831,7 @@ Levels: a b c d</code></pre>
 <p>This returns a <em>list with one element</em>.</p>
 <p>We can subset elements of a list exactly the same way as atomic vectors using <code>[</code>. Comparison operations however won’t work as they’re not recursive, they will try to condition on the data structures in each element of the list, not the individual elements within those data structures.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>xlist[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>xlist[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$a
 [1] "Software Carpentry"
@@ -4771,7 +4842,7 @@ $b
 </div>
 <p>To extract individual elements of a list, you need to use the double-square bracket function: <code>[[</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Software Carpentry"</code></pre>
 </div>
@@ -4779,28 +4850,28 @@ $b
 <p>Notice that now the result is a vector, not a list.</p>
 <p>You can’t extract more than one element at once:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in xlist[[1:2]]: subscript out of bounds</code></pre>
 </div>
 </div>
 <p>Nor use it to skip elements:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="sc">-</span><span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="sc">-</span><span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in xlist[[-1]]: invalid negative subscript in get1index &lt;real&gt;</code></pre>
 </div>
 </div>
 <p>But you can use names to both subset and extract elements:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="st">"a"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="st">"a"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Software Carpentry"</code></pre>
 </div>
 </div>
 <p>The <code>$</code> function is a shorthand way for extracting elements by name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>xlist<span class="sc">$</span>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>xlist<span class="sc">$</span>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
 Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
@@ -4823,11 +4894,28 @@ Challenge 5
 <div class="callout-body-container callout-body">
 <p>Given the following list:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>xlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="st">"Software Carpentry"</span>, <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">data =</span> <span class="fu">head</span>(mtcars))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>xlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="st">"Software Carpentry"</span>, <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">data =</span> <span class="fu">head</span>(mtcars))</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>xlist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$a
+[1] "Software Carpentry"
+
+$b
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$data
+                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
 </div>
-<p>Using your knowledge of both list and vector subsetting, extract the number 2 from xlist. Hint: the number 2 is contained within the “b” item in the list.</p>
+</div>
+<p>Using list and vector subsetting, extract the second entry in the second element of the list (i.e., extract the number <code>2</code> from the <code>b</code> entry from xlist`). There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4836,22 +4924,22 @@ Solution to challenge 5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>xlist<span class="sc">$</span>b[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>xlist<span class="sc">$</span>b[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="st">"b"</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>xlist[[<span class="st">"b"</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -4862,12 +4950,12 @@ Solution to challenge 5
 </div>
 </div>
 </section>
-<section id="data-frames" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">6.9</span> Data frames</h2>
+<section id="data-frames" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">6.10</span> Data frames</h2>
 <p>Remember the data frames are lists underneath the hood, so similar rules apply. However they are also two dimensional objects:</p>
 <p><code>[</code> with one argument will act the same way as for lists, where each list element corresponds to a column. The resulting object will be a data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       pop
 1  8425333
@@ -4878,23 +4966,30 @@ Solution to challenge 5
 6 14880372</code></pre>
 </div>
 </div>
-<p>Similarly, <code>[[</code> will act to extract <em>a single column</em>:</p>
+<p>Similarly, <code>[[</code> will act to extract <em>a single column</em> as a <em>vector</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[[<span class="st">"lifeExp"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[[<span class="dv">3</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  8425333  9240934 10267083 11537966 13079460 14880372</code></pre>
+</div>
+</div>
+<p>Notice the difference in the way the two results are presented (the first is a data frame, the second is a vector)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[[<span class="st">"lifeExp"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 28.801 30.332 31.997 34.020 36.088 38.438</code></pre>
 </div>
 </div>
 <p>And <code>$</code> provides a convenient shorthand to extract columns by name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder<span class="sc">$</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder<span class="sc">$</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1952 1957 1962 1967 1972 1977</code></pre>
 </div>
 </div>
-<p>With two arguments, <code>[</code> behaves the same way as for matrices:</p>
+<p>With two arguments, <code>[</code> behaves lets us extract multiple rows and columns:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      country year      pop continent lifeExp gdpPercap
 1 Afghanistan 1952  8425333      Asia  28.801  779.4453
@@ -4902,15 +4997,28 @@ Solution to challenge 5
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007</code></pre>
 </div>
 </div>
-<p>If we subset a single row, the result will be a data frame (because the elements are mixed types):</p>
+<p>If we subset a single row, the result will be a data frame (because the elements are mixed types, they can’t be a vector):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">3</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">3</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      country year      pop continent lifeExp gdpPercap
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007</code></pre>
 </div>
 </div>
-<p>But for a single column the result will be a vector (this can be changed with the third argument, <code>drop = FALSE</code>).</p>
+<p>For a single column the result will be a <em>vector</em> (this can be changed with the third argument, <code>drop = FALSE</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1952 1957 1962 1967 1972 1977</code></pre>
+</div>
+</div>
+<p>which is equivalent to</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder[[<span class="dv">2</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1952 1957 1962 1967 1972 1977</code></pre>
+</div>
+</div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4921,39 +5029,39 @@ Challenge 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fix each of the following common data frame subsetting errors:</p>
+<p>Each of the following pieces of code are incorrect. Identify the error and fix each of the following common data frame subsetting errors:</p>
 <ol type="1">
 <li>Extract observations collected for the year 1957</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="ot">=</span> <span class="dv">1957</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="ot">=</span> <span class="dv">1957</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Extract all columns except 1 through to 4</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>gapminder[, <span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>gapminder[, <span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>Extract the rows where the life expectancy is longer the 80 years</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>lifeExp <span class="sc">&gt;</span> <span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>lifeExp <span class="sc">&gt;</span> <span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Extract the first row, and the fourth and fifth columns (<code>continent</code> and <code>lifeExp</code>).</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li>Advanced: extract rows that contain information for the years 2002 and 2007</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">|</span> <span class="dv">2007</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">|</span> <span class="dv">2007</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4962,44 +5070,45 @@ Solution to challenge 6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Fix each of the following common data frame subsetting errors:</p>
 <ol type="1">
 <li>Extract observations collected for the year 1957</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$year = 1957, ]</span></span>
-<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1957</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$year = 1957, ]</span></span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1957</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Extract all columns except 1 through to 4</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[, -1:4]</span></span>
-<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>gapminder[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[, -1:4]</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>gapminder[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>Extract the rows where the life expectancy is longer than 80 years</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$lifeExp &gt; 80]</span></span>
-<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>lifeExp <span class="sc">&gt;</span> <span class="dv">80</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$lifeExp &gt; 80]</span></span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>lifeExp <span class="sc">&gt;</span> <span class="dv">80</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Extract the first row, and the fourth and fifth columns (<code>continent</code> and <code>lifeExp</code>).</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[1, 4, 5]</span></span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[1, 4, 5]</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span>, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li>Advanced: extract rows that contain information for the years 2002 and 2007</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$year == 2002 | 2007, ]</span></span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">|</span> gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2007</span>, ]</span>
-<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2002</span>, <span class="dv">2007</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gapminder[gapminder$year == 2002 | 2007, ]</span></span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">|</span> gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2007</span>, ]</span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2002</span>, <span class="dv">2007</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -5018,10 +5127,10 @@ Challenge 7
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Why does <code>gapminder[1:20]</code> return an error? How does it differ from <code>gapminder[1:20, ]</code>?</p></li>
-<li><p>Create a new <code>data.frame</code> called <code>gapminder_small</code> that only contains rows 1 through 9 and 19 through 23. You can do this in one or two steps.</p></li>
+<li><p>Create a new <code>data.frame</code> called <code>gapminder_subset</code> that only contains rows 1 through 9 and rows 19 through 23.</p></li>
 </ol>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -5030,14 +5139,14 @@ Solution to challenge 7
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p><code>gapminder</code> is a data.frame so needs to be subsetted on two dimensions. <code>gapminder[1:20, ]</code> subsets the data to give the first 20 rows and all columns.</p></li>
+<li><p><code>gapminder[1:20]</code> tries to extract the first 20 columns, but there are not 20 columns. <code>gapminder[1:20, ]</code> subsets the data to give the first 20 rows and all columns.</p></li>
 <li></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>gapminder_small <span class="ot">&lt;-</span> gapminder[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">19</span><span class="sc">:</span><span class="dv">23</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>gapminder_subset <span class="ot">&lt;-</span> gapminder[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">19</span><span class="sc">:</span><span class="dv">23</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
