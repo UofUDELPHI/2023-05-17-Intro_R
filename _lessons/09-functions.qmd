@@ -1,5 +1,5 @@
 ---
-title: Functions Explained
+title: Functions
 embed-resources: true
 ---
 
