@@ -16,10 +16,9 @@ book:
     - 08-dplyr.qmd
     - 09-plot-ggplot2.qmd
     - 10-functions.qmd
-    - 11-if.qmd
-    - 12-lists.qmd
-    - 13-iteration.qmd
-    - 14-tidyr.qmd
+    - 11-lists.qmd
+    - 12-iteration.qmd
+    - 13-tidyr.qmd
 
 format:
   html:

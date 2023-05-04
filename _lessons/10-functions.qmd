@@ -178,7 +178,7 @@ statements because we want to assert some condition is `TRUE` before proceeding.
 They make it easier to debug because they give us a better idea of where the
 errors originate.
 
-### Checking conditions with `stopifnot()`
+### Checking conditions with `stop()`
 
 Let's start by re-examining `fahr_to_kelvin()`, our function for converting
 temperatures from Fahrenheit to Kelvin. It was defined like so:
@@ -192,8 +192,9 @@ fahr_to_kelvin <- function(temp) {
 
 For this function to work as intended, the argument `temp` must be a `numeric`
 value; otherwise, the mathematical procedure for converting between the two
-temperature scales will not work. To create an error, we can use the function
-`stop()`. For example, since the argument `temp` must be a `numeric` vector, we
+temperature scales will not work. 
+
+To create an error, we can use the function `stop()`. For example, since the argument `temp` must be a `numeric` vector, we
 could check for this condition with an `if` statement and throw an error if the
 condition was violated. We could augment our function above like so:
 
@@ -206,6 +207,74 @@ fahr_to_kelvin <- function(temp) {
   return(kelvin)
 }
 ```
+
+
+::: {.callout-tip}
+
+## "If" statements
+
+There are several ways you can control flow in R.
+For conditional statements, the most commonly used approaches are the constructs:
+
+```{r}
+#| eval: false
+# if
+if (condition is true) {
+  perform action
+}
+
+# if ... else
+if (condition is true) {
+  perform action
+} else {  # that is, if the condition is false,
+  perform alternative action
+}
+```
+
+Say, for example, that we want R to print a message if a variable `x` has a particular value:
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+}
+
+```
+
+The print statement does not appear in the console because x (8) is not greater than 10. To print a different message for numbers less than 10, we can add an `else` statement.
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else {
+  print("x is less than 10")
+}
+```
+
+You can also test multiple conditions by using `else if`.
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else if (x > 5) {
+  print("x is greater than 5, but less than 10")
+} else {
+  print("x is less than 5")
+}
+```
+
+**Important:** when R evaluates the condition inside `if()` statements, it is
+looking for a logical value (`TRUE` or `FALSE`).
+
+:::
+
+
+
 
 If we had multiple conditions or arguments to check, it would take many lines
 of code to check all of them. Luckily R provides the convenience function
