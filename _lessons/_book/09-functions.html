@@ -4075,17 +4075,17 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lists</span></a>
+  <a href="./11-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data visualization with ggplot2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
+  <a href="./12-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lists</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data visualization with ggplot2</span></a>
+  <a href="./13-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -4149,14 +4149,14 @@ What is a function?
 <li><p>a name we can remember and invoke it by</p></li>
 <li><p>relief from the need to remember the individual operations</p></li>
 <li><p>a defined set of inputs and expected outputs</p></li>
-<li><p>rich connections to the larger programming environment</p></li>
 </ul>
 <p>As the basic building block of most programming languages, user-defined functions constitute “programming” as much as any single abstraction can. If you have written a function, you are a computer programmer.</p>
 </div>
 </div>
 <section id="defining-a-function" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="defining-a-function"><span class="header-section-number">9.1</span> Defining a function</h2>
-<p>Let’s open a new R script file in the <code>functions/</code> directory and call it functions-lesson.R.</p>
+<p>If you haven’t already, create a <code>functions/</code> directory in the same folder as your working quarto file.</p>
+<p>Open a new R script file and call it <code>functions-lesson.R</code> and save it in the <code>functions/</code> directory.</p>
 <p>The general structure of a function is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(parameters) {</span>
@@ -4171,9 +4171,10 @@ What is a function?
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kelvin)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We define <code>fahr_to_kelvin()</code> by assigning it to the output of <code>function</code>. The list of argument names are contained within parentheses. Next, the body of the function–the statements that are executed when it runs–is contained within curly braces (<code>{}</code>). The statements in the body are indented by two spaces. This makes the code easier to read but does not affect how the code operates.</p>
+<p>The list of arguments that the function takes are contained within the parentheses in <code>function(args)</code>.</p>
+<p>Next, the body of the function–the statements that are executed when it runs–is contained within curly braces (<code>{}</code>). The statements in the body are indented by two spaces. This makes the code easier to read but does not affect how the code operates.</p>
 <p>It is useful to think of creating functions like writing a cookbook. First you define the “ingredients” that your function needs. In this case, we only need one ingredient to use our function: “temp”. After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it.</p>
-<p>When we call the function, the values we pass to it as arguments are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="{{ page.root }}/reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
+<p>When we call the function, the values we pass to it as arguments are assigned to those variables so that we can use them inside the function. Inside the function, we use a to output a result when the function is used.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4184,7 +4185,8 @@ Return statements
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>One feature unique to R is that the return statement is not required. R automatically returns whichever variable is on the last line of the body of the function. But for clarity, we will explicitly define the return statement.</p>
+<p>One feature unique to R is that the return statement is not required.</p>
+<p>R automatically returns whichever variable is on the last line of the body of the function. But for clarity, we will explicitly define the return statement.</p>
 </div>
 </div>
 <p>Let’s try running our function. Calling our own function is no different from calling any other function:</p>
