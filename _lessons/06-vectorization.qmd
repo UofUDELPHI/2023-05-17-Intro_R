@@ -162,6 +162,15 @@ y:  1  2  3  4  5  6  7
 
 ## Subsetting vectors using logical operations <a name="logical-operations"></a>
 
+Let's consider the following vector:
+
+```{r}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+```
+
+
+
 We can also use any logical vector to subset:
 
 ```{r}
@@ -225,7 +234,22 @@ For example, the following code will only return the values of `x` that are equa
 x[(x == 5.4) | (x == 7)]
 ```
 
+We could extract all entries that are *not* equal to 5.4 as follows:
 
+```{r}
+x[x != 5.4]
+```
+
+
+
+
+Note that we don't want to use `==` to compare with a *vector*, since this will only look at the first entry.
+
+```{r}
+x == c(5.4, 4.8, 7.5)
+```
+
+Instead, use the `%in%` operator:
 
 
 ## The in operator `%in%`
@@ -235,10 +259,19 @@ Another way to do this is to ask R to subset the values of `x` that are "in" a v
 
 
 ```{r}
-x %in% c(5.4, 7)
+x %in% c(5.4, 4.8, 7)
 
-x[x %in% c(5.4, 7)]
+x[x %in% c(5.4, 4.8, 7)]
 ```
+
+We could extract the entries that are *not* in this vector by preceding the logical expression with a `!`
+
+```{r}
+!(x %in% c(5.4, 4.8, 7))
+
+x[!(x %in% c(5.4, 4.8, 7))]
+```
+
 
 ::: {.callout-tip}
 ## Tip: Getting help for operators
@@ -256,15 +289,25 @@ Given the following code:
 ```{r}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 names(x) <- c('a', 'b', 'c', 'd', 'e')
-print(x)
+x
 ```
-Write a subsetting command to return the values in x that are greater than 4 and less than 7.
+Write a subsetting command to return the values in x that are greater than 4 *or* less than 7.
+
+Write another subsetting command to return the values in x that are greater than 4 *and* less than 7.
 
 ::: {.callout collapse=true}
 ## Solution to challenge 2
 
+greater than 4 *or* less than 7:
+
 ```{r}
-x[x < 7 & x > 4]
+x[(x < 7) | (x > 4)]
+```
+
+greater than 4 *and* less than 7:
+
+```{r}
+x[(x < 7) & (x > 4)]
 ```
 :::
 :::

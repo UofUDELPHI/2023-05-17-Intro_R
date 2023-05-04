@@ -1,6 +1,8 @@
 ---
 title: Data Frame Manipulation with dplyr
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -51,21 +53,21 @@ pipes (`|>`) to combine them.
 4. `summarize()`
 5. `mutate()`
 
-If you have have not installed this package earlier, please do so:
+<!-- If you have have not installed this package earlier, please do so: -->
 
-```{r}
-#| eval: false
-install.packages('dplyr')
-```
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- install.packages('dplyr') -->
+<!-- ``` -->
 
-Now let's load the package:
+<!-- Now let's load the package: -->
 
-```{r}
-#| message: false
-library(dplyr)
-```
+<!-- ```{r} -->
+<!-- #| message: false -->
+<!-- library(dplyr) -->
+<!-- ``` -->
 
-Alternatively, you can load the tidyverse package, which will also install ggplot2 and other related packages:
+You will need to install (if you have not already) and load the tidyverse package, which will also install dplyr, ggplot2, and other related packages:
 
 ```{r}
 #| eval: false
@@ -78,30 +80,54 @@ library(tidyverse)
 ```
 
 
+Recall that you only need to install a package once (so you should not include the `install.packages()` code in your code chunk -- you can just run it directly in the console), but you need to load it every time you start a new R session.
 
-## Using select()
+
+## Extracting columns using select()
 
 If, for example, we wanted to move forward with only a few of the variables in
-our data frame we could use the `select()` function. This will keep only the
-variables you select.
+our data frame we could use the `select()` function. The first argument is the data frame and the remaining argument are the names of the columns that you want to keep. 
 
 ```{r}
 year_country_gdp <- select(gapminder, year, country, gdpPercap)
+head(year_country_gdp)
 ```
 
 ![Diagram illustrating use of select function to select two columns of a data frame](figs/13-dplyr-fig1.png) 
-If we want to remove one column only from the `gapminder` data, for example,
-removing the `continent` column.
+::: {.callout-tip}
+## Quotes vs no quotes
+
+Unlike the base R code, `df["var"]`, you usually do not need to enclose the variable names in quotes in most tidyverse functions: you can write `select(df, var)` rather than `select(df, "var")`.
+:::
+
+
+You can also use the `select()` function to rename columns, for example, the following code will rename the `gdpPercap` column to `gdp_per_cap`, while selecting only the `year`, `country`, and `gdp_per_cap` columns:
+
+```{r}
+gapminder_selected <- select(gapminder, year, country, gdp_per_cap = gdpPercap)
+head(gapminder_selected)
+```
+
+
+
+
+If we want to remove one column only from the `gapminder` data, we can use the `-var` syntax. For example, the code below
+removes the `continent` column:
 
 
 ```{r}
 smaller_gapminder_data <- select(gapminder, -continent)
 ```
 
-If we open up `year_country_gdp` we'll see that it only contains the year,
-country and gdpPercap. Above we used 'normal' grammar, but the strengths of
-`dplyr` lie in combining several functions using pipes. Since the pipes grammar
-is unlike anything we've seen in R before, let's repeat what we've done above
+Above we used 'normal' grammar, which places the data frame in the first argument of the dplyr function `select()`, but the real strength of
+`dplyr` lies in combining several functions using *pipes*. 
+
+
+
+
+## The pipe `|>`
+
+Since the pipes grammar is unlike anything we've seen in R before, let's repeat what we've done above
 using pipes.
 
 ```{r}
@@ -109,18 +135,103 @@ year_country_gdp <- gapminder |> select(year, country, gdpPercap)
 ```
 
 To help you understand why we wrote that in that way, let's walk through it step
-by step. First we summon the gapminder data frame and pass it on, using the pipe
-symbol `|>`, to the next step, which is the `select()` function. In this case
-we don't specify which data object we use in the `select()` function since in
-gets that from the previous pipe. **Fun Fact**: There is a good chance you have
-encountered pipes before in the shell. In R, a pipe symbol is `|>` while in the
-shell it is `|` but the concept is the same!
+by step. 
+
+First we summon the gapminder data frame and pass it on, using the pipe symbol `|>`, to the *first argument* in the function on the right hand side of the pipe, which is the `select()` function. 
+
+
+So the two pieces of code are equivalent.
+
+```{r}
+#| eval: false
+select(gapminder, year)
+```
+
+```{r}
+#| eval: false
+gapminder |> select(year)
+```
+
+
+
+
+
+
+::: {.callout-tip}
+## Two pipes: `|>` vs `%>%`
+
+You might sometimes see the pipe written as `%>%`, rather than `|>`. 
+
+`%>%` is the "old" version of the pipe that was first introduced in the magrittr R package (and is also loaded with the dplyr package).
+
+Recently, a native pipe `|>` has been introduced to the base R language, and moving forward it is this new native pipe that we will use. The two pipes behave very similarly, with only minor differences (such as `|>` requires parentheses for functions with no arguments).
+
+:::
+
+
+The pipe doesn't only work with `select()`. The pipe can be used for every R function. For example, the following are equivalent:
+
+```{r}
+head(gapminder)
+gapminder |> head()
+```
+
+So are these two:
+
+```{r}
+mean(c(1, 5, 3))
+c(1, 5, 3) |> mean()
+```
+
+
+
+
+
+::: {.callout}
+## Challenge 1
+
+Rewrite the following code using the pipe:
+
+1. 
+
+```{r}
+#| eval: false
+select(gapminder, -continent)
+```
+
+2. 
+
+```{r}
+#| eval: false
+head(select(gapminder, life_exp = lifeExp, gdp_per_cap = gdpPercap))
+```
+
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 1
+```{r}
+#| eval: false
+gapminder |> select(-continent)
+```
+
+```{r}
+#| eval: false
+gapminder |>
+  select(life_exp = lifeExp, gdp_per_cap = gdpPercap) |> 
+  head()
+```
+
+:::
+:::
+
 
 ::: {.callout-tip}
 ## Tip: Renaming data frame columns in dplyr
 
-In Chapter 4 we covered how you can rename columns with base R by assigning a value to the output of the `names()` function.
-Just like select, this is a bit cumbersome, but thankfully dplyr has a `rename()` function.
+In an earlier lesson, we covered how you can rename columns with base R by assigning a value to the output of the `names()` function.
+While this works just fine, dplyr has a `rename()` function that makes this even easier.
+
 Within a pipeline, the syntax is `rename(new_name = old_name)`.
 For example, we may want to rename the gdpPercap column name from our `select()` statement above.
 
@@ -130,19 +241,51 @@ head(tidy_gdp)
 ```
 :::
 
-## Using filter()
 
-If we now want to move forward with the above, but only with European
-countries, we can combine `select` and `filter`
+::: {.callout-tip}
+## Tip: `rename()` vs `select()`
+We saw above that we can use `select()` to rename columns, but this also requires us to specify which columns to include in the output.
+
+```{r}
+gapminder |>
+  select(gdp_per_capita = gdpPercap) |>
+  head()
+```
+
+`rename()` however, will automatically return all columns, while renaming the specified column:
+
+```{r}
+gapminder |>
+  rename(gdp_per_capita = gdpPercap) |>
+  head()
+```
+
+:::
+
+
+## Filter to rows using filter()
+
+If we only want to look at the European countries in gapminder, we can use the `filter()` function:
+
+
+```{r}
+gapminder |> filter(continent == "Europe") |> head()
+```
+
+
+We can even chain together `select()` and `filter()`:
 
 ```{r}
 year_country_gdp_euro <- gapminder |>
   filter(continent == "Europe") |>
   select(year, country, gdpPercap)
+head(year_country_gdp_euro)
 ```
 
-If we now want to show life expectancy of European countries but only
-for a specific year (e.g., 2007), we can do as below.
+You can supply multiple conditions to `filter()` using a comma. This is equivalent to "and" `&`, as in only rows where both conditions are satisfied will be returned.
+
+For example, if we now want to show life expectancy of European countries but only for a specific year (e.g., 2007), we can do as below.
+
 ```{r}
 europe_lifeExp_2007 <- gapminder |>
   filter(continent == "Europe", year == 2007) |>
@@ -150,144 +293,275 @@ europe_lifeExp_2007 <- gapminder |>
 ```
 
 ::: {.callout}
-## Challenge 1
-
-Write a single command (which can span multiple lines and includes pipes) that
-will produce a data frame that has the African values for `lifeExp`, `country`
-and `year`, but not for other Continents.  How many rows does your data frame
-have and why?
-
-::: {.callout collapse=true}
-## Solution to Challenge 1
-
-```{r}
-year_country_lifeExp_Africa <- gapminder |>
-  filter(continent == "Africa") |>
-  select(year, country, lifeExp)
-```
-:::
-:::
-
-
-As with last time, first we pass the gapminder data frame to the `filter()`
-function, then we pass the filtered version of the gapminder data frame to the
-`select()` function. **Note:** The order of operations is very important in this
-case. If we used 'select' first, filter would not be able to find the variable
-continent since we would have removed it in the previous step.
-
-## Using group_by()
-
-Now, we were supposed to be reducing the error prone repetitiveness of what can
-be done with base R, but up to now we haven't done that since we would have to
-repeat the above for each continent. Instead of `filter()`, which will only pass
-observations that meet your criteria (in the above: `continent == "Europe"`), we
-can use `group_by()`, which will essentially use every unique criteria that you
-could have used in filter.
-
-```{r}
-str(gapminder)
-
-str(gapminder |> group_by(continent))
-```
-
-You will notice that the structure of the data frame where we used `group_by()`
-(`grouped_df`) is not the same as the original `gapminder` (`data.frame`). A
-`grouped_df` can be thought of as a `list` where each item in the `list`is a
-`data.frame` which contains only the rows that correspond to the a particular
-value `continent` (at least in the example above).
-
-![Diagram illustrating how the group by function oraganizes a data frame into groups](figs/13-dplyr-fig2.png)
-
-## Using summarize()
-
-The above was a bit on the uneventful side but `group_by()` is much more
-exciting in conjunction with `summarize()`. This will allow us to create new
-variable(s) by using functions that repeat for each of the continent-specific
-data frames. That is to say, using the `group_by()` function, we split our
-original data frame into multiple pieces, then we can run functions
-(e.g. `mean()` or `sd()`) within `summarize()`.
-
-```{r}
-gdp_bycontinents <- gapminder |>
-  group_by(continent) |>
-  summarize(mean_gdpPercap = mean(gdpPercap))
-```
-
-![Diagram illustrating the use of group by and summarize together to create a new variable](figs/13-dplyr-fig3.png)
-
-```{r}
-#| eval: false
-continent mean_gdpPercap
-<fctr>          <dbl>
-  1    Africa       2193.755
-2  Americas       7136.110
-3      Asia       7902.150
-4    Europe      14469.476
-5   Oceania      18621.609
-```
-
-That allowed us to calculate the mean gdpPercap for each continent, but it gets
-even better.
-
-::: {.callout}
 ## Challenge 2
-Calculate the average life expectancy per country. Which has the longest average life
-expectancy and which has the shortest average life expectancy?
+
+Use piping to produce a data frame that contains values for `lifeExp`, `country`
+and `year` for Africa but not for other Continents.  
+
+Your data frame should have 624 rows and 3 columns (you can check this with `dim()`).
 
 ::: {.callout collapse=true}
 ## Solution to Challenge 2
 
 ```{r}
-lifeExp_bycountry <- gapminder |>
+year_country_lifeExp_Africa <- gapminder |>
+  filter(continent == "Africa") |>
+  select(year, country, lifeExp)
+head(year_country_lifeExp_Africa)
+```
+
+```{r}
+dim(year_country_lifeExp_Africa)
+```
+
+:::
+:::
+
+
+In the challenge above, first we pass the gapminder data frame to the `filter()`
+function, then we pass the filtered version of the gapminder data frame to the
+`select()` function. **Note:** The order of operations is very important in this
+case. If we used 'select' first, filter would not be able to find the variable
+continent since we would have removed it in the previous step.
+
+
+## Adding and modifying columns using mutate()
+
+You can add new columns as well as modify existing columns in a data frame using `mutate()`.
+
+For example, the following code will create a new column called `gdp_billion` which contains the product of `gdpPercap` and `pop` columns and divides by 1 billion.
+
+```{r}
+gapminder |>
+  mutate(gdp_billion = gdpPercap * pop / 10^9) |>
+  head()
+```
+
+You don't have to always create a new variable with `mutate()`-- you can instead modify an existing variable. For example, the code below replaces the `lifeExp` column with the rounded version of `lifeExp`:
+
+
+```{r}
+gapminder |>
+  mutate(lifeExp = round(lifeExp)) |>
+  head()
+```
+
+
+::: {.callout-tip}
+## Combining mutate() and select() with transmute()
+
+Sometimes you want to both mutate and select at the same time. Rather than doing this in two separate steps, you can do it in one using `transmute()`. 
+
+The following two code chunks are equivalent:
+
+```{r}
+gapminder |>
+  mutate(gdp_billion = gdpPercap * pop / 10^9) |>
+  select(country, year, gdp_billion) |>
+  head()
+```
+
+
+```{r}
+gapminder |>
+  transmute(country, year, gdp_billion = gdpPercap * pop / 10^9) |>
+  head()
+```
+
+:::
+
+
+::: {.callout}
+## Challenge 2
+
+Explain what the following code is trying to do and explain why it doesn't work. Re-write the code so that it does work:
+
+```{r}
+#| error: true
+gapminder |>
+  filter(country == "Australia") |>
+  select(year, lifeExp = round(lifeExp))
+```
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 2
+
+The code doesn't work because you can't make modifications to the data inside a `select()` function.
+
+You could fix this in a few ways. The most efficient is using `transmute()`:
+
+```{r}
+gapminder |>
+  filter(country == "Australia") |>
+  transmute(year, lifeExp = round(lifeExp))
+```
+
+But you could also use `mutate()` and `select()` separately
+
+```{r}
+gapminder |>
+  filter(country == "Australia") |>
+  select(year, lifeExp) |>
+  mutate(lifeExp = round(lifeExp)) 
+```
+:::
+:::
+
+## Creating column summaries using summarize()
+
+
+You can easily compute a "summary" of a column using `summarize()`. For example, the following code computes the max life expectancy in the data:
+
+```{r}
+gapminder |>
+  summarize(max_life_exp = max(lifeExp))
+```
+
+You can even compute multiple summaries at once, e.g., computing both the max and minimum of the lifeExp variable:
+
+```{r}
+gapminder |>
+  summarize(max_life_exp = max(lifeExp),
+            min_life_exp = min(lifeExp))
+```
+
+
+
+
+## Grouped computations with group_by()
+
+Now, we were supposed to be reducing the error prone repetitiveness of what can
+be done with base R, but up to now we haven't done that since we would have to
+repeat the above for each continent. 
+
+One way to compute the mean lifeExp for each continent using dplyr functions would be:
+
+```{r}
+gapminder |> filter(continent == "Europe") |> summarise(mean(lifeExp))
+gapminder |> filter(continent == "Africa") |> summarise(mean(lifeExp))
+gapminder |> filter(continent == "Asia") |> summarise(mean(lifeExp))
+gapminder |> filter(continent == "Americas") |> summarise(mean(lifeExp))
+gapminder |> filter(continent == "Oceania") |> summarise(mean(lifeExp))
+```
+
+But this is very repetitive and is not in line with the tidyverse way of doing things!
+
+The `group_by()` function offers a nice alternative approach for grouped operations on a data frame:
+
+```{r}
+gapminder |>
+  group_by(continent) |>
+  summarize(mean(lifeExp)) 
+```
+
+
+The `group_by()` function essentially splits the data frame into separate data frames to perform the computation, and then joins the result back into a single data frame.
+
+![Diagram illustrating how the group by function oraganizes a data frame into groups](figs/13-dplyr-fig2.png)
+
+
+Moreover, `group_by()` doesn't work just with summarize. Can you figure out what the following code is doing?
+
+```{r}
+gapminder |>
+  group_by(continent) |>
+  mutate(mean_lifeExp = mean(lifeExp)) |>
+  ungroup()
+```
+
+::: {.callout-tip}
+## Tip: ungrouping
+
+Note that it is good practice to follow any grouped operation with `ungroup()` since this prevents further downstream operations from also being grouped.
+:::
+
+
+::: {.callout-tip}
+## Tip: tibbles
+
+You might have noticed that the object above is a "tibble". A tibble is the tidyverse's version of a data frame. For all intents and purposes, tibbles and data frames are completely equivalent. It is only once you get into very advanced tidyverse programming will you start to see the features that tibbles possess that data frames don't, such as list columns.
+:::
+
+### Grouping by multiple variables
+
+The function `group_by()` allows us to group by multiple variables. For example, let's group by `year` and `continent` and compute the mean gdpPercap for each year-continent combination:
+
+
+```{r}
+gapminder |>
+  group_by(continent, year) |>
+  summarize(mean_gdpPercap = mean(gdpPercap)) |> 
+  ungroup() |>
+  head()
+```
+
+
+
+::: {.callout}
+## Challenge 2
+Use `group_by()`, `summarise()`, and `filter()` to identify which country has the longest average life expectancy and which has the shortest average life expectancy.
+
+::: {.callout collapse=true}
+## Solution to Challenge 2
+
+One way to do this is to as
+
+```{r}
+gapminder |>
   group_by(country) |>
-  summarize(mean_lifeExp = mean(lifeExp))
-lifeExp_bycountry |>
+  summarize(mean_lifeExp = mean(lifeExp)) |>
+  ungroup() |>
   filter(mean_lifeExp == min(mean_lifeExp) | mean_lifeExp == max(mean_lifeExp))
 ```
 
-Another way to do this is to use the `dplyr` function `arrange()`, which
+
+:::
+:::
+
+
+## Ordering the rows in a data frame using arrange()
+
+
+Another way to do complete the previous challenge is to use the dplyr function `arrange()`, which
 arranges the rows in a data frame according to the order of one or more
 variables from the data frame.  It has similar syntax to other functions from
 the `dplyr` package. You can use `desc()` inside `arrange()` to sort in
 descending order.
 
+First we can compute the average life expectancy for each country
+
+```{r}
+lifeExp_bycountry <- gapminder |>
+  group_by(country) |>
+  summarise(mean_lifeExp = mean(lifeExp)) |>
+  ungroup()
+```
+
+Then we can arrange the data frame in order of the average life expectancy for each country to view the countries with the lowest average life expectancy
+
 ```{r}
 lifeExp_bycountry |>
   arrange(mean_lifeExp) |>
-  head(1)
+  head()
+```
+
+To view the countries with the highest life expectancy, we can use the `desc()` function inside `arrange()` (or we can view the `tail()` of the previous data frame):
+
+```{r}
 lifeExp_bycountry |>
   arrange(desc(mean_lifeExp)) |>
-  head(1)
+  head()
 ```
 
-Alphabetical order works too
-```{r}
-lifeExp_bycountry |>
-  arrange(desc(country)) |>
-  head(1)
-```
+
+::: {.callout-tip}
+## Arranging by a character variable
+
+Applying `arrange()` to a character variable will present the rows in alphabetical order.
+
 :::
-:::
 
-The function `group_by()` allows us to group by multiple variables. Let's group by `year` and `continent`.
-
-
-```{r}
-gdp_bycontinents_byyear <- gapminder |>
-  group_by(continent, year) |>
-  summarize(mean_gdpPercap = mean(gdpPercap))
-```
-
-That is already quite powerful, but it gets even better! You're not limited to defining 1 new variable in `summarize()`.
-
-```{r}
-gdp_pop_bycontinents_byyear <- gapminder |>
-  group_by(continent, year) |>
-  summarize(mean_gdpPercap = mean(gdpPercap),
-            sd_gdpPercap = sd(gdpPercap),
-            mean_pop = mean(pop),
-            sd_pop = sd(pop))
-```
 
 ## count() and n()
 
@@ -305,70 +579,15 @@ gapminder |>
   count(continent, sort = TRUE)
 ```
 
-If we need to use the number of observations in calculations, the `n()` function
-is useful. It will return the total number of observations in the current group rather than counting the number of observations in each group within a specific column. For instance, if we wanted to get the standard error of the life expectency per continent:
+If we need to use the number of observations/rows in calculations, the `n()` function
+is useful. It will return the total number of observations in the current group rather than counting the number of observations in each group within a specific column. 
+
+For instance, if we wanted to get the standard error of the life expectancy per continent:
 
 ```{r}
 gapminder |>
   group_by(continent) |>
-  summarize(se_le = sd(lifeExp)/sqrt(n()))
-```
-
-You can also chain together several summary operations; in this case calculating the `minimum`, `maximum`, `mean` and `se` of each continent's per-country life-expectancy:
-
-```{r}
-gapminder |>
-  group_by(continent) |>
-  summarize(
-    mean_le = mean(lifeExp),
-    min_le = min(lifeExp),
-    max_le = max(lifeExp),
-    se_le = sd(lifeExp)/sqrt(n()))
-```
-
-## Using mutate()
-
-We can also create new variables prior to (or even after) summarizing information using `mutate()`.
-
-```{r}
-gdp_pop_bycontinents_byyear <- gapminder |>
-  mutate(gdp_billion = gdpPercap * pop / 10^9) |>
-  group_by(continent, year) |>
-  summarize(mean_gdpPercap = mean(gdpPercap),
-            sd_gdpPercap = sd(gdpPercap),
-            mean_pop = mean(pop),
-            sd_pop = sd(pop),
-            mean_gdp_billion = mean(gdp_billion),
-            sd_gdp_billion = sd(gdp_billion))
-```
-
-## Connect mutate with logical filtering: ifelse
-
-When creating new variables, we can hook this with a logical condition. A simple combination of
-`mutate()` and `ifelse()` facilitates filtering right where it is needed: in the moment of creating something new.
-This easy-to-read statement is a fast and powerful way of discarding certain data (even though the overall dimension
-of the data frame will not change) or for updating values depending on this given condition.
-
-```{r}
-## keeping all data but "filtering" after a certain condition
-# calculate GDP only for people with a life expectation above 25
-gdp_pop_bycontinents_byyear_above25 <- gapminder |>
-  mutate(gdp_billion = ifelse(lifeExp > 25, gdpPercap * pop / 10^9, NA)) |>
-  group_by(continent, year) |>
-  summarize(mean_gdpPercap = mean(gdpPercap),
-            sd_gdpPercap = sd(gdpPercap),
-            mean_pop = mean(pop),
-            sd_pop = sd(pop),
-            mean_gdp_billion = mean(gdp_billion),
-            sd_gdp_billion = sd(gdp_billion))
-
-## updating only if certain condition is fullfilled
-# for life expectations above 40 years, the gpd to be expected in the future is scaled
-gdp_future_bycontinents_byyear_high_lifeExp <- gapminder |>
-  mutate(gdp_futureExpectation = ifelse(lifeExp > 40, gdpPercap * 1.5, gdpPercap)) |>
-  group_by(continent, year) |>
-  summarize(mean_gdpPercap = mean(gdpPercap),
-            mean_gdpPercap_expected = mean(gdp_futureExpectation))
+  summarize(se_le = sd(lifeExp) / sqrt(n()))
 ```
 
 
@@ -377,21 +596,19 @@ gdp_future_bycontinents_byyear_high_lifeExp <- gapminder |>
 ::: {.callout}
 ## Advanced Challenge
 
-Calculate the average life expectancy in 2002 of 2 randomly selected countries
-for each continent. Then arrange the continent names in reverse order.
-**Hint:** Use the `dplyr` functions `arrange()` and `sample_n()`, they have
-similar syntax to other dplyr functions.
+Calculate the total GDP in billions (`gdpPercap * pop / 1e9`) for each continent in the year 2002 and in 2007. Which continent had the largest GDP in 2002? which had the smallest? What about in 2007?
+
 
 ::: {.callout collapse=true}
 ## Solution to Advanced Challenge
 
+One way to answer this question is:
 ```{r}
-lifeExp_2countries_bycontinents <- gapminder |>
-  filter(year == 2002) |>
-  group_by(continent) |>
-  sample_n(2) |>
-  summarize(mean_lifeExp = mean(lifeExp)) |>
-  arrange(desc(mean_lifeExp))
+gapminder |>
+  filter(year %in% c(1952, 2007)) |>
+  mutate(gdp = gdpPercap * pop / 1e9) |>
+  group_by(year, continent) |>
+  summarize(total_gdp = sum(gdp))
 ```
 :::
 :::
