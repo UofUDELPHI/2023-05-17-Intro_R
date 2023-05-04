@@ -1,0 +1,288 @@
+---
+title: Vectorization
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+# Silently load in the data so the rest of the lesson works
+gapminder <- read.csv("data/gapminder_data.csv")
+```
+
+
+## Vectorization 
+
+
+Most of R's functions are vectorized, meaning that the function will
+operate on all elements of a vector without needing to loop through
+and act on each element one at a time. This makes writing code more
+concise, easy to read, and less error prone.
+
+For example, applying multiplication to a vector will conduct the operation element-wise:
+
+```{r}
+x <- 1:4
+x * 2
+```
+
+We can also add two vectors together:
+
+```{r}
+y <- 6:9
+x + y
+```
+
+Each element of `x` was added to its corresponding element of `y`:
+
+```{r}
+#| eval: false
+x:  1  2  3  4
+    +  +  +  +
+y:  6  7  8  9
+---------------
+    7  9 11 13
+```
+
+
+::: {.callout}
+## Challenge 1
+
+Let's try this on the `weight` column of the `cats` dataset.
+Make a new column in the `cats` data frame that
+contains a "calibrated" weight measurement, corresponding to the original weight measurement weight minus 0.5.
+
+Check the head or tail of the data frame to make sure
+it worked.
+
+
+To define the cats data frame, run
+
+```{r}
+cats <- read.csv(file = "data/feline-data.csv")
+```
+
+
+::: {.callout collapse=true}
+## Solution to challenge 1
+
+
+```{r}
+cats$weight_calibrated <- cats$weight - 0.5
+head(cats)
+```
+:::
+:::
+
+Comparison operators, logical operators, and many functions are also
+vectorized:
+
+
+### Comparison operators
+
+Comparison operators applied to a vector will produce a boolean vector
+
+```{r}
+x
+x > 2
+```
+
+
+### Functions
+
+Most functions also operate element-wise on vectors:
+
+
+```{r}
+x <- 1:4
+x
+log(x)
+```
+
+
+::: {.callout}
+## Challenge 4
+
+We're interested in looking at the sum of the
+following sequence of fractions:
+
+```{r, eval=FALSE}
+x = 1/(1^2) + 1/(2^2) + 1/(3^2) + ... + 1/(n^2)
+```
+
+This would be tedious to type out, and impossible for high values of
+n.  Use vectorization to compute x when n = 100. What is the sum when
+n = 10,000?
+
+::: {.callout collapse=true}
+##  Solution to Challenge 4
+
+```{r}
+sum(1/(1:100)^2)
+sum(1/(1:1e04)^2)
+```
+
+We could do this for a general `n` using:
+
+```{r}
+n <- 10000
+sum(1/(1:n)^2)
+```
+
+:::
+:::
+
+
+::: {.callout-tip}
+## Tip: Operations on vectors of unequal length
+
+Operations can also be performed on vectors of unequal length, through
+a process known as *recycling*. This process automatically repeats the smaller vector 
+until it matches the length of the larger vector. R will provide a warning
+if the larger vector is not a multiple of the smaller vector.
+
+```{r}
+x <- c(1, 2, 3)
+y <- c(1, 2, 3, 4, 5, 6, 7)
+x + y
+```
+
+Vector `x` was recycled to match the length of vector `y`
+
+```{r, eval=FALSE}
+x:  1  2  3  1  2  3  1
+    +  +  +  +  +  +  +
+y:  1  2  3  4  5  6  7
+-----------------------
+    2  4  6  5  7  9  8
+```
+:::
+
+
+
+## Subsetting vectors using logical operations <a name="logical-operations"></a>
+
+We can also use any logical vector to subset:
+
+```{r}
+x[c(FALSE, FALSE, TRUE, FALSE, TRUE)]
+```
+
+Since comparison operators (e.g. `>`, `<`, `==`) evaluate to logical vectors, we can also
+use them to succinctly subset vectors: the following statement gives
+the same result as the previous one.
+
+```{r}
+x[x > 7]
+```
+
+Breaking it down, this statement first evaluates `x>7`, generating
+a logical vector `c(FALSE, FALSE, TRUE, FALSE, TRUE)`, and then
+selects the elements of `x` corresponding to the `TRUE` values.
+
+We can use `==` to mimic the previous method of indexing by name
+(remember you have to use `==` rather than `=` for comparisons):
+
+```{r}
+names(x) == "a"
+x[names(x) == "a"]
+```
+
+
+## Combining logical conditions
+
+We often want to combine multiple logical
+criteria. For example, we might want to find all the countries that are
+located in Asia **or** Europe **and** have life expectancies within a certain
+range. Several operations for combining logical vectors exist in R:
+
+* `&`, the "logical AND" operator: returns `TRUE` if both the left and right
+  are `TRUE`.
+
+* `|`, the "logical OR" operator: returns `TRUE`, if either the left or right
+  (or both) are `TRUE`.
+
+You may sometimes see `&&` and `||` instead of `&` and `|`. These two-character operators
+only look at the first element of each vector and ignore the
+remaining elements. In general you should not use the two-character
+operators in data analysis.
+
+* `!`, the "logical NOT" operator: converts `TRUE` to `FALSE` and `FALSE` to
+  `TRUE`. It can negate a single logical condition (eg `!TRUE` becomes
+  `FALSE`), or a whole vector of conditions(eg `!c(TRUE, FALSE)` becomes
+  `c(FALSE, TRUE)`).
+
+Additionally, you can compare the elements within a single vector using the
+`all` function (which returns `TRUE` if every element of the vector is `TRUE`)
+and the `any` function (which returns `TRUE` if one or more elements of the
+vector are `TRUE`).
+
+For example, the following code will only return the values of `x` that are equal to either 5.4 or 7 (since there is no value equal to 7, only the value equal to 5.4 will be returned):
+
+```{r}
+(x == 5.4) | (x == 7)
+
+x[(x == 5.4) | (x == 7)]
+```
+
+
+
+
+## The in operator `%in%`
+
+
+Another way to do this is to ask R to subset the values of `x` that are "in" a vector of values.
+
+
+```{r}
+x %in% c(5.4, 7)
+
+x[x %in% c(5.4, 7)]
+```
+
+::: {.callout-tip}
+## Tip: Getting help for operators
+
+Remember you can search for help on operators by wrapping them in quotes:
+`help("%in%")` or `?"%in%"`.
+:::
+
+
+::: {.callout}
+## Challenge 2
+
+Given the following code:
+
+```{r}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
+```
+Write a subsetting command to return the values in x that are greater than 4 and less than 7.
+
+::: {.callout collapse=true}
+## Solution to challenge 2
+
+```{r}
+x[x < 7 & x > 4]
+```
+:::
+:::
+
+
+::: {.callout-tip}
+
+## Tip: Non-unique names
+
+It is possible for multiple elements in a vector to have the same name. (For a data frame, columns can have
+the same name too.) Consider these examples:
+
+```{r}
+x <- 1:3
+x
+names(x) <- c('a', 'a', 'a')
+x
+x['a']  # only returns first value
+x[names(x) == 'a']  # returns all three values
+```
+:::

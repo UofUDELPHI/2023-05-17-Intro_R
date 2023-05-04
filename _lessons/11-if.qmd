@@ -1,0 +1,126 @@
+---
+title: If statements
+embed-resources: true
+---
+
+```{r, include = FALSE}
+# Silently load in the data so the rest of the lesson works
+gapminder <- read.csv("data/gapminder_data.csv")
+# Silently set seed for random number generation, so we don't have to explain it
+set.seed(10)
+```
+
+Often when we're coding we want to "control the flow" of our actions. This can be done
+by setting actions to occur only if a condition or a set of conditions are met.
+Alternatively, we can also set an action to occur a particular number of times.
+
+## "If" statements
+
+There are several ways you can control flow in R.
+For conditional statements, the most commonly used approaches are the constructs:
+
+```{r}
+#| eval: false
+# if
+if (condition is true) {
+  perform action
+}
+
+# if ... else
+if (condition is true) {
+  perform action
+} else {  # that is, if the condition is false,
+  perform alternative action
+}
+```
+
+Say, for example, that we want R to print a message if a variable `x` has a particular value:
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+}
+
+```
+
+The print statement does not appear in the console because x (8) is not greater than 10. To print a different message for numbers less than 10, we can add an `else` statement.
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else {
+  print("x is less than 10")
+}
+```
+
+You can also test multiple conditions by using `else if`.
+
+```{r}
+x <- 8
+
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else if (x > 5) {
+  print("x is greater than 5, but less than 10")
+} else {
+  print("x is less than 5")
+}
+```
+
+**Important:** when R evaluates the condition inside `if()` statements, it is
+looking for a logical value (`TRUE` or `FALSE`).
+
+
+::: {.callout-tip}
+## If statements in functions
+
+If statements might not seem all that useful on their own, but they are incredibly useful for writing *functions* (as we will learn in the next lesson).
+:::
+
+
+::: {.callout}
+## Challenge 1
+
+Use an `if()` statement to print a suitable message
+reporting whether there are any records from 2002 in
+the `gapminder` dataset.
+
+::: {.callout collapse=true}
+## Solution to Challenge 1
+
+We first obtain a logical vector describing which element of `gapminder$year` is equal to `2002`:
+
+```{r}
+if (2002 %in% gapminder$year) {
+  print("Record(s) for the year 2002 found.")
+}
+```
+:::
+:::
+
+::: {.callout-tip}
+## Tip: A common error with `if()` statements
+
+A common error with `if()` statements looks like:
+
+```{r}
+#| error: true
+#| echo: false
+
+if (gapminder$year == 2012) {}
+```
+
+The `if()` function only accepts singular (of length 1) inputs, and therefore
+returns an error when you supply it with a vector. 
+
+The `if()` function will still run, but will only evaluate the condition in the first element of the vector.
+
+Therefore, to use the `if()` function, you need to make sure your input is a single value (of length 1), rather than a vector.
+:::
+
+
+

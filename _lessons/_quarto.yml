@@ -10,15 +10,16 @@ book:
     - 02-project-intro.qmd
     - 03-r-intro.qmd
     - 04-vectors_types.qmd
-    - 05-vectorization.qmd
-    - 06-data-frames.qmd
-    - 07-dplyr.qmd
-    - 08-lists.qmd
-    - 09-functions.qmd
-    - 10-if.qmd
-    - 11-iteration.qmd
-    - 12-plot-ggplot2.qmd
-    - 13-tidyr.qmd
+    - 05-subsetting-vectors.qmd
+    - 06-vectorization.qmd
+    - 07-subsetting-data-frames.qmd
+    - 08-dplyr.qmd
+    - 09-lists.qmd
+    - 10-functions.qmd
+    - 11-if.qmd
+    - 12-iteration.qmd
+    - 13-plot-ggplot2.qmd
+    - 14-tidyr.qmd
 
 format:
   html:

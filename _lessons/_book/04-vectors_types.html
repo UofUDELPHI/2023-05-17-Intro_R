@@ -1462,7 +1462,7 @@ function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="./">
-<link href="./05-vectorization.html" rel="next">
+<link href="./05-subsetting-vectors.html" rel="next">
 <link href="./03-r-intro.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
@@ -4045,47 +4045,52 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-vectorization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectorization</span></a>
+  <a href="./05-subsetting-vectors.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Subsetting vectors</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-data-frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data frames</span></a>
+  <a href="./06-vectorization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vectorization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-dplyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Frame Manipulation with dplyr</span></a>
+  <a href="./07-subsetting-data-frames.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Subsetting data frames</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lists</span></a>
+  <a href="./08-dplyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Frame Manipulation with dplyr</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-functions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Functions</span></a>
+  <a href="./09-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lists</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-if.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">If statements</span></a>
+  <a href="./10-functions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
+  <a href="./11-if.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">If statements</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data visualization with ggplot2</span></a>
+  <a href="./12-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reshaping data frames with tidyr</span></a>
+  <a href="./13-plot-ggplot2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data visualization with ggplot2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Reshaping data frames with tidyr</span></a>
   </div>
 </li>
     </ul>
@@ -4104,12 +4109,7 @@ vertical-align: -.125em;
   <li><a href="#the-type-hierarchy" id="toc-the-type-hierarchy" class="nav-link" data-scroll-target="#the-type-hierarchy"><span class="toc-section-number">4.2.2</span>  The type hierarchy</a></li>
   </ul></li>
   <li><a href="#some-basic-functions-for-creating-vectors" id="toc-some-basic-functions-for-creating-vectors" class="nav-link" data-scroll-target="#some-basic-functions-for-creating-vectors"><span class="toc-section-number">4.4</span>  Some basic functions for creating vectors</a></li>
-  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names"><span class="toc-section-number">5</span>  Names</a>
-  <ul class="collapse">
-  <li><a href="#accessing-vectors-by-name" id="toc-accessing-vectors-by-name" class="nav-link" data-scroll-target="#accessing-vectors-by-name"><span class="toc-section-number">5.1</span>  Accessing vectors by name</a></li>
-  <li><a href="#accessing-and-changing-vector-names" id="toc-accessing-and-changing-vector-names" class="nav-link" data-scroll-target="#accessing-and-changing-vector-names"><span class="toc-section-number">5.2</span>  Accessing and changing vector names</a></li>
-  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="toc-section-number">5.3</span>  Factors</a></li>
-  </ul></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="toc-section-number">4.5</span>  Factors</a></li>
   </ul>
 </nav>
     </div>
@@ -4200,7 +4200,7 @@ Tip: <code>read.table()</code> and delimiters
 </div>
 </div>
 <p>Each column is a <em>vector</em>.</p>
-<p>We can do other operations on the columns, such as:</p>
+<p>There are lots of operations that we can do on vectors, such as:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Say we discovered that the scale weighs two Kg light:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>weight <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4222,7 +4222,7 @@ Tip: <code>read.table()</code> and delimiters
 <p>Understanding what happened here is key to successfully analyzing data in R.</p>
 <section id="data-types" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="data-types"><span class="header-section-number">4.1</span> Data Types</h2>
-<p>If you guessed that the last command will return an error because <code>2.1</code> plus <code>"black"</code> is nonsense, you’re right - and you already have some intuition for an important concept in programming called <em>data types</em>. We can ask what type or “class” of data something is:</p>
+<p>If you guessed that the last command will return an error because <code>2.1</code> plus <code>"black"</code> is nonsense, you’re right - and you already have some intuition for an important concept in programming called <em>data types</em>. We can ask what type or “class” or “type” of data something is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4286,7 +4286,7 @@ Tip: <code>read.table()</code> and delimiters
  $ likes_string: int  1 0 1</code></pre>
 </div>
 </div>
-<p><em>Data frames</em> are composed of rows and columns, where each column has the same number of rows. Different columns in a data frame can be made up of different data types (this is what makes them so versatile), but everything in a given column needs to be the same type (e.g., numeric, character, logical, etc).</p>
+<p><em>Data frames</em> are composed of rows and columns, where each column is a vector of the same length. Different columns in a data frame can be made up of different data types (this is what makes them so versatile), but everything in a given column needs to be the same type (e.g., numeric, character, logical, etc).</p>
 <p>Let’s explore more about different data structures and how they behave. For now, let’s go back to working with the original <code>feline-data.csv</code> file while we investigate this behavior further:</p>
 <p><code>feline-data.csv</code>:</p>
 <pre><code>coat,weight,likes_string
@@ -4705,239 +4705,36 @@ Solution to Challenge 1.5
 <pre><code>[1] "integer"</code></pre>
 </div>
 </div>
-<p>We can extract individual elements of a vector by using the square bracket notation:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>first_element <span class="ot">&lt;-</span> sequence_example[<span class="dv">1</span>]</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>first_element</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 20</code></pre>
-</div>
-</div>
-<p>To change a single element, use the bracket on the other side of the arrow:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>sequence_example[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>sequence_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 30 21 22 23 24 25</code></pre>
-</div>
-</div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Challenge 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Start by making a vector with the numbers 5 through 26. Then:</p>
-<ul>
-<li><p>Print out the first three entries of the vector</p></li>
-<li><p>Extract the fourth entry of the vector</p></li>
-<li><p>Multiply the vector by 2.</p></li>
-</ul>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Solution to Challenge 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">26</span></span>
-<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(x, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5 6 7</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="names" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Names</h1>
-<p>With names, we can give meaning to elements. It is the first time that we do not only have the <strong>data</strong>, but also explaining information. It is <em>metadata</em> that can be stuck to the object like a label. In R, this is called an <strong>attribute</strong>. Some attributes enable us to do more with our object, for example, like here, accessing an element by a self-defined name.</p>
-<section id="accessing-vectors-by-name" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="accessing-vectors-by-name"><span class="header-section-number">5.1</span> Accessing vectors by name</h2>
-<p>Each element of a vector can be given a name:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>pizza_price <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">pizzasubito =</span> <span class="fl">5.64</span>, <span class="at">pizzafresh =</span> <span class="fl">6.60</span>, <span class="at">callapizza =</span> <span class="fl">4.50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To retrieve a specific named entry from a vector, we can use the square bracket notation:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="st">"pizzasubito"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>pizzasubito 
-       5.64 </code></pre>
-</div>
-</div>
-<p>which is equivalent to extracting the first entry of the vector:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>pizzasubito 
-       5.64 </code></pre>
-</div>
-</div>
-</section>
-<section id="accessing-and-changing-vector-names" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="accessing-and-changing-vector-names"><span class="header-section-number">5.2</span> Accessing and changing vector names</h2>
-<p>If you want to extract just the names of an object, use the <code>names()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "pizzasubito" "pizzafresh"  "callapizza" </code></pre>
-</div>
-</div>
-<p>We have seen how to access and change single elements of a vector. The same is possible for names:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "callapizza"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"call-a-pizza"</span></span>
-<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>pizza_price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> pizzasubito   pizzafresh call-a-pizza 
-        5.64         6.60         4.50 </code></pre>
-</div>
-</div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Challenge 3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the data type of the names of <code>pizza_price</code>? You can find out using the <code>str()</code> or <code>class()</code> functions.</p>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Solution to Challenge 3
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You get the names of an object by wrapping the object name inside <code>names(...)</code>. Similarly, you get the data type of the names by again wrapping the whole code in <code>class(...)</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">names</span>(pizza_price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-</div>
-<p>alternatively, use a new variable if this is easier for you to read:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">names</span>(pizza_price)</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Challenge 4
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Instead of just changing the names of each element of a vector individually, you can also set all names of an object by writing code like (replace ALL CAPS text):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>( OBJECT ) <span class="ot">&lt;-</span>  CHARACTER_VECTOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Create a vector that gives the number for each letter in the alphabet!</p>
-<ol type="1">
-<li>Generate a vector called <code>letter_no</code> with the sequence of numbers from 1 to 26</li>
-<li>R has a built-in object called <code>LETTERS</code> (type <code>LETTERS</code> in the console. It is a 26-character vector of uppercase letters from A to Z. Set the names of <code>letter_no</code> to these 26 letters</li>
-<li>Test yourself by calling <code>letter_no["B"]</code>, which should give you the number 2!</li>
-</ol>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Solution to Challenge 4
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>letter_no <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>   <span class="co"># or seq(1,26)</span></span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(letter_no) <span class="ot">&lt;-</span> LETTERS</span>
-<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>letter_no[<span class="st">"B"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>B 
-2 </code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="factors" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="factors"><span class="header-section-number">5.3</span> Factors</h2>
+<section id="factors" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="factors"><span class="header-section-number">4.5</span> Factors</h2>
 <p>Let’s consider a new data type: the factor.</p>
 <p>For an object containing the data type <code>factor</code>, each different value represents what is called a <code>level</code>, and is often how categorical variables/columns whose values can have a finite set of options will be formatted.</p>
 <p>Can you identify any categorical variables in the <code>cats</code> data frame? What about the <code>coat</code> variables?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "calico" "black"  "tabby" </code></pre>
 </div>
 </div>
 <p>The <code>coat</code> variable is currently formatted as a character variable</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
 <p>but we can convert it to a factor using the <code>as.factor()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(cats<span class="sc">$</span>coat)</span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(cats<span class="sc">$</span>coat)</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
 </div>
 <p>Let’s take a look at the factor-formatted <code>coat</code> column:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>coat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] calico black  tabby 
 Levels: black calico tabby</code></pre>
@@ -4947,15 +4744,15 @@ Levels: black calico tabby</code></pre>
 <p>One common pitfall occurs when converting numerically coded factors to numeric type.</p>
 <p>If we convert a <code>coat</code> to a numeric type, it replaces each level with a number in the order that the levels are defined (the default is alphabetical order):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 1 3</code></pre>
 </div>
 </div>
 <p>But if the factor levels are themselves numbers,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>factor_weight <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(cats<span class="sc">$</span>weight)</span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>factor_weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>factor_weight <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(cats<span class="sc">$</span>weight)</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>factor_weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.1 5   3.2
 Levels: 2.1 3.2 5</code></pre>
@@ -4963,7 +4760,7 @@ Levels: 2.1 3.2 5</code></pre>
 </div>
 <p>and we convert this numeric factor to a numeric type, the numeric information will be lost:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(factor_weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(factor_weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 3 2</code></pre>
 </div>
@@ -4971,7 +4768,6 @@ Levels: 2.1 3.2 5</code></pre>
 <p>Fortunately, factor and character types behave fairly similarly across most applications, so it <em>usually</em> won’t matter which format your categorical variables are encoded as, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -5115,8 +4911,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-vectorization.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vectorization</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-subsetting-vectors.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Subsetting vectors</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

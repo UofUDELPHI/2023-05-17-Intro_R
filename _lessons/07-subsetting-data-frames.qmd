@@ -1,0 +1,412 @@
+---
+title: "Subsetting data frames"
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+# We don't want factors
+options(stringsAsFactors = FALSE)
+
+## Save the data. Do not create factors from strings (explicit argument
+## only necessary for R < 4.0.0)
+cats_orig <- data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1),
+                   stringsAsFactors = FALSE)
+cats_bad <- data.frame(coat = c("calico", "black", "tabby", "tabby"),
+                   weight = c(2.1, 5.0, 3.2, '2.3 or 2.4'),
+                   likes_string = c(1, 0, 1, 1), 
+                   stringsAsFactors = FALSE)
+cats <- cats_orig
+```
+
+
+# Data frames
+
+Data frames represent
+a table of data. Recall our `cats` data frame:
+
+```{r}
+cats <-  data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1))
+cats
+```
+
+
+Columns of a data frame are vectors of different types, *each of the same length*, that are organized 
+by belonging to the same table.
+
+In our `cats` example, we have a character, a numeric, and a logical column/variable. As
+we have seen already, each column of data.frame is a vector.
+
+## Extracting columns from a data frame
+
+### The dollar sign syntax `$`
+
+There are several ways to extract an individual column in a data frame, including using the `$` notation for extracting columns by name:
+
+```{r}
+cats$coat
+```
+
+
+This approach returns the column as a *vector*.
+
+### The square bracket syntax with two dimensions `[,]`
+
+A column can also be accessed using the square bracket notation with two dimensions:
+
+```{r}
+cats[, 1]
+```
+
+The syntax `df[i, j]` to extract the entry in the `i`th row and the `j`th column from the data frame called `df`.  For example, `df[3, 1]` will extract the single entry in the third row and first column.
+
+A blank `i` or `j` this tells R to extract *all* of the rows or columns, respectively. That is, `df[, 1]` will extract all rows for the 1st column, and `df[2, ]` will extract the second row across all columns.
+
+- `df[, j]` will extract the `j`th *column* from the data frame called `df` as a *vector*.
+
+- `df[i, ]` will extract the `i`th *row* from the data frame called `df` as a *data frame*.
+
+For example the following code extracts the data from the second column of `cats` as a *vector*
+
+```{r}
+cats[, 2]
+```
+
+and the following code extracts the second *row* of `cats` as a *data frame*:
+
+```{r}
+cats[2, ]
+```
+
+### The square bracket syntax with one dimension `[]`
+
+Note, to extract the $j$th *column*, you can alternatively use the single-dimension square bracket syntax: `df[j]`. 
+
+```{r}
+cats[2]
+```
+
+This syntax also works with *named* indexing. 
+
+```{r}
+cats["weight"]
+```
+
+This, however, returns a one-dimensional data frame, rather than a vector.
+
+
+### The double bracket syntax with one dimension `[[]]`
+
+
+Finally, another way to extract a column from a data frame is using the double bracket syntax `[[]]`:
+
+```{r}
+cats[[2]]
+```
+
+This also works with named indexing:
+
+```{r}
+cats[["weight"]]
+```
+
+
+Can you see how the output of indexing with this `[[]]` syntax differs from the single bracket syntax `[]`? 
+
+The double bracket syntax `[[]]` returns the column as a vector, whereas the single bracket syntax `[]` returns the column as a single-column data frame. 
+
+
+
+
+::: {.callout}
+
+## Challenge 5
+
+There are several subtly different ways to extract observations and
+elements from data.frames:
+
+- `cats[1]`
+- `cats$coat`
+- `cats["coat"]`
+- `cats[1, 1]`
+- `cats[, 1]`
+- `cats[1, ]`
+
+Try out these examples and explain what is returned by each one.
+
+*Hint:* Use the function `class()` to examine what is returned in each case.
+
+::: {.callout collapse=true}
+## Solution to Challenge 5
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1]
+```
+
+The single brace `[1]` returns the first column of the data frame as a *one-column data frame* (this will make more sense once we introduce lists). 
+
+The `$` notation, however, lets us extract a column by name as a *vector*.
+
+```{r, eval=TRUE, echo=TRUE}
+cats$coat
+```
+
+
+Like for vectors, we can also use the single brace notation with named indexing:
+
+```{r, eval=TRUE, echo=TRUE}
+cats["coat"]
+```
+
+Here we are using a single brace `["coat"]` replacing the index number with
+the column name. Like example 1, the returned object is a data frame.
+
+Next,
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1, 1]
+```
+
+This example uses a single brace, but this time we provide row and column
+coordinates. The returned object is the value in row 1, column 1. The object
+is a _vector_ of type _character_.
+
+
+What about:
+
+```{r, eval=TRUE, echo=TRUE}
+cats[, 1]
+```
+
+Like the previous example we use single braces and provide row and column
+coordinates. The row coordinate is not specified, R interprets this missing
+value as all the elements in this _column_ and returns them as a _vector_.
+
+```{r, eval=TRUE, echo=TRUE}
+cats[1, ]
+```
+
+Again we use the single brace with row and column coordinates. The column
+coordinate is not specified. The return value is a _list_ containing all the
+values in the first row.
+:::
+:::
+
+
+::: {.callout-tip}
+## Tip: Renaming data frame columns
+Like vectors, data frames have column names, which can be accessed with the `names()` function.
+
+```{r}
+names(cats)
+```
+
+If you want to rename the second column of `cats`, you can assign a new name to the second element of `names(cats)`.
+
+```{r}
+names(cats)[2] <- "weight_kg"
+cats
+```
+:::
+
+
+
+::: {.callout-tip}
+## Tip: select and rename
+
+In the dplyr lesson, you will learn another method of extracting columns of a data frame and renaming them using the `select()` and `rename()` functions from the dplyr package in the tidyverse suite.
+:::
+
+
+## Extracting multiple columns (and rows)
+
+The square bracket syntaxes (but not the `$` syntax) options allow us to select multiple columns at once:
+
+Can you guess what the following code will return?
+
+```{r}
+cats[1:2]
+```
+
+```{r}
+cats[c(3, 1), 3]
+```
+
+
+Like for vectors, we can also subset using logical operations:
+
+The following code will select only the rows where the cat's weight is at least 3
+
+```{r}
+cats$weight > 3
+cats[cats$weight > 3, ]
+```
+
+The following code will select only the rows where the cat's coat is tabby or calico:
+
+```{r}
+cats[cats$coat %in% c("tabby", "calico"), ]
+```
+
+
+
+```{r, include=FALSE}
+# reverting cats back to original version
+cats <- cats_orig
+```
+
+
+## Gapminder example
+
+
+Let's move away from `cats` to a more interesting data example: gapminder
+
+```{r}
+gapminder <- read.csv("data/gapminder_data.csv")
+```
+
+The gapminder dataset contains information on the population, life expectency, GDP per capita for a range of country-year combinations:
+
+```{r}
+head(gapminder)
+```
+
+```{r}
+dim(gapminder)
+```
+
+
+::: {.callout}
+## Challenge 6
+
+Each of the following pieces of code are incorrect. Identify the error and fix each of the following common data frame subsetting errors:
+
+1. Extract observations collected for the year 1957
+  
+```{r, eval=FALSE}
+gapminder[gapminder$year = 1957, ]
+```
+
+2. Extract all columns except 1 through to 4
+
+```{r, eval=FALSE}
+gapminder[, -1:4]
+```
+
+3. Extract the rows where the life expectancy is longer the 80 years
+
+```{r, eval=FALSE}
+gapminder[gapminder$lifeExp > 80]
+```
+
+4. Extract the first row, and the fourth and fifth columns (`continent` and `lifeExp`).
+
+```{r, eval=FALSE}
+gapminder[1, 4, 5]
+```
+
+5. Advanced: extract rows that contain information for the years 2002 and 2007
+  
+```{r, eval=FALSE}
+gapminder[gapminder$year == 2002 | 2007, ]
+```
+
+::: {.callout collapse=true}
+## Solution to challenge 6
+Fix each of the following common data frame subsetting errors:
+
+1. Extract observations collected for the year 1957
+
+```{r, eval=FALSE}
+# gapminder[gapminder$year = 1957, ]
+gapminder[gapminder$year == 1957, ]
+```
+
+2. Extract all columns except 1 through to 4
+
+```{r, eval=FALSE}
+# gapminder[, -1:4]
+gapminder[, -c(1:4)]
+```
+
+3. Extract the rows where the life expectancy is longer than 80 years
+```{r, eval=FALSE}
+# gapminder[gapminder$lifeExp > 80]
+gapminder[gapminder$lifeExp > 80, ]
+```
+
+4. Extract the first row, and the fourth and fifth columns (`continent` and `lifeExp`).
+
+```{r, eval=FALSE}
+# gapminder[1, 4, 5]
+gapminder[1, c(4, 5)]
+```
+
+5. Advanced: extract rows that contain information for the years 2002 and 2007
+
+```{r, eval=FALSE}
+# gapminder[gapminder$year == 2002 | 2007, ]
+gapminder[gapminder$year == 2002 | gapminder$year == 2007, ]
+# or
+gapminder[gapminder$year %in% c(2002, 2007), ]
+```
+
+:::
+:::
+
+
+
+::: {.callout}
+
+## Challenge 3
+Selecting elements of a vector that match "any of" a list of components
+is a very common data analysis task. 
+
+Suppose we want to pull out information from Southeast Asia, which includes the countries of Myanmar, Thailand, Cambodia, Vietnam, and Laos. 
+
+Your task is to subset the data just to the rows that include the countries in Southeast Asia
+
+1. Define a logical vector that is `TRUE` for all of the countries in southeast Asia and `FALSE` otherwise. 
+
+2. Use this logical vector to extract just the rows for Southeast Asia from the gapminder dataset.
+
+
+::: {.callout collapse=true}
+## Solution to challenge 3
+
+```{r}
+se_asia = gapminder$country %in% c("Myanmar", "Thailand", "Cambodia", "Vietnam", "Laos")
+gapminder[se_asia, ]
+```
+
+:::
+:::
+
+
+::: {.callout}
+## Challenge 7
+1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
+
+2. Create a new `data.frame` called `gapminder_subset` that only contains rows 1 through 9
+and rows 19 through 23.
+
+::: {.callout collapse=true}
+## Solution to challenge 7
+
+1.  `gapminder[1:20]` tries to extract the first 20 columns, but there are not 20 columns. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
+
+2. 
+
+```{r}
+gapminder_subset <- gapminder[c(1:9, 19:23), ]
+```
+:::
+:::
+
+

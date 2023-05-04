@@ -92,13 +92,14 @@ cats$coat
 
 Each column is a *vector*. 
 
-We can do other operations on the columns, such as:
+There are lots of operations that we can do on vectors, such as:
 
 ```{r}
 ## Say we discovered that the scale weighs two Kg light:
 cats$weight + 2
 paste("My cat is", cats$coat)
 ```
+
 
 But what about:
 
@@ -113,7 +114,7 @@ Understanding what happened here is key to successfully analyzing data in R.
 
 If you guessed that the last command will return an error because `2.1` plus
 `"black"` is nonsense, you're right - and you already have some intuition for an
-important concept in programming called *data types*. We can ask what type or "class" of
+important concept in programming called *data types*. We can ask what type or "class" or "type" of
 data something is:
 
 ```{r}
@@ -182,8 +183,8 @@ is written by the `str()` function:
 str(cats)
 ```
 
-*Data frames* are composed of rows and columns, where each column has the 
-same number of rows. Different columns in a data frame can be made up of different 
+*Data frames* are composed of rows and columns, where each column is a vector of the same length. 
+Different columns in a data frame can be made up of different 
 data types (this is what makes them so versatile), but everything in a given
 column needs to be the same type (e.g., numeric, character, logical, etc).
 
@@ -494,154 +495,6 @@ And the `class()` function reports the class/type of the values in the vector:
 ```{r}
 class(sequence_example)
 ```
-
-We can extract individual elements of a vector by using the square bracket notation:
-
-```{r}
-first_element <- sequence_example[1]
-first_element
-```
-
-To change a single element, use the bracket on the other side of the arrow:
-
-```{r}
-sequence_example[1] <- 30
-sequence_example
-```
-
-::: {.callout}
-## Challenge 2
-
-Start by making a vector with the numbers 5 through 26. Then:
-
-- Print out the first three entries of the vector
-
-- Extract the fourth entry of the vector
-
-- Multiply the vector by 2.
-
-::: {.callout collapse=true}
-
-## Solution to Challenge 2
-
-```{r}
-x <- 5:26
-head(x, 3)
-x[4]
-x <- x * 2
-x
-```
-:::
-:::
-
-
-
-# Names
-
-With names, we can give meaning to elements. It is the first time that we do not
-only have the **data**, but also explaining information. It is *metadata*
-that can be stuck to the object like a label. In R, this is called an
-**attribute**. Some attributes enable us to do more with our
-object, for example, like here, accessing an element by a self-defined name.
-
-## Accessing vectors by name
-
-Each element of a vector can be given a name:
-
-```{r}
-pizza_price <- c(pizzasubito = 5.64, pizzafresh = 6.60, callapizza = 4.50)
-```
-
-To retrieve a specific named entry from a vector, we can use the square bracket notation:
-
-```{r}
-pizza_price["pizzasubito"]
-```
-
-which is equivalent to extracting the first entry of the vector:
-
-```{r}
-pizza_price[1]
-```
-
-
-
-## Accessing and changing vector names 
-
-If you want to extract just the names of an object, use the `names()` function:
-
-```{r}
-names(pizza_price)
-```
-
-We have seen how to access and change single elements of a vector. The same is
-possible for names:
-
-```{r}
-names(pizza_price)[3]
-names(pizza_price)[3] <- "call-a-pizza"
-pizza_price
-```
-
-::: {.callout}
-## Challenge 3
-
-What is the data type of the names of `pizza_price`? You can find out 
- using the `str()` or `class()` functions.
-
-
-::: {.callout collapse=true}
-## Solution to Challenge 3
-
-You get the names of an object by wrapping the object name inside
-`names(...)`. Similarly, you get the data type of the names by again 
-wrapping the whole code in `class(...)`:
-
-```{r}
-class(names(pizza_price))
-```
-
-alternatively, use a new variable if this is easier for you to read: 
-
-```{r}
-names <- names(pizza_price)
-class(names)
-```
-:::
-:::
-
-::: {.callout}
-
-## Challenge 4
-
-Instead of just changing the names of each element of a vector individually, you can
-also set all names of an object by writing code like (replace ALL CAPS text):
-
-```{r}
-#| eval: false
-names( OBJECT ) <-  CHARACTER_VECTOR
-```
-
-Create a vector that gives the number for each letter in the alphabet!
-
-1. Generate a vector called `letter_no` with the sequence of numbers from 1
-  to 26
-2. R has a built-in object called `LETTERS` (type `LETTERS` in the console. It is a 26-character vector of uppercase letters from 
-  A to Z. Set the names of `letter_no` to these 26 letters
-3. Test yourself by calling `letter_no["B"]`, which should give you the number
-  2!
-  
-::: {.callout collapse=true}
-## Solution to Challenge 4
-
-```{r}
-letter_no <- 1:26   # or seq(1,26)
-names(letter_no) <- LETTERS
-letter_no["B"]
-```
-:::
-:::
-
 
 
 ## Factors
