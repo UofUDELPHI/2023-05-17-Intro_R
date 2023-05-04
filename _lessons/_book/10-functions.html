@@ -1462,7 +1462,7 @@ function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="./">
-<link href="./11-if.html" rel="next">
+<link href="./11-lists.html" rel="next">
 <link href="./09-plot-ggplot2.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
@@ -4075,22 +4075,17 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-if.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">If statements</span></a>
+  <a href="./11-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lists</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-lists.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lists</span></a>
+  <a href="./12-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Iteration with for loops and map functions</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./14-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Reshaping data frames with tidyr</span></a>
+  <a href="./13-tidyr.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reshaping data frames with tidyr</span></a>
   </div>
 </li>
     </ul>
@@ -4106,9 +4101,9 @@ vertical-align: -.125em;
   <li><a href="#combining-functions" id="toc-combining-functions" class="nav-link" data-scroll-target="#combining-functions"><span class="toc-section-number">10.2</span>  Combining functions</a></li>
   <li><a href="#interlude-defensive-programming" id="toc-interlude-defensive-programming" class="nav-link" data-scroll-target="#interlude-defensive-programming"><span class="toc-section-number">10.3</span>  Interlude: Defensive Programming</a>
   <ul class="collapse">
-  <li><a href="#checking-conditions-with-stopifnot" id="toc-checking-conditions-with-stopifnot" class="nav-link" data-scroll-target="#checking-conditions-with-stopifnot"><span class="toc-section-number">10.3.1</span>  Checking conditions with <code>stopifnot()</code></a></li>
+  <li><a href="#checking-conditions-with-stop" id="toc-checking-conditions-with-stop" class="nav-link" data-scroll-target="#checking-conditions-with-stop"><span class="toc-section-number">10.3.1</span>  Checking conditions with <code>stop()</code></a></li>
   </ul></li>
-  <li><a href="#more-on-combining-functions" id="toc-more-on-combining-functions" class="nav-link" data-scroll-target="#more-on-combining-functions"><span class="toc-section-number">10.4</span>  More on combining functions</a></li>
+  <li><a href="#an-advanced-example" id="toc-an-advanced-example" class="nav-link" data-scroll-target="#an-advanced-example"><span class="toc-section-number">10.4</span>  An advanced example</a></li>
   </ul>
 </nav>
     </div>
@@ -4295,8 +4290,8 @@ Solution to challenge 2
 <section id="interlude-defensive-programming" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="interlude-defensive-programming"><span class="header-section-number">10.3</span> Interlude: Defensive Programming</h2>
 <p>Now that we’ve begun to appreciate how writing functions provides an efficient way to make R code re-usable and modular, we should note that it is important to ensure that functions only work in their intended use-cases. Checking function parameters is related to the concept of <em>defensive programming</em>. Defensive programming encourages us to frequently check conditions and throw an error if something is wrong. These checks are referred to as assertion statements because we want to assert some condition is <code>TRUE</code> before proceeding. They make it easier to debug because they give us a better idea of where the errors originate.</p>
-<section id="checking-conditions-with-stopifnot" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="checking-conditions-with-stopifnot"><span class="header-section-number">10.3.1</span> Checking conditions with <code>stopifnot()</code></h3>
+<section id="checking-conditions-with-stop" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="checking-conditions-with-stop"><span class="header-section-number">10.3.1</span> Checking conditions with <code>stop()</code></h3>
 <p>Let’s start by re-examining <code>fahr_to_kelvin()</code>, our function for converting temperatures from Fahrenheit to Kelvin. It was defined like so:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fahr_to_kelvin <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
@@ -4304,7 +4299,8 @@ Solution to challenge 2
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kelvin)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For this function to work as intended, the argument <code>temp</code> must be a <code>numeric</code> value; otherwise, the mathematical procedure for converting between the two temperature scales will not work. To create an error, we can use the function <code>stop()</code>. For example, since the argument <code>temp</code> must be a <code>numeric</code> vector, we could check for this condition with an <code>if</code> statement and throw an error if the condition was violated. We could augment our function above like so:</p>
+<p>For this function to work as intended, the argument <code>temp</code> must be a <code>numeric</code> value; otherwise, the mathematical procedure for converting between the two temperature scales will not work.</p>
+<p>To create an error, we can use the function <code>stop()</code>. For example, since the argument <code>temp</code> must be a <code>numeric</code> vector, we could check for this condition with an <code>if</code> statement and throw an error if the condition was violated. We could augment our function above like so:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fahr_to_kelvin <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(temp)) {</span>
@@ -4314,30 +4310,99 @@ Solution to challenge 2
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kelvin)</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahr_to_kelvin</span>(<span class="st">"one"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in fahr_to_kelvin("one"): temp must be a numeric vector.</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+“If” statements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are several ways you can control flow in R. For conditional statements, the most commonly used approaches are the constructs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition is true) {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  perform action</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># if ... else</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition is true) {</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  perform action</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {  <span class="co"># that is, if the condition is false,</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  perform alternative action</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Say, for example, that we want R to print a message if a variable <code>x</code> has a particular value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is greater than or equal to 10"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The print statement does not appear in the console because x (8) is not greater than 10. To print a different message for numbers less than 10, we can add an <code>else</code> statement.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is greater than or equal to 10"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is less than 10"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x is less than 10"</code></pre>
+</div>
+</div>
+<p>You can also test multiple conditions by using <code>else if</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is greater than or equal to 10"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is greater than 5, but less than 10"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is less than 5"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x is greater than 5, but less than 10"</code></pre>
+</div>
+</div>
+<p><strong>Important:</strong> when R evaluates the condition inside <code>if()</code> statements, it is looking for a logical value (<code>TRUE</code> or <code>FALSE</code>).</p>
+</div>
+</div>
 <p>If we had multiple conditions or arguments to check, it would take many lines of code to check all of them. Luckily R provides the convenience function <code>stopifnot()</code>. We can list as many requirements that should evaluate to <code>TRUE</code>; <code>stopifnot()</code> throws an error if it finds one that is <code>FALSE</code>. Listing these conditions also serves a secondary purpose as extra documentation for the function.</p>
 <p>Let’s try out defensive programming with <code>stopifnot()</code> by adding assertions to check the input to our function <code>fahr_to_kelvin()</code>.</p>
 <p>We want to assert the following: <code>temp</code> is a numeric vector. We may do that like so:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fahr_to_kelvin <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(temp))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  kelvin <span class="ot">&lt;-</span> ((temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>)) <span class="sc">+</span> <span class="fl">273.15</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kelvin)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fahr_to_kelvin <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(temp))</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  kelvin <span class="ot">&lt;-</span> ((temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>)) <span class="sc">+</span> <span class="fl">273.15</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kelvin)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It still works when given proper input.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># freezing point of water</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fahr_to_kelvin</span>(<span class="at">temp =</span> <span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># freezing point of water</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fahr_to_kelvin</span>(<span class="at">temp =</span> <span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 273.15</code></pre>
 </div>
 </div>
 <p>But fails instantly if given improper input.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Metric is a factor instead of numeric</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fahr_to_kelvin</span>(<span class="at">temp =</span> <span class="fu">as.factor</span>(<span class="dv">32</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Metric is a factor instead of numeric</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fahr_to_kelvin</span>(<span class="at">temp =</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in fahr_to_kelvin(temp = as.factor(32)): is.numeric(temp) is not TRUE</code></pre>
+<pre><code>Error in fahr_to_kelvin(temp = "a"): is.numeric(temp) is not TRUE</code></pre>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -4350,9 +4415,9 @@ Challenge 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use defensive programming to ensure that our <code>fahr_to_celsius()</code> function throws an error immediately if the argument <code>temp</code> is specified inappropriately.</p>
+<p>Edit our <code>fahr_to_celsius()</code> function so that it throws an error immediately if the argument <code>temp</code> is non-numeric. Test that your error message works as expected.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4361,16 +4426,16 @@ Solution to challenge 3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Extend our previous definition of the function by adding in an explicit call to <code>stopifnot()</code>. Since <code>fahr_to_celsius()</code> is a composition of two other functions, checking inside here makes adding checks to the two component functions redundant.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fahr_to_celsius <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(temp))</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a> temp_k <span class="ot">&lt;-</span> <span class="fu">fahr_to_kelvin</span>(temp)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a> result <span class="ot">&lt;-</span> <span class="fu">kelvin_to_celsius</span>(temp_k)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(result)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fahr_to_celsius <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(temp))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> temp_k <span class="ot">&lt;-</span> <span class="fu">fahr_to_kelvin</span>(temp)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a> result <span class="ot">&lt;-</span> <span class="fu">kelvin_to_celsius</span>(temp_k)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(result)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4379,103 +4444,100 @@ Solution to challenge 3
 </div>
 </section>
 </section>
-<section id="more-on-combining-functions" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="more-on-combining-functions"><span class="header-section-number">10.4</span> More on combining functions</h2>
-<p>Now, we’re going to define a function that calculates the Gross Domestic Product of a nation from the data available in our dataset:</p>
+<section id="an-advanced-example" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="an-advanced-example"><span class="header-section-number">10.4</span> An advanced example</h2>
+<p>The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Takes a dataset and multiplies the population column</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with the GDP per capita column.</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat) {</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  gdp <span class="ot">&lt;-</span> dat<span class="sc">$</span>pop <span class="sc">*</span> dat<span class="sc">$</span>gdpPercap</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(gdp)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We define <code>calcGDP()</code> by assigning it to the output of <code>function</code>. The list of argument names are contained within parentheses. Next, the body of the function – the statements executed when you call the function – is contained within curly braces (<code>{}</code>).</p>
-<p>We’ve indented the statements in the body by two spaces. This makes the code easier to read but does not affect how it operates.</p>
-<p>When we call the function, the values we pass to it are assigned to the arguments, which become variables inside the body of the function.</p>
-<p>Inside the function, we use the <code>return()</code> function to send back the result. This <code>return()</code> function is optional: R will automatically return the results of whatever command is executed on the last line of the function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(<span class="fu">head</span>(gapminder))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  6567086330  7585448670  8758855797  9648014150  9678553274 11697659231</code></pre>
-</div>
-</div>
-<p>That’s not very informative. Let’s add some more arguments so we can extract that per year and country.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Takes a dataset and multiplies the population column</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with the GDP per capita column.</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">year=</span><span class="cn">NULL</span>, <span class="at">country=</span><span class="cn">NULL</span>) {</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(year)) {</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat[dat<span class="sc">$</span>year <span class="sc">%in%</span> year, ]</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(country)) {</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat[dat<span class="sc">$</span>country <span class="sc">%in%</span> country,]</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  gdp <span class="ot">&lt;-</span> dat<span class="sc">$</span>pop <span class="sc">*</span> dat<span class="sc">$</span>gdpPercap</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  new <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dat, <span class="at">gdp=</span>gdp)</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(new)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Takes a dataset and multiplies the population column</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with the GDP per capita column.</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">.year =</span> <span class="cn">NULL</span>, <span class="at">.country =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(.year)) {</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">filter</span>(year <span class="sc">%in%</span> .year)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(.country)) {</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> .country)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transmute</span>(country, year, <span class="at">gdp =</span> pop <span class="sc">*</span> gdpPercap <span class="sc">/</span> <span class="fl">1e9</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dat)</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you’ve been writing these functions down into a separate R script (a good idea!), you can load in the functions into our R session by using the <code>source()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/functions-lesson.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/functions-lesson.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ok, so there’s a lot going on in this function now. In plain English, the function now subsets the provided data by year if the year argument isn’t empty, then subsets the result by country if the country argument isn’t empty. Then it calculates the GDP for whatever subset emerges from the previous two steps. The function then adds the GDP as a new column to the subsetted data and returns this as the final result. You can see that the output is much more informative than a vector of numbers.</p>
+<p>If we don’t specify a <code>.year</code> or <code>.country</code> argument, our function returns all rows of the gapminder data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder) <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      country year       gdp
+1 Afghanistan 1952  6.567086
+2 Afghanistan 1957  7.585449
+3 Afghanistan 1962  8.758856
+4 Afghanistan 1967  9.648014
+5 Afghanistan 1972  9.678553
+6 Afghanistan 1977 11.697659</code></pre>
+</div>
+</div>
 <p>Let’s take a look at what happens when we specify the year:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">calcGDP</span>(gapminder, <span class="at">year =</span> <span class="dv">2007</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">calcGDP</span>(gapminder, <span class="at">.year =</span> <span class="dv">2007</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       country year      pop continent lifeExp  gdpPercap          gdp
-12 Afghanistan 2007 31889923      Asia  43.828   974.5803  31079291949
-24     Albania 2007  3600523    Europe  76.423  5937.0295  21376411360
-36     Algeria 2007 33333216    Africa  72.301  6223.3675 207444851958
-48      Angola 2007 12420476    Africa  42.731  4797.2313  59583895818
-60   Argentina 2007 40301927  Americas  75.320 12779.3796 515033625357
-72   Australia 2007 20434176   Oceania  81.235 34435.3674 703658358894</code></pre>
+<pre><code>      country year       gdp
+1 Afghanistan 2007  31.07929
+2     Albania 2007  21.37641
+3     Algeria 2007 207.44485
+4      Angola 2007  59.58390
+5   Argentina 2007 515.03363
+6   Australia 2007 703.65836</code></pre>
 </div>
 </div>
 <p>Or for a specific country:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder, <span class="at">country =</span> <span class="st">"Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder, <span class="at">.country =</span> <span class="st">"Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     country year      pop continent lifeExp gdpPercap          gdp
-61 Australia 1952  8691212   Oceania  69.120  10039.60  87256254102
-62 Australia 1957  9712569   Oceania  70.330  10949.65 106349227169
-63 Australia 1962 10794968   Oceania  70.930  12217.23 131884573002
-64 Australia 1967 11872264   Oceania  71.100  14526.12 172457986742
-65 Australia 1972 13177000   Oceania  71.930  16788.63 221223770658
-66 Australia 1977 14074100   Oceania  73.490  18334.20 258037329175
-67 Australia 1982 15184200   Oceania  74.740  19477.01 295742804309
-68 Australia 1987 16257249   Oceania  76.320  21888.89 355853119294
-69 Australia 1992 17481977   Oceania  77.560  23424.77 409511234952
-70 Australia 1997 18565243   Oceania  78.830  26997.94 501223252921
-71 Australia 2002 19546792   Oceania  80.370  30687.75 599847158654
-72 Australia 2007 20434176   Oceania  81.235  34435.37 703658358894</code></pre>
+<pre><code>     country year       gdp
+1  Australia 1952  87.25625
+2  Australia 1957 106.34923
+3  Australia 1962 131.88457
+4  Australia 1967 172.45799
+5  Australia 1972 221.22377
+6  Australia 1977 258.03733
+7  Australia 1982 295.74280
+8  Australia 1987 355.85312
+9  Australia 1992 409.51123
+10 Australia 1997 501.22325
+11 Australia 2002 599.84716
+12 Australia 2007 703.65836</code></pre>
 </div>
 </div>
 <p>Or both:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder, <span class="at">year =</span> <span class="dv">2007</span>, <span class="at">country =</span> <span class="st">"Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder, <span class="at">.year =</span> <span class="dv">2007</span>, <span class="at">.country =</span> <span class="st">"Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     country year      pop continent lifeExp gdpPercap          gdp
-72 Australia 2007 20434176   Oceania  81.235  34435.37 703658358894</code></pre>
+<pre><code>    country year      gdp
+1 Australia 2007 703.6584</code></pre>
 </div>
 </div>
 <p>Let’s walk through the body of the function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">year =</span> <span class="cn">NULL</span>, <span class="at">country =</span> <span class="cn">NULL</span>) {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">.year =</span> <span class="cn">NULL</span>, <span class="at">.country =</span> <span class="cn">NULL</span>) {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here we’ve added two arguments, <code>year</code>, and <code>country</code>. We’ve set <em>default arguments</em> for both as <code>NULL</code> using the <code>=</code> operator in the function definition. This means that those arguments will take on those values unless the user specifies otherwise.</p>
+<p>Here we’ve added two arguments, <code>.year</code>, and <code>.country</code>. We’ve set <em>default arguments</em> for both as <code>NULL</code> using the <code>=</code> operator in the function definition. We are using a period as a prefix to these arguments <code>.year</code> and <code>.country</code> to help visually differentiate between the <em>arguemnt</em> and the column name in <code>dat</code>/<code>gapminder</code>.</p>
+<p>These arguments will take on those values unless the user specifies otherwise.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(year)) {</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat[dat<span class="sc">$</span>year <span class="sc">%in%</span> year, ]</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(country)) {</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat[dat<span class="sc">$</span>country <span class="sc">%in%</span> country,]</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(.year)) {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">filter</span>(year <span class="sc">%in%</span> .year)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(.country)) {</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> .country)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, we check whether each additional argument is set to <code>null</code>, and whenever they’re not <code>null</code> overwrite the dataset stored in <code>dat</code> with a subset given by the non-<code>null</code> argument.</p>
+<p>Here, we check whether each additional argument is set to <code>null</code>, and whenever they’re not <code>null</code> overwrite the dataset stored in <code>dat</code> with the subset computed in body of the <code>if</code> statement.</p>
 <p>Building these conditionals into the function makes it more flexible for later. Now, we can use it to calculate the GDP for:</p>
 <ul>
 <li>The whole dataset;</li>
@@ -4484,6 +4546,14 @@ Solution to challenge 3
 <li>A single combination of year and country.</li>
 </ul>
 <p>By using <code>%in%</code> instead, we can also give multiple years or countries to those arguments.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>   dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transmute</span>(country, year, <span class="at">gdp =</span> pop <span class="sc">*</span> gdpPercap <span class="sc">/</span> <span class="fl">1e9</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dat)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, we used transmute to both select <code>country</code>, <code>year</code>, and <code>gdp</code> variables and to compute the <code>gdp</code> variable itself.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4494,7 +4564,8 @@ Tip: Pass by value
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Functions in R almost always make copies of the data to operate on inside of a function body. When we modify <code>dat</code> inside the function we are modifying the copy of the gapminder dataset stored in <code>dat</code>, not the original variable we gave as the first argument. This is called “pass-by-value” and it makes writing code much safer: you can always be sure that whatever changes you make within the body of the function, stay inside the body of the function.</p>
+<p>Functions in R almost always make copies of the data to operate on inside of a function body. When we modify <code>dat</code> inside the function we are modifying the copy of the gapminder dataset stored in <code>dat</code>, not the original <code>gapminder</code> variable.</p>
+<p>This is called “pass-by-value” and it makes writing code much safer: you can always be sure that whatever changes you make within the body of the function, stay inside the body of the function.</p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -4507,16 +4578,10 @@ Tip: Function scope
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Another important concept is scoping: any variables (or functions!) you create or modify inside the body of a function only exist for the lifetime of the function’s execution. When we call <code>calcGDP()</code>, the variables <code>dat</code>, <code>gdp</code> and <code>new</code> only exist inside the body of the function. Even if we have variables of the same name in our interactive R session, they are not modified in any way when executing a function.</p>
+<p>Another important concept is scoping: any variables (or functions!) you create or modify inside the body of a function only exist for the lifetime of the function’s execution.</p>
+<p>When we call <code>calcGDP()</code>, the variables <code>dat</code>, <code>gdp</code> and <code>new</code> only exist inside the body of the function. Even if we have variables of the same name in our interactive R session, they are not modified in any way when executing a function.</p>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>  gdp <span class="ot">&lt;-</span> dat<span class="sc">$</span>pop <span class="sc">*</span> dat<span class="sc">$</span>gdpPercap</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  new <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dat, <span class="at">gdp=</span>gdp)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(new)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Finally, we calculated the GDP on our new subset, and created a new data frame with that column added. This means when we call the function later we can see the context for the returned GDP values, which is much better than in our first attempt where we got a vector of numbers.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4527,9 +4592,9 @@ Challenge 4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Test out your GDP function by calculating the GDP for New Zealand in 1987. How does this differ from New Zealand’s GDP in 1952?</p>
+<p>Test out your GDP function by calculating the GDP for New Zealand in 1987 and 1952.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4538,12 +4603,16 @@ Solution to challenge 4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">calcGDP</span>(gapminder, <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1952</span>, <span class="dv">1987</span>), <span class="at">country =</span> <span class="st">"New Zealand"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcGDP</span>(gapminder, <span class="at">.year =</span> <span class="fu">c</span>(<span class="dv">1952</span>, <span class="dv">1987</span>), <span class="at">.country =</span> <span class="st">"New Zealand"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      country year      gdp
+1 New Zealand 1952 21.05819
+2 New Zealand 1987 63.05001</code></pre>
 </div>
-<p>GDP for New Zealand in 1987: 65050008703 GDP for New Zealand in 1952: 21058193787</p>
+</div>
 </div>
 </div>
 </div>
@@ -4561,19 +4630,26 @@ Challenge 5
 <div class="callout-body-container callout-body">
 <p>The <code>paste()</code> function can be used to combine text together, e.g:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>best_practice <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Write"</span>, <span class="st">"programs"</span>, <span class="st">"for"</span>, <span class="st">"people"</span>, <span class="st">"not"</span>, <span class="st">"computers"</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(best_practice, <span class="at">collapse=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>best_practice <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Write"</span>, <span class="st">"programs"</span>, <span class="st">"for"</span>, <span class="st">"people"</span>, <span class="st">"not"</span>, <span class="st">"computers"</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(best_practice, <span class="at">collapse=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Write programs for people not computers"</code></pre>
 </div>
 </div>
 <p>Write a function called <code>fence()</code> that takes two vectors as arguments, called <code>text</code> and <code>wrapper</code>, and prints out the text wrapped with the <code>wrapper</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fence</span>(<span class="at">text=</span>best_practice, <span class="at">wrapper=</span><span class="st">"***"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<p>The output of the following code should be:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fence</span>(<span class="at">text =</span> best_practice, <span class="at">wrapper=</span><span class="st">"***"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "*** Write programs for people not computers ***"</code></pre>
+</div>
 </div>
 <p><em>Note:</em> the <code>paste()</code> function has an argument called <code>sep</code>, which specifies the separator between text. The default is a space: ” “. The default for <code>paste0()</code> is no space”“.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4582,17 +4658,17 @@ Solution to challenge 5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Write a function called <code>fence()</code> that takes two vectors as arguments, called <code>text</code> and <code>wrapper</code>, and prints out the text wrapped with the <code>wrapper</code>:</p>
+<p>The following function will achieve our goal:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>fence <span class="ot">&lt;-</span> <span class="cf">function</span>(text, wrapper){</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> text <span class="ot">&lt;-</span> <span class="fu">c</span>(wrapper, text, wrapper)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a> result <span class="ot">&lt;-</span> <span class="fu">paste</span>(text, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(result)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>best_practice <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Write"</span>, <span class="st">"programs"</span>, <span class="st">"for"</span>, <span class="st">"people"</span>, <span class="st">"not"</span>, <span class="st">"computers"</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fence</span>(<span class="at">text=</span>best_practice, <span class="at">wrapper=</span><span class="st">"***"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>fence <span class="ot">&lt;-</span> <span class="cf">function</span>(text, wrapper){</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a> text <span class="ot">&lt;-</span> <span class="fu">c</span>(wrapper, text, wrapper)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a> result <span class="ot">&lt;-</span> <span class="fu">paste</span>(text, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(result)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>best_practice <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Write"</span>, <span class="st">"programs"</span>, <span class="st">"for"</span>, <span class="st">"people"</span>, <span class="st">"not"</span>, <span class="st">"computers"</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fence</span>(<span class="at">text=</span>best_practice, <span class="at">wrapper=</span><span class="st">"***"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "*** Write programs for people not computers ***"</code></pre>
 </div>
@@ -4600,19 +4676,6 @@ Solution to challenge 5
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>R has some unique aspects that can be exploited when performing more complicated operations. We will not be writing anything that requires knowledge of these more advanced concepts. In the future when you are comfortable writing functions in R, you can learn more by reading the <a href="http://cran.r-project.org/doc/manuals/r-release/R-lang.html#Environment-objects">R Language Manual</a> or this <a href="http://adv-r.had.co.nz/Environments.html">chapter</a> from <a href="http://adv-r.had.co.nz/">Advanced R Programming</a> by Hadley Wickham.</p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -4784,8 +4847,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11-if.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">If statements</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-lists.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lists</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

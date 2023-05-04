@@ -2,11 +2,14 @@
 title: Functions
 output: html
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include=FALSE}
 # Silently load in the data so the rest of the lesson works
 gapminder <- read.csv("data/gapminder_data.csv", header=TRUE)
+library(tidyverse)
 ```
 
 
@@ -208,6 +211,12 @@ fahr_to_kelvin <- function(temp) {
 }
 ```
 
+```{r}
+#| error: true
+fahr_to_kelvin("one")
+```
+
+
 
 ::: {.callout-tip}
 
@@ -309,15 +318,13 @@ But fails instantly if given improper input.
 ```{r}
 #| error: true
 # Metric is a factor instead of numeric
-fahr_to_kelvin(temp = as.factor(32))
+fahr_to_kelvin(temp = "a")
 ```
 
 ::: {.callout}
 ## Challenge 3
 
-Use defensive programming to ensure that our `fahr_to_celsius()` function
-throws an error immediately if the argument `temp` is specified
-inappropriately.
+Edit our `fahr_to_celsius()` function so that it throws an error immediately if the argument `temp` is non-numeric. Test that your error message works as expected.
 
 
 ::: {.callout collapse=true}
@@ -340,57 +347,27 @@ fahr_to_celsius <- function(temp) {
 :::
 
 
-## More on combining functions
+## An advanced example
 
-Now, we're going to define a function that calculates the Gross Domestic Product
-of a nation from the data available in our dataset:
+The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.
+
 
 ```{r}
 # Takes a dataset and multiplies the population column
 # with the GDP per capita column.
-calcGDP <- function(dat) {
-  gdp <- dat$pop * dat$gdpPercap
-  return(gdp)
-}
-```
-
-We define `calcGDP()` by assigning it to the output of `function`. The list of
-argument names are contained within parentheses. Next, the body of the function
--- the statements executed when you call the function -- is contained within
-curly braces (`{}`).
-
-We've indented the statements in the body by two spaces. This makes the code
-easier to read but does not affect how it operates.
-
-When we call the function, the values we pass to it are assigned to the
-arguments, which become variables inside the body of the function.
-
-Inside the function, we use the `return()` function to send back the result.
-This `return()` function is optional: R will automatically return the results of
-whatever command is executed on the last line of the function.
-
-
-```{r}
-calcGDP(head(gapminder))
-```
-
-That's not very informative. Let's add some more arguments so we can extract
-that per year and country.
-
-```{r}
-# Takes a dataset and multiplies the population column
-# with the GDP per capita column.
-calcGDP <- function(dat, year=NULL, country=NULL) {
-  if(!is.null(year)) {
-    dat <- dat[dat$year %in% year, ]
+calcGDP <- function(dat, .year = NULL, .country = NULL) {
+  
+  if(!is.null(.year)) {
+    dat <- dat |> filter(year %in% .year)
   }
-  if (!is.null(country)) {
-    dat <- dat[dat$country %in% country,]
+  if (!is.null(.country)) {
+    dat <- dat |> filter(country %in% .country)
   }
-  gdp <- dat$pop * dat$gdpPercap
-
-  new <- cbind(dat, gdp=gdp)
-  return(new)
+  
+  dat <- dat |>
+    transmute(country, year, gdp = pop * gdpPercap / 1e9)
+  
+  return(dat)
 }
 ```
 
@@ -403,55 +380,58 @@ If you've been writing these functions down into a separate R script
 source("functions/functions-lesson.R")
 ```
 
-Ok, so there's a lot going on in this function now. In plain English, the
-function now subsets the provided data by year if the year argument isn't empty,
-then subsets the result by country if the country argument isn't empty. Then it
-calculates the GDP for whatever subset emerges from the previous two steps. The
-function then adds the GDP as a new column to the subsetted data and returns
-this as the final result. You can see that the output is much more informative
-than a vector of numbers.
+If we don't specify a `.year` or `.country` argument, our function returns all rows of the gapminder data.
+
+```{r}
+calcGDP(gapminder) |>
+  head()
+```
+
 
 Let's take a look at what happens when we specify the year:
 
 ```{r}
-head(calcGDP(gapminder, year = 2007))
+head(calcGDP(gapminder, .year = 2007))
 ```
 
 Or for a specific country:
 
 ```{r}
-calcGDP(gapminder, country = "Australia")
+calcGDP(gapminder, .country = "Australia")
 ```
 
 Or both:
 
 ```{r}
-calcGDP(gapminder, year = 2007, country = "Australia")
+calcGDP(gapminder, .year = 2007, .country = "Australia")
 ```
 
 Let's walk through the body of the function:
 
-``` {r, eval=FALSE}
-calcGDP <- function(dat, year = NULL, country = NULL) {
+``` {r}
+#| eval: false
+calcGDP <- function(dat, .year = NULL, .country = NULL) {
 ```
 
-Here we've added two arguments, `year`, and `country`. We've set
+Here we've added two arguments, `.year`, and `.country`. We've set
 *default arguments* for both as `NULL` using the `=` operator
-in the function definition. This means that those arguments will
-take on those values unless the user specifies otherwise.
+in the function definition. We are using a period as a prefix to these arguments `.year` and `.country` to help visually differentiate between the *arguemnt* and the column name in `dat`/`gapminder`. 
 
-```{r, eval=FALSE}
-  if(!is.null(year)) {
-    dat <- dat[dat$year %in% year, ]
+These arguments will take on those values unless the user specifies otherwise.
+
+```{r}
+#| eval: false
+  if(!is.null(.year)) {
+    dat <- dat |> filter(year %in% .year)
   }
-  if (!is.null(country)) {
-    dat <- dat[dat$country %in% country,]
+  if (!is.null(.country)) {
+    dat <- dat |> filter(country %in% .country)
   }
 ```
 
 Here, we check whether each additional argument is set to `null`, and whenever
-they're not `null` overwrite the dataset stored in `dat` with a subset given by
-the non-`null` argument.
+they're not `null` overwrite the dataset stored in `dat` with the subset computed in
+body of the `if` statement.
 
 Building these conditionals into the function makes it more flexible for later.
 Now, we can use it to calculate the GDP for:
@@ -464,13 +444,27 @@ Now, we can use it to calculate the GDP for:
 By using `%in%` instead, we can also give multiple years or countries to those
 arguments.
 
+
+```{r}
+#| eval: false
+   dat <- dat |>
+    transmute(country, year, gdp = pop * gdpPercap / 1e9)
+  
+  return(dat)
+}
+```
+
+Finally, we used transmute to both select `country`, `year`, and `gdp` variables and to compute the `gdp` variable itself.
+
+
 ::: {.callout-tip}
 ## Tip: Pass by value
 
 Functions in R almost always make copies of the data to operate on
 inside of a function body. When we modify `dat` inside the function
 we are modifying the copy of the gapminder dataset stored in `dat`,
-not the original variable we gave as the first argument.
+not the original `gapminder` variable.
+
 This is called "pass-by-value" and it makes writing code much safer:
 you can always be sure that whatever changes you make within the
 body of the function, stay inside the body of the function.
@@ -482,39 +476,25 @@ body of the function, stay inside the body of the function.
 
 Another important concept is scoping: any variables (or functions!) you
 create or modify inside the body of a function only exist for the lifetime
-of the function's execution. When we call `calcGDP()`, the variables `dat`,
+of the function's execution. 
+
+When we call `calcGDP()`, the variables `dat`,
 `gdp` and `new` only exist inside the body of the function. Even if we
 have variables of the same name in our interactive R session, they are
 not modified in any way when executing a function.
 :::
 
-```{r}
-#| eval: false
-  gdp <- dat$pop * dat$gdpPercap
-  new <- cbind(dat, gdp=gdp)
-  return(new)
-}
-```
-
-Finally, we calculated the GDP on our new subset, and created a new data frame
-with that column added. This means when we call the function later we can see
-the context for the returned GDP values, which is much better than in our first
-attempt where we got a vector of numbers.
-
 ::: {.callout}
 ## Challenge 4
-Test out your GDP function by calculating the GDP for New Zealand in 1987. How
-does this differ from New Zealand's GDP in 1952?
+Test out your GDP function by calculating the GDP for New Zealand in 1987 and 1952.
 
 ::: {.callout collapse=true}
 ## Solution to challenge 4
 
-```{r, eval=FALSE}
- calcGDP(gapminder, year = c(1952, 1987), country = "New Zealand")
+```{r}
+calcGDP(gapminder, .year = c(1952, 1987), .country = "New Zealand")
 ```
 
-GDP for New Zealand in 1987: 65050008703
-GDP for New Zealand in 1952: 21058193787
 :::
 :::
 
@@ -533,8 +513,21 @@ paste(best_practice, collapse=" ")
 Write a function called `fence()` that takes two vectors as arguments, called
 `text` and `wrapper`, and prints out the text wrapped with the `wrapper`:
 
-```{r, eval=FALSE}
-fence(text=best_practice, wrapper="***")
+
+```{r}
+#| echo: false
+fence <- function(text, wrapper){
+ text <- c(wrapper, text, wrapper)
+ result <- paste(text, collapse = " ")
+ return(result)
+}
+```
+
+
+The output of the following code should be:
+
+```{r}
+fence(text = best_practice, wrapper="***")
 ```
 
 *Note:* the `paste()` function has an argument called `sep`, which specifies
@@ -544,9 +537,7 @@ the separator between text. The default is a space: " ". The default for
 ::: {.callout collapse=true}
 ## Solution to challenge 5
 
-Write a function called `fence()` that takes two vectors as arguments,
-called `text` and `wrapper`, and prints out the text wrapped with the
-`wrapper`:
+The following function will achieve our goal:
 
 ```{r}
 fence <- function(text, wrapper){
@@ -559,21 +550,6 @@ fence(text=best_practice, wrapper="***")
 ```
 :::
 :::
-
-::: {.callout-tip}
-## Tip
-
-R has some unique aspects that can be exploited when performing more
-complicated operations. We will not be writing anything that requires
-knowledge of these more advanced concepts. In the future when you are
-comfortable writing functions in R, you can learn more by reading the
-[R Language Manual][man] or this [chapter][] from
-[Advanced R Programming][adv-r] by Hadley Wickham.
-:::
-
-[man]: http://cran.r-project.org/doc/manuals/r-release/R-lang.html#Environment-objects
-[chapter]: http://adv-r.had.co.nz/Environments.html
-[adv-r]: http://adv-r.had.co.nz/
 
 ::: {.callout-tip}
 ## Tip: Testing and documenting
