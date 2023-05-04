@@ -85,7 +85,7 @@ complicated_list
 
 ::: {.callout}
 ## Challenge 6
-Create a list of length two containing a character vector containing the letters "x", "y", "z" and a data frame with two columns that looks like this.
+Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like this.
 
 ```{r}
 #| echo: false
@@ -133,8 +133,6 @@ cats[["coat"]]
 Note that the `df[i, j]` index notation is specific to data frames (and does not work for lists).
 
 
-
-You will learn more about extracting information from vectors, lists and data frames in the advanced subsetting lesson.
 
 
 ### List subsetting

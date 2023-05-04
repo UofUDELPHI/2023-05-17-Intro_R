@@ -14,9 +14,9 @@ book:
     - 06-vectorization.qmd
     - 07-subsetting-data-frames.qmd
     - 08-dplyr.qmd
-    - 09-lists.qmd
-    - 10-functions.qmd
-    - 11-if.qmd
+    - 09-functions.qmd
+    - 10-if.qmd
+    - 11-lists.qmd
     - 12-iteration.qmd
     - 13-plot-ggplot2.qmd
     - 14-tidyr.qmd
