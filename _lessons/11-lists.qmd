@@ -1,14 +1,15 @@
 ---
 title: Lists
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 
 
 ## Lists
 
-Another data structure is the *list*.
-
+It's time to introduce another data structure: the *list*.
 
 List are very flexible because you can put anything you want in it: unlike a vector, the elements of a list can have different data types. For example:
 
@@ -25,19 +26,6 @@ length(list_example)
 ```
 
 
-When printing the object structure with `str()`, we see the data types of all
-elements:
-
-```{r}
-str(list_example)
-```
-
-To retrieve one of the elements of a list, we use the **double bracket** notation:
-
-```{r}
-list_example[[2]]
-```
-
 The elements of lists also can have **names**, they can be given by prepending
 them to the values, separated by an equals sign:
 
@@ -46,21 +34,8 @@ another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE)
 another_list
 ```
 
-This results in a **named list**. Now we have a new function of our object!
-We can access single elements by an additional way!
 
-```{r}
-another_list$title
-```
-
-as well as using named indexing in the double square bracket notation.
-
-```{r}
-another_list[["title"]]
-```
-
-
-Lists, it turns out, can become a lot more complicated than vectors. While each entry of a vector is just a single value, each entry of a list can be any type of object, including vectors and data frames. For example, the following list of length three contains three entries: a numeric vector, a data frame, and a single character value:
+Lists, it turns out, can become a lot more complicated than vectors. While each entry of a vector is just a single value, each entry of a list can be any type of object, including vectors and data frames. For example, the following `complicated_list` list of length three contains three entries: a numeric vector, a data frame, and a single character value:
 
 
 
@@ -84,7 +59,7 @@ complicated_list
 
 
 ::: {.callout}
-## Challenge 6
+## Challenge 1
 Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like this.
 
 ```{r}
@@ -102,7 +77,7 @@ list(c("x", "y", "z"),
 ```
 
 ::: {.callout collapse=true}
-## Solution to Challenge 6
+## Solution to Challenge 1
 
 ```{r}
 list(c("x", "y", "z"),
@@ -113,32 +88,10 @@ list(c("x", "y", "z"),
 :::
 
 
-
-### Data frames as a special case of a list
-
-
-It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
-
-This is why you can extract vector columns from a data frame using the double brackets notation:
-
-```{r}
-cats
-```
-
-```{r}
-cats[["coat"]]
-```
-
-
-Note that the `df[i, j]` index notation is specific to data frames (and does not work for lists).
-
-
-
-
 ### List subsetting
 
 Now we'll introduce some new subsetting operators. There are three functions
-used to subset lists. We've already seen these when learning about atomic vectors and matrices:  `[`, `[[`, and `$`.
+used to subset lists. We've already seen these when learning about vectors and data frames:  `[`, `[[`, and `$`.
 
 Using `[` will always return a list. If you want to *subset* a list, but not
 *extract* an element, then you will likely use `[`.
@@ -194,7 +147,7 @@ xlist$data
 ```
 
 ::: {.callout}
-## Challenge 5
+## Challenge 2
 
 Given the following list:
 
@@ -207,7 +160,7 @@ Using list and vector subsetting, extract the second entry in the second element
 
 ::: {.callout collapse=true}
 
-## Solution to challenge 5
+## Solution to challenge 2
 
 ```{r}
 xlist$b[2]
@@ -222,3 +175,24 @@ xlist[["b"]][2]
 ```
 :::
 :::
+
+
+
+### Data frames as a special case of a list
+
+
+It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
+
+This is why you can extract vector columns from a data frame using the double brackets notation:
+
+```{r}
+cats
+```
+
+```{r}
+cats[["coat"]]
+```
+
+
+Note that the `df[i, j]` index notation is specific to data frames (and does not work for lists).
+

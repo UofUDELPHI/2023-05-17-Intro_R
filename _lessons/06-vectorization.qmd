@@ -101,7 +101,7 @@ log(x)
 
 
 ::: {.callout}
-## Challenge 4
+## Challenge 2
 
 We're interested in looking at the sum of the
 following sequence of fractions:
@@ -115,7 +115,7 @@ n.  Use vectorization to compute x when n = 100. What is the sum when
 n = 10,000?
 
 ::: {.callout collapse=true}
-##  Solution to Challenge 4
+##  Solution to Challenge 2
 
 ```{r}
 sum(1/(1:100)^2)
@@ -282,7 +282,7 @@ Remember you can search for help on operators by wrapping them in quotes:
 
 
 ::: {.callout}
-## Challenge 2
+## Challenge 3
 
 Given the following code:
 
@@ -296,7 +296,7 @@ Write a subsetting command to return the values in x that are greater than 4 *or
 Write another subsetting command to return the values in x that are greater than 4 *and* less than 7.
 
 ::: {.callout collapse=true}
-## Solution to challenge 2
+## Solution to challenge 3
 
 greater than 4 *or* less than 7:
 

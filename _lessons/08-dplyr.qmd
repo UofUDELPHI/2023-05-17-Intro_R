@@ -372,7 +372,7 @@ gapminder |>
 
 
 ::: {.callout}
-## Challenge 2
+## Challenge 3
 
 Explain what the following code is trying to do and explain why it doesn't work. Re-write the code so that it does work:
 
@@ -385,7 +385,7 @@ gapminder |>
 
 
 ::: {.callout collapse=true}
-## Solution to Challenge 2
+## Solution to Challenge 3
 
 The code doesn't work because you can't make modifications to the data inside a `select()` function.
 
@@ -499,11 +499,11 @@ gapminder |>
 
 
 ::: {.callout}
-## Challenge 2
+## Challenge 4
 Use `group_by()`, `summarise()`, and `filter()` to identify which country has the longest average life expectancy and which has the shortest average life expectancy.
 
 ::: {.callout collapse=true}
-## Solution to Challenge 2
+## Solution to Challenge 4
 
 One way to do this is to as
 

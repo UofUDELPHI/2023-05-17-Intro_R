@@ -126,7 +126,7 @@ The double bracket syntax `[[]]` returns the column as a vector, whereas the sin
 
 ::: {.callout}
 
-## Challenge 5
+## Challenge 1
 
 There are several subtly different ways to extract observations and
 elements from data.frames:
@@ -143,7 +143,7 @@ Try out these examples and explain what is returned by each one.
 *Hint:* Use the function `class()` to examine what is returned in each case.
 
 ::: {.callout collapse=true}
-## Solution to Challenge 5
+## Solution to Challenge 1
 
 ```{r, eval=TRUE, echo=TRUE}
 cats[1]
@@ -283,7 +283,7 @@ dim(gapminder)
 
 
 ::: {.callout}
-## Challenge 6
+## Challenge 2
 
 Each of the following pieces of code are incorrect. Identify the error and fix each of the following common data frame subsetting errors:
 
@@ -318,7 +318,7 @@ gapminder[gapminder$year == 2002 | 2007, ]
 ```
 
 ::: {.callout collapse=true}
-## Solution to challenge 6
+## Solution to challenge 2
 Fix each of the following common data frame subsetting errors:
 
 1. Extract observations collected for the year 1957
@@ -390,14 +390,14 @@ gapminder[se_asia, ]
 
 
 ::: {.callout}
-## Challenge 7
+## Challenge 4
 1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
 
 2. Create a new `data.frame` called `gapminder_subset` that only contains rows 1 through 9
 and rows 19 through 23.
 
 ::: {.callout collapse=true}
-## Solution to challenge 7
+## Solution to challenge 4
 
 1.  `gapminder[1:20]` tries to extract the first 20 columns, but there are not 20 columns. `gapminder[1:20, ]` subsets the data to give the first 20 rows and all columns.
 

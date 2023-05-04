@@ -200,7 +200,7 @@ The true power from the map functions really comes once you learn how to write y
 
 
 ::: {.callout}
-## Challenge 2 (advanced)
+## Challenge 1 (advanced)
 
 For each numeric column in the gapminder dataset, print the number of unique entries using the `length()` and `unique()` function. 
 
@@ -208,7 +208,7 @@ Do this in two different ways: using a `for` loop and a `map()` function.
 
 
 ::: {.callout collapse=true}
-## Solution to Challenge 2
+## Solution to Challenge 1
 
 ```{r} 
 numeric_columns <- is.numeric(gapminder)
@@ -224,14 +224,14 @@ map(gapminder, mean)
 :::
 
 ::: {.callout}
-## Challenge 4
+## Challenge 2
 
 Modify the script from Challenge 3 to loop over each
 country. This time print out whether the life expectancy is
 smaller than 50, between 50 and 70, or greater than 70.
 
 ::: {.callout collapse=true}
-## Solution to Challenge 4
+## Solution to Challenge 2
 
 We modify our solution to Challenge 3 by now adding two thresholds, `lowerThreshold` and `upperThreshold` and extending our if-else statements:
 ```{r 07-chall-04-sol, eval=FALSE}
@@ -253,14 +253,14 @@ for (iCountry in unique(gapminder$country)) {
 :::
 
 ::: {.callout}
-## Challenge 5 - Advanced
+## Challenge 3 (Advanced)
 
 Write a script that loops over each country in the `gapminder` dataset,
 tests whether the country starts with a 'B', and graphs life expectancy
 against time as a line graph if the mean life expectancy is under 50 years.
 
 ::: {.callout collapse=true}
-## Solution for Challenge 5
+## Solution for Challenge 3
 
 We will use the `grep()` command that was introduced in the Unix Shell lesson to find countries that start with "B."
 Lets understand how to do this first.
