@@ -128,7 +128,7 @@ x[0]
 
 
 
-### Skipping and removing elements
+### Removing elements
 
 If you use a negative number as the index of a vector, R will return every element *except* for the one specified:
 
@@ -137,7 +137,7 @@ If you use a negative number as the index of a vector, R will return every eleme
 x[-2]
 ```
 
-We can skip multiple elements:
+We can remove multiple elements:
 
 ```{r}
 # remove the first and fifth elements from x in two ways:
@@ -455,69 +455,4 @@ x[-"a"]
 ```
 
 
-
-
-
-
-
-
-
-We can use the `!=` (not-equals) operator to perform logical indexing
-
-```{r}
-# compute a logical vector of whether each name is *not* equal to "a"
-names(x) != "a"
-# use the logical vector to remove entry "a"
-x[names(x) != "a"]
-```
-
-
-
-
-### Skipping multiple named indices
-
-Skipping multiple named indices is a little bit harder still. Suppose we want to drop the `"a"` and `"c"` elements, so we try this:
-
-```{r}
-# try to remove the "a" and "c" elements of x as above (using !=)
-x[names(x) != c("a", "c")]
-```
-
-What went wrong?
-
-#### Recycling
-
-Let's take a look at the indexing component of this code:
-
-```{r}
-names(x) != c("a", "c")
-```
-
-Why does R give `TRUE` as the third element of this vector?
-
-When one vector is shorter than the other, it gets *recycled*: R **repeats** `c("a", "c")` as many times as necessary to match `names(x)`: i.e., `c("a","c","a","c","a")`. 
-
-
-Since the recycled `"a"` doesn't match the third element of `names(x)`, the value of `!=` is `TRUE`.
-
-If we had been unlucky and `names(x)` had contained six elements, R would *silently* have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!
-
-
-
-
-#### The %in% operator
-
-Rather than `==` for comparing multiple options, you should use the `%in%` operator. 
-
-```{r}
-# use %in% to create a logical vector of whether the names of x are "a" or "c"
-names(x) %in% c("a", "c")
-```
-
-
-```{r}
-# use this logical vector to *remove* the elements "a" and "c" from x
-x[!(names(x) %in% c("a", "c"))]
-```
-
-
+We will discuss more examples of indexing in the next lesson.
