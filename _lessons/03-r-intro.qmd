@@ -6,7 +6,7 @@ embed-resources: true
 
 ## Introduction
 
-In this lesson you'll receive your first taste of the R programming language. Specifically you'll learn how to use R as a calculator, and the basics of variables, functions, and packages.
+In this lesson, you'll receive your first taste of the R programming language. Specifically, you'll learn how to use R as a calculator and the basics of variables, functions, and packages.
 
 
 ## Using R as a calculator
@@ -27,7 +27,7 @@ From highest to lowest precedence:
 3 + 5 * 2
 ```
 
-Use parentheses to group operations in order to force the order of
+Use parentheses to group operations to force the order of
 evaluation if it differs from the default, or to make clear what you
 intend.
 
@@ -35,7 +35,7 @@ intend.
 (3 + 5) * 2
 ```
 
-This can get unwieldy when not needed, but clarifies your intentions.
+Parentheses can get unwieldy when not needed, but it clarifies your intentions.
 Remember that others may later read your code.
 
 ```{r, eval=FALSE}
@@ -46,7 +46,7 @@ Remember that others may later read your code.
 
 
 The text after each line of code is called a
-"comment". Anything that follows after the hash (or octothorpe) symbol
+"comment." Anything that follows after the hash (or octothorpe) symbol
 `#` is ignored by R when it executes code. (Note the difference between a code comment and a quarto chunk option specified with `|#`)
 
 Really small or large numbers get a scientific notation:
@@ -66,9 +66,9 @@ You can write numbers in scientific notation too:
 
 ## Mathematical functions
 
-R has many built in mathematical functions. To call a function,
-we can type its name, followed by open and closing parentheses.
-Functions take arguments as inputs, anything we type inside the parentheses of a function is considered an argument. 
+R has many built-in mathematical functions. 
+To call a function, we can type its name, followed by open and closing parentheses. 
+Functions take arguments as inputs; anything we type inside the parentheses of a function is considered an argument. 
 
 
 Depending on the function, the number of arguments can vary from none to multiple. For example:
@@ -78,7 +78,7 @@ Depending on the function, the number of arguments can vary from none to multipl
 getwd() #returns an absolute filepath
 ```
 
-doesn't require an argument, whereas for the next set of mathematical functions we will need to supply the function a value in order to compute the result.
+doesn't require an argument. On the contrary, the following mathematical functions need a value to compute the result:
 
 ```{r}
 sin(1)  # trigonometry functions
@@ -96,23 +96,16 @@ log10(10) # base-10 logarithm
 exp(0.5) # e^(1/2)
 ```
 
-Don't worry about trying to remember every function in R. You
+Don't worry about remembering every function in R. You
 can look them up on Google, or if you can remember the
-start of the function's name, use the tab completion in RStudio.
-
-This is one advantage that RStudio has over R on its own, it
-has auto-completion abilities that allow you to more easily
-look up functions, their arguments, and the values that they
-take.
+start of the function's name, use the tab completion in RStudio. The latter is one advantage that RStudio has over R on its own: it has auto-completion abilities for easy look-up functions, their arguments, and the values that they take.
 
 ### Help files
 
-Typing a `?` before the name of a command will open the help page
+Typing `?` before the name of a command will open the help page
 for that command. When using RStudio, this will open the 'Help' pane;
 if using R in the terminal, the help page will open in your browser.
-The help page will include a detailed description of the command and
-how it works. Scrolling to the bottom of the help page will usually
-show a collection of code examples which illustrate command usage.
+The help page will include a detailed description of the command. The bottom of the help page usually shows a collection of code examples illustrating command usage.
 We'll go through an example later.
 
 
@@ -129,7 +122,7 @@ The `log()` function takes arguments
 
 - `base` (the base of the logarithm calculation). 
 
-There is no default value for `x`, but the default value for `base` is `exp(1)`, which means that you don't need to specify `base`.
+There is no default value for `x`, but the default value for `base` is `exp(1)`, which means you don't need to specify `base`.
 :::
 :::
 
@@ -137,7 +130,7 @@ There is no default value for `x`, but the default value for `base` is `exp(1)`,
 
 ## Comparing things
 
-We can also do comparisons in R:
+We can also make comparisons in R:
 
 ```{r}
 1 == 1  # equality (note two equals signs, read as "is equal to")
@@ -194,7 +187,7 @@ Notice also that variables can be reassigned:
 x <- 100
 ```
 
-`x` used to contain the value 0.025 and now it has the value 100.
+`x` used to contain the value 0.025 and now equals 100.
 
 Assignment values can contain the variable being assigned to:
 
@@ -203,10 +196,10 @@ x <- x + 1 #notice how RStudio updates its description of x on the top right tab
 y <- x * 2
 ```
 
-The right hand side of the assignment can be any valid R expression.
-The right hand side is *fully evaluated* before the assignment occurs.
+The right-hand side of the assignment can be any valid R expression.
+The right-hand side is *fully evaluated* before the assignment occurs.
 
-Variable names can contain letters, numbers, underscores and periods but no spaces. They
+Variable names can contain letters, numbers, underscores, and periods but no spaces. They
 must start with a letter. 
 
 It is recommended to use a **consistent** variable naming syntax, such as
@@ -219,7 +212,7 @@ Note that it is also possible to use the `=` operator for assignment:
 x = 1/40
 ```
 
-But this is much less common among R users and the general recommendation is to use `<-`.
+But this is much less common among R users, and the general recommendation is to use `<-`.
 
 
 ::: {.callout} 
@@ -263,7 +256,7 @@ The following creates a hidden variable:
 
 ## Vectors
 
-Note that a variable can contain many values at once. For example, a **vector** in R corresponds to a collection of values stored in a certain order and that have the same data type. There are many ways to create vectors. Some examples include:
+Note that a variable can contain many values at once. For example, a **vector** in R corresponds to a collection of values stored in a certain order, all with the same data type. There are many ways to create vectors. Some examples include:
 
 ```{r}
 c(1, 4, 2)
@@ -347,10 +340,10 @@ rm(list = ls())
 ```
 
 
-In this case we've combined the two. Like the order of operations, anything
+In this case, we've combined the two. Like the order of operations, anything
 inside the innermost parentheses is evaluated first, and so on.
 
-In this case we've specified that the results of `ls` should be used for the
+In this case, we've specified that the results of `ls` should be used for the
 `list` argument in `rm`. When assigning values to arguments by name, you *must*
 use the `=` operator!!
 
@@ -364,26 +357,26 @@ rm(list <- ls())
 
 ::: {.callout-tip}
 ## Tip: Warnings vs. Errors
-Pay attention when R does something unexpected! Errors, like above,
+Pay attention when R does something unexpected! Errors like the above
 are thrown when R cannot proceed with a calculation. 
 
-Warnings on the other hand usually mean that the function has run, but it probably
+Warnings, on the other hand, usually mean that the function has run, but it probably
 hasn't worked as expected.
 
-In both cases, the message that R prints out usually give you clues
+In both cases, the message that R prints out usually gives you clues
 how to fix a problem.
 :::
 
 
 ## R Packages
 
-It is possible to add functions to R by writing a package, or by
+We can add functions to R by writing a package or
 obtaining a package written by someone else. As of this writing, there
-are over 10,000 packages available on CRAN (the comprehensive R archive
-network). R and RStudio have functionality for managing packages:
+are over 17,000 packages available on CRAN (the comprehensive R archive
+network). R and RStudio have functionalities for managing packages:
 
 * You can install packages by typing `install.packages("packagename")`,
-  where `packagename` is the package name, in quotes.
+  where `packagename` is the package name in quotes.
 * You can update installed packages by typing `update.packages()`
 * You can make a package available for use with `library(packagename)`
 
