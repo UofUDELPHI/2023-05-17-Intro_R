@@ -4175,7 +4175,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>The square brackets operator is a function. For vectors, it means “get me the nth element”.</p>
-<p>We can ask for multiple elements at once by providing a vector if indices:</p>
+<p>We can ask for multiple elements at once by providing a vector of indices:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4202,7 +4202,7 @@ vertical-align: -.125em;
 </div>
 <p>We can ask for the same element multiple times:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.4 5.4 7.1</code></pre>
 </div>
@@ -4643,7 +4643,7 @@ shorter object length</code></pre>
 </figure>
 </div>
 <p>In this case R <strong>repeats</strong> <code>c("a", "c")</code> as many times as necessary to match <code>names(x)</code>, i.e.&nbsp;we get <code>c("a","c","a","c","a")</code>. Since the recycled <code>"a"</code> doesn’t match the third element of <code>names(x)</code>, the value of <code>!=</code> is <code>TRUE</code>. Because in this case the longer vector length (5) isn’t a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and <code>names(x)</code> had contained six elements, R would <em>silently</em> have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!</p>
-<p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) it to use the <code>%in%</code> operator. The <code>%in%</code> operator goes through each element of its left argument, in this case the names of <code>x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code>!</code> operator to change “in” to “not in”:</p>
+<p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) is to use the <code>%in%</code> operator. The <code>%in%</code> operator goes through each element of its left argument, in this case the names of <code>x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code>!</code> operator to change “in” to “not in”:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span>(<span class="fu">names</span>(x) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

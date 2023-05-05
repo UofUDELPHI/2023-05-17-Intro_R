@@ -14,20 +14,20 @@ We can extract individual elements of a vector by using the square bracket notat
 
 ```{r}
 # create a sequence_example vector of integers from 20 to 25
-sequence_example <- 20:25
+
 # extract the first element and store it in a variable called first_element
-first_element <- sequence_example[1]
+
 # take a look at the first_element variable
-first_element
+
 ```
 
 To change a single element, use the bracket on the other side of the arrow:
 
 ```{r}
 # reassign the first element of sequence_example to 30
-sequence_example[1] <- 30
+
 # print out sequence_example
-sequence_example
+
 ```
  
  
@@ -44,9 +44,9 @@ Define a new vector, `x`:
 
 ```{r}
 # define a vector x containing the values 5.4, 6.2, 7.1, 4.8, and 7.5
-x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+
 # print out x
-x
+
 ```
 
 
@@ -55,12 +55,12 @@ To extract elements of a vector we can give their corresponding index:
 
 ```{r}
 # extract the first entry of x
-x[1]
+
 ```
 
 ```{r}
 # extract the fourth entry of x
-x[4]
+
 ```
 
 
@@ -73,7 +73,7 @@ We can ask for multiple elements at once by providing a *vector* of indices:
 
 ```{r}
 # extract the first and third element of x using a vector created with `c()`
-x[c(1, 3)]
+
 ```
 
 
@@ -85,7 +85,7 @@ Or "slices" of the vector using a sequential integer vector index:
 
 ```{r}
 # extract the first to fourth element of x using a vector created with `:`
-x[1:4]
+
 ```
 
 
@@ -96,7 +96,7 @@ You can ask for the same element multiple times:
 
 ```{r}
 # extract the first, first and third element from x using `c()`
-x[c(1, 1, 3)]
+
 ```
 
 
@@ -107,7 +107,7 @@ If you ask for an index beyond the length of the vector, R will return a missing
 
 ```{r}
 # extract the non-existent sixth element from x
-x[6]
+
 ```
 
 
@@ -120,7 +120,7 @@ If you ask for the 0th element, you get an empty vector:
 
 ```{r}
 # extract the 0th element from x
-x[0]
+
 ```
 
 
@@ -134,14 +134,14 @@ If you use a negative number as the index of a vector, R will return every eleme
 
 ```{r}
 # remove the second entry from x
-x[-2]
+
 ```
 
 We can skip multiple elements:
 
 ```{r}
 # remove the first and fifth elements from x in two ways:
-x[c(-1, -5)]  # or x[-c(1,5)]
+
 ```
 
 
@@ -157,7 +157,7 @@ It's natural to try to negate a sequence like `-1:3` (this should give an error)
 ```{r}
 #| error: true
 # Try to remove the 1st-3rd elements from x using `:`
-x[-1:3]
+
 ```
 
 
@@ -166,7 +166,7 @@ Why didn't this work?
 
 ```{r}
 # print out the sequence of integers being used for indexing
--1:3
+
 ```
 
 
@@ -176,7 +176,7 @@ The correct solution is to wrap `1:3` in brackets, so that the `-` operator appl
 
 ```{r}
 # correctly remove elements 1-3 using parentheses
-x[-(1:3)]
+
 ```
 
 
@@ -191,9 +191,9 @@ To redefine `x`, we need to re-assign the variable to our result:
 
 ```{r}
 # redefine x as x without the 4th element
-x <- x[-4]
+
 # print x
-x
+
 ```
 
 ::: {.callout}
@@ -214,23 +214,6 @@ Come up with at least 2 different commands that will produce the following outpu
 
 After you find 2 different commands, compare notes with your neighbor. Did you have different strategies?
 
-::: {.callout collapse=true}
-## Solution to challenge 1
-
-```{r}
-x[2:4]
-```
-
-```{r}
-x[-c(1, 5)]
-```
-
-```{r}
-x[c(2, 3, 4)]
-```
-
-:::
-
 :::
 
 
@@ -246,17 +229,6 @@ Start by making a vector with the numbers 5 through 26. Then:
 
 - Multiply the vector by 2.
 
-::: {.callout collapse=true}
-
-## Solution to Challenge 2
-
-```{r}
-x <- 5:26
-head(x, 3)
-x[4]
-x * 2
-```
-:::
 :::
 
 
@@ -277,9 +249,9 @@ Each element of a vector can be given a name:
 
 ```{r}
 # define a named pizza_price vector 
-pizza_price <- c(pizzasubito = 5.64, pizzafresh = 6.60, callapizza = 4.50)
+
 # look at the result
-pizza_price
+
 ```
 
 
@@ -289,11 +261,11 @@ Alternatively, these names can be assigned after defining the vector:
 
 ```{r}
 # define unnamed pizza price vector
-pizza_price <- c(5.64, 6.60, 4.5)
+
 # assign the names to pizza price
-names(pizza_price) <- c("pizzasubito", "pizzafresh", "callapizza")
+
 # look at the result
-pizza_price
+
 ```
 
 
@@ -311,14 +283,14 @@ To retrieve a named entry from a vector:
 
 ```{r}
 # extract the "pizzasubito" entry from pizza_price using named indexing
-pizza_price["pizzasubito"]
+
 ```
 
 This is equivalent to extracting the first entry of the vector:
 
 ```{r}
 # extract the first entry from pizza_price using numbered indexing
-pizza_price[1]
+
 ```
 
 
@@ -331,7 +303,7 @@ If you want to extract just the names of an object, use the `names()` function:
 
 ```{r}
 # use `names()` to print the names of pizza_price
-names(pizza_price)
+
 ```
 
 
@@ -346,11 +318,11 @@ possible for names:
 
 ```{r}
 # print the third pizza_price name
-names(pizza_price)[3]
+
 # change this third name of pizza_price to "call-a-pizza"
-names(pizza_price)[3] <- "call-a-pizza"
+
 # print out the new pizza_price vector
-pizza_price
+
 ```
 
 
@@ -367,14 +339,6 @@ Define the following vector, `y`, and extract the "a" and "c" entries from it:
 
 
 
-::: {.callout collapse=true}
-## Solution to Challenge 3
-```{r}
-y <- c(a = 5.4, b = 6.2, c = 7.1, d = 4.8, e = 7.5)
-y[c("a", "c")]
-```
-
-:::
 :::
 
 
@@ -385,20 +349,6 @@ y[c("a", "c")]
 
 What is the data type of the *names* of `pizza_price`? 
 
-::: {.callout collapse=true}
-## Solution to Challenge 4
-
-```{r}
-class(names(pizza_price))
-```
-
-alternatively, use a new variable if this is easier for you to read: 
-
-```{r}
-names <- names(pizza_price)
-class(names)
-```
-:::
 :::
 
 
@@ -422,15 +372,6 @@ Create a vector that gives the number for each letter in the alphabet!
 2. R has a built-in object called `LETTERS` (type `LETTERS` in the console. It is a 26-character vector of uppercase letters from  A to Z. Set the names of `letter_no` to these 26 letters
 3. Test yourself by calling `letter_no["B"]`, which should give you the number 2!
   
-::: {.callout collapse=true}
-## Solution to Challenge 5
-
-```{r}
-letter_no <- 1:26   # or seq(1,26)
-names(letter_no) <- LETTERS
-letter_no["B"]
-```
-:::
 :::
 
 
@@ -449,9 +390,9 @@ If we try to remove one named element by negating the string, R complains::
 ```{r}
 #| error: true
 # define the vector x whose values are 5.4, 6.2, 7.1, 4.8, 7.5 with names a-e
-x <- c(a = 5.4, b = 6.2, c = 7.1, d = 4.8, e = 7.5) 
+
 # try to remove entry "a" using the -"a" indexing syntax
-x[-"a"]
+
 ```
 
 
@@ -466,9 +407,9 @@ We can use the `!=` (not-equals) operator to perform logical indexing
 
 ```{r}
 # compute a logical vector of whether each name is *not* equal to "a"
-names(x) != "a"
+
 # use the logical vector to remove entry "a"
-x[names(x) != "a"]
+
 ```
 
 
@@ -480,7 +421,7 @@ Skipping multiple named indices is a little bit harder still. Suppose we want to
 
 ```{r}
 # try to remove the "a" and "c" elements of x as above (using !=)
-x[names(x) != c("a", "c")]
+
 ```
 
 What went wrong?
@@ -511,13 +452,13 @@ Rather than `==` for comparing multiple options, you should use the `%in%` opera
 
 ```{r}
 # use %in% to create a logical vector of whether the names of x are "a" or "c"
-names(x) %in% c("a", "c")
+
 ```
 
 
 ```{r}
 # use this logical vector to *remove* the elements "a" and "c" from x
-x[!(names(x) %in% c("a", "c"))]
+
 ```
 
 
