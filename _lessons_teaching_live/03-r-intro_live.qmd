@@ -1,0 +1,486 @@
+---
+title: "Introduction to R"
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction
+
+In this lesson, you'll learn:
+
+- R as a calculator 
+
+- Variables
+
+- Functions
+
+- Packages
+
+
+
+
+
+
+## Using R as a calculator
+
+When using R as a calculator, the order of operations is the same as you
+would have learned back in school.
+
+From highest to lowest precedence:
+
+ * Parentheses: `(`, `)`
+ * Exponents: `^` or `**`
+ * Multiply: `*`
+ * Divide: `/`
+ * Add: `+`
+ * Subtract: `-`
+
+
+
+```{r}
+# three plus 5 times 2
+
+```
+
+Parentheses can force the order of evaluation
+
+```{r}
+# (three plus five) times 2
+
+```
+
+Parentheses can get unwieldy when not needed, but it clarifies your intentions.
+
+```{r, eval=FALSE}
+
+
+
+```
+
+
+
+
+
+## Scientific notation
+
+Really small or large numbers get a scientific notation:
+
+```{r}
+# a small number: 2/10000
+
+```
+
+- `2e04` is shorthand for `2` multiplied by `10^4`
+
+- `2e-04` is shorthand for `2` multiplied by `10^(-4)`
+
+
+
+You can write numbers in scientific notation too. What is this number:
+
+```{r}
+# write a large number in scientific notation: 5e3
+
+```
+
+
+
+
+
+
+
+
+
+
+## Mathematical functions
+
+
+To call a function: `function()`
+
+```{r}
+#| eval: false
+# Evoke a function that will print the current working directory
+ 
+```
+
+
+
+
+
+Some functions require arguments (inputs) that are provided inside the parentheses of a function. 
+
+
+```{r}
+# sin function
+
+```
+
+```{r}
+# natural logarithm function
+
+```
+
+```{r}
+# log base10 function
+
+```
+
+```{r}
+# exponentiation function: e^(1/2)
+
+```
+
+
+
+
+
+
+
+### Help files
+
+Typing `?` before the name of a command will open the help page.
+
+
+::: {.callout}
+## Challenge 1
+Look at the help page for the `log()` function by typing `?log` in the console. 
+
+What arguments does `log()` take? 
+
+Which arguments have a default value set?
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+## Comparing things
+
+We can also make comparisons in R:
+
+```{r}
+# is 1 equal to 1?
+
+```
+
+```{r}
+# is 2 not equal to 1?
+
+```
+
+```{r}
+# is 1 less than 2?
+
+```
+
+```{r}
+# is 1 less than or equal to 1
+
+```
+
+```{r}
+# is 1 greater than 0
+
+```
+
+```{r}
+# is 1 greater or equal to -9
+
+```
+
+
+
+
+
+
+
+::: {.callout} 
+## Challenge 3
+What will be the value of each variable after each line in the following code?
+
+```{r}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+:::
+
+
+
+::: {.callout} 
+## Challenge 4
+Run the code from the previous challenge, and write a command to compare mass to age. Is mass larger than age?
+
+
+:::
+
+
+
+
+
+
+
+
+
+## Variables and assignment
+
+We can store values in variables using the assignment operator `<-`, like this:
+
+```{r}
+# assign x to 1/40
+
+```
+
+Notice that assignment does not print a value. It instead creates a **variable**. 
+
+```{r}
+# print the value of the variable x
+
+```
+
+
+Check the `Environment` tab in the top right panel of RStudio. Do you see "x"?
+
+
+
+
+`x` can be used in place of a number:
+
+```{r}
+# compute the logarithm of x
+
+```
+
+Variables can be reassigned:
+
+```{r}
+# reassign x to 100
+
+```
+
+
+`x` used to contain the value 0.025 and now equals 100.
+
+```{r}
+# look at x
+
+```
+
+
+
+You can also change assignment using variables:
+
+```{r}
+# reassign x to be x + 1
+
+# define variable y which is x times 2
+
+```
+
+
+Variable names can *contain letters, numbers, underscores, and periods* but *no spaces or mathematical operators (like `-`)*.
+
+Variables must *start with a letter*
+
+It is recommended to use a **consistent** variable naming syntax, such as
+
+  * underscores_between_words
+  
+  
+  
+  
+
+
+Note that it is also possible to use the `=` operator for assignment:
+
+```{r}
+# assign x to 1/40 using `=`
+
+```
+
+
+But this is much less common among R users, and the general recommendation is to use `<-`.
+
+
+
+
+::: {.callout} 
+## Challenge 2
+Which of the following are valid R variable names?
+```{r}
+#| eval: false
+min_height
+max.height
+_age
+.mass
+MaxLength
+min-length
+2widths
+celsius2kelvin
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+## Vectors
+
+Note that a variable can contain many values at once, e.g., by creating a vector
+
+```{r}
+# print out several vectors
+
+# assign a vector to a variable 
+
+# perform a mathematical operation with the vector
+
+```
+
+More on vectors later...
+
+
+
+
+
+
+
+
+
+
+## Managing your environment
+
+
+`ls` will list all of the variables and functions stored in the global environment
+(your working R session):
+
+```{r}
+#| eval: false
+# list all variables in the current environment
+
+```
+
+
+What happens if we run `ls` without the parentheses?
+
+```{r}
+
+```
+
+
+
+
+
+`ls` is the name of an object, and entering the name of an object by itself prints the contents of the object. 
+
+
+E.g., `x` prints out the object we created earlier:
+
+```{r}
+
+```
+
+
+
+
+
+You can use `rm` to delete objects you no longer need:
+
+```{r}
+#| eval: false
+# use rm() to delete x
+
+```
+
+
+
+You can remove everything by passing the results of `ls` to the `rm` function (or you can click the "broom" icon in the environment panel):
+
+```{r}
+#| eval: false
+# provide `ls()` to the `list` argument of `rm()` to remove everything at once
+
+```
+
+
+Note: When assigning values to arguments by name, you *must* use the `=` operator (rather than `<-`)!
+
+
+
+
+
+
+
+```{r}
+#| error: true
+# try to do rm(list = ls()) but with <- instead of =
+
+```
+
+
+
+
+
+
+
+::: {.callout} 
+## Challenge 5
+Clean up your working environment by deleting the `x`, `y`, `mass` and `age`
+variables.
+
+:::
+
+
+
+
+
+
+## R Packages
+
+We can install packages using `install.packages("packagename")`
+
+```{r}
+# install the tidyverse package
+```
+
+
+(Rather than saving this code, you can just run it directly in the console.)
+
+
+You only ever need to *install* a package once, but you need to *load* it every time you want to use it:
+
+```{r}
+# load the tidyverse package
+
+```
+
+
+
+::: {.callout} 
+## Challenge 5
+Install and load the `dplyr` and `ggplot2` R packages.
+
+:::
+
+
+
+
+

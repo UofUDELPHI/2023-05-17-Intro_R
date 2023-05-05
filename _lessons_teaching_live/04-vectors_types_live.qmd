@@ -1,0 +1,475 @@
+---
+title: "Vectors and types"
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Datasets
+
+Let's start by using R to create a dataset, which we will then save in our `data/` directory in a file called `feline-data.csv`. 
+First, let's create the dataset in R using the `data.frame()` function:
+
+```{r}
+# define the cats data frame
+cats <- data.frame(coat = c("calico", "black", "tabby"),
+                    weight = c(2.1, 5.0, 3.2),
+                    likes_string = c(1, 0, 1))
+```
+
+Saving `cats` as a .csv file:
+
+```{r}
+# save the cats data frame as a local csv file
+write.csv(x = cats, file = "data/feline-data.csv", row.names = FALSE)
+```
+
+Loading the `cats` dataset from the csv file:
+
+```{r}
+# load the cats data frame from the csv file
+
+```
+
+## Working with `cats`
+
+Let's extract some columns from `cats`:
+
+```{r}
+# extract the weight column using `$`
+cats$weight
+# extract the coat column using `$`
+cats$coat
+```
+
+Each column in `cats` is a *vector*. 
+
+There are lots of operations that we can do on vectors, such as:
+
+```{r}
+# add 2 to the weight vector
+cats$weight + 2
+```
+
+```{r}
+# multiply the weight and likes_string vectors together
+cats$weight * cats$likes_string
+```
+
+But what about:
+
+```{r}
+#| error: true
+# add the weight and coat vectors together:
+cats$weight + cats$coat
+```
+
+What happened?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Data Types
+
+
+We can ask what type or "class" or "type" of data something is:
+
+```{r}
+# check the class() of the weight column
+class(cats$weight)
+```
+
+
+
+
+
+
+
+
+Three main types:
+
+- `numeric` (which encompasses `double` and `integer`), 
+
+- `logical`, 
+
+- `character` 
+
+
+Let's identify the class of several values:
+
+```{r}
+# identify the class of: 3.14, TRUE, and "banana"
+
+```
+
+
+Let's look at another version of the cats data with an extra row:
+
+```{r, eval=FALSE}
+# read in "data/feline-data_v2.csv"
+
+```
+
+Let's check the class of the `weight` column
+
+```{r}
+# check the class of the weight column
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The weight column is no longer numeric!
+
+```{r}
+#| error: true
+# try to add 2 to the weight column
+
+```
+
+What happened?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Vectors and Type Coercion
+
+
+**Everything in the vector must be the same basic data type**.
+
+A vector can be created with the `c()` "combine" function:
+
+```{r}
+# create a vector consisting of 1, 8, and 1.2 using c():
+
+```
+
+
+The *columns of a data frame are also vectors*:
+
+```{r}
+# print out the weight column of the cats data frame
+
+```
+
+
+
+### Coercion by combining vectors
+
+All entries in a vector must have the same type, so `c()` will *coerce* the type of each element to a common type. G
+
+What do you think will be the type of the following vector?
+
+```{r}
+# create a vector containing 2, 6, and "3"
+
+```
+
+
+
+
+
+
+
+
+
+What about the following vectors:
+
+```{r}
+# a vector containing "a" and TRUE
+
+
+# a vector containing 0 and TRUE
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+### The type hierarchy
+
+The coercion rules go: `logical` -> `numeric` -> `character`
+
+
+```{r}
+# create a vector with "a" and TRUE. What will its type be?
+
+```
+
+
+
+
+
+
+
+
+
+Forcing coercion using `as.numeric()`, `as.logical()`, etc:
+
+```{r}
+# create a vector with "0", "2", "4" (character values)
+
+# coerce the vector to numeric using as.numeric()
+
+# coerce the NUMERIC vector to logical using as.logical()
+
+```
+
+
+
+
+In the cats data, coerce `likes_string` to logical (`TRUE`/`FALSE`)
+
+```{r}
+# print out likes_string column of cats data
+
+# redefine the likes_string column as a logical vector
+
+# print out the modified cats data frame
+
+```
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 1
+
+In this exercise, you will clean the cat data set from the chapter about 
+type coercion.
+
+Fill in the ____ gaps in the code below:
+
+```{r}
+#| eval: false
+# Read data
+cats <- read.csv("data/feline-data_v2.csv")
+# 1. Print the data
+_____
+
+# 2. Show an overview of the table that prints out the type of each column
+_____(cats)
+
+# 3. The "weight" column has the incorrect data type __________.
+#    The correct data type is: ____________.
+
+# 4. Correct the 4th weight data point with the mean of the two given values
+cats$weight[4] <- 2.35
+#    print the data again to see the effect
+cats
+
+# 5. Convert the weight to the right data type
+cats$weight <- ______________(cats$weight)
+
+#    Calculate the mean to test yourself (you should get 3.16)
+mean(cats$weight)
+
+# If you see the correct mean value (and not NA), you did the exercise
+# correctly!
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Some basic functions for creating vectors
+
+The combine function, `c()`, can also be used both to create a new vector as well as to append things to an existing vector:
+
+```{r}
+# create a new vector ab_vector with entries "a" and "b"
+
+# add "z" to ab_vector
+
+```
+
+
+
+
+
+
+
+
+You can also make series of numbers using the `:` syntax as well as the `seq()` function:
+
+```{r}
+# create a vector with the numbers 1 to 10 using `:`
+
+# print a vector with the numbers 1 to 10 using `seq()`
+
+# print a vector with the numbers 1 to 10 using `seq()` with intervals of 0.1
+
+```
+
+
+
+
+
+
+
+The `head()` and `tail()` functions show the first and last few entries of a vector, respectively.
+
+```{r}
+# create a vector of integers from 20 to 25
+
+# look at the first 2 entries using `head()`
+
+# look at the last 4 entries using `tail()`
+
+```
+
+
+
+
+
+
+
+
+The `length()` function computes the number of entries in the vector:
+
+```{r}
+# compute the length of the vector above using `length()`
+
+```
+
+And the `class()` function reports the class/type of the values in the vector:
+
+```{r}
+# report the class of the vector above using `class()`
+
+```
+
+
+
+
+
+
+
+
+
+
+## Factors
+
+Categorical variables/columns with a finite set of options will often be formatted as factor. 
+
+```{r}
+# look at the coat categorical varaible from the cats data frame
+
+```
+
+
+The `coat` variable is currently formatted as a character variable
+
+```{r}
+# compute the class of the coat variable
+
+```
+
+
+We can convert it to a factor using the `as.factor()` function:
+
+```{r}
+# convert the coat column from cats to a factor
+
+# check its class
+
+```
+
+
+
+Let's take a look at the factor-formatted `coat` column:
+
+```{r}
+# take a look at the coat column
+
+```
+
+
+It looks very similar to the character format, but now our output tells us that there are "levels": "black", "calico", "tabby". 
+
+
+
+
+
+### Converting factors to numeric: 
+
+If we convert `coat` to a numeric type, it replaces each level with a number:
+
+```{r}
+# convert the coat column vector to numeric
+
+```
+
+But if the factor levels are themselves numbers, the numeric information gets lost:
+
+```{r}
+# Create a factor version of the weight column
+
+
+# convert the factor weight column vector to a numeric vector
+
+```
+
+
+

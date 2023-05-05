@@ -6,23 +6,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r, include=FALSE}
-# We don't want factors
-options(stringsAsFactors = FALSE)
-
-## Save the data. Do not create factors from strings (explicit argument
-## only necessary for R < 4.0.0)
-cats_orig <- data.frame(coat = c("calico", "black", "tabby"),
-                   weight = c(2.1, 5.0, 3.2),
-                   likes_string = c(1, 0, 1),
-                   stringsAsFactors = FALSE)
-cats_bad <- data.frame(coat = c("calico", "black", "tabby", "tabby"),
-                   weight = c(2.1, 5.0, 3.2, '2.3 or 2.4'),
-                   likes_string = c(1, 0, 1, 1), 
-                   stringsAsFactors = FALSE)
-cats <- cats_orig
-```
-
 
 ## Subsetting vectors
 
@@ -30,30 +13,43 @@ cats <- cats_orig
 We can extract individual elements of a vector by using the square bracket notation:
 
 ```{r}
+# create a sequence_example vector of integers from 20 to 25
 sequence_example <- 20:25
+# extract the first element and store it in a variable called first_element
 first_element <- sequence_example[1]
+# take a look at the first_element variable
 first_element
 ```
 
 To change a single element, use the bracket on the other side of the arrow:
 
 ```{r}
+# reassign the first element of sequence_example to 30
 sequence_example[1] <- 30
+# print out sequence_example
 sequence_example
 ```
+ 
+ 
+ 
+ 
+ 
+ 
 
-Let's define a new vector, `x`:
+
+
+### Accessing elements using their indices
+
+Define a new vector, `x`:
 
 ```{r}
+# define a vector x containing the values 5.4, 6.2, 7.1, 4.8, and 7.5
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+# print out x
 x
 ```
 
 
-So now that we've created a toy vector to play with, how do we get at its
-contents?
-
-### Accessing elements using their indices
 
 To extract elements of a vector we can give their corresponding index, starting
 from one:
@@ -169,10 +165,11 @@ x
 ::: {.callout}
 ## Challenge 1
 
-Given the following vector:
+Given the following code:
 ```{r}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
-x
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
 ```
 
 Come up with at least 2 different commands that will produce the following output:
@@ -198,6 +195,9 @@ x[-c(1, 5)]
 x[c(2, 3, 4)]
 ```
 
+```{r}
+x[c("b", "c", "d")]
+```
 :::
 
 :::

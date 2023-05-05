@@ -157,6 +157,67 @@ We can also make comparisons in R:
 ```
 
 
+
+
+::: {.callout} 
+## Challenge 2
+What will be the value of each variable after each line in the following code?
+```{r}
+#| eval: false
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 2
+```{r}
+mass <- 47.5
+```
+This will give a value of `r mass` for the variable mass
+```{r ch2pt2-sol}
+age <- 122
+```
+This will give a value of `r age` for the variable age
+```{r ch2pt3-sol}
+mass <- mass * 2.3
+```
+This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
+`r mass` to the variable mass.
+```{r ch2pt4-sol}
+age <- age - 20
+```
+This will subtract 20 from the existing value of `r age + 20 ` to give a new value
+of `r age` to the variable age.
+:::
+
+
+
+:::
+
+
+::: {.callout} 
+## Challenge 3
+Run the code from the previous challenge, and write a command to
+compare mass to age. Is mass larger than age?
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 3
+One way of answering this question in R is to use the `>` to set up the following:
+```{r ch3-sol}
+mass > age
+```
+This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
+:::
+:::
+
+
+
+
+
+
+
 ## Variables and assignment
 
 We can store values in variables using the assignment operator `<-`, like this:
@@ -216,7 +277,7 @@ But this is much less common among R users, and the general recommendation is to
 
 
 ::: {.callout} 
-## Challenge 2
+## Challenge 4
 Which of the following are valid R variable names?
 ```{r}
 #| eval: false
@@ -232,7 +293,7 @@ celsius2kelvin
 
 
 ::: {.callout collapse="true"} 
-## Solution to Challenge 2
+## Solution to Challenge 4
 The following variable names are valid:
 ```{r}
 #| eval: false
@@ -368,6 +429,21 @@ how to fix a problem.
 :::
 
 
+::: {.callout} 
+## Challenge 5
+Clean up your working environment by deleting the mass and age
+variables.
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 5
+We can use the `rm` command to accomplish this task
+```{r ch4-sol}
+rm(age, mass)
+```
+:::
+:::
+
+
 ## R Packages
 
 We can add functions to R by writing a package or
@@ -384,74 +460,6 @@ Packages can also be viewed, loaded, and detached in the Packages tab of the low
 
 Packages can be installed and updated from the Package tab with the Install and Update buttons at the top of the tab.
 
-::: {.callout} 
-## Challenge 3
-What will be the value of each variable after each line in the following code?
-```{r}
-#| eval: false
-mass <- 47.5
-age <- 122
-mass <- mass * 2.3
-age <- age - 20
-```
-
-::: {.callout collapse="true"} 
-## Solution to Challenge 3
-```{r}
-mass <- 47.5
-```
-This will give a value of `r mass` for the variable mass
-```{r ch2pt2-sol}
-age <- 122
-```
-This will give a value of `r age` for the variable age
-```{r ch2pt3-sol}
-mass <- mass * 2.3
-```
-This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
-`r mass` to the variable mass.
-```{r ch2pt4-sol}
-age <- age - 20
-```
-This will subtract 20 from the existing value of `r age + 20 ` to give a new value
-of `r age` to the variable age.
-:::
-
-
-
-:::
-
-
-::: {.callout} 
-## Challenge 4
-Run the code from the previous challenge, and write a command to
-compare mass to age. Is mass larger than age?
-
-::: {.callout collapse="true"} 
-## Solution to Challenge 4
-One way of answering this question in R is to use the `>` to set up the following:
-```{r ch3-sol}
-mass > age
-```
-This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
-:::
-:::
-
-
-
-::: {.callout} 
-## Challenge 5
-Clean up your working environment by deleting the mass and age
-variables.
-
-::: {.callout collapse="true"} 
-## Solution to Challenge 5
-We can use the `rm` command to accomplish this task
-```{r ch4-sol}
-rm(age, mass)
-```
-:::
-:::
 
 
 
@@ -466,13 +474,12 @@ We can use the `install.packages()` command to install the required packages.
 
 ```{r ch5-sol, eval=FALSE}
 install.packages("tidyverse")
-install.packages("gapminder")
 ```
 
 An alternate solution, to install multiple packages with a single `install.packages()` command is:
 
 ```{r ch5-sol2, eval=FALSE}
-install.packages(c("tidyverse", "gapminder"))
+install.packages(c("tidyverse"))
 ```
 :::
 

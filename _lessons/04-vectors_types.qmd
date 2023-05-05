@@ -530,7 +530,7 @@ cats$coat
 ```
 
 
-It looks very similar to the character format, but now our output tells us that there are four "levels": "black", "calico", "tabby", and "tortoiseshell". 
+It looks very similar to the character format, but now our output tells us that there are the following "levels": "black", "calico", "tabby"
 
 
 One common pitfall occurs when converting numerically coded factors to numeric type. 

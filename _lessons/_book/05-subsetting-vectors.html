@@ -4153,11 +4153,9 @@ vertical-align: -.125em;
 <p>Let’s define a new vector, <code>x</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="fl">6.2</span>, <span class="fl">7.1</span>, <span class="fl">4.8</span>, <span class="fl">7.5</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   b   c   d   e 
-5.4 6.2 7.1 4.8 7.5 </code></pre>
+<pre><code>[1] 5.4 6.2 7.1 4.8 7.5</code></pre>
 </div>
 </div>
 <p>So now that we’ve created a toy vector to play with, how do we get at its contents?</p>
@@ -4167,15 +4165,13 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a 
-5.4 </code></pre>
+<pre><code>[1] 5.4</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  d 
-4.8 </code></pre>
+<pre><code>[1] 4.8</code></pre>
 </div>
 </div>
 <p>The square brackets operator is a function. For vectors, it means “get me the nth element”.</p>
@@ -4183,16 +4179,14 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   c 
-5.4 7.1 </code></pre>
+<pre><code>[1] 5.4 7.1</code></pre>
 </div>
 </div>
 <p>Or “slices” of the vector using a sequential integer vector index:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   b   c   d 
-5.4 6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 5.4 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 <p>Recall that the <code>:</code> operator creates a sequence of numbers from the left element to the right.</p>
@@ -4210,16 +4204,14 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   a   c 
-5.4 5.4 7.1 </code></pre>
+<pre><code>[1] 5.4 5.4 7.1</code></pre>
 </div>
 </div>
 <p>If we ask for an index beyond the length of the vector, R will return a missing value:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;NA&gt; 
-  NA </code></pre>
+<pre><code>[1] NA</code></pre>
 </div>
 </div>
 <p>This is a vector of length one containing an <code>NA</code>, whose name is also <code>NA</code>.</p>
@@ -4227,7 +4219,7 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>named numeric(0)</code></pre>
+<pre><code>numeric(0)</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -4250,16 +4242,14 @@ Vector numbering in R starts at 1
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   c   d   e 
-5.4 7.1 4.8 7.5 </code></pre>
+<pre><code>[1] 5.4 7.1 4.8 7.5</code></pre>
 </div>
 </div>
 <p>We can skip multiple elements:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>)]  <span class="co"># or x[-c(1,5)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -4286,8 +4276,7 @@ Order of operations
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  d   e 
-4.8 7.5 </code></pre>
+<pre><code>[1] 4.8 7.5</code></pre>
 </div>
 </div>
 </div>
@@ -4297,8 +4286,7 @@ Order of operations
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x[<span class="sc">-</span><span class="dv">4</span>]</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   b   c   e 
-5.4 6.2 7.1 7.5 </code></pre>
+<pre><code>[1] 5.4 6.2 7.1 7.5</code></pre>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -4311,21 +4299,18 @@ Challenge 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given the following code:</p>
+<p>Given the following vector:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.4</span>, <span class="fl">6.2</span>, <span class="fl">7.1</span>, <span class="fl">4.8</span>, <span class="fl">7.5</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  a   b   c   d   e 
-5.4 6.2 7.1 4.8 7.5 </code></pre>
+<pre><code>[1] 5.4 6.2 7.1 4.8 7.5</code></pre>
 </div>
 </div>
 <p>Come up with at least 2 different commands that will produce the following output:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 <p>After you find 2 different commands, compare notes with your neighbour. Did you have different strategies?</p>
@@ -4344,29 +4329,19 @@ Solution to challenge 1
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  b   c   d 
-6.2 7.1 4.8 </code></pre>
+<pre><code>[1] 6.2 7.1 4.8</code></pre>
 </div>
 </div>
 </div>
@@ -4403,16 +4378,16 @@ Solution to Challenge 2
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">26</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(x, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">26</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(x, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 6 7</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52</code></pre>
 </div>
@@ -4431,11 +4406,11 @@ Solution to Challenge 2
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="accessing-vectors-by-name"><span class="header-section-number">5.2.1</span> Accessing vectors by name</h3>
 <p>Each element of a vector can be given a name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>pizza_price <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">pizzasubito =</span> <span class="fl">5.64</span>, <span class="at">pizzafresh =</span> <span class="fl">6.60</span>, <span class="at">callapizza =</span> <span class="fl">4.50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>pizza_price <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">pizzasubito =</span> <span class="fl">5.64</span>, <span class="at">pizzafresh =</span> <span class="fl">6.60</span>, <span class="at">callapizza =</span> <span class="fl">4.50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To retrieve a specific named entry from a vector, we can use the square bracket notation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="st">"pizzasubito"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="st">"pizzasubito"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>pizzasubito 
        5.64 </code></pre>
@@ -4443,7 +4418,7 @@ Solution to Challenge 2
 </div>
 <p>which is equivalent to extracting the first entry of the vector:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>pizza_price[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>pizzasubito 
        5.64 </code></pre>
@@ -4451,19 +4426,19 @@ Solution to Challenge 2
 </div>
 <p>If you want to extract just the names of an object, use the <code>names()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "pizzasubito" "pizzafresh"  "callapizza" </code></pre>
 </div>
 </div>
 <p>We have seen how to access and change single elements of a vector. The same is possible for names:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "callapizza"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"call-a-pizza"</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>pizza_price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pizza_price)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"call-a-pizza"</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>pizza_price</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> pizzasubito   pizzafresh call-a-pizza 
         5.64         6.60         4.50 </code></pre>
@@ -4484,7 +4459,7 @@ Challenge 3
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 </code></pre>
@@ -4503,8 +4478,8 @@ Solution to Challenge 3
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we can name a vector 'on the fly'</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>y[<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we can name a vector 'on the fly'</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>y[<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  a   c 
 5.4 7.1 </code></pre>
@@ -4541,15 +4516,15 @@ Solution to Challenge 4
 <div class="callout-body-container callout-body">
 <p>You get the names of an object by wrapping the object name inside <code>names(...)</code>. Similarly, you get the data type of the names by again wrapping the whole code in <code>class(...)</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">names</span>(pizza_price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">names</span>(pizza_price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
 <p>alternatively, use a new variable if this is easier for you to read:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">names</span>(pizza_price)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">names</span>(pizza_price)</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -4571,7 +4546,7 @@ Challenge 5
 <div class="callout-body-container callout-body">
 <p>Instead of just changing the names of each element of a vector individually, you can also set all names of an object by writing code like (replace ALL CAPS text):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>( OBJECT ) <span class="ot">&lt;-</span>  CHARACTER_VECTOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>( OBJECT ) <span class="ot">&lt;-</span>  CHARACTER_VECTOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create a vector that gives the number for each letter in the alphabet!</p>
 <ol type="1">
@@ -4592,9 +4567,9 @@ Solution to Challenge 5
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>letter_no <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>   <span class="co"># or seq(1,26)</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(letter_no) <span class="ot">&lt;-</span> LETTERS</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>letter_no[<span class="st">"B"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>letter_no <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>   <span class="co"># or seq(1,26)</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(letter_no) <span class="ot">&lt;-</span> LETTERS</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>letter_no[<span class="st">"B"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>B 
 2 </code></pre>
@@ -4610,15 +4585,15 @@ Solution to Challenge 5
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="removing-named-elements"><span class="header-section-number">5.2.2</span> Removing named elements</h3>
 <p>Removing named elements is a little harder. If we try to remove one named element by negating the string, R complains (slightly obscurely) that it doesn’t know how to take the negative of a string:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we start again by naming a vector 'on the fly'</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="fl">5.4</span>, <span class="at">b =</span> <span class="fl">6.2</span>, <span class="at">c =</span> <span class="fl">7.1</span>, <span class="at">d =</span> <span class="fl">4.8</span>, <span class="at">e =</span> <span class="fl">7.5</span>) <span class="co"># we start again by naming a vector 'on the fly'</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">-</span><span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in -"a": invalid argument to unary operator</code></pre>
 </div>
 </div>
 <p>However, we can use the <code>!=</code> (not-equals) operator to construct a logical vector that will do what we want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="st">"a"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   c   d   e 
 6.2 7.1 4.8 7.5 </code></pre>
@@ -4626,7 +4601,7 @@ Solution to Challenge 5
 </div>
 <p>Skipping multiple named indices is a little bit harder still. Suppose we want to drop the <code>"a"</code> and <code>"c"</code> elements, so we try this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>x[<span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length</code></pre>
@@ -4644,7 +4619,7 @@ shorter object length</code></pre>
 <h2 data-number="5.3" class="anchored" data-anchor-id="recycling"><span class="header-section-number">5.3</span> Recycling</h2>
 <p>Let’s take a look at the comparison component of this code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="sc">!=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length</code></pre>
@@ -4670,7 +4645,7 @@ shorter object length</code></pre>
 <p>In this case R <strong>repeats</strong> <code>c("a", "c")</code> as many times as necessary to match <code>names(x)</code>, i.e.&nbsp;we get <code>c("a","c","a","c","a")</code>. Since the recycled <code>"a"</code> doesn’t match the third element of <code>names(x)</code>, the value of <code>!=</code> is <code>TRUE</code>. Because in this case the longer vector length (5) isn’t a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and <code>names(x)</code> had contained six elements, R would <em>silently</em> have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!</p>
 <p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) it to use the <code>%in%</code> operator. The <code>%in%</code> operator goes through each element of its left argument, in this case the names of <code>x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code>!</code> operator to change “in” to “not in”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span>(<span class="fu">names</span>(x) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span>(<span class="fu">names</span>(x) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  b   d   e 
 6.2 4.8 7.5 </code></pre>

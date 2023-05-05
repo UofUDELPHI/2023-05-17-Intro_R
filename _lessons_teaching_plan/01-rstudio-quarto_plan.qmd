@@ -1,0 +1,50 @@
+---
+title: "Introduction to RStudio and quarto"
+output: html
+embed-resources: true
+---
+
+## Installation
+
+- Go through installation
+
+## RStudio
+
+- Discuss the basic layout of RStudio: panels
+
+## Quarto intro
+
+- Create a new quarto document
+
+- Walk through the template we created
+
+- Render the template
+
+- Simplifying output with `embed-resources: true` yaml
+
+- Basics of markdown syntax (`##` and *bold*)
+
+- Code chunks
+
+    - compare markdown code chunk with rendered html chunk
+
+- Chunk options `#| echo: false`
+
+    - Compare with code comments
+
+```{{r}}
+#| echo: false
+
+# this code is computing the product of 2 and 2
+2 * 2
+```
+
+## Console
+
+
+- `>` with blinking cursor
+
+- Incomplete output: `+`
+
+    - Hit escape or <kbd>Ctrl</kbd>+<kbd>C</kbd> instead of <kbd>Esc</kbd> to cancel the command.
+
