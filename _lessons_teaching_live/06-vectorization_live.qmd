@@ -13,9 +13,9 @@ Most mathematical operations in R are vectorized (are automatically applied elem
 
 ```{r}
 # define x as a vector of integers from 1-4
-x <- 1:4
+
 # multiply x by 2
-x * 2
+
 ```
 
 
@@ -23,9 +23,9 @@ Operations on vectors of the same length are vectorized:
 
 ```{r}
 # define y as a vector of integers from 6-9
-y <- 6:9
+
 # add x to y
-x + y
+
 ```
 
 Here, each element of `x` was added to its corresponding element of `y`:
@@ -54,15 +54,6 @@ cats <- read.csv("data/feline-data.csv")
 ```
 
 
-::: {.callout collapse=true}
-## Solution to challenge 1
-
-
-```{r}
-cats$weight_calibrated <- cats$weight - 0.5
-head(cats)
-```
-:::
 :::
 
 
@@ -75,9 +66,9 @@ Comparison operators applied to a vector will produce a boolean vector
 
 ```{r}
 # print out x
-x
+
 # check if each entry of x is greater than 2
-x > 2
+
 ```
 
 
@@ -94,11 +85,11 @@ Most functions also operate element-wise on vectors:
 
 ```{r}
 # define a new vector x that contains the integers 1:4
-x <- 1:4
+
 # print out x
-x
+
 # compute the logarithm of x
-log(x)
+
 ```
 
 
@@ -115,22 +106,6 @@ This would be tedious to type out, and impossible for high values of n.  Use vec
 
 What is the sum when n = 10,000?
 
-::: {.callout collapse=true}
-##  Solution to Challenge 2
-
-```{r}
-sum(1/(1:100)^2)
-sum(1/(1:10000)^2)
-```
-
-We could do this for a general `n` using:
-
-```{r}
-n <- 10000
-sum(1/(1:n)^2)
-```
-
-:::
 :::
 
 
@@ -147,7 +122,7 @@ y <- c(1, 2, 3, 4, 5, 6, 7)
 
 ```{r}
 # compute the sum of x and y
-x + y
+
 ```
 
 
@@ -180,9 +155,9 @@ Let's consider the following vector:
 
 ```{r}
 # define a vector `x` with the entries 5.4, 6.2, 7.1, 4.8, 7.5
-x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+
 # set the names to be: a-e
-names(x) <- c('a', 'b', 'c', 'd', 'e')
+
 ```
 
 
@@ -192,7 +167,7 @@ We can use a logical vector to subset the `TRUE` entries:
 
 ```{r}
 # Extract the third and fifth entries of `x` using a logical TRUE/FALSE vector
-x[c(FALSE, FALSE, TRUE, FALSE, TRUE)]
+
 ```
 
 
@@ -203,9 +178,9 @@ Since comparison operators (e.g. `>`, `<`, `==`) are vectorized we can use them 
 
 ```{r}
 # Compute a vector asking if x is greater than 7
-x > 7
+
 # use this vector to subset x to the entries that are greater than 7
-x[x > 7]
+
 ```
 
 
@@ -234,9 +209,9 @@ Several operations for combining logical vectors exist in R:
 
 ```{r}
 # use `|` to identify which values in x are equal to 5.4 or 7
-(x == 5.4) | (x == 7)
+
 # use the above logical vector to subset x to just the values 5.4 or 7
-x[(x == 5.4) | (x == 7)]
+
 ```
 
 
@@ -258,19 +233,19 @@ x[(x == 5.4) & (x == 7)]
 
 ```{r}
 # Extract the values of x that are equal to 7.5
-x[x == 7.5]
+
 ```
+
 
 ### "Not" equal to:
 
 `!=` can be used to ask whether a single value--or entries in a vector--are *not* equal to a specified value.
 
-
 ```{r}
 # Using !=, extract the values of x that are *not* equal to 5.4 
-x[x != 5.4]
+
 # Rewrite the above code by negating the entire expression instead:
-x[!(x == 5.4)]
+
 ```
 
 
@@ -282,12 +257,22 @@ A cautionary example:
 
 ```{r}
 # print x
-x
+
 # ask whether x is equal to the vector c(5.4, 4.8, 7.5)
-x == c(5.4, 4.8, 7.5)
+
 ```
 
+
+
+
+
+
+
 What is happening here? **Recycling**
+
+
+
+
 
 
 
@@ -299,9 +284,9 @@ To ask which values of `x` are included in the values in another vector:
 
 ```{r}
 # Using %in% ask which values of `x` are included in 5.4, 4.8, 7
-x %in% c(5.4, 4.8, 7)
+
 # use this logical vector to subset x to the relevant values
-x[x %in% c(5.4, 4.8, 7)]
+
 ```
 
 
@@ -313,9 +298,9 @@ We could extract the entries of `x` that are *not* in this vector by preceding t
 
 ```{r}
 # Using `!` and `%in%` ask which values of x are *not* included in 5.4, 4.8, 7
-!(x %in% c(5.4, 4.8, 7))
+
 # use this logical vector to subset `x` to exclude the values 5.4, 4.8, 7
-x[!(x %in% c(5.4, 4.8, 7))]
+
 ```
 
 
@@ -338,21 +323,6 @@ Write a subsetting command to return the values in x that are greater than 4 *or
 
 Write another subsetting command to return the values in x that are greater than 4 *and* less than 7.
 
-::: {.callout collapse=true}
-## Solution to challenge 3
-
-greater than 4 *or* less than 7:
-
-```{r}
-x[(x < 7) | (x > 4)]
-```
-
-greater than 4 *and* less than 7:
-
-```{r}
-x[(x < 7) & (x > 4)]
-```
-:::
 :::
 
 

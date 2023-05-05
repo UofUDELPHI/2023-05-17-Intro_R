@@ -4351,10 +4351,10 @@ length</code></pre>
 </section>
 <section id="combining-logical-conditions" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="combining-logical-conditions"><span class="header-section-number">6.3</span> Combining logical conditions</h2>
-<p>We often want to combine multiple logical criteria. For example, we might want to find all the countries that are located in Asia <strong>or</strong> Europe <strong>and</strong> have life expectancies within a certain range. Several operations for combining logical vectors exist in R:</p>
+<p>We often want to combine multiple logical criteria. Several operations for combining logical vectors exist in R:</p>
 <ul>
-<li><p><code>&amp;</code>, the “logical AND” operator: returns <code>TRUE</code> if both the left and right are <code>TRUE</code>.</p></li>
-<li><p><code>|</code>, the “logical OR” operator: returns <code>TRUE</code>, if either the left or right (or both) are <code>TRUE</code>.</p></li>
+<li><p><code>a &amp; b</code>, the “logical AND” operator: returns <code>TRUE</code> if both the <code>a</code> and <code>b</code> are <code>TRUE</code>.</p></li>
+<li><p>a | b<code>, the "logical OR" operator: returns</code>TRUE<code>, if either</code>a<code>or</code>b<code>(or both) are</code>TRUE`.</p></li>
 </ul>
 <p>You may sometimes see <code>&amp;&amp;</code> and <code>||</code> instead of <code>&amp;</code> and <code>|</code>. These two-character operators only look at the first element of each vector and ignore the remaining elements. In general you should not use the two-character operators in data analysis.</p>
 <ul>
