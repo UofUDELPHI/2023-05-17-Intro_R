@@ -1,0 +1,373 @@
+---
+title: "Subsetting data frames"
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+# Data frames
+
+Recall our `cats` data frame:
+
+```{r}
+cats <-  data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1))
+cats
+```
+
+
+Each column of a data frame is a vector.
+
+
+
+
+
+
+
+## Extracting columns from a data frame
+
+### The dollar sign syntax `$`
+
+
+```{r}
+# Using `$`, extract the coat column
+
+```
+
+What type of object does this return?
+
+
+
+
+
+
+
+
+### The square bracket syntax with one dimension `[j]`
+
+We can extract individual columns using `[j]`
+
+```{r}
+# Using `[j]`, extract the first column 
+
+```
+
+What type of object does this return?
+
+
+
+
+
+This `[j]` syntax also works with *named* indexing. 
+
+```{r}
+# Using `[j]`, extract the "coat" column by name
+
+```
+
+
+
+
+
+
+
+
+### The square bracket syntax with two dimensions `[i, j]`
+
+
+```{r}
+# Using `[i, j]`, extract the coat column (which is the first column)
+
+```
+
+What type of object does this return?
+
+
+
+
+
+
+What does this syntax do?
+
+`df[i, j]` extracts the entry in the `i`th row and the `j`th column
+
+```{r}
+# Using `[i, j]`, extract the entry in the third row and the first column
+
+```
+
+
+
+
+
+A blank `i` or `j` this tells R to extract *all* of the rows or columns
+
+- `df[, j]` will extract all rows for the jth column, and 
+
+- `df[i, ]` will extract the ith row across all columns.
+
+
+```{r}
+# Using `[, j]` extract the second column
+
+```
+
+What type of object does this return?
+
+```{r}
+# Using `[i, ]` extract the second row
+
+```
+
+What type of object does this return? And why?
+
+
+
+
+
+
+
+
+### The double bracket syntax with one dimension `[[]]`
+
+One additional way to extract columns:
+
+```{r}
+# using [[]], extract the first column
+
+```
+
+
+The double bracket syntax also works with named indexing:
+
+```{r}
+# using [[]], extract the first column using its name: "coat"
+
+```
+
+
+
+
+Compare this with:
+
+```{r}
+cats[1]
+cats["coat"]
+```
+
+
+
+
+
+
+
+::: {.callout}
+
+## Challenge 1
+
+There are several subtly different ways to extract observations and elements from data.frames:
+
+- `cats[2]`
+- `cats$weight`
+- `cats["weight"]`
+- `cats[1, 2]`
+- `cats[, 2]`
+- `cats[3, ]`
+
+Try out these examples and explain what type of object is returned by each one.
+
+:::
+
+
+
+
+
+
+## Tip: Renaming data frame columns
+
+
+Like vectors, data frames have column names, which can be accessed with the `names()` function.
+
+```{r}
+# using `names()` print out the names of the cats data frame 
+
+```
+
+You can also use `colnames()`
+
+```{r}
+# using `colnames()` print out the names of the cats data frame 
+
+```
+
+
+
+
+
+If you want to rename the second column of `cats`, you can assign a new name to the second element of `names(cats)`.
+
+```{r}
+# rename the second column of cats to "weight_kg"
+
+# print out cats
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## Extracting multiple columns (and rows)
+
+Each of the square bracket syntax (but not the `$` syntax) options allow us to select multiple columns at once:
+
+Can you guess what the following code will return?
+
+```{r}
+cats[1:2]
+```
+
+
+What about:
+
+```{r}
+cats[c(3, 1), 3]
+```
+
+
+
+
+
+
+
+## Using logical vectors to subset data frames
+
+To subset the cats data frame to just the rows where the weight of the cats is at least 3:
+
+```{r}
+# compute a logical vector to identify which rows correspond to weight > 3
+
+# use this logical vector to subset the cats data
+
+```
+
+
+
+
+
+
+Task: select only the rows where the *cat's coat is tabby or calico* and returns just the values in the *"weight" column*:
+
+```{r}
+# subset to just the rows where the coat is "tabby" or "calico" and 
+# print the values in the "weight" column
+
+```
+
+
+
+
+
+
+
+
+
+
+## Gapminder example
+
+
+```{r}
+# load the gapminder data
+
+```
+
+The gapminder dataset contains information on the population, life expectency, GDP per capita for a range of country-year combinations:
+
+```{r}
+# look at the first 6 rows of the gapminder data
+
+```
+
+```{r}
+# print the dimension of the gapminder data
+
+```
+
+
+::: {.callout}
+## Challenge 2
+
+Each of the following pieces of code are incorrect. Identify the error and fix each of the following common data frame subsetting errors:
+
+1. Extract observations collected for the year 1957
+  
+```{r}
+#| eval: false
+gapminder[gapminder$year = 1957, ]
+```
+
+2. Extract all columns except 1 through to 4
+
+```{r}
+#| eval: false
+gapminder[, -1:4]
+```
+
+3. Extract the rows where the life expectancy is longer the 80 years
+
+```{r}
+#| eval: false
+gapminder[gapminder$lifeExp > 80]
+```
+
+4. Extract the first row, and the fourth and fifth columns (`continent` and `lifeExp`).
+
+```{r}
+#| eval: false
+gapminder[1, 4, 5]
+```
+
+5. Advanced: extract rows that contain information for the years 2002 and 2007
+  
+```{r}
+#| eval: false
+gapminder[gapminder$year == 2002 | 2007, ]
+```
+
+:::
+
+
+
+::: {.callout}
+
+## Challenge 3
+Suppose we want to pull out information from Southeast Asia, which includes the countries of Myanmar, Thailand, Cambodia, Vietnam, and Laos. 
+
+Subset the data just to the rows that include the countries in Southeast Asia by:
+
+1. Defining a logical vector that is `TRUE` for all of the countries in southeast Asia and `FALSE` otherwise. 
+
+2. Using this logical vector to extract just the rows for Southeast Asia from the gapminder dataset.
+
+
+:::
+
+
+::: {.callout}
+## Challenge 4
+1. Why does `gapminder[1:20]` return an error? How does it differ from `gapminder[1:20, ]`?
+
+2. Create a new `data.frame` called `gapminder_subset` that only contains rows 1 through 9 and rows 19 through 23.
+
+:::
+
+
