@@ -1,0 +1,583 @@
+---
+title: Functions
+output: html
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+# load the libraries and data that we'll use in this lesson
+library(tidyverse)
+gapminder <- read.csv("data/gapminder_data.csv")
+```
+
+
+## Functions
+
+
+A function corresponds to a piece of reusable code that can be run just by calling its name.
+
+
+The general structure of a function is:
+
+```{r}
+my_function <- function(arguments) {
+  # perform action
+  # return value
+}
+```
+
+
+The *arguments* that the function takes are contained within the parentheses in `function(arguments)`.   
+
+
+
+
+
+
+
+
+
+
+
+Let's define a function `fahr_to_kelvin()` that converts temperatures from
+Fahrenheit to Kelvin:
+
+```{r}
+# define the fahr_to_kelvin() function 
+# hint: (kelvin <- ((temp - 32) * (5 / 9)) + 273.15)
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+```
+
+
+Let's try running our function:
+
+```{r}
+# freezing point of water
+fahr_to_kelvin(32)
+```
+
+```{r}
+# boiling point of water
+fahr_to_kelvin(212)
+```
+
+
+
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 1
+
+Write a function called `kelvin_to_celsius()` that takes a temperature in Kelvin and returns that temperature in Celsius.
+
+Hint: To convert from Kelvin to Celsius you just subtract 273.15
+
+::: {.callout collapse=true}
+## Solution to challenge 1
+
+```{r}
+kelvin_to_celsius <- function(temp) {
+celsius <- temp - 273.15
+return(celsius)
+}
+```
+:::
+:::
+
+
+
+
+## Combining functions
+
+We now have two functions:
+
+```{r}
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+
+kelvin_to_celsius <- function(temp) {
+  celsius <- temp - 273.15
+  return(celsius)
+}
+```
+
+
+::: {.callout}
+## Challenge 2
+
+Define a single function to convert directly from Fahrenheit to Celsius, using the two functions above in the body of the function.
+
+::: {.callout collapse=true}
+## Solution to challenge 2
+
+Define the function to convert directly from Fahrenheit to Celsius,
+by reusing these two functions above
+
+```{r}
+fahr_to_celsius <- function(temp) {
+ temp_k <- fahr_to_kelvin(temp)
+ result <- kelvin_to_celsius(temp_k)
+ return(result)
+}
+```
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+
+## Interlude: "if" statements
+
+"If" statements are particularly helpful when writing functions.
+
+The general syntax is:
+
+```{r}
+#| eval: false
+
+if (condition is true) {
+  perform action
+}
+```
+
+
+You can execute alternative code if the condition is false using `else`:
+
+```{r}
+# if else
+if (condition is true) {
+  perform action
+} else {  # that is, if the condition is false,
+  perform alternative action
+}
+```
+
+
+
+
+
+If want R to print a message if a variable `x` has a particular value:
+
+```{r}
+x <- 8
+
+# write an if statement that will print "x is greater than or equal to 10" if
+# x is greater than 10 
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+}
+```
+
+To print a different message for numbers less than 10, we can add an `else` statement.
+
+```{r}
+x <- 8
+# write an if else statement that will print "x is greater than or equal to 10" if
+# x is greater than 10 and will print "x is less than 10" otherwise
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else {
+  print("x is less than 10")
+}
+
+# change the value of x and try again!
+```
+
+
+
+
+
+
+
+
+
+
+You can also test multiple conditions by using `else if`.
+
+```{r}
+x <- 8
+
+# Add an else if statement to the above code to add another condition 
+# for if x > 5 but less than 10 (and update the final else code accordingly)
+if (x >= 10) {
+  print("x is greater than or equal to 10")
+} else if (x > 5) {
+  print("x is greater than 5, but less than 10")
+} else {
+  print("x is less than 5")
+}
+```
+
+
+
+**Important:** when R evaluates the condition inside `if()` statements, it is looking for a logical value (`TRUE` or `FALSE`).
+
+
+
+
+
+
+
+
+
+
+
+
+## Writing function error messages with `stop()`
+
+Our `fahr_to_kelvin()` function above should only accept numeric `temp` arguments. 
+
+```{r}
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+```
+
+Let's write an error for when a non-numeric value is provided using `stop()` and an `if` statement:
+
+```{r}
+# To the code below, add an if statement with a stop() function to return an 
+# error for a non-numeric temperature argument
+fahr_to_kelvin <- function(temp) {
+  if (!is.numeric(temp)) {
+    stop("temp must be a numeric vector.")
+  }
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+```
+
+```{r}
+#| error: true
+
+# try running the code with a non-numeric argument:
+fahr_to_kelvin("one")
+```
+
+
+
+
+
+
+### `Stopifnot()`
+
+
+A shorter way to return an error when a particular condition fails is using `stopifnot()`
+
+
+```{r}
+# add a `stopifnot()` line to the function to return an error for a non-numeric
+# argument
+fahr_to_kelvin <- function(temp) {
+  stopifnot(is.numeric(temp))
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+```
+
+Examples:
+
+```{r}
+fahr_to_kelvin(32)
+```
+
+```{r}
+#| error: true
+fahr_to_kelvin("a")
+```
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 3
+
+Edit your `fahr_to_celsius()` function from the previous challenge so that it throws an error immediately if the argument `temp` is non-numeric. Test that your error message works as expected.
+
+
+::: {.callout collapse=true}
+## Solution to challenge 3
+
+Extend our previous definition of the function by adding in an explicit call
+to `stopifnot()`. Since `fahr_to_celsius()` is a composition of two other
+functions, checking inside here makes adding checks to the two component
+functions redundant.
+
+```{r}
+fahr_to_celsius <- function(temp) {
+ stopifnot(is.numeric(temp))
+ temp_k <- fahr_to_kelvin(temp)
+ result <- kelvin_to_celsius(temp_k)
+ return(result)
+}
+```
+:::
+:::
+
+
+
+
+
+
+
+## Default arguments
+
+Our functions above only had one single argument. But some functions have many arguments, some of which are *required* and others which are not.
+
+The following function has three arguments:
+
+```{r}
+# define a function add() with three arguments, which adds three values together
+add <- function(a, b, c) {
+  return(a + b + (2 * c))
+}
+```
+
+```{r}
+# run add() with all three named arguments a = 1, b = 3, c = 5
+add(a = 1, b = 3, c = 5)
+```
+
+If all arguments are provided, you don't need to provide a name for the arguments:
+
+```{r}
+# run add() without naming the arguments
+add(1, 3, 5)
+```
+
+If you don't provide all three arguments, you will get an error: 
+
+```{r}
+#| error: true
+
+# try to run add() with just two arguments
+add(1, 3)
+```
+
+If you want to allow the user to leave some arguments out, you need to provide a *default* value for the arguments.
+
+
+
+
+
+
+
+
+
+
+**Default arguments** can be defined by setting the argument equal to some value:
+
+```{r}
+# redefine add() with defaults of 0 for all arguments
+add <- function(a = 0, b = 0, c = 0) {
+  return(a + b + (2 * c))
+}
+```
+
+```{r}
+# run add() with just two (unnamed) arguments
+add(1, 3)
+```
+
+
+
+
+
+
+
+
+
+If you don't name the arguments, by default the arguments you provide are assigned to the arguments in the order that they occur.
+
+If you want to specify which argument you are providing, you must name them:
+
+```{r}
+# run add() with arguments for a and c
+add(a = 1, c = 3)
+```
+
+
+
+
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 4
+
+Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says "you must provide at least two non-zero values to add". Test your function.
+
+::: {.callout collapse=true}
+## Solution to challenge 4
+
+```{r}
+add <- function(a = 0, b = 0, c = 0) {
+  if (sum(c(a, b, c) == 0) > 1) {
+    stop("you must provide at least two non-zero values to add")
+  } 
+  return(a + b + (2 * c))
+}
+```
+:::
+:::
+
+
+
+
+
+
+## An advanced example
+
+The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.
+
+
+```{r}
+# Define a function calcGDP() that returns the following gapminder columns:
+#  - country
+#  - year
+#  - gdp = pop * gdpPercap / 1e9
+# for a specified year (.year) and country (.country)
+
+calcGDP <- function(dat, .year = NULL, .country = NULL) {
+  
+  if(!is.null(.year)) {
+    dat <- dat |> filter(year %in% .year)
+  }
+  if (!is.null(.country)) {
+    dat <- dat |> filter(country %in% .country)
+  }
+  
+  dat <- dat |>
+    transmute(country, year, gdp = pop * gdpPercap / 1e9)
+  
+  return(dat)
+}
+
+# Explain each step of the function!
+```
+
+
+
+
+
+If we don't specify a `.year` or `.country` argument, our function returns all rows of the gapminder data.
+
+```{r}
+# run calcGDP on gapminder without specifying any other args
+head(calcGDP(gapminder))
+```
+
+
+
+
+
+Let's take a look at what happens when we specify the year:
+
+```{r}
+# run calcGDP on gapminder for the year 2007
+head(calcGDP(gapminder, .year = 2007))
+```
+
+Or for a specific country:
+
+```{r}
+# run calcGDP on gapminder for Australia
+calcGDP(gapminder, .country = "Australia")
+```
+
+Or both:
+
+```{r}
+# run calcGDP on gapminder for Australia in the year 2007
+calcGDP(gapminder, .year = 2007, .country = "Australia")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 5
+Test out your GDP for multiple years and countries function by calculating the GDP for New Zealand and Australia in 1987 and 1952.
+
+::: {.callout collapse=true}
+## Solution to challenge 5
+
+```{r}
+calcGDP(gapminder, .year = c(1952, 1987), .country = c("New Zealand", "Australia"))
+```
+
+:::
+:::
+
+
+
+
+
+
+
+## Function scope
+
+
+```{r}
+calcGDP <- function(dat, .year = NULL, .country = NULL) {
+  if(!is.null(.year)) {
+    dat <- dat |> filter(year %in% .year)
+  }
+  if (!is.null(.country)) {
+    dat <- dat |> filter(country %in% .country)
+  }
+  dat <- dat |>
+    transmute(country, year, gdp = pop * gdpPercap / 1e9)
+  return(dat)
+}
+```
+
+The above `calcGDP()` function defined a variable called `dat`. This variable is only accessible inside the body of the function:
+
+```{r}
+#| error: true
+
+dat
+```
+
+
+
+
+

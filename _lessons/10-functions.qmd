@@ -347,6 +347,112 @@ fahr_to_celsius <- function(temp) {
 :::
 
 
+
+
+
+
+
+
+## Default arguments
+
+Our functions above only had one single argument. But some functions have many arguments, some of which are *required* and others which are not.
+
+The following function has three arguments:
+
+```{r}
+# define a function add() with three arguments, which adds three values together
+add <- function(a, b, c) {
+  return(a + b + (2 * c))
+}
+```
+
+```{r}
+# run add() with all three named arguments a = 1, b = 3, c = 5
+add(a = 1, b = 3, c = 5)
+```
+
+If all arguments are provided, you don't need to provide a name for the arguments:
+
+```{r}
+# run add() without naming the arguments
+add(1, 3, 5)
+```
+
+If you don't provide all three arguments, you will get an error: 
+
+```{r}
+#| error: true
+
+# try to run add() with just two arguments
+add(1, 3)
+```
+
+If you want to allow the user to leave some arguments out, you need to provide a *default* value for the arguments.
+
+
+
+
+
+
+
+
+Default values can be defined by setting the argument equal to some value:
+
+```{r}
+# redefine add() with defaults of 0 for all arguments
+add <- function(a = 0, b = 0, c = 0) {
+  return(a + b + (2 * c))
+}
+```
+
+```{r}
+# try add() with just two arguments
+add(1, 3)
+```
+
+If you don't name the arguments, by default the arguments you provide are assigned to the arguments in the order that they occur.
+
+If you want to specify which argument you are providing, you must name them:
+
+```{r}
+# try add() with arguments for a and c
+add(a = 1, c = 3)
+```
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 4
+
+Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says "you must provide at least two non-zero values to add". Test your function.
+
+::: {.callout collapse=true}
+## Solution to challenge 4
+
+```{r}
+add <- function(a = 0, b = 0, c = 0) {
+  if (sum(c(a, b, c) == 0) > 1) {
+    stop("you must provide at least two non-zero values to add")
+  } 
+  return(a + b + (2 * c))
+}
+```
+:::
+:::
+
+
+
+
+
+
+
+
+
+
 ## An advanced example
 
 The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.
@@ -485,11 +591,11 @@ not modified in any way when executing a function.
 :::
 
 ::: {.callout}
-## Challenge 4
+## Challenge 5
 Test out your GDP function by calculating the GDP for New Zealand in 1987 and 1952.
 
 ::: {.callout collapse=true}
-## Solution to challenge 4
+## Solution to challenge 5
 
 ```{r}
 calcGDP(gapminder, .year = c(1952, 1987), .country = "New Zealand")
@@ -501,7 +607,7 @@ calcGDP(gapminder, .year = c(1952, 1987), .country = "New Zealand")
 
 
 ::: {.callout}
-## Challenge 5
+## Challenge 6
 
 The `paste()` function can be used to combine text together, e.g:
 
@@ -535,7 +641,7 @@ the separator between text. The default is a space: " ". The default for
 `paste0()` is no space "".
 
 ::: {.callout collapse=true}
-## Solution to challenge 5
+## Solution to challenge 6
 
 The following function will achieve our goal:
 

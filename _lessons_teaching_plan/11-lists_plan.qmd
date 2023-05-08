@@ -1,0 +1,198 @@
+---
+title: Lists
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+## Lists
+
+It's time to introduce another data structure: the *list*.
+
+List are very flexible because you can put anything you want in it: unlike a vector, the elements of a list can have different data types. For example:
+
+```{r}
+list_example <- list(1, "a", TRUE)
+list_example
+```
+
+
+Like a vector, the "length" of a list corresponds to how many entries it contains:
+
+```{r}
+length(list_example)
+```
+
+
+The elements of lists also can have **names**, they can be given by prepending
+them to the values, separated by an equals sign:
+
+```{r}
+another_list <- list(title = "Numbers", numbers = 1:10, data = TRUE)
+another_list
+```
+
+
+Lists, it turns out, can become a lot more complicated than vectors. While each entry of a vector is just a single value, each entry of a list can be any type of object, including vectors and data frames. For example, the following `complicated_list` list of length three contains three entries: a numeric vector, a data frame, and a single character value:
+
+
+
+```{r}
+# define the cats data frame:
+cats <- data.frame(coat = c("calico", "black", "tabby"),
+                   weight = c(2.1, 5.0, 3.2),
+                   likes_string = c(1, 0, 1),
+                   stringsAsFactors = FALSE)
+```
+
+
+
+```{r}
+complicated_list <- list(vec = c(1, 2, 9),
+                         dataframe = cats, 
+                         single_value = "a")
+complicated_list
+```
+
+
+
+::: {.callout}
+## Challenge 1
+Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like this.
+
+```{r}
+#| echo: false
+data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C"))
+```
+
+
+Your list output should look like this:
+
+```{r}
+#| echo: false
+list(c("x", "y", "z"),
+     data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C")))
+```
+
+::: {.callout collapse=true}
+## Solution to Challenge 1
+
+```{r}
+list(c("x", "y", "z"),
+     data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C")))
+```
+
+:::
+:::
+
+
+### List subsetting
+
+Now we'll introduce some new subsetting operators. There are three functions
+used to subset lists. We've already seen these when learning about vectors and data frames:  `[`, `[[`, and `$`.
+
+Using `[` will always return a list. If you want to *subset* a list, but not
+*extract* an element, then you will likely use `[`.
+
+```{r}
+xlist <- list(a = "Software Carpentry", b = 1:10, data = head(mtcars))
+xlist[1]
+```
+
+This returns a *list with one element*.
+
+We can subset elements of a list exactly the same way as atomic
+vectors using `[`. Comparison operations however won't work as
+they're not recursive, they will try to condition on the data structures
+in each element of the list, not the individual elements within those
+data structures.
+
+```{r}
+xlist[1:2]
+```
+
+To extract individual elements of a list, you need to use the double-square
+bracket function: `[[`.
+
+```{r}
+xlist[[1]]
+```
+
+Notice that now the result is a vector, not a list.
+
+You can't extract more than one element at once:
+
+```{r, error=TRUE}
+xlist[[1:2]]
+```
+
+Nor use it to skip elements:
+
+```{r, error=TRUE}
+xlist[[-1]]
+```
+
+But you can use names to both subset and extract elements:
+
+```{r}
+xlist[["a"]]
+```
+
+The `$` function is a shorthand way for extracting elements by name:
+
+```{r}
+xlist$data
+```
+
+::: {.callout}
+## Challenge 2
+
+Given the following list:
+
+```{r}
+xlist <- list(a = "Software Carpentry", b = 1:10, data = head(mtcars))
+xlist
+```
+
+Using list and vector subsetting, extract the second entry in the second element of the list (i.e., extract the number `2` from the `b` entry from xlist`). There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?
+
+::: {.callout collapse=true}
+
+## Solution to challenge 2
+
+```{r}
+xlist$b[2]
+```
+
+```{r}
+xlist[[2]][2]
+```
+
+```{r}
+xlist[["b"]][2]
+```
+:::
+:::
+
+
+
+### Data frames as a special case of a list
+
+
+It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
+
+This is why you can extract vector columns from a data frame using the double brackets notation:
+
+```{r}
+cats
+```
+
+```{r}
+cats[["coat"]]
+```
+
+
+Note that the `df[i, j]` index notation is specific to data frames (and does not work for lists).
+
