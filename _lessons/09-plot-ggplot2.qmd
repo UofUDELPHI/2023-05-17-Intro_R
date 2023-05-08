@@ -162,7 +162,7 @@ gapminder |>
 
 
 
-## Layers
+## Line plots
 
 Using a scatterplot probably isn't the best for visualizing change over time.
 Instead, let's tell `ggplot` to visualize the data as a line plot (dropping the argument names for brevity):
@@ -255,7 +255,7 @@ ggplot(gapminder, aes(x = year, y = lifeExp, group = country)) +
 :::
 :::
 
-## Transformations and statistics
+## Transformations
 
 ggplot2 also makes it easy to overlay statistical models over the data. To
 demonstrate we'll go back to our earlier example:
