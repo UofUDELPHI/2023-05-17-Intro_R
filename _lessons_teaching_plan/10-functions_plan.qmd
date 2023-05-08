@@ -450,6 +450,51 @@ add <- function(a = 0, b = 0, c = 0) {
 
 
 
+## Shorthand functions
+
+
+There are a few ways to write simple functions on a single line. 
+
+For example, the following two functions, `add_v1()` and `add_v2()` are equivalent:
+
+```{r}
+# define add_v1(a, b, c), using the regular syntax
+add_v1 <- function(a, b, c) {
+  linear_combination <- a + b + (2 * c)
+  return(linear_combination)
+}
+
+# Run add_v1() using arg values 1, 5, 4
+add_v1(1, 5, 4)
+```
+
+and
+
+```{r}
+# define add_v2() function in one line with a return() statement
+add_v2 <- function(a, b, c) return(a + b + (2 * c))
+
+# Run add_v2() using arg values 1, 5, 4
+add_v2(1, 5, 4)
+```
+
+Note that the `return()` above is technically not required, since R will always return the last object that was computed in the body of the function
+
+
+
+So the following will also work:
+
+
+```{r}
+# define add_v3() function in one line without a return() statement
+add_v3 <- function(a, b, c) a + b + (2 * c)
+
+# run add_v3() using arg values 1, 5, 4
+add_v3(1, 5, 4)
+```
+
+
+
 
 
 

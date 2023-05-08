@@ -1,6 +1,8 @@
 ---
 title: Iteration with for loops and map functions
 embed-resources: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -15,10 +17,9 @@ set.seed(10)
 gapminder <- read.csv("data/gapminder_data.csv")
 ```
 
-## Repeating operations
+## "For" loops for repeating operations
 
-If you want to iterate over a set of values, when the order of iteration is important, and perform the
-same operation on each, one way to do this is using a `for()` loop.
+If you want to iterate over a set of values, when the order of iteration is important, and perform the same operation on each, one way to do this is using a `for()` loop.
 
 In general, the advice of many `R` users would be to learn about
 `for()` loops, but to avoid using `for()` loops unless the order of iteration is
@@ -43,15 +44,16 @@ for (i in 1:10) {
 ```
 
 
+To save the output of a computation in a vector, you need to first create an empty vector (e.g., `x <- c()`) and sequentially fill the values of this vector in each iteration of the for loop.
+
 ```{r}
-x <- c()
+result <- c()
 for (i in 1:10) {
-  x[i] <- exp(i)
+  result[i] <- (1 + i)^{10}
 }
-x
+result
 ```
 
-The `1:10` bit creates a vector on the fly; you can iterate over any other vector as well.
 
 
 
@@ -155,7 +157,7 @@ The `1:10` bit creates a vector on the fly; you can iterate over any other vecto
 <!-- that you don't end up stuck in an infinite loop because your condition is always met and hence the while statement never terminates. -->
 <!-- ::: -->
 
-For loops are common in programming in general, `for` loops are rarely used in R, primarily due to their computational inefficiency.
+For loops are common in programming in general, but `for` loops are rarely used in R, primarily due to their computational inefficiency.
 
 
 
@@ -167,15 +169,22 @@ library(purrr)
 ```
 
 
-The first argument from the `map()` function is the object that we want to iterate over. The second argument is the function that we want to apply at each iteration. The output of the `map()` function is always a list.
+The first argument from the `map()` function is the object whose elements we want to iterate over. The second argument is the function that we want to apply at each iteration. 
 
-For example, the following code will apply the `exp()` function to each entry in the vector `1:10` and return the results in a list:
+The output of the `map()` function is always a *list*.
+
+
+For example, the following code will apply the `exp()` function to each element in the vector `1:10` and return the results in a list:
 
 ```{r}
 map(1:10, exp)
 ```
 
-Since lists are unwieldy, there are several versions of the `map()` function, such as `map_dbl()` that specifies the type of your output. For instance, if you want your output to be a numeric "double" vector, you can use `map_dbl()`:
+
+
+While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the `map()` function, such as `map_dbl()` that specifies the type of your output in its name. 
+
+For instance, if you want your output to be a numeric "double" vector, you can use `map_dbl()`:
 
 ```{r}
 map_dbl(1:10, exp)
@@ -189,6 +198,8 @@ map_chr(gapminder, class)
 
 Here, recall that the gapminder data frame is a list, and the `map_` function is iterating over the elements of the list, which in this case is the columns.
 
+
+
 Note that the output of the function you are applying must match the `map_` function that you use, else you will get an error:
 
 ```{r}
@@ -196,110 +207,161 @@ Note that the output of the function you are applying must match the `map_` func
 map_dbl(1:10, class)
 ```
 
-The true power from the map functions really comes once you learn how to write your own functions (see future lesson on functions).
+The true power from the map functions really comes once you learn how to write your own functions.
+
+
+For example, we could conduct the following transformation to each entry in `1:10`:
+
+```{r}
+map_dbl(1:10, function(x) (x + 1)^10)
+```
+
+
+
+
+An even more compact way of writing a function with one argument is using the `~.` anonymous function shorthand:
+
+```{r}
+map_dbl(1:10, ~(. + 1)^10)
+```
+
+This shorthand involves:
+
+- Replacing `function(x)` with `~`
+
+- Replacing the argument in the body of the function with `.`
+
+
+
+
+
+
+
+
+
+The `map_df()` function will return a data frame (but requires that the function being applied outputs a data frame).
+
+
+As an example, the following code takes each entry in the vector `c(1, 4, 7)`, and adds 10 to it, and returns a two-column data frame containing the old number and new number:
+
+```{r}
+map_df(c(1, 4, 7), function(.x) {
+  return(data.frame(old_number = .x, 
+                    new_number = .x + 10))
+})
+```
+
+To help see how this works, set `.x` to be one of the values in the vector and run the body of the code:
+
+```{r}
+.x <- 1
+data.frame(old_number = .x, 
+           new_number = .x + 10)
+```
+
+
+
+
+As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns and then computes a data frame for each column/variable containing the mean and sd.
+
+
+```{r}
+gapminder |>
+  select(pop, gdpPercap, lifeExp) |>
+  map_df(function(.x) data.frame(mean = mean(.x),
+                                 sd = sd(.x)),
+         .id = "variable")
+```
+
+
+To figure out what is happening here, `map_df()` is computing the following for each variable:
+
+```{r}
+.x <- gapminder$pop
+data.frame(mean = mean(.x), 
+           sd = sd(.x))
+```
+
+and is then pasting the results for each variable together into a single data frame.
+
+
+
+
+
+
+
+
+
 
 
 ::: {.callout}
-## Challenge 1 (advanced)
+## Challenge 1
 
-For each numeric column in the gapminder dataset, print the number of unique entries using the `length()` and `unique()` function. 
+For each column in the gapminder dataset, compute the number of unique entries using the `n_distinct()` function. Make sure the output of your code is a numeric vector.
 
-Do this in two different ways: using a `for` loop and a `map()` function.
+Do this in two different ways: using a `for` loop and a `map_dbl()` function.
+
+Hint: `n_distinct()` is a dplyr function which counts the number of unique/distinct values in a vector. Try `n_distinct(c(1, 1, 4, 4, 4, 4, 1, 3))` as an example of its usage
+
 
 
 ::: {.callout collapse=true}
 ## Solution to Challenge 1
 
 ```{r} 
-numeric_columns <- is.numeric(gapminder)
+unique_gapminder <- c()
 for (i in 1:ncol(gapminder)) {
-  print(mean(gapminder[, i]))
+  unique_gapminder[i] <- n_distinct(gapminder[, i])
 }
+unique_gapminder
 ```
+
+
 ```{r}
-map(gapminder, mean)
+map_dbl(gapminder, ~n_distinct(.))
 ```
 
 :::
 :::
+
+
+
+
+
 
 ::: {.callout}
 ## Challenge 2
 
-Modify the script from Challenge 3 to loop over each
-country. This time print out whether the life expectancy is
-smaller than 50, between 50 and 70, or greater than 70.
+Use `map_df()` to compute the number of distinct values and the class of each variable in the gapminder dataset and store them in a data frame.
+
+The output of your code should look like this:
+
+```{verbatim}
+   variable n_distinct     class
+1   country        142 character
+2      year         12   integer
+3       pop       1704   numeric
+4 continent          5 character
+5   lifeExp       1626   numeric
+6 gdpPercap       1704   numeric
+```
+
+Hint: the argument `.id = "variable"` variable of `map_df()` can be used to add the `variable` column automatically based on the gapminder column names.
+
 
 ::: {.callout collapse=true}
 ## Solution to Challenge 2
 
-We modify our solution to Challenge 3 by now adding two thresholds, `lowerThreshold` and `upperThreshold` and extending our if-else statements:
-```{r 07-chall-04-sol, eval=FALSE}
-lowerThreshold <- 50
-upperThreshold <- 70
-for (iCountry in unique(gapminder$country)) {
-   tmp <- mean(gapminder[gapminder$country == iCountry, "lifeExp"])
-   if(tmp < lowerThreshold) {
-       cat("Average Life Expectancy in", iCountry, "is less than", lowerThreshold, "\n")
-   } else if(tmp > lowerThreshold && tmp < upperThreshold) {
-       cat("Average Life Expectancy in", iCountry, "is between", lowerThreshold, "and", upperThreshold, "\n")
-   } else {
-       cat("Average Life Expectancy in", iCountry, "is greater than", upperThreshold, "\n")
-   }
-   rm(tmp)
-}
+```{r} 
+gapminder %>% map_df(function(.x) {
+  data.frame(n_distinct = n_distinct(.x),
+             class = class(.x))
+  }, .id = "variable")
 ```
+
 :::
 :::
 
-::: {.callout}
-## Challenge 3 (Advanced)
 
-Write a script that loops over each country in the `gapminder` dataset,
-tests whether the country starts with a 'B', and graphs life expectancy
-against time as a line graph if the mean life expectancy is under 50 years.
 
-::: {.callout collapse=true}
-## Solution for Challenge 3
 
-We will use the `grep()` command that was introduced in the Unix Shell lesson to find countries that start with "B."
-Lets understand how to do this first.
-Following from the Unix shell section we may be tempted to try the following
-
-```{r 07-chall-05-sol-a, eval=FALSE}
-grep("^B", unique(gapminder$country))
-```
-
-But when we evaluate this command it returns the indices of the factor variable `country` that start with "B."
-To get the values, we must add the `value = TRUE` option to the `grep()` command:
-
-```{r 07-chall-05-sol-b}
-#| eval: false
-grep("^B", unique(gapminder$country), value = TRUE)
-```
-
-We will now store these countries in a variable called candidateCountries, and then loop over each entry in the variable.
-Inside the loop, we evaluate the average life expectancy for each country, and if the average life expectancy is less than 50 we use base-plot to plot the evolution of average life expectancy using `with()` and `subset()`:
-
-```{r 07-chall-05-sol-c}
-#| eval: false
-thresholdValue <- 50
-candidateCountries <- grep("^B", unique(gapminder$country), value = TRUE)
-for (iCountry in candidateCountries) {
-   tmp <- mean(gapminder[gapminder$country == iCountry, "lifeExp"])
-   if (tmp < thresholdValue) {
-       cat("Average Life Expectancy in", iCountry, "is less than", thresholdValue, "plotting life expectancy graph... \n")
-       with(subset(gapminder, country == iCountry),
-               plot(year, lifeExp,
-                    type = "o",
-                    main = paste("Life Expectancy in", iCountry, "over time"),
-                    ylab = "Life Expectancy",
-                    xlab = "Year"
-                    ) # end plot
-            ) # end with
-   } # end if
-   rm(tmp)
-} # end for loop
-```
-:::
-:::

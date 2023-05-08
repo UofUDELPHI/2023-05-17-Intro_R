@@ -449,6 +449,51 @@ add <- function(a = 0, b = 0, c = 0) {
 
 
 
+## Shorthand functions
+
+
+There are a few ways to write simple functions on a single line. 
+
+For example, the following two functions are equivalent:
+
+```{r}
+add_v1 <- function(a, b, c) {
+  linear_combination <- a + b + (2 * c)
+  return(linear_combination)
+}
+```
+
+
+```{r}
+add_v1(1, 5, 4)
+```
+
+and
+
+```{r}
+add_v2 <- function(a, b, c) return(a + b + (2 * c))
+```
+
+```{r}
+add_v2(1, 5, 4)
+```
+
+Note that the `return()` above is technically not required, since R will always return the last object that was computed in the body of the function, so the following will also work:
+
+
+```{r}
+add_v3 <- function(a, b, c) a + b + (2 * c)
+```
+
+```{r}
+add_v3(1, 5, 4)
+```
+
+
+
+
+
+
 
 
 

@@ -393,6 +393,60 @@ Add an error message that will return an error if at least two of a, b, c, are n
 
 
 
+
+
+
+
+
+## Shorthand functions
+
+
+There are a few ways to write simple functions on a single line. 
+
+For example, the following two functions, `add_v1()` and `add_v2()` are equivalent:
+
+```{r}
+# define add_v1(a, b, c), using the regular syntax
+
+
+# Run add_v1() using arg values 1, 5, 4
+
+```
+
+and
+
+```{r}
+# define add_v2() function in one line with a return() statement
+
+
+# Run add_v2() using arg values 1, 5, 4
+
+```
+
+Note that the `return()` above is technically not required, since R will always return the last object that was computed in the body of the function
+
+
+
+So the following will also work:
+
+
+```{r}
+# define add_v3() function in one line without a return() statement
+
+
+# run add_v3() using arg values 1, 5, 4
+
+```
+
+
+
+
+
+
+
+
+
+
 ## An advanced example
 
 The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.
