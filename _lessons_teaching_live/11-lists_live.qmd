@@ -15,8 +15,7 @@ The elements of a list can have different data types. For example:
 
 ```{r}
 # create a list called list_example containing 1, "a", and TRUE
-list_example <- list(1, "a", TRUE)
-list_example
+
 ```
 
 
@@ -30,10 +29,8 @@ The "length" of a list corresponds to how many entries it contains:
 
 ```{r}
 # compute the length of list_example
-length(list_example)
+
 ```
-
-
 
 
 
@@ -60,10 +57,7 @@ cats
 #  - a numeric vector c(1, 2, 9), 
 #  - the cats data frame, and 
 #  - a single character value "a"
-complicated_list <- list(vec = c(1, 2, 9),
-                         dataframe = cats, 
-                         single_value = "a")
-complicated_list
+
 ```
 
 
@@ -75,7 +69,7 @@ complicated_list
 
 ::: {.callout}
 ## Challenge 1
-Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like this.
+Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like:
 
 ```{verbatim}
     name grade
@@ -84,16 +78,6 @@ Create a list of length two containing a (1) character vector containing the let
   Harvey     C
 ```
 
-
-::: {.callout collapse=true}
-## Solution to Challenge 1
-
-```{r}
-list(c("x", "y", "z"),
-     data.frame(name = c("Henry", "Hannah", "Harvey"), grade = c("A", "B", "C")))
-```
-
-:::
 :::
 
 
@@ -123,12 +107,12 @@ To *subset* a list use single brackets `[ ]` (the output will be a list):
 
 ```{r}
 # subset to the second element of xlist 
-xlist[1]
+
 ```
 
 ```{r}
 # subset to the first two elements of xlist
-xlist[1:2]
+
 ```
 
 
@@ -141,7 +125,7 @@ To *extract* individual elements of a list, you need double-square brackets `[[ 
 
 ```{r}
 # extract the first element of xlist
-xlist[[1]]
+
 ```
 
 
@@ -150,7 +134,7 @@ You can use names to both subset and extract elements:
 
 ```{r}
 # extract the entry named "a":
-xlist[["a"]]
+
 ```
 
 
@@ -159,18 +143,18 @@ xlist[["a"]]
 
 ### Limitations of `[[ ]]`
 
-You can't extract more than one element at once:
+You can't extract more than one element at once using `[[ ]]`:
 
 ```{r, error=TRUE}
 # try to extract the first two elements using `[[ ]]`
-xlist[[1:2]]
+
 ```
 
 Nor use it to skip elements:
 
 ```{r, error=TRUE}
 # try to remove the first element using `[[ ]]`
-xlist[[-1]]
+
 ```
 
 
@@ -185,9 +169,15 @@ xlist[[-1]]
 The `$` function is a shorthand way for extracting elements by name:
 
 ```{r}
-# extract the element a
-xlist$a
+# extract the element a from xlist using `$`
+
 ```
+
+
+
+
+
+
 
 
 ::: {.callout}
@@ -204,25 +194,9 @@ Extract the second entry in the second element of the list (i.e., extract the nu
 
 There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?
 
-::: {.callout collapse=true}
-
-## Solution to challenge 2
-
-A few approaches:
-
-```{r}
-xlist$b[2]
-```
-
-```{r}
-xlist[[2]][2]
-```
-
-```{r}
-xlist[["b"]][2]
-```
 :::
-:::
+
+
 
 
 
@@ -246,9 +220,9 @@ cats
 
 ```{r}
 # use the $ notation to extract the coat vector
-cats$coat
+
 # use the `[[ ]]` notation to extract the coat vector
-cats[["coat"]]
+
 ```
 
 
@@ -256,13 +230,13 @@ Note that the `df[i, j]` index notation is specific to data frames (and does not
 
 ```{r}
 # extract the entry in cats in the first row and second column:
-cats[1, 2]
+
 ```
 
 ```{r}
 #| error: true
 
 # Try to subset xlist using [ , ]
-xlist[3, 3]
+
 ```
 
