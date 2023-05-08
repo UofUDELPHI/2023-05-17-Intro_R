@@ -408,7 +408,7 @@ gapminder |>
 :::
 :::
 
-## Creating column summaries using summarize()
+## Creating summaries using summarize()
 
 
 You can easily compute a "summary" of a column using `summarize()`. For example, the following code computes the max life expectancy in the data:
@@ -505,7 +505,7 @@ Use `group_by()`, `summarise()`, and `filter()` to identify which country has th
 ::: {.callout collapse=true}
 ## Solution to Challenge 4
 
-One way to do this is to as
+One way to do this is:
 
 ```{r}
 gapminder |>
@@ -605,7 +605,7 @@ Calculate the total GDP in billions (`gdpPercap * pop / 1e9`) for each continent
 One way to answer this question is:
 ```{r}
 gapminder |>
-  filter(year %in% c(1952, 2007)) |>
+  filter(year %in% c(2002, 2007)) |>
   mutate(gdp = gdpPercap * pop / 1e9) |>
   group_by(year, continent) |>
   summarize(total_gdp = sum(gdp))

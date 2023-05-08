@@ -1,0 +1,666 @@
+---
+title: Data Frame Manipulation with dplyr
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r}
+# load in gapminder
+gapminder <- read.csv("data/gapminder_data.csv")
+# look at the first 6 rows
+head(gapminder)
+# check the unique values of continent
+unique(gapminder$continent)
+```
+
+
+Let's try to compute the average gdpPercap separately for each continent in the gapminder data:
+
+```{r}
+# compute the mean gdpPercap of Africa, Americas, Oceania, Europe, and Asia
+# using base R and logical row indexing
+mean(gapminder[gapminder$continent == "Africa", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Americas", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Asia", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Oceania", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Europe", "gdpPercap"])
+```
+
+Can we do this more neatly?
+
+
+
+
+
+
+
+
+
+
+## The functions of `dplyr` package (part of the tidyverse)
+
+0. Piping `|>`: Chain functions together
+
+1. `select()`: Extract columns from a data frame
+
+2. `filter()`: Subset the rows of a data frame using a logical condition
+
+3. `mutate()`: Create new (or modify existing) columns in a data frame
+
+4. `summarize()`: Compute summaries of the data in a data frame
+
+5. `group_by()`: compute functions separately across different levels of a categorical variable.
+
+
+
+
+
+
+## Installing and loading dplyr (via the tidyverse)
+
+```{r}
+#| message: false
+# Install the tidyverse if you haven't already
+# Load the tidyverse library
+library(tidyverse)
+```
+
+
+
+
+
+
+
+
+
+## Extracting columns using select()
+
+
+Select allows us to select a subset of the columns of our data frame
+
+```{r}
+# Define `year_country_gdp` (year, country, and gdpPercap only) using select
+year_country_gdp <- select(gapminder, year, country, gdpPercap)
+# look at the head
+head(year_country_gdp)
+```
+
+
+Note the **lack of quotes** around the variables in select().
+
+
+
+
+
+### Renaming variables using select()
+
+```{r}
+# Use select to rename `gdpPercap` to gdp_per_cap 
+head(select(gapminder, year, country, gdp_per_cap = gdpPercap))
+```
+
+
+
+
+
+
+### Removing variables using select()
+
+
+```{r}
+# remove the continent variable from gapminder using select
+head(select(gapminder, -continent))
+```
+
+
+
+
+
+
+
+
+## The pipe `|>`
+
+Defining the pipe:
+
+```{r}
+head(gapminder)
+# rewrite the above code using the pipe |>
+gapminder |> head()
+```
+
+
+
+
+
+### Using the pipe to chain together functions:
+
+```{r}
+head(select(gapminder, year))
+# rewrite the above code using the pipe |>
+gapminder |> select(year) |> head()
+```
+
+
+Another example:
+
+```{r}
+mean(c(1, 5, 3))
+# rewrite the above code using the pipe
+c(1, 5, 3) |> mean()
+```
+
+
+
+### The two pipes: `|>` and `%>%`
+
+```{r}
+# Rewrite the above code using the old pipe %>%
+gapminder %>% select(year) %>% head()
+```
+
+
+
+
+
+
+::: {.callout}
+## Challenge 1
+
+Rewrite the following code using the pipe:
+
+1. 
+
+```{r}
+#| eval: false
+select(gapminder, -continent)
+```
+
+2. 
+
+```{r}
+#| eval: false
+head(select(gapminder, life_exp = lifeExp, gdp_per_cap = gdpPercap))
+```
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 1
+```{r}
+#| eval: false
+gapminder |> select(-continent)
+```
+
+```{r}
+#| eval: false
+gapminder |>
+  select(life_exp = lifeExp, gdp_per_cap = gdpPercap) |> 
+  head()
+```
+
+:::
+:::
+
+
+
+
+### Renaming columns: rename() vs select()
+
+
+
+```{r}
+# use the `rename()` function to rename gdpPercap to gdp_per_capita
+gapminder |> rename(gdp_per_capita = gdpPercap) |> head()
+```
+
+
+How does this compare with `select()`?
+
+```{r}
+# Replace rename() with select() in the above example. 
+# Predict the output
+gapminder |> select(gdp_per_capita = gdpPercap) |> head()
+```
+
+
+
+
+
+
+
+
+## Filtering to rows using filter()
+
+Filter() allows us to subset the rows of our data frame using a logical condition. 
+
+```{r}
+# identify (using `$`) a logical condition for identifying which rows 
+# correspond to Europe
+gapminder$continent == "Europe"
+
+# use filter (without the pipe) to filter to just the rows for Europe and 
+# look at just the first 10 rows
+head(filter(gapminder, continent == "Europe"), 10)
+
+# use filter (with the pipe) to filter to just the rows for Europe and
+# look at just the first 10 rows
+gapminder |> filter(continent == "Europe") |> head(10)
+```
+
+
+
+
+
+
+Let's use the pipe to chain together `select()` and `filter()`:
+
+```{r}
+# filter to the rows corresponding to Europe and then select just the 
+# year, country, gdpPercap columns, and then view just the head
+gapminder |>
+  filter(continent == "Europe") |>
+  select(year, country, gdpPercap) |>
+  head()
+```
+
+Can we switch the order of `filter()` and `select()` for this example?
+
+
+
+
+
+
+
+
+### Filtering with Multiple conditions 
+
+Two ways to provide multiple conditions with "and" (both must be true):
+
+```{r}
+# Filter to countries in Europe in 2007 using &
+gapminder |> filter(continent == "Europe" & year == 2007)
+# Filter to countries in Europe in 2007 using a comma (),)
+gapminder |> filter(continent == "Europe", year == 2007) 
+```
+
+
+How would you provide multiple conditions with "or" (at least one must be true)?
+
+
+```{r}
+# Filter to United States or Canada in two different ways
+# option 1:
+gapminder |> filter(country == "United States" | country == "Canada") 
+# option 2:
+gapminder |> filter(country %in% c("United States", "Canada"))
+```
+
+
+
+
+
+
+::: {.callout}
+## Challenge 2
+
+Use piping to produce a data frame that contains the `lifeExp`, `country`
+and `year` columns for African countries in 2002.  
+
+Your data frame should have 52 rows and 3 columns (you can check this with `dim()`).
+
+::: {.callout collapse=true}
+## Solution to Challenge 2
+
+```{r}
+year_country_lifeExp_Africa_2002 <- gapminder |>
+  filter(continent == "Africa", year == 2002) |>
+  select(year, country, lifeExp)
+head(year_country_lifeExp_Africa)
+```
+
+```{r}
+dim(year_country_lifeExp_Africa_2002)
+```
+
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+## Adding and modifying columns using mutate()
+
+You can add new columns using `mutate()`.
+
+```{r}
+# use mutate to define gdp_billion: gdpPercap * pop / 10^9 (and print the head)
+gapminder |>
+  mutate(gdp_billion = gdpPercap * pop / 10^9) |>
+  head()
+```
+
+You can also modify existing columns using `mutate()`.
+
+
+```{r}
+# use mutate to round lifeExp to the nearest integer (and print the head)
+gapminder |>
+  mutate(lifeExp = round(lifeExp)) |>
+  head()
+```
+
+
+
+
+
+
+
+
+
+### Combining `mutate()` and `select()` with `transmute()`
+
+Sometimes you want to both mutate and select at the same time. Rather than doing this in two separate steps, you can do it in one using `transmute()`. 
+
+```{r}
+gapminder |>
+  mutate(gdp_billion = gdpPercap * pop / 10^9) |>
+  select(country, year, gdp_billion) |>
+  head()
+
+# rewrite the above code using transmute
+gapminder |>
+  transmute(country, year, gdp_billion = gdpPercap * pop / 10^9) |>
+  head()
+```
+
+
+
+
+
+
+
+::: {.callout}
+## Challenge 3
+
+Explain what the following code is trying to do and explain why it doesn't work. Re-write the code so that it does work:
+
+```{r}
+#| error: true
+gapminder |>
+  filter(country == "Australia") |>
+  select(year, lifeExp = round(lifeExp))
+```
+
+
+::: {.callout collapse=true}
+## Solution to Challenge 3
+
+The code doesn't work because you can't make modifications to the data inside a `select()` function.
+
+You could fix this in a few ways. The most efficient is using `transmute()`:
+
+```{r}
+gapminder |>
+  filter(country == "Australia") |>
+  transmute(year, lifeExp = round(lifeExp))
+```
+
+But you could also use `mutate()` and `select()` separately
+
+```{r}
+gapminder |>
+  filter(country == "Australia") |>
+  select(year, lifeExp) |>
+  mutate(lifeExp = round(lifeExp)) 
+```
+:::
+:::
+
+
+
+
+
+
+
+
+
+## Creating summaries using summarize()
+
+You can compute summaries using `summarize()`
+
+```{r}
+# compute the maximum life expectancy using summarize:
+gapminder |>
+  summarize(max_life_exp = max(lifeExp))
+```
+
+You can even compute multiple summaries at once, e.g., computing both the max and minimum of the lifeExp variable:
+
+```{r}
+# compute the min, mean, and max life expectancy using summarize:
+gapminder |>
+  summarize(max_life_exp = max(lifeExp),
+            mean_life_exp = max(lifeExp),
+            min_life_exp = min(lifeExp))
+```
+
+
+```{r}
+# compute the mean life expectancy and mean gdpPercap
+gapminder |>
+  summarize(mean_life_exp = mean(lifeExp),
+            mean_gdp_per_cap = mean(gdpPercap))
+```
+
+
+
+
+
+
+
+## Grouped computations with group_by()
+
+Recall the code at the beginning of the lesson:
+
+
+```{r}
+# compute the mean gdpPercap of Africa, Americas, Oceania, Europe, and Asia
+# using base R and logical row indexing
+mean(gapminder[gapminder$continent == "Africa", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Americas", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Asia", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Oceania", "gdpPercap"])
+mean(gapminder[gapminder$continent == "Europe", "gdpPercap"])
+```
+
+We can rewrite this code using `summarize()`
+
+```{r}
+# rewrite each line of the above code using summarize
+gapminder |> filter(continent == "Europe") |> summarize(mean(lifeExp))
+gapminder |> filter(continent == "Africa") |> summarize(mean(lifeExp))
+gapminder |> filter(continent == "Asia") |> summarize(mean(lifeExp))
+gapminder |> filter(continent == "Americas") |> summarize(mean(lifeExp))
+gapminder |> filter(continent == "Oceania") |> summarize(mean(lifeExp))
+```
+
+
+The `group_by()` function offers a nice approach for grouped operations on a data frame:
+
+```{r}
+# rewrite the above code using group_by() and summarize() and ungroup afterwards
+gapminder |>
+  group_by(continent) |>
+  summarize(mean_lifeExp = mean(lifeExp))  |>
+  ungroup()
+```
+
+
+
+
+
+
+`group_by()` can be used with any dplyr function. For example with mutate:
+
+```{r}
+# use group_by() and mutate() to add a column containig the continent's 
+# average life expectancy
+gapminder |>
+  group_by(continent) |>
+  mutate(mean_lifeExp = mean(lifeExp)) |>
+  ungroup()
+```
+
+Note that the output is a "tibble"
+
+
+
+
+
+
+
+### Grouping by multiple variables
+
+
+```{r}
+# compute the mean GDP per capita for each *country-year combination*
+gapminder |>
+  group_by(continent, year) |>
+  summarize(mean_gdpPercap = mean(gdpPercap)) |> 
+  ungroup() |>
+  head()
+```
+
+
+
+
+
+::: {.callout}
+## Challenge 4
+Use `group_by()`, `summarize()`, and `filter()` to identify which country has the longest average life expectancy and which has the shortest average life expectancy.
+
+Hint: The logical condition `x == min(x)` will return `TRUE` for the value of `x` that is smallest.
+
+::: {.callout collapse=true}
+## Solution to Challenge 4
+
+One way to do this is:
+
+```{r}
+gapminder |>
+  group_by(country) |>
+  summarize(mean_lifeExp = mean(lifeExp)) |>
+  ungroup() |>
+  filter(mean_lifeExp == min(mean_lifeExp) | mean_lifeExp == max(mean_lifeExp))
+```
+
+
+:::
+:::
+
+
+
+
+
+## Ordering the rows in a data frame using arrange()
+
+
+Another way to do complete the previous challenge is to use `arrange()`:
+
+
+```{r}
+# Compute the average life expectancy for each country
+mean_lifeExp_by_country <- gapminder |>
+  group_by(country) |>
+  summarise(mean_lifeExp = mean(lifeExp)) |>
+  ungroup()
+
+# Arrange the result in order of mean life expectancy using arrange()
+mean_lifeExp_by_country |> 
+  arrange(mean_lifeExp)
+
+# Arrange in decreasing order:
+mean_lifeExp_by_country |> 
+  arrange(desc(mean_lifeExp))
+
+```
+
+
+What do you think will happen when we arrange using a character variable?
+
+```{r}
+# arrange the result above by `country`
+mean_lifeExp_by_country |>
+  arrange(desc(country))
+```
+
+
+
+
+
+
+
+
+
+## count() and n()
+
+
+`n()` is a function that we can use in most dplyr functions to count the number of rows in a data frame (or group, if the data frame is grouped).
+
+```{r} 
+# use `group_by()` and `summarize()` with `n()` to count the number of times each
+# continent occurs
+# then arrange in decreasing order
+gapminder |>
+  group_by(continent) |>
+  summarize(total = n()) |>
+  ungroup() |>
+  arrange(desc(total))
+```
+
+
+
+We could alternatively do this using the shortcut `count()` function:
+
+```{r}
+# count the number of times each continent appears in the data using `count()`
+gapminder |>
+  count(continent, sort = TRUE)
+```
+
+
+
+
+
+
+::: {.callout}
+## Advanced Challenge
+
+Calculate the total GDP in billions (`gdpPercap * pop / 1e9`) for each continent in the year 2002 and in 2007. Which continent had the largest GDP in 2002? which had the smallest? What about in 2007?
+
+
+::: {.callout collapse=true}
+## Solution to Advanced Challenge
+
+One way to answer this question is:
+```{r}
+gapminder |>
+  filter(year %in% c(2002, 2007)) |>
+  mutate(gdp = gdpPercap * pop / 1e9) |>
+  group_by(year, continent) |>
+  summarize(total_gdp = sum(gdp))
+```
+:::
+:::
+
+
