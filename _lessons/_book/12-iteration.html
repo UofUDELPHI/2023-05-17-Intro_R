@@ -4097,7 +4097,7 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#repeating-operations" id="toc-repeating-operations" class="nav-link active" data-scroll-target="#repeating-operations"><span class="toc-section-number">12.1</span>  Repeating operations</a></li>
+  <li><a href="#for-loops-for-repeating-operations" id="toc-for-loops-for-repeating-operations" class="nav-link active" data-scroll-target="#for-loops-for-repeating-operations"><span class="toc-section-number">12.1</span>  “For” loops for repeating operations</a></li>
   </ul>
 </nav>
     </div>
@@ -4122,23 +4122,36 @@ vertical-align: -.125em;
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gapminder_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.0     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors</code></pre>
 </div>
-<section id="repeating-operations" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="repeating-operations"><span class="header-section-number">12.1</span> Repeating operations</h2>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gapminder_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="for-loops-for-repeating-operations" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="for-loops-for-repeating-operations"><span class="header-section-number">12.1</span> “For” loops for repeating operations</h2>
 <p>If you want to iterate over a set of values, when the order of iteration is important, and perform the same operation on each, one way to do this is using a <code>for()</code> loop.</p>
 <p>In general, the advice of many <code>R</code> users would be to learn about <code>for()</code> loops, but to avoid using <code>for()</code> loops unless the order of iteration is important: i.e.&nbsp;the calculation at each iteration depends on the results of previous iterations.</p>
 <p>The basic structure of a <code>for()</code> loop is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iterator <span class="cf">in</span> set of values) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  do a thing</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iterator <span class="cf">in</span> set of values) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  do a thing</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -4152,18 +4165,18 @@ vertical-align: -.125em;
 [1] 10</code></pre>
 </div>
 </div>
+<p>To save the output of a computation in a vector, you need to first create an empty vector (e.g., <code>x &lt;- c()</code>) and sequentially fill the values of this vector in each iteration of the for loop.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  x[i] <span class="ot">&lt;-</span> <span class="fu">exp</span>(i)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">+</span> i)<span class="sc">^</span>{<span class="dv">10</span>}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]     2.718282     7.389056    20.085537    54.598150   148.413159
- [6]   403.428793  1096.633158  2980.957987  8103.083928 22026.465795</code></pre>
+<pre><code> [1]        1024       59049     1048576     9765625    60466176   282475249
+ [7]  1073741824  3486784401 10000000000 25937424601</code></pre>
 </div>
 </div>
-<p>The <code>1:10</code> bit creates a vector on the fly; you can iterate over any other vector as well.</p>
 <!-- We can use a `for()` loop nested within another `for()` loop to iterate over two things at -->
 <!-- once. -->
 <!-- ```{r} -->
@@ -4243,16 +4256,17 @@ vertical-align: -.125em;
 <!-- while()` loops will not always be appropriate. You have to be particularly careful -->
 <!-- that you don't end up stuck in an infinite loop because your condition is always met and hence the while statement never terminates. -->
 <!-- ::: -->
-<p>For loops are common in programming in general, <code>for</code> loops are rarely used in R, primarily due to their computational inefficiency.</p>
+<p>For loops are common in programming in general, but <code>for</code> loops are rarely used in R, primarily due to their computational inefficiency.</p>
 <p>Instead, a much more efficient method for iterating in R is using the <code>map()</code> functions from the purrr R package. To load the purrr R package, you need to run the following code (if the purrr package is not installed, you will need to run the commented <code>install.packages()</code> line)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("purrr")</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("purrr")</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The first argument from the <code>map()</code> function is the object that we want to iterate over. The second argument is the function that we want to apply at each iteration. The output of the <code>map()</code> function is always a list.</p>
-<p>For example, the following code will apply the <code>exp()</code> function to each entry in the vector <code>1:10</code> and return the results in a list:</p>
+<p>The first argument from the <code>map()</code> function is the object whose elements we want to iterate over. The second argument is the function that we want to apply at each iteration.</p>
+<p>The output of the <code>map()</code> function is always a <em>list</em>.</p>
+<p>For example, the following code will apply the <code>exp()</code> function to each element in the vector <code>1:10</code> and return the results in a list:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 2.718282
@@ -4285,9 +4299,10 @@ vertical-align: -.125em;
 [1] 22026.47</code></pre>
 </div>
 </div>
-<p>Since lists are unwieldy, there are several versions of the <code>map()</code> function, such as <code>map_dbl()</code> that specifies the type of your output. For instance, if you want your output to be a numeric “double” vector, you can use <code>map_dbl()</code>:</p>
+<p>While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the <code>map()</code> function, such as <code>map_dbl()</code> that specifies the type of your output in its name.</p>
+<p>For instance, if you want your output to be a numeric “double” vector, you can use <code>map_dbl()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]     2.718282     7.389056    20.085537    54.598150   148.413159
  [6]   403.428793  1096.633158  2980.957987  8103.083928 22026.465795</code></pre>
@@ -4295,7 +4310,7 @@ vertical-align: -.125em;
 </div>
 <p>and if you want it to be a character vector, you can use <code>map_chr()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_chr</span>(gapminder, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_chr</span>(gapminder, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    country        year         pop   continent     lifeExp   gdpPercap 
 "character"   "integer"   "numeric" "character"   "numeric"   "numeric" </code></pre>
@@ -4304,7 +4319,7 @@ vertical-align: -.125em;
 <p>Here, recall that the gapminder data frame is a list, and the <code>map_</code> function is iterating over the elements of the list, which in this case is the columns.</p>
 <p>Note that the output of the function you are applying must match the <code>map_</code> function that you use, else you will get an error:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `map_dbl()`:
 ℹ In index: 1.
@@ -4312,21 +4327,146 @@ Caused by error:
 ! Can't coerce from a string to a double vector.</code></pre>
 </div>
 </div>
-<p>The true power from the map functions really comes once you learn how to write your own functions (see future lesson on functions).</p>
+<p>The true power from the map functions really comes once you learn how to write your own functions.</p>
+<p>For example, we could conduct the following transformation to each entry in <code>1:10</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) (x <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">^</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]        1024       59049     1048576     9765625    60466176   282475249
+ [7]  1073741824  3486784401 10000000000 25937424601</code></pre>
+</div>
+</div>
+<p>An even more compact way of writing a function with one argument is using the <code>~.</code> anonymous function shorthand:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="sc">~</span>(. <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">^</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]        1024       59049     1048576     9765625    60466176   282475249
+ [7]  1073741824  3486784401 10000000000 25937424601</code></pre>
+</div>
+</div>
+<p>This shorthand involves:</p>
+<ul>
+<li><p>Replacing <code>function(x)</code> with <code>~</code></p></li>
+<li><p>Replacing the argument in the body of the function with <code>.</code></p></li>
+</ul>
+<p>The <code>map_df()</code> function will return a data frame (but requires that the function being applied outputs a data frame).</p>
+<p>As an example, the following code takes each entry in the vector <code>c(1, 4, 7)</code>, and adds 10 to it, and returns a two-column data frame containing the old number and new number:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_df</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>), <span class="cf">function</span>(.x) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">old_number =</span> .x, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">new_number =</span> .x <span class="sc">+</span> <span class="dv">10</span>))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  old_number new_number
+1          1         11
+2          4         14
+3          7         17</code></pre>
+</div>
+</div>
+<p>To help see how this works, set <code>.x</code> to be one of the values in the vector and run the body of the code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>.x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">old_number =</span> .x, </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">new_number =</span> .x <span class="sc">+</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  old_number new_number
+1          1         11</code></pre>
+</div>
+</div>
+<p>As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns and then computes a data frame for each column/variable containing the mean and sd.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pop, gdpPercap, lifeExp) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="cf">function</span>(.x) <span class="fu">data.frame</span>(<span class="at">mean =</span> <span class="fu">mean</span>(.x),</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">sd =</span> <span class="fu">sd</span>(.x)),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">.id =</span> <span class="st">"variable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   variable         mean           sd
+1       pop 2.960121e+07 1.061579e+08
+2 gdpPercap 7.215327e+03 9.857455e+03
+3   lifeExp 5.947444e+01 1.291711e+01</code></pre>
+</div>
+</div>
+<p>To figure out what is happening here, <code>map_df()</code> is computing the following for each variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>.x <span class="ot">&lt;-</span> gapminder<span class="sc">$</span>pop</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">mean =</span> <span class="fu">mean</span>(.x), </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">sd =</span> <span class="fu">sd</span>(.x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mean        sd
+1 29601212 106157897</code></pre>
+</div>
+</div>
+<p>and is then pasting the results for each variable together into a single data frame.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Challenge 2 (advanced)
+Challenge 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For each numeric column in the gapminder dataset, print the number of unique entries using the <code>length()</code> and <code>unique()</code> function.</p>
-<p>Do this in two different ways: using a <code>for</code> loop and a <code>map()</code> function.</p>
+<p>For each column in the gapminder dataset, compute the number of unique entries using the <code>n_distinct()</code> function. Make sure the output of your code is a numeric vector.</p>
+<p>Do this in two different ways: using a <code>for</code> loop and a <code>map_dbl()</code> function.</p>
+<p>Hint: <code>n_distinct()</code> is a dplyr function which counts the number of unique/distinct values in a vector. Try <code>n_distinct(c(1, 1, 4, 4, 4, 4, 1, 3))</code> as an example of its usage</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solution to Challenge 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>unique_gapminder <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(gapminder)) {</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  unique_gapminder[i] <span class="ot">&lt;-</span> <span class="fu">n_distinct</span>(gapminder[, i])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>unique_gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  142   12 1704    5 1626 1704</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(gapminder, <span class="sc">~</span><span class="fu">n_distinct</span>(.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  country      year       pop continent   lifeExp gdpPercap 
+      142        12      1704         5      1626      1704 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Challenge 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>map_df()</code> to compute the number of distinct values and the class of each variable in the gapminder dataset and store them in a data frame.</p>
+<p>The output of your code should look like this:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>   variable n_distinct     class</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>1   country        142 character</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>2      year         12   integer</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>3       pop       1704   numeric</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>4 continent          5 character</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>5   lifeExp       1626   numeric</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>6 gdpPercap       1704   numeric</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hint: the argument <code>.id = "variable"</code> variable of <code>map_df()</code> can be used to add the <code>variable</code> column automatically based on the gapminder column names.</p>
+<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -4335,160 +4475,22 @@ Solution to Challenge 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">is.numeric</span>(gapminder)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(gapminder)) {</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">mean</span>(gapminder[, i]))</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mean.default(gapminder[, i]): argument is not numeric or logical:
-returning NA</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA
-[1] 1979.5
-[1] 29601212</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mean.default(gapminder[, i]): argument is not numeric or logical:
-returning NA</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA
-[1] 59.47444
-[1] 7215.327</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(gapminder, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mean.default(.x[[i]], ...): argument is not numeric or logical:
-returning NA
-
-Warning in mean.default(.x[[i]], ...): argument is not numeric or logical:
-returning NA</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$country
-[1] NA
-
-$year
-[1] 1979.5
-
-$pop
-[1] 29601212
-
-$continent
-[1] NA
-
-$lifeExp
-[1] 59.47444
-
-$gdpPercap
-[1] 7215.327</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Challenge 4
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Modify the script from Challenge 3 to loop over each country. This time print out whether the life expectancy is smaller than 50, between 50 and 70, or greater than 70.</p>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Solution to Challenge 4
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We modify our solution to Challenge 3 by now adding two thresholds, <code>lowerThreshold</code> and <code>upperThreshold</code> and extending our if-else statements:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>lowerThreshold <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>upperThreshold <span class="ot">&lt;-</span> <span class="dv">70</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iCountry <span class="cf">in</span> <span class="fu">unique</span>(gapminder<span class="sc">$</span>country)) {</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>   tmp <span class="ot">&lt;-</span> <span class="fu">mean</span>(gapminder[gapminder<span class="sc">$</span>country <span class="sc">==</span> iCountry, <span class="st">"lifeExp"</span>])</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span>(tmp <span class="sc">&lt;</span> lowerThreshold) {</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cat</span>(<span class="st">"Average Life Expectancy in"</span>, iCountry, <span class="st">"is less than"</span>, lowerThreshold, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>   } <span class="cf">else</span> <span class="cf">if</span>(tmp <span class="sc">&gt;</span> lowerThreshold <span class="sc">&amp;&amp;</span> tmp <span class="sc">&lt;</span> upperThreshold) {</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cat</span>(<span class="st">"Average Life Expectancy in"</span>, iCountry, <span class="st">"is between"</span>, lowerThreshold, <span class="st">"and"</span>, upperThreshold, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>   } <span class="cf">else</span> {</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cat</span>(<span class="st">"Average Life Expectancy in"</span>, iCountry, <span class="st">"is greater than"</span>, upperThreshold, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span>(tmp)</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">map_df</span>(<span class="cf">function</span>(.x) {</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">n_distinct =</span> <span class="fu">n_distinct</span>(.x),</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">class =</span> <span class="fu">class</span>(.x))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">.id =</span> <span class="st">"variable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   variable n_distinct     class
+1   country        142 character
+2      year         12   integer
+3       pop       1704   numeric
+4 continent          5 character
+5   lifeExp       1626   numeric
+6 gdpPercap       1704   numeric</code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Challenge 5 - Advanced
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write a script that loops over each country in the <code>gapminder</code> dataset, tests whether the country starts with a ‘B’, and graphs life expectancy against time as a line graph if the mean life expectancy is under 50 years.</p>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Solution for Challenge 5
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We will use the <code>grep()</code> command that was introduced in the Unix Shell lesson to find countries that start with “B.” Lets understand how to do this first. Following from the Unix shell section we may be tempted to try the following</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^B"</span>, <span class="fu">unique</span>(gapminder<span class="sc">$</span>country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>But when we evaluate this command it returns the indices of the factor variable <code>country</code> that start with “B.” To get the values, we must add the <code>value = TRUE</code> option to the <code>grep()</code> command:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^B"</span>, <span class="fu">unique</span>(gapminder<span class="sc">$</span>country), <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We will now store these countries in a variable called candidateCountries, and then loop over each entry in the variable. Inside the loop, we evaluate the average life expectancy for each country, and if the average life expectancy is less than 50 we use base-plot to plot the evolution of average life expectancy using <code>with()</code> and <code>subset()</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>thresholdValue <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>candidateCountries <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="st">"^B"</span>, <span class="fu">unique</span>(gapminder<span class="sc">$</span>country), <span class="at">value =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iCountry <span class="cf">in</span> candidateCountries) {</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>   tmp <span class="ot">&lt;-</span> <span class="fu">mean</span>(gapminder[gapminder<span class="sc">$</span>country <span class="sc">==</span> iCountry, <span class="st">"lifeExp"</span>])</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (tmp <span class="sc">&lt;</span> thresholdValue) {</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cat</span>(<span class="st">"Average Life Expectancy in"</span>, iCountry, <span class="st">"is less than"</span>, thresholdValue, <span class="st">"plotting life expectancy graph... </span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">with</span>(<span class="fu">subset</span>(gapminder, country <span class="sc">==</span> iCountry),</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plot</span>(year, lifeExp,</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type =</span> <span class="st">"o"</span>,</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Life Expectancy in"</span>, iCountry, <span class="st">"over time"</span>),</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ylab =</span> <span class="st">"Life Expectancy"</span>,</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xlab =</span> <span class="st">"Year"</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>                    ) <span class="co"># end plot</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            ) <span class="co"># end with</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>   } <span class="co"># end if</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span>(tmp)</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>} <span class="co"># end for loop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

@@ -1,0 +1,192 @@
+---
+title: "Reshaping data frames with tidyr"
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+The "tidyr" package is part of the tidyverse suite:
+
+```{r}
+library(tidyverse)
+```
+
+
+
+
+
+
+
+
+
+
+```{r}
+gapminder <- read.csv("data/gapminder_data.csv")
+gapminder_long <- read.csv("data/gapminder_long.csv")
+```
+
+
+Our original gapminder data:
+
+```{r}
+head(gapminder)
+dim(gapminder)
+```
+
+A long-form version of the gapminder data:
+
+```{r}
+head(gapminder_long)
+dim(gapminder_long)
+```
+
+Many of `R`'s functions have been designed assuming you have a **tidy** dataset, in which:
+
+- Each row contains all the data for a *single* observational unit
+
+- Each column is a *distinct* type of measurement
+
+
+
+
+Are either of the datasets above in a tidy format?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Pivoting longer with pivot_longer()
+
+![Diagram illustrating how pivot longer reorganizes a data frame from a wide to long format](figs/14-tidyr-fig3.png)
+
+
+```{r}
+# use pivot_longer() to convert gapminder into a longer format
+gapminder_long <- gapminder |>
+  pivot_longer(cols = c(pop, lifeExp, gdpPercap),
+               names_to = "variable", 
+               values_to = "value")
+gapminder_long
+```
+
+
+
+
+
+### One use for the longer format in ggplot2
+
+Long-format is useful for when you want to plot multiple variables on the same plot:
+
+```{r}
+# use ggplot2 to create a line plot for the United States showing the 
+# SD-scaled population, gdpPercap, and lifeExp variables over time 
+gapminder_long |>
+  # filter to just the data for the US
+  filter(country == "United States") |>
+  # scale each variable's value to a common scale between 0 (min) and 1
+  group_by(variable) |>
+  mutate(value_scaled = value / sd(value)) |>
+  ungroup() |>
+  # plot a line plot of each variable over time
+  ggplot() +
+  geom_line(aes(x = year, y = value_scaled, color = variable))
+```
+
+
+
+
+::: {.callout}
+## Challenge 2
+
+Using `gapminder_long`, calculate the mean life expectancy, population, and gdpPercap for each continent.
+
+*Hint:** use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
+
+::: {.callout collapse=true}
+## Solution to Challenge 2
+
+```{r}
+gapminder_long |> 
+  group_by(continent, variable) |>
+  summarize(means = mean(value))
+```
+:::
+:::
+
+
+
+
+
+
+
+
+
+## Pivoting wider with pivot_wider()
+
+Let's convert our long format data back to the (wider) tidy format using `pivot_wider()`.
+
+```{r}
+# use pivot_wider() to create gapminder_wider from gapminder_long 
+gapminder_wider <- gapminder_long |>
+  pivot_wider(names_from = variable, values_from = value)
+```
+
+
+```{r}
+# look at the gapminder_wider object (head and dim)
+head(gapminder_wider)
+dim(gapminder_wider)
+```
+
+
+
+```{r}
+# compare with the gapminder object (head and dim)
+head(gapminder)
+dim(gapminder)
+```
+
+
+
+::: {.callout}
+## Challenge 3
+
+Is the `mtcars` dataset in a tidy format?
+
+```{r}
+mtcars_data <- read.csv("data/mtcars.csv") 
+```
+
+Convert `mtcars` to a longer format using `pivot_longer()` (Hint: the `car` variable is an ID variable and should not be pivoted). 
+
+Use `pivot_wider()` to convert your result back to the original `mtcars` dataset.
+
+::: {.callout collapse=true}
+## Solution to Challenge 3
+
+```{r}
+mtcars_long <- mtcars_data |>
+  pivot_longer(-car)
+mtcars_long
+
+mtcars_wide <- mtcars_long |>
+  pivot_wider(names_from = "name", values_from = "value")
+mtcars_wide
+```
+:::
+:::
+

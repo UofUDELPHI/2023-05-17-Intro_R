@@ -18,7 +18,7 @@ book:
     - 10-functions.qmd
     - 11-lists.qmd
     - 12-iteration.qmd
-    - 13-tidyr.qmd
+    - 13-reshape.qmd
 
 format:
   html:

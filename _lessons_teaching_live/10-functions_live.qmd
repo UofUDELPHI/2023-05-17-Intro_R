@@ -7,6 +7,7 @@ editor_options:
 ---
 
 ```{r}
+#| message: false
 # load the libraries and data that we'll use in this lesson
 library(tidyverse)
 gapminder <- read.csv("data/gapminder_data.csv")
@@ -54,13 +55,13 @@ Fahrenheit to Kelvin:
 Let's try running our function:
 
 ```{r}
-# freezing point of water
-fahr_to_kelvin(32)
+# Evaluate fahr_to_kelvin at 32
+
 ```
 
 ```{r}
-# boiling point of water
-fahr_to_kelvin(212)
+# Evaluate fahr_to_kelvin at 212
+
 ```
 
 
@@ -136,6 +137,8 @@ if (condition is true) {
 You can execute alternative code if the condition is false using `else`:
 
 ```{r}
+#| eval: false
+
 # if else
 if (condition is true) {
   perform action

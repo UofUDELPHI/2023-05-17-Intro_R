@@ -1,0 +1,5113 @@
+country,year,continent,variable,value
+Afghanistan,1952,Asia,pop,8425333
+Afghanistan,1952,Asia,lifeExp,28.801
+Afghanistan,1952,Asia,gdpPercap,779.4453145
+Afghanistan,1957,Asia,pop,9240934
+Afghanistan,1957,Asia,lifeExp,30.332
+Afghanistan,1957,Asia,gdpPercap,820.8530296
+Afghanistan,1962,Asia,pop,10267083
+Afghanistan,1962,Asia,lifeExp,31.997
+Afghanistan,1962,Asia,gdpPercap,853.10071
+Afghanistan,1967,Asia,pop,11537966
+Afghanistan,1967,Asia,lifeExp,34.02
+Afghanistan,1967,Asia,gdpPercap,836.1971382
+Afghanistan,1972,Asia,pop,13079460
+Afghanistan,1972,Asia,lifeExp,36.088
+Afghanistan,1972,Asia,gdpPercap,739.9811058
+Afghanistan,1977,Asia,pop,14880372
+Afghanistan,1977,Asia,lifeExp,38.438
+Afghanistan,1977,Asia,gdpPercap,786.11336
+Afghanistan,1982,Asia,pop,12881816
+Afghanistan,1982,Asia,lifeExp,39.854
+Afghanistan,1982,Asia,gdpPercap,978.0114388
+Afghanistan,1987,Asia,pop,13867957
+Afghanistan,1987,Asia,lifeExp,40.822
+Afghanistan,1987,Asia,gdpPercap,852.3959448
+Afghanistan,1992,Asia,pop,16317921
+Afghanistan,1992,Asia,lifeExp,41.674
+Afghanistan,1992,Asia,gdpPercap,649.3413952
+Afghanistan,1997,Asia,pop,22227415
+Afghanistan,1997,Asia,lifeExp,41.763
+Afghanistan,1997,Asia,gdpPercap,635.341351
+Afghanistan,2002,Asia,pop,25268405
+Afghanistan,2002,Asia,lifeExp,42.129
+Afghanistan,2002,Asia,gdpPercap,726.7340548
+Afghanistan,2007,Asia,pop,31889923
+Afghanistan,2007,Asia,lifeExp,43.828
+Afghanistan,2007,Asia,gdpPercap,974.5803384
+Albania,1952,Europe,pop,1282697
+Albania,1952,Europe,lifeExp,55.23
+Albania,1952,Europe,gdpPercap,1601.056136
+Albania,1957,Europe,pop,1476505
+Albania,1957,Europe,lifeExp,59.28
+Albania,1957,Europe,gdpPercap,1942.284244
+Albania,1962,Europe,pop,1728137
+Albania,1962,Europe,lifeExp,64.82
+Albania,1962,Europe,gdpPercap,2312.888958
+Albania,1967,Europe,pop,1984060
+Albania,1967,Europe,lifeExp,66.22
+Albania,1967,Europe,gdpPercap,2760.196931
+Albania,1972,Europe,pop,2263554
+Albania,1972,Europe,lifeExp,67.69
+Albania,1972,Europe,gdpPercap,3313.422188
+Albania,1977,Europe,pop,2509048
+Albania,1977,Europe,lifeExp,68.93
+Albania,1977,Europe,gdpPercap,3533.00391
+Albania,1982,Europe,pop,2780097
+Albania,1982,Europe,lifeExp,70.42
+Albania,1982,Europe,gdpPercap,3630.880722
+Albania,1987,Europe,pop,3075321
+Albania,1987,Europe,lifeExp,72
+Albania,1987,Europe,gdpPercap,3738.932735
+Albania,1992,Europe,pop,3326498
+Albania,1992,Europe,lifeExp,71.581
+Albania,1992,Europe,gdpPercap,2497.437901
+Albania,1997,Europe,pop,3428038
+Albania,1997,Europe,lifeExp,72.95
+Albania,1997,Europe,gdpPercap,3193.054604
+Albania,2002,Europe,pop,3508512
+Albania,2002,Europe,lifeExp,75.651
+Albania,2002,Europe,gdpPercap,4604.211737
+Albania,2007,Europe,pop,3600523
+Albania,2007,Europe,lifeExp,76.423
+Albania,2007,Europe,gdpPercap,5937.029526
+Algeria,1952,Africa,pop,9279525
+Algeria,1952,Africa,lifeExp,43.077
+Algeria,1952,Africa,gdpPercap,2449.008185
+Algeria,1957,Africa,pop,10270856
+Algeria,1957,Africa,lifeExp,45.685
+Algeria,1957,Africa,gdpPercap,3013.976023
+Algeria,1962,Africa,pop,11000948
+Algeria,1962,Africa,lifeExp,48.303
+Algeria,1962,Africa,gdpPercap,2550.81688
+Algeria,1967,Africa,pop,12760499
+Algeria,1967,Africa,lifeExp,51.407
+Algeria,1967,Africa,gdpPercap,3246.991771
+Algeria,1972,Africa,pop,14760787
+Algeria,1972,Africa,lifeExp,54.518
+Algeria,1972,Africa,gdpPercap,4182.663766
+Algeria,1977,Africa,pop,17152804
+Algeria,1977,Africa,lifeExp,58.014
+Algeria,1977,Africa,gdpPercap,4910.416756
+Algeria,1982,Africa,pop,20033753
+Algeria,1982,Africa,lifeExp,61.368
+Algeria,1982,Africa,gdpPercap,5745.160213
+Algeria,1987,Africa,pop,23254956
+Algeria,1987,Africa,lifeExp,65.799
+Algeria,1987,Africa,gdpPercap,5681.358539
+Algeria,1992,Africa,pop,26298373
+Algeria,1992,Africa,lifeExp,67.744
+Algeria,1992,Africa,gdpPercap,5023.216647
+Algeria,1997,Africa,pop,29072015
+Algeria,1997,Africa,lifeExp,69.152
+Algeria,1997,Africa,gdpPercap,4797.295051
+Algeria,2002,Africa,pop,31287142
+Algeria,2002,Africa,lifeExp,70.994
+Algeria,2002,Africa,gdpPercap,5288.040382
+Algeria,2007,Africa,pop,33333216
+Algeria,2007,Africa,lifeExp,72.301
+Algeria,2007,Africa,gdpPercap,6223.367465
+Angola,1952,Africa,pop,4232095
+Angola,1952,Africa,lifeExp,30.015
+Angola,1952,Africa,gdpPercap,3520.610273
+Angola,1957,Africa,pop,4561361
+Angola,1957,Africa,lifeExp,31.999
+Angola,1957,Africa,gdpPercap,3827.940465
+Angola,1962,Africa,pop,4826015
+Angola,1962,Africa,lifeExp,34
+Angola,1962,Africa,gdpPercap,4269.276742
+Angola,1967,Africa,pop,5247469
+Angola,1967,Africa,lifeExp,35.985
+Angola,1967,Africa,gdpPercap,5522.776375
+Angola,1972,Africa,pop,5894858
+Angola,1972,Africa,lifeExp,37.928
+Angola,1972,Africa,gdpPercap,5473.288005
+Angola,1977,Africa,pop,6162675
+Angola,1977,Africa,lifeExp,39.483
+Angola,1977,Africa,gdpPercap,3008.647355
+Angola,1982,Africa,pop,7016384
+Angola,1982,Africa,lifeExp,39.942
+Angola,1982,Africa,gdpPercap,2756.953672
+Angola,1987,Africa,pop,7874230
+Angola,1987,Africa,lifeExp,39.906
+Angola,1987,Africa,gdpPercap,2430.208311
+Angola,1992,Africa,pop,8735988
+Angola,1992,Africa,lifeExp,40.647
+Angola,1992,Africa,gdpPercap,2627.845685
+Angola,1997,Africa,pop,9875024
+Angola,1997,Africa,lifeExp,40.963
+Angola,1997,Africa,gdpPercap,2277.140884
+Angola,2002,Africa,pop,10866106
+Angola,2002,Africa,lifeExp,41.003
+Angola,2002,Africa,gdpPercap,2773.287312
+Angola,2007,Africa,pop,12420476
+Angola,2007,Africa,lifeExp,42.731
+Angola,2007,Africa,gdpPercap,4797.231267
+Argentina,1952,Americas,pop,17876956
+Argentina,1952,Americas,lifeExp,62.485
+Argentina,1952,Americas,gdpPercap,5911.315053
+Argentina,1957,Americas,pop,19610538
+Argentina,1957,Americas,lifeExp,64.399
+Argentina,1957,Americas,gdpPercap,6856.856212
+Argentina,1962,Americas,pop,21283783
+Argentina,1962,Americas,lifeExp,65.142
+Argentina,1962,Americas,gdpPercap,7133.166023
+Argentina,1967,Americas,pop,22934225
+Argentina,1967,Americas,lifeExp,65.634
+Argentina,1967,Americas,gdpPercap,8052.953021
+Argentina,1972,Americas,pop,24779799
+Argentina,1972,Americas,lifeExp,67.065
+Argentina,1972,Americas,gdpPercap,9443.038526
+Argentina,1977,Americas,pop,26983828
+Argentina,1977,Americas,lifeExp,68.481
+Argentina,1977,Americas,gdpPercap,10079.02674
+Argentina,1982,Americas,pop,29341374
+Argentina,1982,Americas,lifeExp,69.942
+Argentina,1982,Americas,gdpPercap,8997.897412
+Argentina,1987,Americas,pop,31620918
+Argentina,1987,Americas,lifeExp,70.774
+Argentina,1987,Americas,gdpPercap,9139.671389
+Argentina,1992,Americas,pop,33958947
+Argentina,1992,Americas,lifeExp,71.868
+Argentina,1992,Americas,gdpPercap,9308.41871
+Argentina,1997,Americas,pop,36203463
+Argentina,1997,Americas,lifeExp,73.275
+Argentina,1997,Americas,gdpPercap,10967.28195
+Argentina,2002,Americas,pop,38331121
+Argentina,2002,Americas,lifeExp,74.34
+Argentina,2002,Americas,gdpPercap,8797.640716
+Argentina,2007,Americas,pop,40301927
+Argentina,2007,Americas,lifeExp,75.32
+Argentina,2007,Americas,gdpPercap,12779.37964
+Australia,1952,Oceania,pop,8691212
+Australia,1952,Oceania,lifeExp,69.12
+Australia,1952,Oceania,gdpPercap,10039.59564
+Australia,1957,Oceania,pop,9712569
+Australia,1957,Oceania,lifeExp,70.33
+Australia,1957,Oceania,gdpPercap,10949.64959
+Australia,1962,Oceania,pop,10794968
+Australia,1962,Oceania,lifeExp,70.93
+Australia,1962,Oceania,gdpPercap,12217.22686
+Australia,1967,Oceania,pop,11872264
+Australia,1967,Oceania,lifeExp,71.1
+Australia,1967,Oceania,gdpPercap,14526.12465
+Australia,1972,Oceania,pop,13177000
+Australia,1972,Oceania,lifeExp,71.93
+Australia,1972,Oceania,gdpPercap,16788.62948
+Australia,1977,Oceania,pop,14074100
+Australia,1977,Oceania,lifeExp,73.49
+Australia,1977,Oceania,gdpPercap,18334.19751
+Australia,1982,Oceania,pop,15184200
+Australia,1982,Oceania,lifeExp,74.74
+Australia,1982,Oceania,gdpPercap,19477.00928
+Australia,1987,Oceania,pop,16257249
+Australia,1987,Oceania,lifeExp,76.32
+Australia,1987,Oceania,gdpPercap,21888.88903
+Australia,1992,Oceania,pop,17481977
+Australia,1992,Oceania,lifeExp,77.56
+Australia,1992,Oceania,gdpPercap,23424.76683
+Australia,1997,Oceania,pop,18565243
+Australia,1997,Oceania,lifeExp,78.83
+Australia,1997,Oceania,gdpPercap,26997.93657
+Australia,2002,Oceania,pop,19546792
+Australia,2002,Oceania,lifeExp,80.37
+Australia,2002,Oceania,gdpPercap,30687.75473
+Australia,2007,Oceania,pop,20434176
+Australia,2007,Oceania,lifeExp,81.235
+Australia,2007,Oceania,gdpPercap,34435.36744
+Austria,1952,Europe,pop,6927772
+Austria,1952,Europe,lifeExp,66.8
+Austria,1952,Europe,gdpPercap,6137.076492
+Austria,1957,Europe,pop,6965860
+Austria,1957,Europe,lifeExp,67.48
+Austria,1957,Europe,gdpPercap,8842.59803
+Austria,1962,Europe,pop,7129864
+Austria,1962,Europe,lifeExp,69.54
+Austria,1962,Europe,gdpPercap,10750.72111
+Austria,1967,Europe,pop,7376998
+Austria,1967,Europe,lifeExp,70.14
+Austria,1967,Europe,gdpPercap,12834.6024
+Austria,1972,Europe,pop,7544201
+Austria,1972,Europe,lifeExp,70.63
+Austria,1972,Europe,gdpPercap,16661.6256
+Austria,1977,Europe,pop,7568430
+Austria,1977,Europe,lifeExp,72.17
+Austria,1977,Europe,gdpPercap,19749.4223
+Austria,1982,Europe,pop,7574613
+Austria,1982,Europe,lifeExp,73.18
+Austria,1982,Europe,gdpPercap,21597.08362
+Austria,1987,Europe,pop,7578903
+Austria,1987,Europe,lifeExp,74.94
+Austria,1987,Europe,gdpPercap,23687.82607
+Austria,1992,Europe,pop,7914969
+Austria,1992,Europe,lifeExp,76.04
+Austria,1992,Europe,gdpPercap,27042.01868
+Austria,1997,Europe,pop,8069876
+Austria,1997,Europe,lifeExp,77.51
+Austria,1997,Europe,gdpPercap,29095.92066
+Austria,2002,Europe,pop,8148312
+Austria,2002,Europe,lifeExp,78.98
+Austria,2002,Europe,gdpPercap,32417.60769
+Austria,2007,Europe,pop,8199783
+Austria,2007,Europe,lifeExp,79.829
+Austria,2007,Europe,gdpPercap,36126.4927
+Bahrain,1952,Asia,pop,120447
+Bahrain,1952,Asia,lifeExp,50.939
+Bahrain,1952,Asia,gdpPercap,9867.084765
+Bahrain,1957,Asia,pop,138655
+Bahrain,1957,Asia,lifeExp,53.832
+Bahrain,1957,Asia,gdpPercap,11635.79945
+Bahrain,1962,Asia,pop,171863
+Bahrain,1962,Asia,lifeExp,56.923
+Bahrain,1962,Asia,gdpPercap,12753.27514
+Bahrain,1967,Asia,pop,202182
+Bahrain,1967,Asia,lifeExp,59.923
+Bahrain,1967,Asia,gdpPercap,14804.6727
+Bahrain,1972,Asia,pop,230800
+Bahrain,1972,Asia,lifeExp,63.3
+Bahrain,1972,Asia,gdpPercap,18268.65839
+Bahrain,1977,Asia,pop,297410
+Bahrain,1977,Asia,lifeExp,65.593
+Bahrain,1977,Asia,gdpPercap,19340.10196
+Bahrain,1982,Asia,pop,377967
+Bahrain,1982,Asia,lifeExp,69.052
+Bahrain,1982,Asia,gdpPercap,19211.14731
+Bahrain,1987,Asia,pop,454612
+Bahrain,1987,Asia,lifeExp,70.75
+Bahrain,1987,Asia,gdpPercap,18524.02406
+Bahrain,1992,Asia,pop,529491
+Bahrain,1992,Asia,lifeExp,72.601
+Bahrain,1992,Asia,gdpPercap,19035.57917
+Bahrain,1997,Asia,pop,598561
+Bahrain,1997,Asia,lifeExp,73.925
+Bahrain,1997,Asia,gdpPercap,20292.01679
+Bahrain,2002,Asia,pop,656397
+Bahrain,2002,Asia,lifeExp,74.795
+Bahrain,2002,Asia,gdpPercap,23403.55927
+Bahrain,2007,Asia,pop,708573
+Bahrain,2007,Asia,lifeExp,75.635
+Bahrain,2007,Asia,gdpPercap,29796.04834
+Bangladesh,1952,Asia,pop,46886859
+Bangladesh,1952,Asia,lifeExp,37.484
+Bangladesh,1952,Asia,gdpPercap,684.2441716
+Bangladesh,1957,Asia,pop,51365468
+Bangladesh,1957,Asia,lifeExp,39.348
+Bangladesh,1957,Asia,gdpPercap,661.6374577
+Bangladesh,1962,Asia,pop,56839289
+Bangladesh,1962,Asia,lifeExp,41.216
+Bangladesh,1962,Asia,gdpPercap,686.3415538
+Bangladesh,1967,Asia,pop,62821884
+Bangladesh,1967,Asia,lifeExp,43.453
+Bangladesh,1967,Asia,gdpPercap,721.1860862
+Bangladesh,1972,Asia,pop,70759295
+Bangladesh,1972,Asia,lifeExp,45.252
+Bangladesh,1972,Asia,gdpPercap,630.2336265
+Bangladesh,1977,Asia,pop,80428306
+Bangladesh,1977,Asia,lifeExp,46.923
+Bangladesh,1977,Asia,gdpPercap,659.8772322
+Bangladesh,1982,Asia,pop,93074406
+Bangladesh,1982,Asia,lifeExp,50.009
+Bangladesh,1982,Asia,gdpPercap,676.9818656
+Bangladesh,1987,Asia,pop,103764241
+Bangladesh,1987,Asia,lifeExp,52.819
+Bangladesh,1987,Asia,gdpPercap,751.9794035
+Bangladesh,1992,Asia,pop,113704579
+Bangladesh,1992,Asia,lifeExp,56.018
+Bangladesh,1992,Asia,gdpPercap,837.8101643
+Bangladesh,1997,Asia,pop,123315288
+Bangladesh,1997,Asia,lifeExp,59.412
+Bangladesh,1997,Asia,gdpPercap,972.7700352
+Bangladesh,2002,Asia,pop,135656790
+Bangladesh,2002,Asia,lifeExp,62.013
+Bangladesh,2002,Asia,gdpPercap,1136.39043
+Bangladesh,2007,Asia,pop,150448339
+Bangladesh,2007,Asia,lifeExp,64.062
+Bangladesh,2007,Asia,gdpPercap,1391.253792
+Belgium,1952,Europe,pop,8730405
+Belgium,1952,Europe,lifeExp,68
+Belgium,1952,Europe,gdpPercap,8343.105127
+Belgium,1957,Europe,pop,8989111
+Belgium,1957,Europe,lifeExp,69.24
+Belgium,1957,Europe,gdpPercap,9714.960623
+Belgium,1962,Europe,pop,9218400
+Belgium,1962,Europe,lifeExp,70.25
+Belgium,1962,Europe,gdpPercap,10991.20676
+Belgium,1967,Europe,pop,9556500
+Belgium,1967,Europe,lifeExp,70.94
+Belgium,1967,Europe,gdpPercap,13149.04119
+Belgium,1972,Europe,pop,9709100
+Belgium,1972,Europe,lifeExp,71.44
+Belgium,1972,Europe,gdpPercap,16672.14356
+Belgium,1977,Europe,pop,9821800
+Belgium,1977,Europe,lifeExp,72.8
+Belgium,1977,Europe,gdpPercap,19117.97448
+Belgium,1982,Europe,pop,9856303
+Belgium,1982,Europe,lifeExp,73.93
+Belgium,1982,Europe,gdpPercap,20979.84589
+Belgium,1987,Europe,pop,9870200
+Belgium,1987,Europe,lifeExp,75.35
+Belgium,1987,Europe,gdpPercap,22525.56308
+Belgium,1992,Europe,pop,10045622
+Belgium,1992,Europe,lifeExp,76.46
+Belgium,1992,Europe,gdpPercap,25575.57069
+Belgium,1997,Europe,pop,10199787
+Belgium,1997,Europe,lifeExp,77.53
+Belgium,1997,Europe,gdpPercap,27561.19663
+Belgium,2002,Europe,pop,10311970
+Belgium,2002,Europe,lifeExp,78.32
+Belgium,2002,Europe,gdpPercap,30485.88375
+Belgium,2007,Europe,pop,10392226
+Belgium,2007,Europe,lifeExp,79.441
+Belgium,2007,Europe,gdpPercap,33692.60508
+Benin,1952,Africa,pop,1738315
+Benin,1952,Africa,lifeExp,38.223
+Benin,1952,Africa,gdpPercap,1062.7522
+Benin,1957,Africa,pop,1925173
+Benin,1957,Africa,lifeExp,40.358
+Benin,1957,Africa,gdpPercap,959.6010805
+Benin,1962,Africa,pop,2151895
+Benin,1962,Africa,lifeExp,42.618
+Benin,1962,Africa,gdpPercap,949.4990641
+Benin,1967,Africa,pop,2427334
+Benin,1967,Africa,lifeExp,44.885
+Benin,1967,Africa,gdpPercap,1035.831411
+Benin,1972,Africa,pop,2761407
+Benin,1972,Africa,lifeExp,47.014
+Benin,1972,Africa,gdpPercap,1085.796879
+Benin,1977,Africa,pop,3168267
+Benin,1977,Africa,lifeExp,49.19
+Benin,1977,Africa,gdpPercap,1029.161251
+Benin,1982,Africa,pop,3641603
+Benin,1982,Africa,lifeExp,50.904
+Benin,1982,Africa,gdpPercap,1277.897616
+Benin,1987,Africa,pop,4243788
+Benin,1987,Africa,lifeExp,52.337
+Benin,1987,Africa,gdpPercap,1225.85601
+Benin,1992,Africa,pop,4981671
+Benin,1992,Africa,lifeExp,53.919
+Benin,1992,Africa,gdpPercap,1191.207681
+Benin,1997,Africa,pop,6066080
+Benin,1997,Africa,lifeExp,54.777
+Benin,1997,Africa,gdpPercap,1232.975292
+Benin,2002,Africa,pop,7026113
+Benin,2002,Africa,lifeExp,54.406
+Benin,2002,Africa,gdpPercap,1372.877931
+Benin,2007,Africa,pop,8078314
+Benin,2007,Africa,lifeExp,56.728
+Benin,2007,Africa,gdpPercap,1441.284873
+Bolivia,1952,Americas,pop,2883315
+Bolivia,1952,Americas,lifeExp,40.414
+Bolivia,1952,Americas,gdpPercap,2677.326347
+Bolivia,1957,Americas,pop,3211738
+Bolivia,1957,Americas,lifeExp,41.89
+Bolivia,1957,Americas,gdpPercap,2127.686326
+Bolivia,1962,Americas,pop,3593918
+Bolivia,1962,Americas,lifeExp,43.428
+Bolivia,1962,Americas,gdpPercap,2180.972546
+Bolivia,1967,Americas,pop,4040665
+Bolivia,1967,Americas,lifeExp,45.032
+Bolivia,1967,Americas,gdpPercap,2586.886053
+Bolivia,1972,Americas,pop,4565872
+Bolivia,1972,Americas,lifeExp,46.714
+Bolivia,1972,Americas,gdpPercap,2980.331339
+Bolivia,1977,Americas,pop,5079716
+Bolivia,1977,Americas,lifeExp,50.023
+Bolivia,1977,Americas,gdpPercap,3548.097832
+Bolivia,1982,Americas,pop,5642224
+Bolivia,1982,Americas,lifeExp,53.859
+Bolivia,1982,Americas,gdpPercap,3156.510452
+Bolivia,1987,Americas,pop,6156369
+Bolivia,1987,Americas,lifeExp,57.251
+Bolivia,1987,Americas,gdpPercap,2753.69149
+Bolivia,1992,Americas,pop,6893451
+Bolivia,1992,Americas,lifeExp,59.957
+Bolivia,1992,Americas,gdpPercap,2961.699694
+Bolivia,1997,Americas,pop,7693188
+Bolivia,1997,Americas,lifeExp,62.05
+Bolivia,1997,Americas,gdpPercap,3326.143191
+Bolivia,2002,Americas,pop,8445134
+Bolivia,2002,Americas,lifeExp,63.883
+Bolivia,2002,Americas,gdpPercap,3413.26269
+Bolivia,2007,Americas,pop,9119152
+Bolivia,2007,Americas,lifeExp,65.554
+Bolivia,2007,Americas,gdpPercap,3822.137084
+Bosnia and Herzegovina,1952,Europe,pop,2791000
+Bosnia and Herzegovina,1952,Europe,lifeExp,53.82
+Bosnia and Herzegovina,1952,Europe,gdpPercap,973.5331948
+Bosnia and Herzegovina,1957,Europe,pop,3076000
+Bosnia and Herzegovina,1957,Europe,lifeExp,58.45
+Bosnia and Herzegovina,1957,Europe,gdpPercap,1353.989176
+Bosnia and Herzegovina,1962,Europe,pop,3349000
+Bosnia and Herzegovina,1962,Europe,lifeExp,61.93
+Bosnia and Herzegovina,1962,Europe,gdpPercap,1709.683679
+Bosnia and Herzegovina,1967,Europe,pop,3585000
+Bosnia and Herzegovina,1967,Europe,lifeExp,64.79
+Bosnia and Herzegovina,1967,Europe,gdpPercap,2172.352423
+Bosnia and Herzegovina,1972,Europe,pop,3819000
+Bosnia and Herzegovina,1972,Europe,lifeExp,67.45
+Bosnia and Herzegovina,1972,Europe,gdpPercap,2860.16975
+Bosnia and Herzegovina,1977,Europe,pop,4086000
+Bosnia and Herzegovina,1977,Europe,lifeExp,69.86
+Bosnia and Herzegovina,1977,Europe,gdpPercap,3528.481305
+Bosnia and Herzegovina,1982,Europe,pop,4172693
+Bosnia and Herzegovina,1982,Europe,lifeExp,70.69
+Bosnia and Herzegovina,1982,Europe,gdpPercap,4126.613157
+Bosnia and Herzegovina,1987,Europe,pop,4338977
+Bosnia and Herzegovina,1987,Europe,lifeExp,71.14
+Bosnia and Herzegovina,1987,Europe,gdpPercap,4314.114757
+Bosnia and Herzegovina,1992,Europe,pop,4256013
+Bosnia and Herzegovina,1992,Europe,lifeExp,72.178
+Bosnia and Herzegovina,1992,Europe,gdpPercap,2546.781445
+Bosnia and Herzegovina,1997,Europe,pop,3607000
+Bosnia and Herzegovina,1997,Europe,lifeExp,73.244
+Bosnia and Herzegovina,1997,Europe,gdpPercap,4766.355904
+Bosnia and Herzegovina,2002,Europe,pop,4165416
+Bosnia and Herzegovina,2002,Europe,lifeExp,74.09
+Bosnia and Herzegovina,2002,Europe,gdpPercap,6018.975239
+Bosnia and Herzegovina,2007,Europe,pop,4552198
+Bosnia and Herzegovina,2007,Europe,lifeExp,74.852
+Bosnia and Herzegovina,2007,Europe,gdpPercap,7446.298803
+Botswana,1952,Africa,pop,442308
+Botswana,1952,Africa,lifeExp,47.622
+Botswana,1952,Africa,gdpPercap,851.2411407
+Botswana,1957,Africa,pop,474639
+Botswana,1957,Africa,lifeExp,49.618
+Botswana,1957,Africa,gdpPercap,918.2325349
+Botswana,1962,Africa,pop,512764
+Botswana,1962,Africa,lifeExp,51.52
+Botswana,1962,Africa,gdpPercap,983.6539764
+Botswana,1967,Africa,pop,553541
+Botswana,1967,Africa,lifeExp,53.298
+Botswana,1967,Africa,gdpPercap,1214.709294
+Botswana,1972,Africa,pop,619351
+Botswana,1972,Africa,lifeExp,56.024
+Botswana,1972,Africa,gdpPercap,2263.611114
+Botswana,1977,Africa,pop,781472
+Botswana,1977,Africa,lifeExp,59.319
+Botswana,1977,Africa,gdpPercap,3214.857818
+Botswana,1982,Africa,pop,970347
+Botswana,1982,Africa,lifeExp,61.484
+Botswana,1982,Africa,gdpPercap,4551.14215
+Botswana,1987,Africa,pop,1151184
+Botswana,1987,Africa,lifeExp,63.622
+Botswana,1987,Africa,gdpPercap,6205.88385
+Botswana,1992,Africa,pop,1342614
+Botswana,1992,Africa,lifeExp,62.745
+Botswana,1992,Africa,gdpPercap,7954.111645
+Botswana,1997,Africa,pop,1536536
+Botswana,1997,Africa,lifeExp,52.556
+Botswana,1997,Africa,gdpPercap,8647.142313
+Botswana,2002,Africa,pop,1630347
+Botswana,2002,Africa,lifeExp,46.634
+Botswana,2002,Africa,gdpPercap,11003.60508
+Botswana,2007,Africa,pop,1639131
+Botswana,2007,Africa,lifeExp,50.728
+Botswana,2007,Africa,gdpPercap,12569.85177
+Brazil,1952,Americas,pop,56602560
+Brazil,1952,Americas,lifeExp,50.917
+Brazil,1952,Americas,gdpPercap,2108.944355
+Brazil,1957,Americas,pop,65551171
+Brazil,1957,Americas,lifeExp,53.285
+Brazil,1957,Americas,gdpPercap,2487.365989
+Brazil,1962,Americas,pop,76039390
+Brazil,1962,Americas,lifeExp,55.665
+Brazil,1962,Americas,gdpPercap,3336.585802
+Brazil,1967,Americas,pop,88049823
+Brazil,1967,Americas,lifeExp,57.632
+Brazil,1967,Americas,gdpPercap,3429.864357
+Brazil,1972,Americas,pop,100840058
+Brazil,1972,Americas,lifeExp,59.504
+Brazil,1972,Americas,gdpPercap,4985.711467
+Brazil,1977,Americas,pop,114313951
+Brazil,1977,Americas,lifeExp,61.489
+Brazil,1977,Americas,gdpPercap,6660.118654
+Brazil,1982,Americas,pop,128962939
+Brazil,1982,Americas,lifeExp,63.336
+Brazil,1982,Americas,gdpPercap,7030.835878
+Brazil,1987,Americas,pop,142938076
+Brazil,1987,Americas,lifeExp,65.205
+Brazil,1987,Americas,gdpPercap,7807.095818
+Brazil,1992,Americas,pop,155975974
+Brazil,1992,Americas,lifeExp,67.057
+Brazil,1992,Americas,gdpPercap,6950.283021
+Brazil,1997,Americas,pop,168546719
+Brazil,1997,Americas,lifeExp,69.388
+Brazil,1997,Americas,gdpPercap,7957.980824
+Brazil,2002,Americas,pop,179914212
+Brazil,2002,Americas,lifeExp,71.006
+Brazil,2002,Americas,gdpPercap,8131.212843
+Brazil,2007,Americas,pop,190010647
+Brazil,2007,Americas,lifeExp,72.39
+Brazil,2007,Americas,gdpPercap,9065.800825
+Bulgaria,1952,Europe,pop,7274900
+Bulgaria,1952,Europe,lifeExp,59.6
+Bulgaria,1952,Europe,gdpPercap,2444.286648
+Bulgaria,1957,Europe,pop,7651254
+Bulgaria,1957,Europe,lifeExp,66.61
+Bulgaria,1957,Europe,gdpPercap,3008.670727
+Bulgaria,1962,Europe,pop,8012946
+Bulgaria,1962,Europe,lifeExp,69.51
+Bulgaria,1962,Europe,gdpPercap,4254.337839
+Bulgaria,1967,Europe,pop,8310226
+Bulgaria,1967,Europe,lifeExp,70.42
+Bulgaria,1967,Europe,gdpPercap,5577.0028
+Bulgaria,1972,Europe,pop,8576200
+Bulgaria,1972,Europe,lifeExp,70.9
+Bulgaria,1972,Europe,gdpPercap,6597.494398
+Bulgaria,1977,Europe,pop,8797022
+Bulgaria,1977,Europe,lifeExp,70.81
+Bulgaria,1977,Europe,gdpPercap,7612.240438
+Bulgaria,1982,Europe,pop,8892098
+Bulgaria,1982,Europe,lifeExp,71.08
+Bulgaria,1982,Europe,gdpPercap,8224.191647
+Bulgaria,1987,Europe,pop,8971958
+Bulgaria,1987,Europe,lifeExp,71.34
+Bulgaria,1987,Europe,gdpPercap,8239.854824
+Bulgaria,1992,Europe,pop,8658506
+Bulgaria,1992,Europe,lifeExp,71.19
+Bulgaria,1992,Europe,gdpPercap,6302.623438
+Bulgaria,1997,Europe,pop,8066057
+Bulgaria,1997,Europe,lifeExp,70.32
+Bulgaria,1997,Europe,gdpPercap,5970.38876
+Bulgaria,2002,Europe,pop,7661799
+Bulgaria,2002,Europe,lifeExp,72.14
+Bulgaria,2002,Europe,gdpPercap,7696.777725
+Bulgaria,2007,Europe,pop,7322858
+Bulgaria,2007,Europe,lifeExp,73.005
+Bulgaria,2007,Europe,gdpPercap,10680.79282
+Burkina Faso,1952,Africa,pop,4469979
+Burkina Faso,1952,Africa,lifeExp,31.975
+Burkina Faso,1952,Africa,gdpPercap,543.2552413
+Burkina Faso,1957,Africa,pop,4713416
+Burkina Faso,1957,Africa,lifeExp,34.906
+Burkina Faso,1957,Africa,gdpPercap,617.1834648
+Burkina Faso,1962,Africa,pop,4919632
+Burkina Faso,1962,Africa,lifeExp,37.814
+Burkina Faso,1962,Africa,gdpPercap,722.5120206
+Burkina Faso,1967,Africa,pop,5127935
+Burkina Faso,1967,Africa,lifeExp,40.697
+Burkina Faso,1967,Africa,gdpPercap,794.8265597
+Burkina Faso,1972,Africa,pop,5433886
+Burkina Faso,1972,Africa,lifeExp,43.591
+Burkina Faso,1972,Africa,gdpPercap,854.7359763
+Burkina Faso,1977,Africa,pop,5889574
+Burkina Faso,1977,Africa,lifeExp,46.137
+Burkina Faso,1977,Africa,gdpPercap,743.3870368
+Burkina Faso,1982,Africa,pop,6634596
+Burkina Faso,1982,Africa,lifeExp,48.122
+Burkina Faso,1982,Africa,gdpPercap,807.1985855
+Burkina Faso,1987,Africa,pop,7586551
+Burkina Faso,1987,Africa,lifeExp,49.557
+Burkina Faso,1987,Africa,gdpPercap,912.0631417
+Burkina Faso,1992,Africa,pop,8878303
+Burkina Faso,1992,Africa,lifeExp,50.26
+Burkina Faso,1992,Africa,gdpPercap,931.7527731
+Burkina Faso,1997,Africa,pop,10352843
+Burkina Faso,1997,Africa,lifeExp,50.324
+Burkina Faso,1997,Africa,gdpPercap,946.2949618
+Burkina Faso,2002,Africa,pop,12251209
+Burkina Faso,2002,Africa,lifeExp,50.65
+Burkina Faso,2002,Africa,gdpPercap,1037.645221
+Burkina Faso,2007,Africa,pop,14326203
+Burkina Faso,2007,Africa,lifeExp,52.295
+Burkina Faso,2007,Africa,gdpPercap,1217.032994
+Burundi,1952,Africa,pop,2445618
+Burundi,1952,Africa,lifeExp,39.031
+Burundi,1952,Africa,gdpPercap,339.2964587
+Burundi,1957,Africa,pop,2667518
+Burundi,1957,Africa,lifeExp,40.533
+Burundi,1957,Africa,gdpPercap,379.5646281
+Burundi,1962,Africa,pop,2961915
+Burundi,1962,Africa,lifeExp,42.045
+Burundi,1962,Africa,gdpPercap,355.2032273
+Burundi,1967,Africa,pop,3330989
+Burundi,1967,Africa,lifeExp,43.548
+Burundi,1967,Africa,gdpPercap,412.9775136
+Burundi,1972,Africa,pop,3529983
+Burundi,1972,Africa,lifeExp,44.057
+Burundi,1972,Africa,gdpPercap,464.0995039
+Burundi,1977,Africa,pop,3834415
+Burundi,1977,Africa,lifeExp,45.91
+Burundi,1977,Africa,gdpPercap,556.1032651
+Burundi,1982,Africa,pop,4580410
+Burundi,1982,Africa,lifeExp,47.471
+Burundi,1982,Africa,gdpPercap,559.603231
+Burundi,1987,Africa,pop,5126023
+Burundi,1987,Africa,lifeExp,48.211
+Burundi,1987,Africa,gdpPercap,621.8188189
+Burundi,1992,Africa,pop,5809236
+Burundi,1992,Africa,lifeExp,44.736
+Burundi,1992,Africa,gdpPercap,631.6998778
+Burundi,1997,Africa,pop,6121610
+Burundi,1997,Africa,lifeExp,45.326
+Burundi,1997,Africa,gdpPercap,463.1151478
+Burundi,2002,Africa,pop,7021078
+Burundi,2002,Africa,lifeExp,47.36
+Burundi,2002,Africa,gdpPercap,446.4035126
+Burundi,2007,Africa,pop,8390505
+Burundi,2007,Africa,lifeExp,49.58
+Burundi,2007,Africa,gdpPercap,430.0706916
+Cambodia,1952,Asia,pop,4693836
+Cambodia,1952,Asia,lifeExp,39.417
+Cambodia,1952,Asia,gdpPercap,368.4692856
+Cambodia,1957,Asia,pop,5322536
+Cambodia,1957,Asia,lifeExp,41.366
+Cambodia,1957,Asia,gdpPercap,434.0383364
+Cambodia,1962,Asia,pop,6083619
+Cambodia,1962,Asia,lifeExp,43.415
+Cambodia,1962,Asia,gdpPercap,496.9136476
+Cambodia,1967,Asia,pop,6960067
+Cambodia,1967,Asia,lifeExp,45.415
+Cambodia,1967,Asia,gdpPercap,523.4323142
+Cambodia,1972,Asia,pop,7450606
+Cambodia,1972,Asia,lifeExp,40.317
+Cambodia,1972,Asia,gdpPercap,421.6240257
+Cambodia,1977,Asia,pop,6978607
+Cambodia,1977,Asia,lifeExp,31.22
+Cambodia,1977,Asia,gdpPercap,524.9721832
+Cambodia,1982,Asia,pop,7272485
+Cambodia,1982,Asia,lifeExp,50.957
+Cambodia,1982,Asia,gdpPercap,624.4754784
+Cambodia,1987,Asia,pop,8371791
+Cambodia,1987,Asia,lifeExp,53.914
+Cambodia,1987,Asia,gdpPercap,683.8955732
+Cambodia,1992,Asia,pop,10150094
+Cambodia,1992,Asia,lifeExp,55.803
+Cambodia,1992,Asia,gdpPercap,682.3031755
+Cambodia,1997,Asia,pop,11782962
+Cambodia,1997,Asia,lifeExp,56.534
+Cambodia,1997,Asia,gdpPercap,734.28517
+Cambodia,2002,Asia,pop,12926707
+Cambodia,2002,Asia,lifeExp,56.752
+Cambodia,2002,Asia,gdpPercap,896.2260153
+Cambodia,2007,Asia,pop,14131858
+Cambodia,2007,Asia,lifeExp,59.723
+Cambodia,2007,Asia,gdpPercap,1713.778686
+Cameroon,1952,Africa,pop,5009067
+Cameroon,1952,Africa,lifeExp,38.523
+Cameroon,1952,Africa,gdpPercap,1172.667655
+Cameroon,1957,Africa,pop,5359923
+Cameroon,1957,Africa,lifeExp,40.428
+Cameroon,1957,Africa,gdpPercap,1313.048099
+Cameroon,1962,Africa,pop,5793633
+Cameroon,1962,Africa,lifeExp,42.643
+Cameroon,1962,Africa,gdpPercap,1399.607441
+Cameroon,1967,Africa,pop,6335506
+Cameroon,1967,Africa,lifeExp,44.799
+Cameroon,1967,Africa,gdpPercap,1508.453148
+Cameroon,1972,Africa,pop,7021028
+Cameroon,1972,Africa,lifeExp,47.049
+Cameroon,1972,Africa,gdpPercap,1684.146528
+Cameroon,1977,Africa,pop,7959865
+Cameroon,1977,Africa,lifeExp,49.355
+Cameroon,1977,Africa,gdpPercap,1783.432873
+Cameroon,1982,Africa,pop,9250831
+Cameroon,1982,Africa,lifeExp,52.961
+Cameroon,1982,Africa,gdpPercap,2367.983282
+Cameroon,1987,Africa,pop,10780667
+Cameroon,1987,Africa,lifeExp,54.985
+Cameroon,1987,Africa,gdpPercap,2602.664206
+Cameroon,1992,Africa,pop,12467171
+Cameroon,1992,Africa,lifeExp,54.314
+Cameroon,1992,Africa,gdpPercap,1793.163278
+Cameroon,1997,Africa,pop,14195809
+Cameroon,1997,Africa,lifeExp,52.199
+Cameroon,1997,Africa,gdpPercap,1694.337469
+Cameroon,2002,Africa,pop,15929988
+Cameroon,2002,Africa,lifeExp,49.856
+Cameroon,2002,Africa,gdpPercap,1934.011449
+Cameroon,2007,Africa,pop,17696293
+Cameroon,2007,Africa,lifeExp,50.43
+Cameroon,2007,Africa,gdpPercap,2042.09524
+Canada,1952,Americas,pop,14785584
+Canada,1952,Americas,lifeExp,68.75
+Canada,1952,Americas,gdpPercap,11367.16112
+Canada,1957,Americas,pop,17010154
+Canada,1957,Americas,lifeExp,69.96
+Canada,1957,Americas,gdpPercap,12489.95006
+Canada,1962,Americas,pop,18985849
+Canada,1962,Americas,lifeExp,71.3
+Canada,1962,Americas,gdpPercap,13462.48555
+Canada,1967,Americas,pop,20819767
+Canada,1967,Americas,lifeExp,72.13
+Canada,1967,Americas,gdpPercap,16076.58803
+Canada,1972,Americas,pop,22284500
+Canada,1972,Americas,lifeExp,72.88
+Canada,1972,Americas,gdpPercap,18970.57086
+Canada,1977,Americas,pop,23796400
+Canada,1977,Americas,lifeExp,74.21
+Canada,1977,Americas,gdpPercap,22090.88306
+Canada,1982,Americas,pop,25201900
+Canada,1982,Americas,lifeExp,75.76
+Canada,1982,Americas,gdpPercap,22898.79214
+Canada,1987,Americas,pop,26549700
+Canada,1987,Americas,lifeExp,76.86
+Canada,1987,Americas,gdpPercap,26626.51503
+Canada,1992,Americas,pop,28523502
+Canada,1992,Americas,lifeExp,77.95
+Canada,1992,Americas,gdpPercap,26342.88426
+Canada,1997,Americas,pop,30305843
+Canada,1997,Americas,lifeExp,78.61
+Canada,1997,Americas,gdpPercap,28954.92589
+Canada,2002,Americas,pop,31902268
+Canada,2002,Americas,lifeExp,79.77
+Canada,2002,Americas,gdpPercap,33328.96507
+Canada,2007,Americas,pop,33390141
+Canada,2007,Americas,lifeExp,80.653
+Canada,2007,Americas,gdpPercap,36319.23501
+Central African Republic,1952,Africa,pop,1291695
+Central African Republic,1952,Africa,lifeExp,35.463
+Central African Republic,1952,Africa,gdpPercap,1071.310713
+Central African Republic,1957,Africa,pop,1392284
+Central African Republic,1957,Africa,lifeExp,37.464
+Central African Republic,1957,Africa,gdpPercap,1190.844328
+Central African Republic,1962,Africa,pop,1523478
+Central African Republic,1962,Africa,lifeExp,39.475
+Central African Republic,1962,Africa,gdpPercap,1193.068753
+Central African Republic,1967,Africa,pop,1733638
+Central African Republic,1967,Africa,lifeExp,41.478
+Central African Republic,1967,Africa,gdpPercap,1136.056615
+Central African Republic,1972,Africa,pop,1927260
+Central African Republic,1972,Africa,lifeExp,43.457
+Central African Republic,1972,Africa,gdpPercap,1070.013275
+Central African Republic,1977,Africa,pop,2167533
+Central African Republic,1977,Africa,lifeExp,46.775
+Central African Republic,1977,Africa,gdpPercap,1109.374338
+Central African Republic,1982,Africa,pop,2476971
+Central African Republic,1982,Africa,lifeExp,48.295
+Central African Republic,1982,Africa,gdpPercap,956.7529907
+Central African Republic,1987,Africa,pop,2840009
+Central African Republic,1987,Africa,lifeExp,50.485
+Central African Republic,1987,Africa,gdpPercap,844.8763504
+Central African Republic,1992,Africa,pop,3265124
+Central African Republic,1992,Africa,lifeExp,49.396
+Central African Republic,1992,Africa,gdpPercap,747.9055252
+Central African Republic,1997,Africa,pop,3696513
+Central African Republic,1997,Africa,lifeExp,46.066
+Central African Republic,1997,Africa,gdpPercap,740.5063317
+Central African Republic,2002,Africa,pop,4048013
+Central African Republic,2002,Africa,lifeExp,43.308
+Central African Republic,2002,Africa,gdpPercap,738.6906068
+Central African Republic,2007,Africa,pop,4369038
+Central African Republic,2007,Africa,lifeExp,44.741
+Central African Republic,2007,Africa,gdpPercap,706.016537
+Chad,1952,Africa,pop,2682462
+Chad,1952,Africa,lifeExp,38.092
+Chad,1952,Africa,gdpPercap,1178.665927
+Chad,1957,Africa,pop,2894855
+Chad,1957,Africa,lifeExp,39.881
+Chad,1957,Africa,gdpPercap,1308.495577
+Chad,1962,Africa,pop,3150417
+Chad,1962,Africa,lifeExp,41.716
+Chad,1962,Africa,gdpPercap,1389.817618
+Chad,1967,Africa,pop,3495967
+Chad,1967,Africa,lifeExp,43.601
+Chad,1967,Africa,gdpPercap,1196.810565
+Chad,1972,Africa,pop,3899068
+Chad,1972,Africa,lifeExp,45.569
+Chad,1972,Africa,gdpPercap,1104.103987
+Chad,1977,Africa,pop,4388260
+Chad,1977,Africa,lifeExp,47.383
+Chad,1977,Africa,gdpPercap,1133.98495
+Chad,1982,Africa,pop,4875118
+Chad,1982,Africa,lifeExp,49.517
+Chad,1982,Africa,gdpPercap,797.9081006
+Chad,1987,Africa,pop,5498955
+Chad,1987,Africa,lifeExp,51.051
+Chad,1987,Africa,gdpPercap,952.386129
+Chad,1992,Africa,pop,6429417
+Chad,1992,Africa,lifeExp,51.724
+Chad,1992,Africa,gdpPercap,1058.0643
+Chad,1997,Africa,pop,7562011
+Chad,1997,Africa,lifeExp,51.573
+Chad,1997,Africa,gdpPercap,1004.961353
+Chad,2002,Africa,pop,8835739
+Chad,2002,Africa,lifeExp,50.525
+Chad,2002,Africa,gdpPercap,1156.18186
+Chad,2007,Africa,pop,10238807
+Chad,2007,Africa,lifeExp,50.651
+Chad,2007,Africa,gdpPercap,1704.063724
+Chile,1952,Americas,pop,6377619
+Chile,1952,Americas,lifeExp,54.745
+Chile,1952,Americas,gdpPercap,3939.978789
+Chile,1957,Americas,pop,7048426
+Chile,1957,Americas,lifeExp,56.074
+Chile,1957,Americas,gdpPercap,4315.622723
+Chile,1962,Americas,pop,7961258
+Chile,1962,Americas,lifeExp,57.924
+Chile,1962,Americas,gdpPercap,4519.094331
+Chile,1967,Americas,pop,8858908
+Chile,1967,Americas,lifeExp,60.523
+Chile,1967,Americas,gdpPercap,5106.654313
+Chile,1972,Americas,pop,9717524
+Chile,1972,Americas,lifeExp,63.441
+Chile,1972,Americas,gdpPercap,5494.024437
+Chile,1977,Americas,pop,10599793
+Chile,1977,Americas,lifeExp,67.052
+Chile,1977,Americas,gdpPercap,4756.763836
+Chile,1982,Americas,pop,11487112
+Chile,1982,Americas,lifeExp,70.565
+Chile,1982,Americas,gdpPercap,5095.665738
+Chile,1987,Americas,pop,12463354
+Chile,1987,Americas,lifeExp,72.492
+Chile,1987,Americas,gdpPercap,5547.063754
+Chile,1992,Americas,pop,13572994
+Chile,1992,Americas,lifeExp,74.126
+Chile,1992,Americas,gdpPercap,7596.125964
+Chile,1997,Americas,pop,14599929
+Chile,1997,Americas,lifeExp,75.816
+Chile,1997,Americas,gdpPercap,10118.05318
+Chile,2002,Americas,pop,15497046
+Chile,2002,Americas,lifeExp,77.86
+Chile,2002,Americas,gdpPercap,10778.78385
+Chile,2007,Americas,pop,16284741
+Chile,2007,Americas,lifeExp,78.553
+Chile,2007,Americas,gdpPercap,13171.63885
+China,1952,Asia,pop,556263527.999989
+China,1952,Asia,lifeExp,44
+China,1952,Asia,gdpPercap,400.448610699994
+China,1957,Asia,pop,637408000
+China,1957,Asia,lifeExp,50.54896
+China,1957,Asia,gdpPercap,575.9870009
+China,1962,Asia,pop,665770000
+China,1962,Asia,lifeExp,44.50136
+China,1962,Asia,gdpPercap,487.6740183
+China,1967,Asia,pop,754550000
+China,1967,Asia,lifeExp,58.38112
+China,1967,Asia,gdpPercap,612.7056934
+China,1972,Asia,pop,862030000
+China,1972,Asia,lifeExp,63.11888
+China,1972,Asia,gdpPercap,676.9000921
+China,1977,Asia,pop,943455000
+China,1977,Asia,lifeExp,63.96736
+China,1977,Asia,gdpPercap,741.2374699
+China,1982,Asia,pop,1000281000
+China,1982,Asia,lifeExp,65.525
+China,1982,Asia,gdpPercap,962.4213805
+China,1987,Asia,pop,1084035000
+China,1987,Asia,lifeExp,67.274
+China,1987,Asia,gdpPercap,1378.904018
+China,1992,Asia,pop,1164970000
+China,1992,Asia,lifeExp,68.69
+China,1992,Asia,gdpPercap,1655.784158
+China,1997,Asia,pop,1230075000
+China,1997,Asia,lifeExp,70.426
+China,1997,Asia,gdpPercap,2289.234136
+China,2002,Asia,pop,1280400000
+China,2002,Asia,lifeExp,72.028
+China,2002,Asia,gdpPercap,3119.280896
+China,2007,Asia,pop,1318683096
+China,2007,Asia,lifeExp,72.961
+China,2007,Asia,gdpPercap,4959.114854
+Colombia,1952,Americas,pop,12350771
+Colombia,1952,Americas,lifeExp,50.643
+Colombia,1952,Americas,gdpPercap,2144.115096
+Colombia,1957,Americas,pop,14485993
+Colombia,1957,Americas,lifeExp,55.118
+Colombia,1957,Americas,gdpPercap,2323.805581
+Colombia,1962,Americas,pop,17009885
+Colombia,1962,Americas,lifeExp,57.863
+Colombia,1962,Americas,gdpPercap,2492.351109
+Colombia,1967,Americas,pop,19764027
+Colombia,1967,Americas,lifeExp,59.963
+Colombia,1967,Americas,gdpPercap,2678.729839
+Colombia,1972,Americas,pop,22542890
+Colombia,1972,Americas,lifeExp,61.623
+Colombia,1972,Americas,gdpPercap,3264.660041
+Colombia,1977,Americas,pop,25094412
+Colombia,1977,Americas,lifeExp,63.837
+Colombia,1977,Americas,gdpPercap,3815.80787
+Colombia,1982,Americas,pop,27764644
+Colombia,1982,Americas,lifeExp,66.653
+Colombia,1982,Americas,gdpPercap,4397.575659
+Colombia,1987,Americas,pop,30964245
+Colombia,1987,Americas,lifeExp,67.768
+Colombia,1987,Americas,gdpPercap,4903.2191
+Colombia,1992,Americas,pop,34202721
+Colombia,1992,Americas,lifeExp,68.421
+Colombia,1992,Americas,gdpPercap,5444.648617
+Colombia,1997,Americas,pop,37657830
+Colombia,1997,Americas,lifeExp,70.313
+Colombia,1997,Americas,gdpPercap,6117.361746
+Colombia,2002,Americas,pop,41008227
+Colombia,2002,Americas,lifeExp,71.682
+Colombia,2002,Americas,gdpPercap,5755.259962
+Colombia,2007,Americas,pop,44227550
+Colombia,2007,Americas,lifeExp,72.889
+Colombia,2007,Americas,gdpPercap,7006.580419
+Comoros,1952,Africa,pop,153936
+Comoros,1952,Africa,lifeExp,40.715
+Comoros,1952,Africa,gdpPercap,1102.990936
+Comoros,1957,Africa,pop,170928
+Comoros,1957,Africa,lifeExp,42.46
+Comoros,1957,Africa,gdpPercap,1211.148548
+Comoros,1962,Africa,pop,191689
+Comoros,1962,Africa,lifeExp,44.467
+Comoros,1962,Africa,gdpPercap,1406.648278
+Comoros,1967,Africa,pop,217378
+Comoros,1967,Africa,lifeExp,46.472
+Comoros,1967,Africa,gdpPercap,1876.029643
+Comoros,1972,Africa,pop,250027
+Comoros,1972,Africa,lifeExp,48.944
+Comoros,1972,Africa,gdpPercap,1937.577675
+Comoros,1977,Africa,pop,304739
+Comoros,1977,Africa,lifeExp,50.939
+Comoros,1977,Africa,gdpPercap,1172.603047
+Comoros,1982,Africa,pop,348643
+Comoros,1982,Africa,lifeExp,52.933
+Comoros,1982,Africa,gdpPercap,1267.100083
+Comoros,1987,Africa,pop,395114
+Comoros,1987,Africa,lifeExp,54.926
+Comoros,1987,Africa,gdpPercap,1315.980812
+Comoros,1992,Africa,pop,454429
+Comoros,1992,Africa,lifeExp,57.939
+Comoros,1992,Africa,gdpPercap,1246.90737
+Comoros,1997,Africa,pop,527982
+Comoros,1997,Africa,lifeExp,60.66
+Comoros,1997,Africa,gdpPercap,1173.618235
+Comoros,2002,Africa,pop,614382
+Comoros,2002,Africa,lifeExp,62.974
+Comoros,2002,Africa,gdpPercap,1075.811558
+Comoros,2007,Africa,pop,710960
+Comoros,2007,Africa,lifeExp,65.152
+Comoros,2007,Africa,gdpPercap,986.1478792
+Congo Dem. Rep.,1952,Africa,pop,14100005
+Congo Dem. Rep.,1952,Africa,lifeExp,39.143
+Congo Dem. Rep.,1952,Africa,gdpPercap,780.5423257
+Congo Dem. Rep.,1957,Africa,pop,15577932
+Congo Dem. Rep.,1957,Africa,lifeExp,40.652
+Congo Dem. Rep.,1957,Africa,gdpPercap,905.8602303
+Congo Dem. Rep.,1962,Africa,pop,17486434
+Congo Dem. Rep.,1962,Africa,lifeExp,42.122
+Congo Dem. Rep.,1962,Africa,gdpPercap,896.3146335
+Congo Dem. Rep.,1967,Africa,pop,19941073
+Congo Dem. Rep.,1967,Africa,lifeExp,44.056
+Congo Dem. Rep.,1967,Africa,gdpPercap,861.5932424
+Congo Dem. Rep.,1972,Africa,pop,23007669
+Congo Dem. Rep.,1972,Africa,lifeExp,45.989
+Congo Dem. Rep.,1972,Africa,gdpPercap,904.8960685
+Congo Dem. Rep.,1977,Africa,pop,26480870
+Congo Dem. Rep.,1977,Africa,lifeExp,47.804
+Congo Dem. Rep.,1977,Africa,gdpPercap,795.757282
+Congo Dem. Rep.,1982,Africa,pop,30646495
+Congo Dem. Rep.,1982,Africa,lifeExp,47.784
+Congo Dem. Rep.,1982,Africa,gdpPercap,673.7478181
+Congo Dem. Rep.,1987,Africa,pop,35481645
+Congo Dem. Rep.,1987,Africa,lifeExp,47.412
+Congo Dem. Rep.,1987,Africa,gdpPercap,672.774812
+Congo Dem. Rep.,1992,Africa,pop,41672143
+Congo Dem. Rep.,1992,Africa,lifeExp,45.548
+Congo Dem. Rep.,1992,Africa,gdpPercap,457.7191807
+Congo Dem. Rep.,1997,Africa,pop,47798986
+Congo Dem. Rep.,1997,Africa,lifeExp,42.587
+Congo Dem. Rep.,1997,Africa,gdpPercap,312.188423
+Congo Dem. Rep.,2002,Africa,pop,55379852
+Congo Dem. Rep.,2002,Africa,lifeExp,44.966
+Congo Dem. Rep.,2002,Africa,gdpPercap,241.1658765
+Congo Dem. Rep.,2007,Africa,pop,64606759
+Congo Dem. Rep.,2007,Africa,lifeExp,46.462
+Congo Dem. Rep.,2007,Africa,gdpPercap,277.5518587
+Congo Rep.,1952,Africa,pop,854885
+Congo Rep.,1952,Africa,lifeExp,42.111
+Congo Rep.,1952,Africa,gdpPercap,2125.621418
+Congo Rep.,1957,Africa,pop,940458
+Congo Rep.,1957,Africa,lifeExp,45.053
+Congo Rep.,1957,Africa,gdpPercap,2315.056572
+Congo Rep.,1962,Africa,pop,1047924
+Congo Rep.,1962,Africa,lifeExp,48.435
+Congo Rep.,1962,Africa,gdpPercap,2464.783157
+Congo Rep.,1967,Africa,pop,1179760
+Congo Rep.,1967,Africa,lifeExp,52.04
+Congo Rep.,1967,Africa,gdpPercap,2677.939642
+Congo Rep.,1972,Africa,pop,1340458
+Congo Rep.,1972,Africa,lifeExp,54.907
+Congo Rep.,1972,Africa,gdpPercap,3213.152683
+Congo Rep.,1977,Africa,pop,1536769
+Congo Rep.,1977,Africa,lifeExp,55.625
+Congo Rep.,1977,Africa,gdpPercap,3259.178978
+Congo Rep.,1982,Africa,pop,1774735
+Congo Rep.,1982,Africa,lifeExp,56.695
+Congo Rep.,1982,Africa,gdpPercap,4879.507522
+Congo Rep.,1987,Africa,pop,2064095
+Congo Rep.,1987,Africa,lifeExp,57.47
+Congo Rep.,1987,Africa,gdpPercap,4201.194937
+Congo Rep.,1992,Africa,pop,2409073
+Congo Rep.,1992,Africa,lifeExp,56.433
+Congo Rep.,1992,Africa,gdpPercap,4016.239529
+Congo Rep.,1997,Africa,pop,2800947
+Congo Rep.,1997,Africa,lifeExp,52.962
+Congo Rep.,1997,Africa,gdpPercap,3484.164376
+Congo Rep.,2002,Africa,pop,3328795
+Congo Rep.,2002,Africa,lifeExp,52.97
+Congo Rep.,2002,Africa,gdpPercap,3484.06197
+Congo Rep.,2007,Africa,pop,3800610
+Congo Rep.,2007,Africa,lifeExp,55.322
+Congo Rep.,2007,Africa,gdpPercap,3632.557798
+Costa Rica,1952,Americas,pop,926317
+Costa Rica,1952,Americas,lifeExp,57.206
+Costa Rica,1952,Americas,gdpPercap,2627.009471
+Costa Rica,1957,Americas,pop,1112300
+Costa Rica,1957,Americas,lifeExp,60.026
+Costa Rica,1957,Americas,gdpPercap,2990.010802
+Costa Rica,1962,Americas,pop,1345187
+Costa Rica,1962,Americas,lifeExp,62.842
+Costa Rica,1962,Americas,gdpPercap,3460.937025
+Costa Rica,1967,Americas,pop,1588717
+Costa Rica,1967,Americas,lifeExp,65.424
+Costa Rica,1967,Americas,gdpPercap,4161.727834
+Costa Rica,1972,Americas,pop,1834796
+Costa Rica,1972,Americas,lifeExp,67.849
+Costa Rica,1972,Americas,gdpPercap,5118.146939
+Costa Rica,1977,Americas,pop,2108457
+Costa Rica,1977,Americas,lifeExp,70.75
+Costa Rica,1977,Americas,gdpPercap,5926.876967
+Costa Rica,1982,Americas,pop,2424367
+Costa Rica,1982,Americas,lifeExp,73.45
+Costa Rica,1982,Americas,gdpPercap,5262.734751
+Costa Rica,1987,Americas,pop,2799811
+Costa Rica,1987,Americas,lifeExp,74.752
+Costa Rica,1987,Americas,gdpPercap,5629.915318
+Costa Rica,1992,Americas,pop,3173216
+Costa Rica,1992,Americas,lifeExp,75.713
+Costa Rica,1992,Americas,gdpPercap,6160.416317
+Costa Rica,1997,Americas,pop,3518107
+Costa Rica,1997,Americas,lifeExp,77.26
+Costa Rica,1997,Americas,gdpPercap,6677.045314
+Costa Rica,2002,Americas,pop,3834934
+Costa Rica,2002,Americas,lifeExp,78.123
+Costa Rica,2002,Americas,gdpPercap,7723.447195
+Costa Rica,2007,Americas,pop,4133884
+Costa Rica,2007,Americas,lifeExp,78.782
+Costa Rica,2007,Americas,gdpPercap,9645.06142
+Cote d'Ivoire,1952,Africa,pop,2977019
+Cote d'Ivoire,1952,Africa,lifeExp,40.477
+Cote d'Ivoire,1952,Africa,gdpPercap,1388.594732
+Cote d'Ivoire,1957,Africa,pop,3300000
+Cote d'Ivoire,1957,Africa,lifeExp,42.469
+Cote d'Ivoire,1957,Africa,gdpPercap,1500.895925
+Cote d'Ivoire,1962,Africa,pop,3832408
+Cote d'Ivoire,1962,Africa,lifeExp,44.93
+Cote d'Ivoire,1962,Africa,gdpPercap,1728.869428
+Cote d'Ivoire,1967,Africa,pop,4744870
+Cote d'Ivoire,1967,Africa,lifeExp,47.35
+Cote d'Ivoire,1967,Africa,gdpPercap,2052.050473
+Cote d'Ivoire,1972,Africa,pop,6071696
+Cote d'Ivoire,1972,Africa,lifeExp,49.801
+Cote d'Ivoire,1972,Africa,gdpPercap,2378.201111
+Cote d'Ivoire,1977,Africa,pop,7459574
+Cote d'Ivoire,1977,Africa,lifeExp,52.374
+Cote d'Ivoire,1977,Africa,gdpPercap,2517.736547
+Cote d'Ivoire,1982,Africa,pop,9025951
+Cote d'Ivoire,1982,Africa,lifeExp,53.983
+Cote d'Ivoire,1982,Africa,gdpPercap,2602.710169
+Cote d'Ivoire,1987,Africa,pop,10761098
+Cote d'Ivoire,1987,Africa,lifeExp,54.655
+Cote d'Ivoire,1987,Africa,gdpPercap,2156.956069
+Cote d'Ivoire,1992,Africa,pop,12772596
+Cote d'Ivoire,1992,Africa,lifeExp,52.044
+Cote d'Ivoire,1992,Africa,gdpPercap,1648.073791
+Cote d'Ivoire,1997,Africa,pop,14625967
+Cote d'Ivoire,1997,Africa,lifeExp,47.991
+Cote d'Ivoire,1997,Africa,gdpPercap,1786.265407
+Cote d'Ivoire,2002,Africa,pop,16252726
+Cote d'Ivoire,2002,Africa,lifeExp,46.832
+Cote d'Ivoire,2002,Africa,gdpPercap,1648.800823
+Cote d'Ivoire,2007,Africa,pop,18013409
+Cote d'Ivoire,2007,Africa,lifeExp,48.328
+Cote d'Ivoire,2007,Africa,gdpPercap,1544.750112
+Croatia,1952,Europe,pop,3882229
+Croatia,1952,Europe,lifeExp,61.21
+Croatia,1952,Europe,gdpPercap,3119.23652
+Croatia,1957,Europe,pop,3991242
+Croatia,1957,Europe,lifeExp,64.77
+Croatia,1957,Europe,gdpPercap,4338.231617
+Croatia,1962,Europe,pop,4076557
+Croatia,1962,Europe,lifeExp,67.13
+Croatia,1962,Europe,gdpPercap,5477.890018
+Croatia,1967,Europe,pop,4174366
+Croatia,1967,Europe,lifeExp,68.5
+Croatia,1967,Europe,gdpPercap,6960.297861
+Croatia,1972,Europe,pop,4225310
+Croatia,1972,Europe,lifeExp,69.61
+Croatia,1972,Europe,gdpPercap,9164.090127
+Croatia,1977,Europe,pop,4318673
+Croatia,1977,Europe,lifeExp,70.64
+Croatia,1977,Europe,gdpPercap,11305.38517
+Croatia,1982,Europe,pop,4413368
+Croatia,1982,Europe,lifeExp,70.46
+Croatia,1982,Europe,gdpPercap,13221.82184
+Croatia,1987,Europe,pop,4484310
+Croatia,1987,Europe,lifeExp,71.52
+Croatia,1987,Europe,gdpPercap,13822.58394
+Croatia,1992,Europe,pop,4494013
+Croatia,1992,Europe,lifeExp,72.527
+Croatia,1992,Europe,gdpPercap,8447.794873
+Croatia,1997,Europe,pop,4444595
+Croatia,1997,Europe,lifeExp,73.68
+Croatia,1997,Europe,gdpPercap,9875.604515
+Croatia,2002,Europe,pop,4481020
+Croatia,2002,Europe,lifeExp,74.876
+Croatia,2002,Europe,gdpPercap,11628.38895
+Croatia,2007,Europe,pop,4493312
+Croatia,2007,Europe,lifeExp,75.748
+Croatia,2007,Europe,gdpPercap,14619.22272
+Cuba,1952,Americas,pop,6007797
+Cuba,1952,Americas,lifeExp,59.421
+Cuba,1952,Americas,gdpPercap,5586.53878
+Cuba,1957,Americas,pop,6640752
+Cuba,1957,Americas,lifeExp,62.325
+Cuba,1957,Americas,gdpPercap,6092.174359
+Cuba,1962,Americas,pop,7254373
+Cuba,1962,Americas,lifeExp,65.246
+Cuba,1962,Americas,gdpPercap,5180.75591
+Cuba,1967,Americas,pop,8139332
+Cuba,1967,Americas,lifeExp,68.29
+Cuba,1967,Americas,gdpPercap,5690.268015
+Cuba,1972,Americas,pop,8831348
+Cuba,1972,Americas,lifeExp,70.723
+Cuba,1972,Americas,gdpPercap,5305.445256
+Cuba,1977,Americas,pop,9537988
+Cuba,1977,Americas,lifeExp,72.649
+Cuba,1977,Americas,gdpPercap,6380.494966
+Cuba,1982,Americas,pop,9789224
+Cuba,1982,Americas,lifeExp,73.717
+Cuba,1982,Americas,gdpPercap,7316.918107
+Cuba,1987,Americas,pop,10239839
+Cuba,1987,Americas,lifeExp,74.174
+Cuba,1987,Americas,gdpPercap,7532.924763
+Cuba,1992,Americas,pop,10723260
+Cuba,1992,Americas,lifeExp,74.414
+Cuba,1992,Americas,gdpPercap,5592.843963
+Cuba,1997,Americas,pop,10983007
+Cuba,1997,Americas,lifeExp,76.151
+Cuba,1997,Americas,gdpPercap,5431.990415
+Cuba,2002,Americas,pop,11226999
+Cuba,2002,Americas,lifeExp,77.158
+Cuba,2002,Americas,gdpPercap,6340.646683
+Cuba,2007,Americas,pop,11416987
+Cuba,2007,Americas,lifeExp,78.273
+Cuba,2007,Americas,gdpPercap,8948.102923
+Czech Republic,1952,Europe,pop,9125183
+Czech Republic,1952,Europe,lifeExp,66.87
+Czech Republic,1952,Europe,gdpPercap,6876.14025
+Czech Republic,1957,Europe,pop,9513758
+Czech Republic,1957,Europe,lifeExp,69.03
+Czech Republic,1957,Europe,gdpPercap,8256.343918
+Czech Republic,1962,Europe,pop,9620282
+Czech Republic,1962,Europe,lifeExp,69.9
+Czech Republic,1962,Europe,gdpPercap,10136.86713
+Czech Republic,1967,Europe,pop,9835109
+Czech Republic,1967,Europe,lifeExp,70.38
+Czech Republic,1967,Europe,gdpPercap,11399.44489
+Czech Republic,1972,Europe,pop,9862158
+Czech Republic,1972,Europe,lifeExp,70.29
+Czech Republic,1972,Europe,gdpPercap,13108.4536
+Czech Republic,1977,Europe,pop,10161915
+Czech Republic,1977,Europe,lifeExp,70.71
+Czech Republic,1977,Europe,gdpPercap,14800.16062
+Czech Republic,1982,Europe,pop,10303704
+Czech Republic,1982,Europe,lifeExp,70.96
+Czech Republic,1982,Europe,gdpPercap,15377.22855
+Czech Republic,1987,Europe,pop,10311597
+Czech Republic,1987,Europe,lifeExp,71.58
+Czech Republic,1987,Europe,gdpPercap,16310.4434
+Czech Republic,1992,Europe,pop,10315702
+Czech Republic,1992,Europe,lifeExp,72.4
+Czech Republic,1992,Europe,gdpPercap,14297.02122
+Czech Republic,1997,Europe,pop,10300707
+Czech Republic,1997,Europe,lifeExp,74.01
+Czech Republic,1997,Europe,gdpPercap,16048.51424
+Czech Republic,2002,Europe,pop,10256295
+Czech Republic,2002,Europe,lifeExp,75.51
+Czech Republic,2002,Europe,gdpPercap,17596.21022
+Czech Republic,2007,Europe,pop,10228744
+Czech Republic,2007,Europe,lifeExp,76.486
+Czech Republic,2007,Europe,gdpPercap,22833.30851
+Denmark,1952,Europe,pop,4334000
+Denmark,1952,Europe,lifeExp,70.78
+Denmark,1952,Europe,gdpPercap,9692.385245
+Denmark,1957,Europe,pop,4487831
+Denmark,1957,Europe,lifeExp,71.81
+Denmark,1957,Europe,gdpPercap,11099.65935
+Denmark,1962,Europe,pop,4646899
+Denmark,1962,Europe,lifeExp,72.35
+Denmark,1962,Europe,gdpPercap,13583.31351
+Denmark,1967,Europe,pop,4838800
+Denmark,1967,Europe,lifeExp,72.96
+Denmark,1967,Europe,gdpPercap,15937.21123
+Denmark,1972,Europe,pop,4991596
+Denmark,1972,Europe,lifeExp,73.47
+Denmark,1972,Europe,gdpPercap,18866.20721
+Denmark,1977,Europe,pop,5088419
+Denmark,1977,Europe,lifeExp,74.69
+Denmark,1977,Europe,gdpPercap,20422.9015
+Denmark,1982,Europe,pop,5117810
+Denmark,1982,Europe,lifeExp,74.63
+Denmark,1982,Europe,gdpPercap,21688.04048
+Denmark,1987,Europe,pop,5127024
+Denmark,1987,Europe,lifeExp,74.8
+Denmark,1987,Europe,gdpPercap,25116.17581
+Denmark,1992,Europe,pop,5171393
+Denmark,1992,Europe,lifeExp,75.33
+Denmark,1992,Europe,gdpPercap,26406.73985
+Denmark,1997,Europe,pop,5283663
+Denmark,1997,Europe,lifeExp,76.11
+Denmark,1997,Europe,gdpPercap,29804.34567
+Denmark,2002,Europe,pop,5374693
+Denmark,2002,Europe,lifeExp,77.18
+Denmark,2002,Europe,gdpPercap,32166.50006
+Denmark,2007,Europe,pop,5468120
+Denmark,2007,Europe,lifeExp,78.332
+Denmark,2007,Europe,gdpPercap,35278.41874
+Djibouti,1952,Africa,pop,63149
+Djibouti,1952,Africa,lifeExp,34.812
+Djibouti,1952,Africa,gdpPercap,2669.529475
+Djibouti,1957,Africa,pop,71851
+Djibouti,1957,Africa,lifeExp,37.328
+Djibouti,1957,Africa,gdpPercap,2864.969076
+Djibouti,1962,Africa,pop,89898
+Djibouti,1962,Africa,lifeExp,39.693
+Djibouti,1962,Africa,gdpPercap,3020.989263
+Djibouti,1967,Africa,pop,127617
+Djibouti,1967,Africa,lifeExp,42.074
+Djibouti,1967,Africa,gdpPercap,3020.050513
+Djibouti,1972,Africa,pop,178848
+Djibouti,1972,Africa,lifeExp,44.366
+Djibouti,1972,Africa,gdpPercap,3694.212352
+Djibouti,1977,Africa,pop,228694
+Djibouti,1977,Africa,lifeExp,46.519
+Djibouti,1977,Africa,gdpPercap,3081.761022
+Djibouti,1982,Africa,pop,305991
+Djibouti,1982,Africa,lifeExp,48.812
+Djibouti,1982,Africa,gdpPercap,2879.468067
+Djibouti,1987,Africa,pop,311025
+Djibouti,1987,Africa,lifeExp,50.04
+Djibouti,1987,Africa,gdpPercap,2880.102568
+Djibouti,1992,Africa,pop,384156
+Djibouti,1992,Africa,lifeExp,51.604
+Djibouti,1992,Africa,gdpPercap,2377.156192
+Djibouti,1997,Africa,pop,417908
+Djibouti,1997,Africa,lifeExp,53.157
+Djibouti,1997,Africa,gdpPercap,1895.016984
+Djibouti,2002,Africa,pop,447416
+Djibouti,2002,Africa,lifeExp,53.373
+Djibouti,2002,Africa,gdpPercap,1908.260867
+Djibouti,2007,Africa,pop,496374
+Djibouti,2007,Africa,lifeExp,54.791
+Djibouti,2007,Africa,gdpPercap,2082.481567
+Dominican Republic,1952,Americas,pop,2491346
+Dominican Republic,1952,Americas,lifeExp,45.928
+Dominican Republic,1952,Americas,gdpPercap,1397.717137
+Dominican Republic,1957,Americas,pop,2923186
+Dominican Republic,1957,Americas,lifeExp,49.828
+Dominican Republic,1957,Americas,gdpPercap,1544.402995
+Dominican Republic,1962,Americas,pop,3453434
+Dominican Republic,1962,Americas,lifeExp,53.459
+Dominican Republic,1962,Americas,gdpPercap,1662.137359
+Dominican Republic,1967,Americas,pop,4049146
+Dominican Republic,1967,Americas,lifeExp,56.751
+Dominican Republic,1967,Americas,gdpPercap,1653.723003
+Dominican Republic,1972,Americas,pop,4671329
+Dominican Republic,1972,Americas,lifeExp,59.631
+Dominican Republic,1972,Americas,gdpPercap,2189.874499
+Dominican Republic,1977,Americas,pop,5302800
+Dominican Republic,1977,Americas,lifeExp,61.788
+Dominican Republic,1977,Americas,gdpPercap,2681.9889
+Dominican Republic,1982,Americas,pop,5968349
+Dominican Republic,1982,Americas,lifeExp,63.727
+Dominican Republic,1982,Americas,gdpPercap,2861.092386
+Dominican Republic,1987,Americas,pop,6655297
+Dominican Republic,1987,Americas,lifeExp,66.046
+Dominican Republic,1987,Americas,gdpPercap,2899.842175
+Dominican Republic,1992,Americas,pop,7351181
+Dominican Republic,1992,Americas,lifeExp,68.457
+Dominican Republic,1992,Americas,gdpPercap,3044.214214
+Dominican Republic,1997,Americas,pop,7992357
+Dominican Republic,1997,Americas,lifeExp,69.957
+Dominican Republic,1997,Americas,gdpPercap,3614.101285
+Dominican Republic,2002,Americas,pop,8650322
+Dominican Republic,2002,Americas,lifeExp,70.847
+Dominican Republic,2002,Americas,gdpPercap,4563.808154
+Dominican Republic,2007,Americas,pop,9319622
+Dominican Republic,2007,Americas,lifeExp,72.235
+Dominican Republic,2007,Americas,gdpPercap,6025.374752
+Ecuador,1952,Americas,pop,3548753
+Ecuador,1952,Americas,lifeExp,48.357
+Ecuador,1952,Americas,gdpPercap,3522.110717
+Ecuador,1957,Americas,pop,4058385
+Ecuador,1957,Americas,lifeExp,51.356
+Ecuador,1957,Americas,gdpPercap,3780.546651
+Ecuador,1962,Americas,pop,4681707
+Ecuador,1962,Americas,lifeExp,54.64
+Ecuador,1962,Americas,gdpPercap,4086.114078
+Ecuador,1967,Americas,pop,5432424
+Ecuador,1967,Americas,lifeExp,56.678
+Ecuador,1967,Americas,gdpPercap,4579.074215
+Ecuador,1972,Americas,pop,6298651
+Ecuador,1972,Americas,lifeExp,58.796
+Ecuador,1972,Americas,gdpPercap,5280.99471
+Ecuador,1977,Americas,pop,7278866
+Ecuador,1977,Americas,lifeExp,61.31
+Ecuador,1977,Americas,gdpPercap,6679.62326
+Ecuador,1982,Americas,pop,8365850
+Ecuador,1982,Americas,lifeExp,64.342
+Ecuador,1982,Americas,gdpPercap,7213.791267
+Ecuador,1987,Americas,pop,9545158
+Ecuador,1987,Americas,lifeExp,67.231
+Ecuador,1987,Americas,gdpPercap,6481.776993
+Ecuador,1992,Americas,pop,10748394
+Ecuador,1992,Americas,lifeExp,69.613
+Ecuador,1992,Americas,gdpPercap,7103.702595
+Ecuador,1997,Americas,pop,11911819
+Ecuador,1997,Americas,lifeExp,72.312
+Ecuador,1997,Americas,gdpPercap,7429.455877
+Ecuador,2002,Americas,pop,12921234
+Ecuador,2002,Americas,lifeExp,74.173
+Ecuador,2002,Americas,gdpPercap,5773.044512
+Ecuador,2007,Americas,pop,13755680
+Ecuador,2007,Americas,lifeExp,74.994
+Ecuador,2007,Americas,gdpPercap,6873.262326
+Egypt,1952,Africa,pop,22223309
+Egypt,1952,Africa,lifeExp,41.893
+Egypt,1952,Africa,gdpPercap,1418.822445
+Egypt,1957,Africa,pop,25009741
+Egypt,1957,Africa,lifeExp,44.444
+Egypt,1957,Africa,gdpPercap,1458.915272
+Egypt,1962,Africa,pop,28173309
+Egypt,1962,Africa,lifeExp,46.992
+Egypt,1962,Africa,gdpPercap,1693.335853
+Egypt,1967,Africa,pop,31681188
+Egypt,1967,Africa,lifeExp,49.293
+Egypt,1967,Africa,gdpPercap,1814.880728
+Egypt,1972,Africa,pop,34807417
+Egypt,1972,Africa,lifeExp,51.137
+Egypt,1972,Africa,gdpPercap,2024.008147
+Egypt,1977,Africa,pop,38783863
+Egypt,1977,Africa,lifeExp,53.319
+Egypt,1977,Africa,gdpPercap,2785.493582
+Egypt,1982,Africa,pop,45681811
+Egypt,1982,Africa,lifeExp,56.006
+Egypt,1982,Africa,gdpPercap,3503.729636
+Egypt,1987,Africa,pop,52799062
+Egypt,1987,Africa,lifeExp,59.797
+Egypt,1987,Africa,gdpPercap,3885.46071
+Egypt,1992,Africa,pop,59402198
+Egypt,1992,Africa,lifeExp,63.674
+Egypt,1992,Africa,gdpPercap,3794.755195
+Egypt,1997,Africa,pop,66134291
+Egypt,1997,Africa,lifeExp,67.217
+Egypt,1997,Africa,gdpPercap,4173.181797
+Egypt,2002,Africa,pop,73312559
+Egypt,2002,Africa,lifeExp,69.806
+Egypt,2002,Africa,gdpPercap,4754.604414
+Egypt,2007,Africa,pop,80264543
+Egypt,2007,Africa,lifeExp,71.338
+Egypt,2007,Africa,gdpPercap,5581.180998
+El Salvador,1952,Americas,pop,2042865
+El Salvador,1952,Americas,lifeExp,45.262
+El Salvador,1952,Americas,gdpPercap,3048.3029
+El Salvador,1957,Americas,pop,2355805
+El Salvador,1957,Americas,lifeExp,48.57
+El Salvador,1957,Americas,gdpPercap,3421.523218
+El Salvador,1962,Americas,pop,2747687
+El Salvador,1962,Americas,lifeExp,52.307
+El Salvador,1962,Americas,gdpPercap,3776.803627
+El Salvador,1967,Americas,pop,3232927
+El Salvador,1967,Americas,lifeExp,55.855
+El Salvador,1967,Americas,gdpPercap,4358.595393
+El Salvador,1972,Americas,pop,3790903
+El Salvador,1972,Americas,lifeExp,58.207
+El Salvador,1972,Americas,gdpPercap,4520.246008
+El Salvador,1977,Americas,pop,4282586
+El Salvador,1977,Americas,lifeExp,56.696
+El Salvador,1977,Americas,gdpPercap,5138.922374
+El Salvador,1982,Americas,pop,4474873
+El Salvador,1982,Americas,lifeExp,56.604
+El Salvador,1982,Americas,gdpPercap,4098.344175
+El Salvador,1987,Americas,pop,4842194
+El Salvador,1987,Americas,lifeExp,63.154
+El Salvador,1987,Americas,gdpPercap,4140.442097
+El Salvador,1992,Americas,pop,5274649
+El Salvador,1992,Americas,lifeExp,66.798
+El Salvador,1992,Americas,gdpPercap,4444.2317
+El Salvador,1997,Americas,pop,5783439
+El Salvador,1997,Americas,lifeExp,69.535
+El Salvador,1997,Americas,gdpPercap,5154.825496
+El Salvador,2002,Americas,pop,6353681
+El Salvador,2002,Americas,lifeExp,70.734
+El Salvador,2002,Americas,gdpPercap,5351.568666
+El Salvador,2007,Americas,pop,6939688
+El Salvador,2007,Americas,lifeExp,71.878
+El Salvador,2007,Americas,gdpPercap,5728.353514
+Equatorial Guinea,1952,Africa,pop,216964
+Equatorial Guinea,1952,Africa,lifeExp,34.482
+Equatorial Guinea,1952,Africa,gdpPercap,375.6431231
+Equatorial Guinea,1957,Africa,pop,232922
+Equatorial Guinea,1957,Africa,lifeExp,35.983
+Equatorial Guinea,1957,Africa,gdpPercap,426.0964081
+Equatorial Guinea,1962,Africa,pop,249220
+Equatorial Guinea,1962,Africa,lifeExp,37.485
+Equatorial Guinea,1962,Africa,gdpPercap,582.8419714
+Equatorial Guinea,1967,Africa,pop,259864
+Equatorial Guinea,1967,Africa,lifeExp,38.987
+Equatorial Guinea,1967,Africa,gdpPercap,915.5960025
+Equatorial Guinea,1972,Africa,pop,277603
+Equatorial Guinea,1972,Africa,lifeExp,40.516
+Equatorial Guinea,1972,Africa,gdpPercap,672.4122571
+Equatorial Guinea,1977,Africa,pop,192675
+Equatorial Guinea,1977,Africa,lifeExp,42.024
+Equatorial Guinea,1977,Africa,gdpPercap,958.5668124
+Equatorial Guinea,1982,Africa,pop,285483
+Equatorial Guinea,1982,Africa,lifeExp,43.662
+Equatorial Guinea,1982,Africa,gdpPercap,927.8253427
+Equatorial Guinea,1987,Africa,pop,341244
+Equatorial Guinea,1987,Africa,lifeExp,45.664
+Equatorial Guinea,1987,Africa,gdpPercap,966.8968149
+Equatorial Guinea,1992,Africa,pop,387838
+Equatorial Guinea,1992,Africa,lifeExp,47.545
+Equatorial Guinea,1992,Africa,gdpPercap,1132.055034
+Equatorial Guinea,1997,Africa,pop,439971
+Equatorial Guinea,1997,Africa,lifeExp,48.245
+Equatorial Guinea,1997,Africa,gdpPercap,2814.480755
+Equatorial Guinea,2002,Africa,pop,495627
+Equatorial Guinea,2002,Africa,lifeExp,49.348
+Equatorial Guinea,2002,Africa,gdpPercap,7703.4959
+Equatorial Guinea,2007,Africa,pop,551201
+Equatorial Guinea,2007,Africa,lifeExp,51.579
+Equatorial Guinea,2007,Africa,gdpPercap,12154.08975
+Eritrea,1952,Africa,pop,1438760
+Eritrea,1952,Africa,lifeExp,35.928
+Eritrea,1952,Africa,gdpPercap,328.9405571
+Eritrea,1957,Africa,pop,1542611
+Eritrea,1957,Africa,lifeExp,38.047
+Eritrea,1957,Africa,gdpPercap,344.1618859
+Eritrea,1962,Africa,pop,1666618
+Eritrea,1962,Africa,lifeExp,40.158
+Eritrea,1962,Africa,gdpPercap,380.9958433
+Eritrea,1967,Africa,pop,1820319
+Eritrea,1967,Africa,lifeExp,42.189
+Eritrea,1967,Africa,gdpPercap,468.7949699
+Eritrea,1972,Africa,pop,2260187
+Eritrea,1972,Africa,lifeExp,44.142
+Eritrea,1972,Africa,gdpPercap,514.3242082
+Eritrea,1977,Africa,pop,2512642
+Eritrea,1977,Africa,lifeExp,44.535
+Eritrea,1977,Africa,gdpPercap,505.7538077
+Eritrea,1982,Africa,pop,2637297
+Eritrea,1982,Africa,lifeExp,43.89
+Eritrea,1982,Africa,gdpPercap,524.8758493
+Eritrea,1987,Africa,pop,2915959
+Eritrea,1987,Africa,lifeExp,46.453
+Eritrea,1987,Africa,gdpPercap,521.1341333
+Eritrea,1992,Africa,pop,3668440
+Eritrea,1992,Africa,lifeExp,49.991
+Eritrea,1992,Africa,gdpPercap,582.8585102
+Eritrea,1997,Africa,pop,4058319
+Eritrea,1997,Africa,lifeExp,53.378
+Eritrea,1997,Africa,gdpPercap,913.47079
+Eritrea,2002,Africa,pop,4414865
+Eritrea,2002,Africa,lifeExp,55.24
+Eritrea,2002,Africa,gdpPercap,765.3500015
+Eritrea,2007,Africa,pop,4906585
+Eritrea,2007,Africa,lifeExp,58.04
+Eritrea,2007,Africa,gdpPercap,641.3695236
+Ethiopia,1952,Africa,pop,20860941
+Ethiopia,1952,Africa,lifeExp,34.078
+Ethiopia,1952,Africa,gdpPercap,362.1462796
+Ethiopia,1957,Africa,pop,22815614
+Ethiopia,1957,Africa,lifeExp,36.667
+Ethiopia,1957,Africa,gdpPercap,378.9041632
+Ethiopia,1962,Africa,pop,25145372
+Ethiopia,1962,Africa,lifeExp,40.059
+Ethiopia,1962,Africa,gdpPercap,419.4564161
+Ethiopia,1967,Africa,pop,27860297
+Ethiopia,1967,Africa,lifeExp,42.115
+Ethiopia,1967,Africa,gdpPercap,516.1186438
+Ethiopia,1972,Africa,pop,30770372
+Ethiopia,1972,Africa,lifeExp,43.515
+Ethiopia,1972,Africa,gdpPercap,566.2439442
+Ethiopia,1977,Africa,pop,34617799
+Ethiopia,1977,Africa,lifeExp,44.51
+Ethiopia,1977,Africa,gdpPercap,556.8083834
+Ethiopia,1982,Africa,pop,38111756
+Ethiopia,1982,Africa,lifeExp,44.916
+Ethiopia,1982,Africa,gdpPercap,577.8607471
+Ethiopia,1987,Africa,pop,42999530
+Ethiopia,1987,Africa,lifeExp,46.684
+Ethiopia,1987,Africa,gdpPercap,573.7413142
+Ethiopia,1992,Africa,pop,52088559
+Ethiopia,1992,Africa,lifeExp,48.091
+Ethiopia,1992,Africa,gdpPercap,421.3534653
+Ethiopia,1997,Africa,pop,59861301
+Ethiopia,1997,Africa,lifeExp,49.402
+Ethiopia,1997,Africa,gdpPercap,515.8894013
+Ethiopia,2002,Africa,pop,67946797
+Ethiopia,2002,Africa,lifeExp,50.725
+Ethiopia,2002,Africa,gdpPercap,530.0535319
+Ethiopia,2007,Africa,pop,76511887
+Ethiopia,2007,Africa,lifeExp,52.947
+Ethiopia,2007,Africa,gdpPercap,690.8055759
+Finland,1952,Europe,pop,4090500
+Finland,1952,Europe,lifeExp,66.55
+Finland,1952,Europe,gdpPercap,6424.519071
+Finland,1957,Europe,pop,4324000
+Finland,1957,Europe,lifeExp,67.49
+Finland,1957,Europe,gdpPercap,7545.415386
+Finland,1962,Europe,pop,4491443
+Finland,1962,Europe,lifeExp,68.75
+Finland,1962,Europe,gdpPercap,9371.842561
+Finland,1967,Europe,pop,4605744
+Finland,1967,Europe,lifeExp,69.83
+Finland,1967,Europe,gdpPercap,10921.63626
+Finland,1972,Europe,pop,4639657
+Finland,1972,Europe,lifeExp,70.87
+Finland,1972,Europe,gdpPercap,14358.8759
+Finland,1977,Europe,pop,4738902
+Finland,1977,Europe,lifeExp,72.52
+Finland,1977,Europe,gdpPercap,15605.42283
+Finland,1982,Europe,pop,4826933
+Finland,1982,Europe,lifeExp,74.55
+Finland,1982,Europe,gdpPercap,18533.15761
+Finland,1987,Europe,pop,4931729
+Finland,1987,Europe,lifeExp,74.83
+Finland,1987,Europe,gdpPercap,21141.01223
+Finland,1992,Europe,pop,5041039
+Finland,1992,Europe,lifeExp,75.7
+Finland,1992,Europe,gdpPercap,20647.16499
+Finland,1997,Europe,pop,5134406
+Finland,1997,Europe,lifeExp,77.13
+Finland,1997,Europe,gdpPercap,23723.9502
+Finland,2002,Europe,pop,5193039
+Finland,2002,Europe,lifeExp,78.37
+Finland,2002,Europe,gdpPercap,28204.59057
+Finland,2007,Europe,pop,5238460
+Finland,2007,Europe,lifeExp,79.313
+Finland,2007,Europe,gdpPercap,33207.0844
+France,1952,Europe,pop,42459667
+France,1952,Europe,lifeExp,67.41
+France,1952,Europe,gdpPercap,7029.809327
+France,1957,Europe,pop,44310863
+France,1957,Europe,lifeExp,68.93
+France,1957,Europe,gdpPercap,8662.834898
+France,1962,Europe,pop,47124000
+France,1962,Europe,lifeExp,70.51
+France,1962,Europe,gdpPercap,10560.48553
+France,1967,Europe,pop,49569000
+France,1967,Europe,lifeExp,71.55
+France,1967,Europe,gdpPercap,12999.91766
+France,1972,Europe,pop,51732000
+France,1972,Europe,lifeExp,72.38
+France,1972,Europe,gdpPercap,16107.19171
+France,1977,Europe,pop,53165019
+France,1977,Europe,lifeExp,73.83
+France,1977,Europe,gdpPercap,18292.63514
+France,1982,Europe,pop,54433565
+France,1982,Europe,lifeExp,74.89
+France,1982,Europe,gdpPercap,20293.89746
+France,1987,Europe,pop,55630100
+France,1987,Europe,lifeExp,76.34
+France,1987,Europe,gdpPercap,22066.44214
+France,1992,Europe,pop,57374179
+France,1992,Europe,lifeExp,77.46
+France,1992,Europe,gdpPercap,24703.79615
+France,1997,Europe,pop,58623428
+France,1997,Europe,lifeExp,78.64
+France,1997,Europe,gdpPercap,25889.78487
+France,2002,Europe,pop,59925035
+France,2002,Europe,lifeExp,79.59
+France,2002,Europe,gdpPercap,28926.03234
+France,2007,Europe,pop,61083916
+France,2007,Europe,lifeExp,80.657
+France,2007,Europe,gdpPercap,30470.0167
+Gabon,1952,Africa,pop,420702
+Gabon,1952,Africa,lifeExp,37.003
+Gabon,1952,Africa,gdpPercap,4293.476475
+Gabon,1957,Africa,pop,434904
+Gabon,1957,Africa,lifeExp,38.999
+Gabon,1957,Africa,gdpPercap,4976.198099
+Gabon,1962,Africa,pop,455661
+Gabon,1962,Africa,lifeExp,40.489
+Gabon,1962,Africa,gdpPercap,6631.459222
+Gabon,1967,Africa,pop,489004
+Gabon,1967,Africa,lifeExp,44.598
+Gabon,1967,Africa,gdpPercap,8358.761987
+Gabon,1972,Africa,pop,537977
+Gabon,1972,Africa,lifeExp,48.69
+Gabon,1972,Africa,gdpPercap,11401.94841
+Gabon,1977,Africa,pop,706367
+Gabon,1977,Africa,lifeExp,52.79
+Gabon,1977,Africa,gdpPercap,21745.57328
+Gabon,1982,Africa,pop,753874
+Gabon,1982,Africa,lifeExp,56.564
+Gabon,1982,Africa,gdpPercap,15113.36194
+Gabon,1987,Africa,pop,880397
+Gabon,1987,Africa,lifeExp,60.19
+Gabon,1987,Africa,gdpPercap,11864.40844
+Gabon,1992,Africa,pop,985739
+Gabon,1992,Africa,lifeExp,61.366
+Gabon,1992,Africa,gdpPercap,13522.15752
+Gabon,1997,Africa,pop,1126189
+Gabon,1997,Africa,lifeExp,60.461
+Gabon,1997,Africa,gdpPercap,14722.84188
+Gabon,2002,Africa,pop,1299304
+Gabon,2002,Africa,lifeExp,56.761
+Gabon,2002,Africa,gdpPercap,12521.71392
+Gabon,2007,Africa,pop,1454867
+Gabon,2007,Africa,lifeExp,56.735
+Gabon,2007,Africa,gdpPercap,13206.48452
+Gambia,1952,Africa,pop,284320
+Gambia,1952,Africa,lifeExp,30
+Gambia,1952,Africa,gdpPercap,485.2306591
+Gambia,1957,Africa,pop,323150
+Gambia,1957,Africa,lifeExp,32.065
+Gambia,1957,Africa,gdpPercap,520.9267111
+Gambia,1962,Africa,pop,374020
+Gambia,1962,Africa,lifeExp,33.896
+Gambia,1962,Africa,gdpPercap,599.650276
+Gambia,1967,Africa,pop,439593
+Gambia,1967,Africa,lifeExp,35.857
+Gambia,1967,Africa,gdpPercap,734.7829124
+Gambia,1972,Africa,pop,517101
+Gambia,1972,Africa,lifeExp,38.308
+Gambia,1972,Africa,gdpPercap,756.0868363
+Gambia,1977,Africa,pop,608274
+Gambia,1977,Africa,lifeExp,41.842
+Gambia,1977,Africa,gdpPercap,884.7552507
+Gambia,1982,Africa,pop,715523
+Gambia,1982,Africa,lifeExp,45.58
+Gambia,1982,Africa,gdpPercap,835.8096108
+Gambia,1987,Africa,pop,848406
+Gambia,1987,Africa,lifeExp,49.265
+Gambia,1987,Africa,gdpPercap,611.6588611
+Gambia,1992,Africa,pop,1025384
+Gambia,1992,Africa,lifeExp,52.644
+Gambia,1992,Africa,gdpPercap,665.6244126
+Gambia,1997,Africa,pop,1235767
+Gambia,1997,Africa,lifeExp,55.861
+Gambia,1997,Africa,gdpPercap,653.7301704
+Gambia,2002,Africa,pop,1457766
+Gambia,2002,Africa,lifeExp,58.041
+Gambia,2002,Africa,gdpPercap,660.5855997
+Gambia,2007,Africa,pop,1688359
+Gambia,2007,Africa,lifeExp,59.448
+Gambia,2007,Africa,gdpPercap,752.7497265
+Germany,1952,Europe,pop,69145952
+Germany,1952,Europe,lifeExp,67.5
+Germany,1952,Europe,gdpPercap,7144.114393
+Germany,1957,Europe,pop,71019069
+Germany,1957,Europe,lifeExp,69.1
+Germany,1957,Europe,gdpPercap,10187.82665
+Germany,1962,Europe,pop,73739117
+Germany,1962,Europe,lifeExp,70.3
+Germany,1962,Europe,gdpPercap,12902.46291
+Germany,1967,Europe,pop,76368453
+Germany,1967,Europe,lifeExp,70.8
+Germany,1967,Europe,gdpPercap,14745.62561
+Germany,1972,Europe,pop,78717088
+Germany,1972,Europe,lifeExp,71
+Germany,1972,Europe,gdpPercap,18016.18027
+Germany,1977,Europe,pop,78160773
+Germany,1977,Europe,lifeExp,72.5
+Germany,1977,Europe,gdpPercap,20512.92123
+Germany,1982,Europe,pop,78335266
+Germany,1982,Europe,lifeExp,73.8
+Germany,1982,Europe,gdpPercap,22031.53274
+Germany,1987,Europe,pop,77718298
+Germany,1987,Europe,lifeExp,74.847
+Germany,1987,Europe,gdpPercap,24639.18566
+Germany,1992,Europe,pop,80597764
+Germany,1992,Europe,lifeExp,76.07
+Germany,1992,Europe,gdpPercap,26505.30317
+Germany,1997,Europe,pop,82011073
+Germany,1997,Europe,lifeExp,77.34
+Germany,1997,Europe,gdpPercap,27788.88416
+Germany,2002,Europe,pop,82350671
+Germany,2002,Europe,lifeExp,78.67
+Germany,2002,Europe,gdpPercap,30035.80198
+Germany,2007,Europe,pop,82400996
+Germany,2007,Europe,lifeExp,79.406
+Germany,2007,Europe,gdpPercap,32170.37442
+Ghana,1952,Africa,pop,5581001
+Ghana,1952,Africa,lifeExp,43.149
+Ghana,1952,Africa,gdpPercap,911.2989371
+Ghana,1957,Africa,pop,6391288
+Ghana,1957,Africa,lifeExp,44.779
+Ghana,1957,Africa,gdpPercap,1043.561537
+Ghana,1962,Africa,pop,7355248
+Ghana,1962,Africa,lifeExp,46.452
+Ghana,1962,Africa,gdpPercap,1190.041118
+Ghana,1967,Africa,pop,8490213
+Ghana,1967,Africa,lifeExp,48.072
+Ghana,1967,Africa,gdpPercap,1125.69716
+Ghana,1972,Africa,pop,9354120
+Ghana,1972,Africa,lifeExp,49.875
+Ghana,1972,Africa,gdpPercap,1178.223708
+Ghana,1977,Africa,pop,10538093
+Ghana,1977,Africa,lifeExp,51.756
+Ghana,1977,Africa,gdpPercap,993.2239571
+Ghana,1982,Africa,pop,11400338
+Ghana,1982,Africa,lifeExp,53.744
+Ghana,1982,Africa,gdpPercap,876.032569
+Ghana,1987,Africa,pop,14168101
+Ghana,1987,Africa,lifeExp,55.729
+Ghana,1987,Africa,gdpPercap,847.0061135
+Ghana,1992,Africa,pop,16278738
+Ghana,1992,Africa,lifeExp,57.501
+Ghana,1992,Africa,gdpPercap,925.060154
+Ghana,1997,Africa,pop,18418288
+Ghana,1997,Africa,lifeExp,58.556
+Ghana,1997,Africa,gdpPercap,1005.245812
+Ghana,2002,Africa,pop,20550751
+Ghana,2002,Africa,lifeExp,58.453
+Ghana,2002,Africa,gdpPercap,1111.984578
+Ghana,2007,Africa,pop,22873338
+Ghana,2007,Africa,lifeExp,60.022
+Ghana,2007,Africa,gdpPercap,1327.60891
+Greece,1952,Europe,pop,7733250
+Greece,1952,Europe,lifeExp,65.86
+Greece,1952,Europe,gdpPercap,3530.690067
+Greece,1957,Europe,pop,8096218
+Greece,1957,Europe,lifeExp,67.86
+Greece,1957,Europe,gdpPercap,4916.299889
+Greece,1962,Europe,pop,8448233
+Greece,1962,Europe,lifeExp,69.51
+Greece,1962,Europe,gdpPercap,6017.190733
+Greece,1967,Europe,pop,8716441
+Greece,1967,Europe,lifeExp,71
+Greece,1967,Europe,gdpPercap,8513.097016
+Greece,1972,Europe,pop,8888628
+Greece,1972,Europe,lifeExp,72.34
+Greece,1972,Europe,gdpPercap,12724.82957
+Greece,1977,Europe,pop,9308479
+Greece,1977,Europe,lifeExp,73.68
+Greece,1977,Europe,gdpPercap,14195.52428
+Greece,1982,Europe,pop,9786480
+Greece,1982,Europe,lifeExp,75.24
+Greece,1982,Europe,gdpPercap,15268.42089
+Greece,1987,Europe,pop,9974490
+Greece,1987,Europe,lifeExp,76.67
+Greece,1987,Europe,gdpPercap,16120.52839
+Greece,1992,Europe,pop,10325429
+Greece,1992,Europe,lifeExp,77.03
+Greece,1992,Europe,gdpPercap,17541.49634
+Greece,1997,Europe,pop,10502372
+Greece,1997,Europe,lifeExp,77.869
+Greece,1997,Europe,gdpPercap,18747.69814
+Greece,2002,Europe,pop,10603863
+Greece,2002,Europe,lifeExp,78.256
+Greece,2002,Europe,gdpPercap,22514.2548
+Greece,2007,Europe,pop,10706290
+Greece,2007,Europe,lifeExp,79.483
+Greece,2007,Europe,gdpPercap,27538.41188
+Guatemala,1952,Americas,pop,3146381
+Guatemala,1952,Americas,lifeExp,42.023
+Guatemala,1952,Americas,gdpPercap,2428.237769
+Guatemala,1957,Americas,pop,3640876
+Guatemala,1957,Americas,lifeExp,44.142
+Guatemala,1957,Americas,gdpPercap,2617.155967
+Guatemala,1962,Americas,pop,4208858
+Guatemala,1962,Americas,lifeExp,46.954
+Guatemala,1962,Americas,gdpPercap,2750.364446
+Guatemala,1967,Americas,pop,4690773
+Guatemala,1967,Americas,lifeExp,50.016
+Guatemala,1967,Americas,gdpPercap,3242.531147
+Guatemala,1972,Americas,pop,5149581
+Guatemala,1972,Americas,lifeExp,53.738
+Guatemala,1972,Americas,gdpPercap,4031.408271
+Guatemala,1977,Americas,pop,5703430
+Guatemala,1977,Americas,lifeExp,56.029
+Guatemala,1977,Americas,gdpPercap,4879.992748
+Guatemala,1982,Americas,pop,6395630
+Guatemala,1982,Americas,lifeExp,58.137
+Guatemala,1982,Americas,gdpPercap,4820.49479
+Guatemala,1987,Americas,pop,7326406
+Guatemala,1987,Americas,lifeExp,60.782
+Guatemala,1987,Americas,gdpPercap,4246.485974
+Guatemala,1992,Americas,pop,8486949
+Guatemala,1992,Americas,lifeExp,63.373
+Guatemala,1992,Americas,gdpPercap,4439.45084
+Guatemala,1997,Americas,pop,9803875
+Guatemala,1997,Americas,lifeExp,66.322
+Guatemala,1997,Americas,gdpPercap,4684.313807
+Guatemala,2002,Americas,pop,11178650
+Guatemala,2002,Americas,lifeExp,68.978
+Guatemala,2002,Americas,gdpPercap,4858.347495
+Guatemala,2007,Americas,pop,12572928
+Guatemala,2007,Americas,lifeExp,70.259
+Guatemala,2007,Americas,gdpPercap,5186.050003
+Guinea,1952,Africa,pop,2664249
+Guinea,1952,Africa,lifeExp,33.609
+Guinea,1952,Africa,gdpPercap,510.1964923
+Guinea,1957,Africa,pop,2876726
+Guinea,1957,Africa,lifeExp,34.558
+Guinea,1957,Africa,gdpPercap,576.2670245
+Guinea,1962,Africa,pop,3140003
+Guinea,1962,Africa,lifeExp,35.753
+Guinea,1962,Africa,gdpPercap,686.3736739
+Guinea,1967,Africa,pop,3451418
+Guinea,1967,Africa,lifeExp,37.197
+Guinea,1967,Africa,gdpPercap,708.7595409
+Guinea,1972,Africa,pop,3811387
+Guinea,1972,Africa,lifeExp,38.842
+Guinea,1972,Africa,gdpPercap,741.6662307
+Guinea,1977,Africa,pop,4227026
+Guinea,1977,Africa,lifeExp,40.762
+Guinea,1977,Africa,gdpPercap,874.6858643
+Guinea,1982,Africa,pop,4710497
+Guinea,1982,Africa,lifeExp,42.891
+Guinea,1982,Africa,gdpPercap,857.2503577
+Guinea,1987,Africa,pop,5650262
+Guinea,1987,Africa,lifeExp,45.552
+Guinea,1987,Africa,gdpPercap,805.5724718
+Guinea,1992,Africa,pop,6990574
+Guinea,1992,Africa,lifeExp,48.576
+Guinea,1992,Africa,gdpPercap,794.3484384
+Guinea,1997,Africa,pop,8048834
+Guinea,1997,Africa,lifeExp,51.455
+Guinea,1997,Africa,gdpPercap,869.4497668
+Guinea,2002,Africa,pop,8807818
+Guinea,2002,Africa,lifeExp,53.676
+Guinea,2002,Africa,gdpPercap,945.5835837
+Guinea,2007,Africa,pop,9947814
+Guinea,2007,Africa,lifeExp,56.007
+Guinea,2007,Africa,gdpPercap,942.6542111
+Guinea-Bissau,1952,Africa,pop,580653
+Guinea-Bissau,1952,Africa,lifeExp,32.5
+Guinea-Bissau,1952,Africa,gdpPercap,299.850319
+Guinea-Bissau,1957,Africa,pop,601095
+Guinea-Bissau,1957,Africa,lifeExp,33.489
+Guinea-Bissau,1957,Africa,gdpPercap,431.7904566
+Guinea-Bissau,1962,Africa,pop,627820
+Guinea-Bissau,1962,Africa,lifeExp,34.488
+Guinea-Bissau,1962,Africa,gdpPercap,522.0343725
+Guinea-Bissau,1967,Africa,pop,601287
+Guinea-Bissau,1967,Africa,lifeExp,35.492
+Guinea-Bissau,1967,Africa,gdpPercap,715.5806402
+Guinea-Bissau,1972,Africa,pop,625361
+Guinea-Bissau,1972,Africa,lifeExp,36.486
+Guinea-Bissau,1972,Africa,gdpPercap,820.2245876
+Guinea-Bissau,1977,Africa,pop,745228
+Guinea-Bissau,1977,Africa,lifeExp,37.465
+Guinea-Bissau,1977,Africa,gdpPercap,764.7259628
+Guinea-Bissau,1982,Africa,pop,825987
+Guinea-Bissau,1982,Africa,lifeExp,39.327
+Guinea-Bissau,1982,Africa,gdpPercap,838.1239671
+Guinea-Bissau,1987,Africa,pop,927524
+Guinea-Bissau,1987,Africa,lifeExp,41.245
+Guinea-Bissau,1987,Africa,gdpPercap,736.4153921
+Guinea-Bissau,1992,Africa,pop,1050938
+Guinea-Bissau,1992,Africa,lifeExp,43.266
+Guinea-Bissau,1992,Africa,gdpPercap,745.5398706
+Guinea-Bissau,1997,Africa,pop,1193708
+Guinea-Bissau,1997,Africa,lifeExp,44.873
+Guinea-Bissau,1997,Africa,gdpPercap,796.6644681
+Guinea-Bissau,2002,Africa,pop,1332459
+Guinea-Bissau,2002,Africa,lifeExp,45.504
+Guinea-Bissau,2002,Africa,gdpPercap,575.7047176
+Guinea-Bissau,2007,Africa,pop,1472041
+Guinea-Bissau,2007,Africa,lifeExp,46.388
+Guinea-Bissau,2007,Africa,gdpPercap,579.231743
+Haiti,1952,Americas,pop,3201488
+Haiti,1952,Americas,lifeExp,37.579
+Haiti,1952,Americas,gdpPercap,1840.366939
+Haiti,1957,Americas,pop,3507701
+Haiti,1957,Americas,lifeExp,40.696
+Haiti,1957,Americas,gdpPercap,1726.887882
+Haiti,1962,Americas,pop,3880130
+Haiti,1962,Americas,lifeExp,43.59
+Haiti,1962,Americas,gdpPercap,1796.589032
+Haiti,1967,Americas,pop,4318137
+Haiti,1967,Americas,lifeExp,46.243
+Haiti,1967,Americas,gdpPercap,1452.057666
+Haiti,1972,Americas,pop,4698301
+Haiti,1972,Americas,lifeExp,48.042
+Haiti,1972,Americas,gdpPercap,1654.456946
+Haiti,1977,Americas,pop,4908554
+Haiti,1977,Americas,lifeExp,49.923
+Haiti,1977,Americas,gdpPercap,1874.298931
+Haiti,1982,Americas,pop,5198399
+Haiti,1982,Americas,lifeExp,51.461
+Haiti,1982,Americas,gdpPercap,2011.159549
+Haiti,1987,Americas,pop,5756203
+Haiti,1987,Americas,lifeExp,53.636
+Haiti,1987,Americas,gdpPercap,1823.015995
+Haiti,1992,Americas,pop,6326682
+Haiti,1992,Americas,lifeExp,55.089
+Haiti,1992,Americas,gdpPercap,1456.309517
+Haiti,1997,Americas,pop,6913545
+Haiti,1997,Americas,lifeExp,56.671
+Haiti,1997,Americas,gdpPercap,1341.726931
+Haiti,2002,Americas,pop,7607651
+Haiti,2002,Americas,lifeExp,58.137
+Haiti,2002,Americas,gdpPercap,1270.364932
+Haiti,2007,Americas,pop,8502814
+Haiti,2007,Americas,lifeExp,60.916
+Haiti,2007,Americas,gdpPercap,1201.637154
+Honduras,1952,Americas,pop,1517453
+Honduras,1952,Americas,lifeExp,41.912
+Honduras,1952,Americas,gdpPercap,2194.926204
+Honduras,1957,Americas,pop,1770390
+Honduras,1957,Americas,lifeExp,44.665
+Honduras,1957,Americas,gdpPercap,2220.487682
+Honduras,1962,Americas,pop,2090162
+Honduras,1962,Americas,lifeExp,48.041
+Honduras,1962,Americas,gdpPercap,2291.156835
+Honduras,1967,Americas,pop,2500689
+Honduras,1967,Americas,lifeExp,50.924
+Honduras,1967,Americas,gdpPercap,2538.269358
+Honduras,1972,Americas,pop,2965146
+Honduras,1972,Americas,lifeExp,53.884
+Honduras,1972,Americas,gdpPercap,2529.842345
+Honduras,1977,Americas,pop,3055235
+Honduras,1977,Americas,lifeExp,57.402
+Honduras,1977,Americas,gdpPercap,3203.208066
+Honduras,1982,Americas,pop,3669448
+Honduras,1982,Americas,lifeExp,60.909
+Honduras,1982,Americas,gdpPercap,3121.760794
+Honduras,1987,Americas,pop,4372203
+Honduras,1987,Americas,lifeExp,64.492
+Honduras,1987,Americas,gdpPercap,3023.096699
+Honduras,1992,Americas,pop,5077347
+Honduras,1992,Americas,lifeExp,66.399
+Honduras,1992,Americas,gdpPercap,3081.694603
+Honduras,1997,Americas,pop,5867957
+Honduras,1997,Americas,lifeExp,67.659
+Honduras,1997,Americas,gdpPercap,3160.454906
+Honduras,2002,Americas,pop,6677328
+Honduras,2002,Americas,lifeExp,68.565
+Honduras,2002,Americas,gdpPercap,3099.72866
+Honduras,2007,Americas,pop,7483763
+Honduras,2007,Americas,lifeExp,70.198
+Honduras,2007,Americas,gdpPercap,3548.330846
+Hong Kong China,1952,Asia,pop,2125900
+Hong Kong China,1952,Asia,lifeExp,60.96
+Hong Kong China,1952,Asia,gdpPercap,3054.421209
+Hong Kong China,1957,Asia,pop,2736300
+Hong Kong China,1957,Asia,lifeExp,64.75
+Hong Kong China,1957,Asia,gdpPercap,3629.076457
+Hong Kong China,1962,Asia,pop,3305200
+Hong Kong China,1962,Asia,lifeExp,67.65
+Hong Kong China,1962,Asia,gdpPercap,4692.648272
+Hong Kong China,1967,Asia,pop,3722800
+Hong Kong China,1967,Asia,lifeExp,70
+Hong Kong China,1967,Asia,gdpPercap,6197.962814
+Hong Kong China,1972,Asia,pop,4115700
+Hong Kong China,1972,Asia,lifeExp,72
+Hong Kong China,1972,Asia,gdpPercap,8315.928145
+Hong Kong China,1977,Asia,pop,4583700
+Hong Kong China,1977,Asia,lifeExp,73.6
+Hong Kong China,1977,Asia,gdpPercap,11186.14125
+Hong Kong China,1982,Asia,pop,5264500
+Hong Kong China,1982,Asia,lifeExp,75.45
+Hong Kong China,1982,Asia,gdpPercap,14560.53051
+Hong Kong China,1987,Asia,pop,5584510
+Hong Kong China,1987,Asia,lifeExp,76.2
+Hong Kong China,1987,Asia,gdpPercap,20038.47269
+Hong Kong China,1992,Asia,pop,5829696
+Hong Kong China,1992,Asia,lifeExp,77.601
+Hong Kong China,1992,Asia,gdpPercap,24757.60301
+Hong Kong China,1997,Asia,pop,6495918
+Hong Kong China,1997,Asia,lifeExp,80
+Hong Kong China,1997,Asia,gdpPercap,28377.63219
+Hong Kong China,2002,Asia,pop,6762476
+Hong Kong China,2002,Asia,lifeExp,81.495
+Hong Kong China,2002,Asia,gdpPercap,30209.01516
+Hong Kong China,2007,Asia,pop,6980412
+Hong Kong China,2007,Asia,lifeExp,82.208
+Hong Kong China,2007,Asia,gdpPercap,39724.97867
+Hungary,1952,Europe,pop,9504000
+Hungary,1952,Europe,lifeExp,64.03
+Hungary,1952,Europe,gdpPercap,5263.673816
+Hungary,1957,Europe,pop,9839000
+Hungary,1957,Europe,lifeExp,66.41
+Hungary,1957,Europe,gdpPercap,6040.180011
+Hungary,1962,Europe,pop,10063000
+Hungary,1962,Europe,lifeExp,67.96
+Hungary,1962,Europe,gdpPercap,7550.359877
+Hungary,1967,Europe,pop,10223422
+Hungary,1967,Europe,lifeExp,69.5
+Hungary,1967,Europe,gdpPercap,9326.64467
+Hungary,1972,Europe,pop,10394091
+Hungary,1972,Europe,lifeExp,69.76
+Hungary,1972,Europe,gdpPercap,10168.65611
+Hungary,1977,Europe,pop,10637171
+Hungary,1977,Europe,lifeExp,69.95
+Hungary,1977,Europe,gdpPercap,11674.83737
+Hungary,1982,Europe,pop,10705535
+Hungary,1982,Europe,lifeExp,69.39
+Hungary,1982,Europe,gdpPercap,12545.99066
+Hungary,1987,Europe,pop,10612740
+Hungary,1987,Europe,lifeExp,69.58
+Hungary,1987,Europe,gdpPercap,12986.47998
+Hungary,1992,Europe,pop,10348684
+Hungary,1992,Europe,lifeExp,69.17
+Hungary,1992,Europe,gdpPercap,10535.62855
+Hungary,1997,Europe,pop,10244684
+Hungary,1997,Europe,lifeExp,71.04
+Hungary,1997,Europe,gdpPercap,11712.7768
+Hungary,2002,Europe,pop,10083313
+Hungary,2002,Europe,lifeExp,72.59
+Hungary,2002,Europe,gdpPercap,14843.93556
+Hungary,2007,Europe,pop,9956108
+Hungary,2007,Europe,lifeExp,73.338
+Hungary,2007,Europe,gdpPercap,18008.94444
+Iceland,1952,Europe,pop,147962
+Iceland,1952,Europe,lifeExp,72.49
+Iceland,1952,Europe,gdpPercap,7267.688428
+Iceland,1957,Europe,pop,165110
+Iceland,1957,Europe,lifeExp,73.47
+Iceland,1957,Europe,gdpPercap,9244.001412
+Iceland,1962,Europe,pop,182053
+Iceland,1962,Europe,lifeExp,73.68
+Iceland,1962,Europe,gdpPercap,10350.15906
+Iceland,1967,Europe,pop,198676
+Iceland,1967,Europe,lifeExp,73.73
+Iceland,1967,Europe,gdpPercap,13319.89568
+Iceland,1972,Europe,pop,209275
+Iceland,1972,Europe,lifeExp,74.46
+Iceland,1972,Europe,gdpPercap,15798.06362
+Iceland,1977,Europe,pop,221823
+Iceland,1977,Europe,lifeExp,76.11
+Iceland,1977,Europe,gdpPercap,19654.96247
+Iceland,1982,Europe,pop,233997
+Iceland,1982,Europe,lifeExp,76.99
+Iceland,1982,Europe,gdpPercap,23269.6075
+Iceland,1987,Europe,pop,244676
+Iceland,1987,Europe,lifeExp,77.23
+Iceland,1987,Europe,gdpPercap,26923.20628
+Iceland,1992,Europe,pop,259012
+Iceland,1992,Europe,lifeExp,78.77
+Iceland,1992,Europe,gdpPercap,25144.39201
+Iceland,1997,Europe,pop,271192
+Iceland,1997,Europe,lifeExp,78.95
+Iceland,1997,Europe,gdpPercap,28061.09966
+Iceland,2002,Europe,pop,288030
+Iceland,2002,Europe,lifeExp,80.5
+Iceland,2002,Europe,gdpPercap,31163.20196
+Iceland,2007,Europe,pop,301931
+Iceland,2007,Europe,lifeExp,81.757
+Iceland,2007,Europe,gdpPercap,36180.78919
+India,1952,Asia,pop,372000000
+India,1952,Asia,lifeExp,37.373
+India,1952,Asia,gdpPercap,546.5657493
+India,1957,Asia,pop,409000000
+India,1957,Asia,lifeExp,40.249
+India,1957,Asia,gdpPercap,590.061996
+India,1962,Asia,pop,454000000
+India,1962,Asia,lifeExp,43.605
+India,1962,Asia,gdpPercap,658.3471509
+India,1967,Asia,pop,506000000
+India,1967,Asia,lifeExp,47.193
+India,1967,Asia,gdpPercap,700.7706107
+India,1972,Asia,pop,567000000
+India,1972,Asia,lifeExp,50.651
+India,1972,Asia,gdpPercap,724.032527
+India,1977,Asia,pop,634000000
+India,1977,Asia,lifeExp,54.208
+India,1977,Asia,gdpPercap,813.337323
+India,1982,Asia,pop,708000000
+India,1982,Asia,lifeExp,56.596
+India,1982,Asia,gdpPercap,855.7235377
+India,1987,Asia,pop,788000000
+India,1987,Asia,lifeExp,58.553
+India,1987,Asia,gdpPercap,976.5126756
+India,1992,Asia,pop,872000000
+India,1992,Asia,lifeExp,60.223
+India,1992,Asia,gdpPercap,1164.406809
+India,1997,Asia,pop,959000000
+India,1997,Asia,lifeExp,61.765
+India,1997,Asia,gdpPercap,1458.817442
+India,2002,Asia,pop,1034172547
+India,2002,Asia,lifeExp,62.879
+India,2002,Asia,gdpPercap,1746.769454
+India,2007,Asia,pop,1110396331
+India,2007,Asia,lifeExp,64.698
+India,2007,Asia,gdpPercap,2452.210407
+Indonesia,1952,Asia,pop,82052000
+Indonesia,1952,Asia,lifeExp,37.468
+Indonesia,1952,Asia,gdpPercap,749.6816546
+Indonesia,1957,Asia,pop,90124000
+Indonesia,1957,Asia,lifeExp,39.918
+Indonesia,1957,Asia,gdpPercap,858.9002707
+Indonesia,1962,Asia,pop,99028000
+Indonesia,1962,Asia,lifeExp,42.518
+Indonesia,1962,Asia,gdpPercap,849.2897701
+Indonesia,1967,Asia,pop,109343000
+Indonesia,1967,Asia,lifeExp,45.964
+Indonesia,1967,Asia,gdpPercap,762.4317721
+Indonesia,1972,Asia,pop,121282000
+Indonesia,1972,Asia,lifeExp,49.203
+Indonesia,1972,Asia,gdpPercap,1111.107907
+Indonesia,1977,Asia,pop,136725000
+Indonesia,1977,Asia,lifeExp,52.702
+Indonesia,1977,Asia,gdpPercap,1382.702056
+Indonesia,1982,Asia,pop,153343000
+Indonesia,1982,Asia,lifeExp,56.159
+Indonesia,1982,Asia,gdpPercap,1516.872988
+Indonesia,1987,Asia,pop,169276000
+Indonesia,1987,Asia,lifeExp,60.137
+Indonesia,1987,Asia,gdpPercap,1748.356961
+Indonesia,1992,Asia,pop,184816000
+Indonesia,1992,Asia,lifeExp,62.681
+Indonesia,1992,Asia,gdpPercap,2383.140898
+Indonesia,1997,Asia,pop,199278000
+Indonesia,1997,Asia,lifeExp,66.041
+Indonesia,1997,Asia,gdpPercap,3119.335603
+Indonesia,2002,Asia,pop,211060000
+Indonesia,2002,Asia,lifeExp,68.588
+Indonesia,2002,Asia,gdpPercap,2873.91287
+Indonesia,2007,Asia,pop,223547000
+Indonesia,2007,Asia,lifeExp,70.65
+Indonesia,2007,Asia,gdpPercap,3540.651564
+Iran,1952,Asia,pop,17272000
+Iran,1952,Asia,lifeExp,44.869
+Iran,1952,Asia,gdpPercap,3035.326002
+Iran,1957,Asia,pop,19792000
+Iran,1957,Asia,lifeExp,47.181
+Iran,1957,Asia,gdpPercap,3290.257643
+Iran,1962,Asia,pop,22874000
+Iran,1962,Asia,lifeExp,49.325
+Iran,1962,Asia,gdpPercap,4187.329802
+Iran,1967,Asia,pop,26538000
+Iran,1967,Asia,lifeExp,52.469
+Iran,1967,Asia,gdpPercap,5906.731805
+Iran,1972,Asia,pop,30614000
+Iran,1972,Asia,lifeExp,55.234
+Iran,1972,Asia,gdpPercap,9613.818607
+Iran,1977,Asia,pop,35480679
+Iran,1977,Asia,lifeExp,57.702
+Iran,1977,Asia,gdpPercap,11888.59508
+Iran,1982,Asia,pop,43072751
+Iran,1982,Asia,lifeExp,59.62
+Iran,1982,Asia,gdpPercap,7608.334602
+Iran,1987,Asia,pop,51889696
+Iran,1987,Asia,lifeExp,63.04
+Iran,1987,Asia,gdpPercap,6642.881371
+Iran,1992,Asia,pop,60397973
+Iran,1992,Asia,lifeExp,65.742
+Iran,1992,Asia,gdpPercap,7235.653188
+Iran,1997,Asia,pop,63327987
+Iran,1997,Asia,lifeExp,68.042
+Iran,1997,Asia,gdpPercap,8263.590301
+Iran,2002,Asia,pop,66907826
+Iran,2002,Asia,lifeExp,69.451
+Iran,2002,Asia,gdpPercap,9240.761975
+Iran,2007,Asia,pop,69453570
+Iran,2007,Asia,lifeExp,70.964
+Iran,2007,Asia,gdpPercap,11605.71449
+Iraq,1952,Asia,pop,5441766
+Iraq,1952,Asia,lifeExp,45.32
+Iraq,1952,Asia,gdpPercap,4129.766056
+Iraq,1957,Asia,pop,6248643
+Iraq,1957,Asia,lifeExp,48.437
+Iraq,1957,Asia,gdpPercap,6229.333562
+Iraq,1962,Asia,pop,7240260
+Iraq,1962,Asia,lifeExp,51.457
+Iraq,1962,Asia,gdpPercap,8341.737815
+Iraq,1967,Asia,pop,8519282
+Iraq,1967,Asia,lifeExp,54.459
+Iraq,1967,Asia,gdpPercap,8931.459811
+Iraq,1972,Asia,pop,10061506
+Iraq,1972,Asia,lifeExp,56.95
+Iraq,1972,Asia,gdpPercap,9576.037596
+Iraq,1977,Asia,pop,11882916
+Iraq,1977,Asia,lifeExp,60.413
+Iraq,1977,Asia,gdpPercap,14688.23507
+Iraq,1982,Asia,pop,14173318
+Iraq,1982,Asia,lifeExp,62.038
+Iraq,1982,Asia,gdpPercap,14517.90711
+Iraq,1987,Asia,pop,16543189
+Iraq,1987,Asia,lifeExp,65.044
+Iraq,1987,Asia,gdpPercap,11643.57268
+Iraq,1992,Asia,pop,17861905
+Iraq,1992,Asia,lifeExp,59.461
+Iraq,1992,Asia,gdpPercap,3745.640687
+Iraq,1997,Asia,pop,20775703
+Iraq,1997,Asia,lifeExp,58.811
+Iraq,1997,Asia,gdpPercap,3076.239795
+Iraq,2002,Asia,pop,24001816
+Iraq,2002,Asia,lifeExp,57.046
+Iraq,2002,Asia,gdpPercap,4390.717312
+Iraq,2007,Asia,pop,27499638
+Iraq,2007,Asia,lifeExp,59.545
+Iraq,2007,Asia,gdpPercap,4471.061906
+Ireland,1952,Europe,pop,2952156
+Ireland,1952,Europe,lifeExp,66.91
+Ireland,1952,Europe,gdpPercap,5210.280328
+Ireland,1957,Europe,pop,2878220
+Ireland,1957,Europe,lifeExp,68.9
+Ireland,1957,Europe,gdpPercap,5599.077872
+Ireland,1962,Europe,pop,2830000
+Ireland,1962,Europe,lifeExp,70.29
+Ireland,1962,Europe,gdpPercap,6631.597314
+Ireland,1967,Europe,pop,2900100
+Ireland,1967,Europe,lifeExp,71.08
+Ireland,1967,Europe,gdpPercap,7655.568963
+Ireland,1972,Europe,pop,3024400
+Ireland,1972,Europe,lifeExp,71.28
+Ireland,1972,Europe,gdpPercap,9530.772896
+Ireland,1977,Europe,pop,3271900
+Ireland,1977,Europe,lifeExp,72.03
+Ireland,1977,Europe,gdpPercap,11150.98113
+Ireland,1982,Europe,pop,3480000
+Ireland,1982,Europe,lifeExp,73.1
+Ireland,1982,Europe,gdpPercap,12618.32141
+Ireland,1987,Europe,pop,3539900
+Ireland,1987,Europe,lifeExp,74.36
+Ireland,1987,Europe,gdpPercap,13872.86652
+Ireland,1992,Europe,pop,3557761
+Ireland,1992,Europe,lifeExp,75.467
+Ireland,1992,Europe,gdpPercap,17558.81555
+Ireland,1997,Europe,pop,3667233
+Ireland,1997,Europe,lifeExp,76.122
+Ireland,1997,Europe,gdpPercap,24521.94713
+Ireland,2002,Europe,pop,3879155
+Ireland,2002,Europe,lifeExp,77.783
+Ireland,2002,Europe,gdpPercap,34077.04939
+Ireland,2007,Europe,pop,4109086
+Ireland,2007,Europe,lifeExp,78.885
+Ireland,2007,Europe,gdpPercap,40675.99635
+Israel,1952,Asia,pop,1620914
+Israel,1952,Asia,lifeExp,65.39
+Israel,1952,Asia,gdpPercap,4086.522128
+Israel,1957,Asia,pop,1944401
+Israel,1957,Asia,lifeExp,67.84
+Israel,1957,Asia,gdpPercap,5385.278451
+Israel,1962,Asia,pop,2310904
+Israel,1962,Asia,lifeExp,69.39
+Israel,1962,Asia,gdpPercap,7105.630706
+Israel,1967,Asia,pop,2693585
+Israel,1967,Asia,lifeExp,70.75
+Israel,1967,Asia,gdpPercap,8393.741404
+Israel,1972,Asia,pop,3095893
+Israel,1972,Asia,lifeExp,71.63
+Israel,1972,Asia,gdpPercap,12786.93223
+Israel,1977,Asia,pop,3495918
+Israel,1977,Asia,lifeExp,73.06
+Israel,1977,Asia,gdpPercap,13306.61921
+Israel,1982,Asia,pop,3858421
+Israel,1982,Asia,lifeExp,74.45
+Israel,1982,Asia,gdpPercap,15367.0292
+Israel,1987,Asia,pop,4203148
+Israel,1987,Asia,lifeExp,75.6
+Israel,1987,Asia,gdpPercap,17122.47986
+Israel,1992,Asia,pop,4936550
+Israel,1992,Asia,lifeExp,76.93
+Israel,1992,Asia,gdpPercap,18051.52254
+Israel,1997,Asia,pop,5531387
+Israel,1997,Asia,lifeExp,78.269
+Israel,1997,Asia,gdpPercap,20896.60924
+Israel,2002,Asia,pop,6029529
+Israel,2002,Asia,lifeExp,79.696
+Israel,2002,Asia,gdpPercap,21905.59514
+Israel,2007,Asia,pop,6426679
+Israel,2007,Asia,lifeExp,80.745
+Israel,2007,Asia,gdpPercap,25523.2771
+Italy,1952,Europe,pop,47666000
+Italy,1952,Europe,lifeExp,65.94
+Italy,1952,Europe,gdpPercap,4931.404155
+Italy,1957,Europe,pop,49182000
+Italy,1957,Europe,lifeExp,67.81
+Italy,1957,Europe,gdpPercap,6248.656232
+Italy,1962,Europe,pop,50843200
+Italy,1962,Europe,lifeExp,69.24
+Italy,1962,Europe,gdpPercap,8243.58234
+Italy,1967,Europe,pop,52667100
+Italy,1967,Europe,lifeExp,71.06
+Italy,1967,Europe,gdpPercap,10022.40131
+Italy,1972,Europe,pop,54365564
+Italy,1972,Europe,lifeExp,72.19
+Italy,1972,Europe,gdpPercap,12269.27378
+Italy,1977,Europe,pop,56059245
+Italy,1977,Europe,lifeExp,73.48
+Italy,1977,Europe,gdpPercap,14255.98475
+Italy,1982,Europe,pop,56535636
+Italy,1982,Europe,lifeExp,74.98
+Italy,1982,Europe,gdpPercap,16537.4835
+Italy,1987,Europe,pop,56729703
+Italy,1987,Europe,lifeExp,76.42
+Italy,1987,Europe,gdpPercap,19207.23482
+Italy,1992,Europe,pop,56840847
+Italy,1992,Europe,lifeExp,77.44
+Italy,1992,Europe,gdpPercap,22013.64486
+Italy,1997,Europe,pop,57479469
+Italy,1997,Europe,lifeExp,78.82
+Italy,1997,Europe,gdpPercap,24675.02446
+Italy,2002,Europe,pop,57926999
+Italy,2002,Europe,lifeExp,80.24
+Italy,2002,Europe,gdpPercap,27968.09817
+Italy,2007,Europe,pop,58147733
+Italy,2007,Europe,lifeExp,80.546
+Italy,2007,Europe,gdpPercap,28569.7197
+Jamaica,1952,Americas,pop,1426095
+Jamaica,1952,Americas,lifeExp,58.53
+Jamaica,1952,Americas,gdpPercap,2898.530881
+Jamaica,1957,Americas,pop,1535090
+Jamaica,1957,Americas,lifeExp,62.61
+Jamaica,1957,Americas,gdpPercap,4756.525781
+Jamaica,1962,Americas,pop,1665128
+Jamaica,1962,Americas,lifeExp,65.61
+Jamaica,1962,Americas,gdpPercap,5246.107524
+Jamaica,1967,Americas,pop,1861096
+Jamaica,1967,Americas,lifeExp,67.51
+Jamaica,1967,Americas,gdpPercap,6124.703451
+Jamaica,1972,Americas,pop,1997616
+Jamaica,1972,Americas,lifeExp,69
+Jamaica,1972,Americas,gdpPercap,7433.889293
+Jamaica,1977,Americas,pop,2156814
+Jamaica,1977,Americas,lifeExp,70.11
+Jamaica,1977,Americas,gdpPercap,6650.195573
+Jamaica,1982,Americas,pop,2298309
+Jamaica,1982,Americas,lifeExp,71.21
+Jamaica,1982,Americas,gdpPercap,6068.05135
+Jamaica,1987,Americas,pop,2326606
+Jamaica,1987,Americas,lifeExp,71.77
+Jamaica,1987,Americas,gdpPercap,6351.237495
+Jamaica,1992,Americas,pop,2378618
+Jamaica,1992,Americas,lifeExp,71.766
+Jamaica,1992,Americas,gdpPercap,7404.923685
+Jamaica,1997,Americas,pop,2531311
+Jamaica,1997,Americas,lifeExp,72.262
+Jamaica,1997,Americas,gdpPercap,7121.924704
+Jamaica,2002,Americas,pop,2664659
+Jamaica,2002,Americas,lifeExp,72.047
+Jamaica,2002,Americas,gdpPercap,6994.774861
+Jamaica,2007,Americas,pop,2780132
+Jamaica,2007,Americas,lifeExp,72.567
+Jamaica,2007,Americas,gdpPercap,7320.880262
+Japan,1952,Asia,pop,86459025
+Japan,1952,Asia,lifeExp,63.03
+Japan,1952,Asia,gdpPercap,3216.956347
+Japan,1957,Asia,pop,91563009
+Japan,1957,Asia,lifeExp,65.5
+Japan,1957,Asia,gdpPercap,4317.694365
+Japan,1962,Asia,pop,95831757
+Japan,1962,Asia,lifeExp,68.73
+Japan,1962,Asia,gdpPercap,6576.649461
+Japan,1967,Asia,pop,100825279
+Japan,1967,Asia,lifeExp,71.43
+Japan,1967,Asia,gdpPercap,9847.788607
+Japan,1972,Asia,pop,107188273
+Japan,1972,Asia,lifeExp,73.42
+Japan,1972,Asia,gdpPercap,14778.78636
+Japan,1977,Asia,pop,113872473
+Japan,1977,Asia,lifeExp,75.38
+Japan,1977,Asia,gdpPercap,16610.37701
+Japan,1982,Asia,pop,118454974
+Japan,1982,Asia,lifeExp,77.11
+Japan,1982,Asia,gdpPercap,19384.10571
+Japan,1987,Asia,pop,122091325
+Japan,1987,Asia,lifeExp,78.67
+Japan,1987,Asia,gdpPercap,22375.94189
+Japan,1992,Asia,pop,124329269
+Japan,1992,Asia,lifeExp,79.36
+Japan,1992,Asia,gdpPercap,26824.89511
+Japan,1997,Asia,pop,125956499
+Japan,1997,Asia,lifeExp,80.69
+Japan,1997,Asia,gdpPercap,28816.58499
+Japan,2002,Asia,pop,127065841
+Japan,2002,Asia,lifeExp,82
+Japan,2002,Asia,gdpPercap,28604.5919
+Japan,2007,Asia,pop,127467972
+Japan,2007,Asia,lifeExp,82.603
+Japan,2007,Asia,gdpPercap,31656.06806
+Jordan,1952,Asia,pop,607914
+Jordan,1952,Asia,lifeExp,43.158
+Jordan,1952,Asia,gdpPercap,1546.907807
+Jordan,1957,Asia,pop,746559
+Jordan,1957,Asia,lifeExp,45.669
+Jordan,1957,Asia,gdpPercap,1886.080591
+Jordan,1962,Asia,pop,933559
+Jordan,1962,Asia,lifeExp,48.126
+Jordan,1962,Asia,gdpPercap,2348.009158
+Jordan,1967,Asia,pop,1255058
+Jordan,1967,Asia,lifeExp,51.629
+Jordan,1967,Asia,gdpPercap,2741.796252
+Jordan,1972,Asia,pop,1613551
+Jordan,1972,Asia,lifeExp,56.528
+Jordan,1972,Asia,gdpPercap,2110.856309
+Jordan,1977,Asia,pop,1937652
+Jordan,1977,Asia,lifeExp,61.134
+Jordan,1977,Asia,gdpPercap,2852.351568
+Jordan,1982,Asia,pop,2347031
+Jordan,1982,Asia,lifeExp,63.739
+Jordan,1982,Asia,gdpPercap,4161.415959
+Jordan,1987,Asia,pop,2820042
+Jordan,1987,Asia,lifeExp,65.869
+Jordan,1987,Asia,gdpPercap,4448.679912
+Jordan,1992,Asia,pop,3867409
+Jordan,1992,Asia,lifeExp,68.015
+Jordan,1992,Asia,gdpPercap,3431.593647
+Jordan,1997,Asia,pop,4526235
+Jordan,1997,Asia,lifeExp,69.772
+Jordan,1997,Asia,gdpPercap,3645.379572
+Jordan,2002,Asia,pop,5307470
+Jordan,2002,Asia,lifeExp,71.263
+Jordan,2002,Asia,gdpPercap,3844.917194
+Jordan,2007,Asia,pop,6053193
+Jordan,2007,Asia,lifeExp,72.535
+Jordan,2007,Asia,gdpPercap,4519.461171
+Kenya,1952,Africa,pop,6464046
+Kenya,1952,Africa,lifeExp,42.27
+Kenya,1952,Africa,gdpPercap,853.540919
+Kenya,1957,Africa,pop,7454779
+Kenya,1957,Africa,lifeExp,44.686
+Kenya,1957,Africa,gdpPercap,944.4383152
+Kenya,1962,Africa,pop,8678557
+Kenya,1962,Africa,lifeExp,47.949
+Kenya,1962,Africa,gdpPercap,896.9663732
+Kenya,1967,Africa,pop,10191512
+Kenya,1967,Africa,lifeExp,50.654
+Kenya,1967,Africa,gdpPercap,1056.736457
+Kenya,1972,Africa,pop,12044785
+Kenya,1972,Africa,lifeExp,53.559
+Kenya,1972,Africa,gdpPercap,1222.359968
+Kenya,1977,Africa,pop,14500404
+Kenya,1977,Africa,lifeExp,56.155
+Kenya,1977,Africa,gdpPercap,1267.613204
+Kenya,1982,Africa,pop,17661452
+Kenya,1982,Africa,lifeExp,58.766
+Kenya,1982,Africa,gdpPercap,1348.225791
+Kenya,1987,Africa,pop,21198082
+Kenya,1987,Africa,lifeExp,59.339
+Kenya,1987,Africa,gdpPercap,1361.936856
+Kenya,1992,Africa,pop,25020539
+Kenya,1992,Africa,lifeExp,59.285
+Kenya,1992,Africa,gdpPercap,1341.921721
+Kenya,1997,Africa,pop,28263827
+Kenya,1997,Africa,lifeExp,54.407
+Kenya,1997,Africa,gdpPercap,1360.485021
+Kenya,2002,Africa,pop,31386842
+Kenya,2002,Africa,lifeExp,50.992
+Kenya,2002,Africa,gdpPercap,1287.514732
+Kenya,2007,Africa,pop,35610177
+Kenya,2007,Africa,lifeExp,54.11
+Kenya,2007,Africa,gdpPercap,1463.249282
+Korea Dem. Rep.,1952,Asia,pop,8865488
+Korea Dem. Rep.,1952,Asia,lifeExp,50.056
+Korea Dem. Rep.,1952,Asia,gdpPercap,1088.277758
+Korea Dem. Rep.,1957,Asia,pop,9411381
+Korea Dem. Rep.,1957,Asia,lifeExp,54.081
+Korea Dem. Rep.,1957,Asia,gdpPercap,1571.134655
+Korea Dem. Rep.,1962,Asia,pop,10917494
+Korea Dem. Rep.,1962,Asia,lifeExp,56.656
+Korea Dem. Rep.,1962,Asia,gdpPercap,1621.693598
+Korea Dem. Rep.,1967,Asia,pop,12617009
+Korea Dem. Rep.,1967,Asia,lifeExp,59.942
+Korea Dem. Rep.,1967,Asia,gdpPercap,2143.540609
+Korea Dem. Rep.,1972,Asia,pop,14781241
+Korea Dem. Rep.,1972,Asia,lifeExp,63.983
+Korea Dem. Rep.,1972,Asia,gdpPercap,3701.621503
+Korea Dem. Rep.,1977,Asia,pop,16325320
+Korea Dem. Rep.,1977,Asia,lifeExp,67.159
+Korea Dem. Rep.,1977,Asia,gdpPercap,4106.301249
+Korea Dem. Rep.,1982,Asia,pop,17647518
+Korea Dem. Rep.,1982,Asia,lifeExp,69.1
+Korea Dem. Rep.,1982,Asia,gdpPercap,4106.525293
+Korea Dem. Rep.,1987,Asia,pop,19067554
+Korea Dem. Rep.,1987,Asia,lifeExp,70.647
+Korea Dem. Rep.,1987,Asia,gdpPercap,4106.492315
+Korea Dem. Rep.,1992,Asia,pop,20711375
+Korea Dem. Rep.,1992,Asia,lifeExp,69.978
+Korea Dem. Rep.,1992,Asia,gdpPercap,3726.063507
+Korea Dem. Rep.,1997,Asia,pop,21585105
+Korea Dem. Rep.,1997,Asia,lifeExp,67.727
+Korea Dem. Rep.,1997,Asia,gdpPercap,1690.756814
+Korea Dem. Rep.,2002,Asia,pop,22215365
+Korea Dem. Rep.,2002,Asia,lifeExp,66.662
+Korea Dem. Rep.,2002,Asia,gdpPercap,1646.758151
+Korea Dem. Rep.,2007,Asia,pop,23301725
+Korea Dem. Rep.,2007,Asia,lifeExp,67.297
+Korea Dem. Rep.,2007,Asia,gdpPercap,1593.06548
+Korea Rep.,1952,Asia,pop,20947571
+Korea Rep.,1952,Asia,lifeExp,47.453
+Korea Rep.,1952,Asia,gdpPercap,1030.592226
+Korea Rep.,1957,Asia,pop,22611552
+Korea Rep.,1957,Asia,lifeExp,52.681
+Korea Rep.,1957,Asia,gdpPercap,1487.593537
+Korea Rep.,1962,Asia,pop,26420307
+Korea Rep.,1962,Asia,lifeExp,55.292
+Korea Rep.,1962,Asia,gdpPercap,1536.344387
+Korea Rep.,1967,Asia,pop,30131000
+Korea Rep.,1967,Asia,lifeExp,57.716
+Korea Rep.,1967,Asia,gdpPercap,2029.228142
+Korea Rep.,1972,Asia,pop,33505000
+Korea Rep.,1972,Asia,lifeExp,62.612
+Korea Rep.,1972,Asia,gdpPercap,3030.87665
+Korea Rep.,1977,Asia,pop,36436000
+Korea Rep.,1977,Asia,lifeExp,64.766
+Korea Rep.,1977,Asia,gdpPercap,4657.22102
+Korea Rep.,1982,Asia,pop,39326000
+Korea Rep.,1982,Asia,lifeExp,67.123
+Korea Rep.,1982,Asia,gdpPercap,5622.942464
+Korea Rep.,1987,Asia,pop,41622000
+Korea Rep.,1987,Asia,lifeExp,69.81
+Korea Rep.,1987,Asia,gdpPercap,8533.088805
+Korea Rep.,1992,Asia,pop,43805450
+Korea Rep.,1992,Asia,lifeExp,72.244
+Korea Rep.,1992,Asia,gdpPercap,12104.27872
+Korea Rep.,1997,Asia,pop,46173816
+Korea Rep.,1997,Asia,lifeExp,74.647
+Korea Rep.,1997,Asia,gdpPercap,15993.52796
+Korea Rep.,2002,Asia,pop,47969150
+Korea Rep.,2002,Asia,lifeExp,77.045
+Korea Rep.,2002,Asia,gdpPercap,19233.98818
+Korea Rep.,2007,Asia,pop,49044790
+Korea Rep.,2007,Asia,lifeExp,78.623
+Korea Rep.,2007,Asia,gdpPercap,23348.13973
+Kuwait,1952,Asia,pop,160000
+Kuwait,1952,Asia,lifeExp,55.565
+Kuwait,1952,Asia,gdpPercap,108382.3529
+Kuwait,1957,Asia,pop,212846
+Kuwait,1957,Asia,lifeExp,58.033
+Kuwait,1957,Asia,gdpPercap,113523.1329
+Kuwait,1962,Asia,pop,358266
+Kuwait,1962,Asia,lifeExp,60.47
+Kuwait,1962,Asia,gdpPercap,95458.11176
+Kuwait,1967,Asia,pop,575003
+Kuwait,1967,Asia,lifeExp,64.624
+Kuwait,1967,Asia,gdpPercap,80894.88326
+Kuwait,1972,Asia,pop,841934
+Kuwait,1972,Asia,lifeExp,67.712
+Kuwait,1972,Asia,gdpPercap,109347.867
+Kuwait,1977,Asia,pop,1140357
+Kuwait,1977,Asia,lifeExp,69.343
+Kuwait,1977,Asia,gdpPercap,59265.47714
+Kuwait,1982,Asia,pop,1497494
+Kuwait,1982,Asia,lifeExp,71.309
+Kuwait,1982,Asia,gdpPercap,31354.03573
+Kuwait,1987,Asia,pop,1891487
+Kuwait,1987,Asia,lifeExp,74.174
+Kuwait,1987,Asia,gdpPercap,28118.42998
+Kuwait,1992,Asia,pop,1418095
+Kuwait,1992,Asia,lifeExp,75.19
+Kuwait,1992,Asia,gdpPercap,34932.91959
+Kuwait,1997,Asia,pop,1765345
+Kuwait,1997,Asia,lifeExp,76.156
+Kuwait,1997,Asia,gdpPercap,40300.619960000004
+Kuwait,2002,Asia,pop,2111561
+Kuwait,2002,Asia,lifeExp,76.904
+Kuwait,2002,Asia,gdpPercap,35110.10566
+Kuwait,2007,Asia,pop,2505559
+Kuwait,2007,Asia,lifeExp,77.588
+Kuwait,2007,Asia,gdpPercap,47306.98978
+Lebanon,1952,Asia,pop,1439529
+Lebanon,1952,Asia,lifeExp,55.928
+Lebanon,1952,Asia,gdpPercap,4834.804067
+Lebanon,1957,Asia,pop,1647412
+Lebanon,1957,Asia,lifeExp,59.489
+Lebanon,1957,Asia,gdpPercap,6089.786934
+Lebanon,1962,Asia,pop,1886848
+Lebanon,1962,Asia,lifeExp,62.094
+Lebanon,1962,Asia,gdpPercap,5714.560611
+Lebanon,1967,Asia,pop,2186894
+Lebanon,1967,Asia,lifeExp,63.87
+Lebanon,1967,Asia,gdpPercap,6006.983042
+Lebanon,1972,Asia,pop,2680018
+Lebanon,1972,Asia,lifeExp,65.421
+Lebanon,1972,Asia,gdpPercap,7486.384341
+Lebanon,1977,Asia,pop,3115787
+Lebanon,1977,Asia,lifeExp,66.099
+Lebanon,1977,Asia,gdpPercap,8659.696836
+Lebanon,1982,Asia,pop,3086876
+Lebanon,1982,Asia,lifeExp,66.983
+Lebanon,1982,Asia,gdpPercap,7640.519521
+Lebanon,1987,Asia,pop,3089353
+Lebanon,1987,Asia,lifeExp,67.926
+Lebanon,1987,Asia,gdpPercap,5377.091329
+Lebanon,1992,Asia,pop,3219994
+Lebanon,1992,Asia,lifeExp,69.292
+Lebanon,1992,Asia,gdpPercap,6890.806854
+Lebanon,1997,Asia,pop,3430388
+Lebanon,1997,Asia,lifeExp,70.265
+Lebanon,1997,Asia,gdpPercap,8754.96385
+Lebanon,2002,Asia,pop,3677780
+Lebanon,2002,Asia,lifeExp,71.028
+Lebanon,2002,Asia,gdpPercap,9313.93883
+Lebanon,2007,Asia,pop,3921278
+Lebanon,2007,Asia,lifeExp,71.993
+Lebanon,2007,Asia,gdpPercap,10461.05868
+Lesotho,1952,Africa,pop,748747
+Lesotho,1952,Africa,lifeExp,42.138
+Lesotho,1952,Africa,gdpPercap,298.8462121
+Lesotho,1957,Africa,pop,813338
+Lesotho,1957,Africa,lifeExp,45.047
+Lesotho,1957,Africa,gdpPercap,335.9971151
+Lesotho,1962,Africa,pop,893143
+Lesotho,1962,Africa,lifeExp,47.747
+Lesotho,1962,Africa,gdpPercap,411.8006266
+Lesotho,1967,Africa,pop,996380
+Lesotho,1967,Africa,lifeExp,48.492
+Lesotho,1967,Africa,gdpPercap,498.6390265
+Lesotho,1972,Africa,pop,1116779
+Lesotho,1972,Africa,lifeExp,49.767
+Lesotho,1972,Africa,gdpPercap,496.5815922
+Lesotho,1977,Africa,pop,1251524
+Lesotho,1977,Africa,lifeExp,52.208
+Lesotho,1977,Africa,gdpPercap,745.3695408
+Lesotho,1982,Africa,pop,1411807
+Lesotho,1982,Africa,lifeExp,55.078
+Lesotho,1982,Africa,gdpPercap,797.2631074
+Lesotho,1987,Africa,pop,1599200
+Lesotho,1987,Africa,lifeExp,57.18
+Lesotho,1987,Africa,gdpPercap,773.9932141
+Lesotho,1992,Africa,pop,1803195
+Lesotho,1992,Africa,lifeExp,59.685
+Lesotho,1992,Africa,gdpPercap,977.4862725
+Lesotho,1997,Africa,pop,1982823
+Lesotho,1997,Africa,lifeExp,55.558
+Lesotho,1997,Africa,gdpPercap,1186.147994
+Lesotho,2002,Africa,pop,2046772
+Lesotho,2002,Africa,lifeExp,44.593
+Lesotho,2002,Africa,gdpPercap,1275.184575
+Lesotho,2007,Africa,pop,2012649
+Lesotho,2007,Africa,lifeExp,42.592
+Lesotho,2007,Africa,gdpPercap,1569.331442
+Liberia,1952,Africa,pop,863308
+Liberia,1952,Africa,lifeExp,38.48
+Liberia,1952,Africa,gdpPercap,575.5729961
+Liberia,1957,Africa,pop,975950
+Liberia,1957,Africa,lifeExp,39.486
+Liberia,1957,Africa,gdpPercap,620.9699901
+Liberia,1962,Africa,pop,1112796
+Liberia,1962,Africa,lifeExp,40.502
+Liberia,1962,Africa,gdpPercap,634.1951625
+Liberia,1967,Africa,pop,1279406
+Liberia,1967,Africa,lifeExp,41.536
+Liberia,1967,Africa,gdpPercap,713.6036483
+Liberia,1972,Africa,pop,1482628
+Liberia,1972,Africa,lifeExp,42.614
+Liberia,1972,Africa,gdpPercap,803.0054535
+Liberia,1977,Africa,pop,1703617
+Liberia,1977,Africa,lifeExp,43.764
+Liberia,1977,Africa,gdpPercap,640.3224383
+Liberia,1982,Africa,pop,1956875
+Liberia,1982,Africa,lifeExp,44.852
+Liberia,1982,Africa,gdpPercap,572.1995694
+Liberia,1987,Africa,pop,2269414
+Liberia,1987,Africa,lifeExp,46.027
+Liberia,1987,Africa,gdpPercap,506.1138573
+Liberia,1992,Africa,pop,1912974
+Liberia,1992,Africa,lifeExp,40.802
+Liberia,1992,Africa,gdpPercap,636.6229191
+Liberia,1997,Africa,pop,2200725
+Liberia,1997,Africa,lifeExp,42.221
+Liberia,1997,Africa,gdpPercap,609.17395079999994
+Liberia,2002,Africa,pop,2814651
+Liberia,2002,Africa,lifeExp,43.753
+Liberia,2002,Africa,gdpPercap,531.4823679
+Liberia,2007,Africa,pop,3193942
+Liberia,2007,Africa,lifeExp,45.678
+Liberia,2007,Africa,gdpPercap,414.5073415
+Libya,1952,Africa,pop,1019729
+Libya,1952,Africa,lifeExp,42.723
+Libya,1952,Africa,gdpPercap,2387.54806
+Libya,1957,Africa,pop,1201578
+Libya,1957,Africa,lifeExp,45.289
+Libya,1957,Africa,gdpPercap,3448.284395
+Libya,1962,Africa,pop,1441863
+Libya,1962,Africa,lifeExp,47.808
+Libya,1962,Africa,gdpPercap,6757.030816
+Libya,1967,Africa,pop,1759224
+Libya,1967,Africa,lifeExp,50.227
+Libya,1967,Africa,gdpPercap,18772.75169
+Libya,1972,Africa,pop,2183877
+Libya,1972,Africa,lifeExp,52.773
+Libya,1972,Africa,gdpPercap,21011.49721
+Libya,1977,Africa,pop,2721783
+Libya,1977,Africa,lifeExp,57.442
+Libya,1977,Africa,gdpPercap,21951.21176
+Libya,1982,Africa,pop,3344074
+Libya,1982,Africa,lifeExp,62.155
+Libya,1982,Africa,gdpPercap,17364.27538
+Libya,1987,Africa,pop,3799845
+Libya,1987,Africa,lifeExp,66.234
+Libya,1987,Africa,gdpPercap,11770.5898
+Libya,1992,Africa,pop,4364501
+Libya,1992,Africa,lifeExp,68.755
+Libya,1992,Africa,gdpPercap,9640.138501
+Libya,1997,Africa,pop,4759670
+Libya,1997,Africa,lifeExp,71.555
+Libya,1997,Africa,gdpPercap,9467.446056
+Libya,2002,Africa,pop,5368585
+Libya,2002,Africa,lifeExp,72.737
+Libya,2002,Africa,gdpPercap,9534.677467
+Libya,2007,Africa,pop,6036914
+Libya,2007,Africa,lifeExp,73.952
+Libya,2007,Africa,gdpPercap,12057.49928
+Madagascar,1952,Africa,pop,4762912
+Madagascar,1952,Africa,lifeExp,36.681
+Madagascar,1952,Africa,gdpPercap,1443.011715
+Madagascar,1957,Africa,pop,5181679
+Madagascar,1957,Africa,lifeExp,38.865
+Madagascar,1957,Africa,gdpPercap,1589.20275
+Madagascar,1962,Africa,pop,5703324
+Madagascar,1962,Africa,lifeExp,40.848
+Madagascar,1962,Africa,gdpPercap,1643.38711
+Madagascar,1967,Africa,pop,6334556
+Madagascar,1967,Africa,lifeExp,42.881
+Madagascar,1967,Africa,gdpPercap,1634.047282
+Madagascar,1972,Africa,pop,7082430
+Madagascar,1972,Africa,lifeExp,44.851
+Madagascar,1972,Africa,gdpPercap,1748.562982
+Madagascar,1977,Africa,pop,8007166
+Madagascar,1977,Africa,lifeExp,46.881
+Madagascar,1977,Africa,gdpPercap,1544.228586
+Madagascar,1982,Africa,pop,9171477
+Madagascar,1982,Africa,lifeExp,48.969
+Madagascar,1982,Africa,gdpPercap,1302.878658
+Madagascar,1987,Africa,pop,10568642
+Madagascar,1987,Africa,lifeExp,49.35
+Madagascar,1987,Africa,gdpPercap,1155.441948
+Madagascar,1992,Africa,pop,12210395
+Madagascar,1992,Africa,lifeExp,52.214
+Madagascar,1992,Africa,gdpPercap,1040.67619
+Madagascar,1997,Africa,pop,14165114
+Madagascar,1997,Africa,lifeExp,54.978
+Madagascar,1997,Africa,gdpPercap,986.2958956
+Madagascar,2002,Africa,pop,16473477
+Madagascar,2002,Africa,lifeExp,57.286
+Madagascar,2002,Africa,gdpPercap,894.6370822
+Madagascar,2007,Africa,pop,19167654
+Madagascar,2007,Africa,lifeExp,59.443
+Madagascar,2007,Africa,gdpPercap,1044.770126
+Malawi,1952,Africa,pop,2917802
+Malawi,1952,Africa,lifeExp,36.256
+Malawi,1952,Africa,gdpPercap,369.1650802
+Malawi,1957,Africa,pop,3221238
+Malawi,1957,Africa,lifeExp,37.207
+Malawi,1957,Africa,gdpPercap,416.3698064
+Malawi,1962,Africa,pop,3628608
+Malawi,1962,Africa,lifeExp,38.41
+Malawi,1962,Africa,gdpPercap,427.9010856
+Malawi,1967,Africa,pop,4147252
+Malawi,1967,Africa,lifeExp,39.487
+Malawi,1967,Africa,gdpPercap,495.5147806
+Malawi,1972,Africa,pop,4730997
+Malawi,1972,Africa,lifeExp,41.766
+Malawi,1972,Africa,gdpPercap,584.6219709
+Malawi,1977,Africa,pop,5637246
+Malawi,1977,Africa,lifeExp,43.767
+Malawi,1977,Africa,gdpPercap,663.2236766
+Malawi,1982,Africa,pop,6502825
+Malawi,1982,Africa,lifeExp,45.642
+Malawi,1982,Africa,gdpPercap,632.8039209
+Malawi,1987,Africa,pop,7824747
+Malawi,1987,Africa,lifeExp,47.457
+Malawi,1987,Africa,gdpPercap,635.5173634
+Malawi,1992,Africa,pop,10014249
+Malawi,1992,Africa,lifeExp,49.42
+Malawi,1992,Africa,gdpPercap,563.2000145
+Malawi,1997,Africa,pop,10419991
+Malawi,1997,Africa,lifeExp,47.495
+Malawi,1997,Africa,gdpPercap,692.2758103
+Malawi,2002,Africa,pop,11824495
+Malawi,2002,Africa,lifeExp,45.009
+Malawi,2002,Africa,gdpPercap,665.4231186
+Malawi,2007,Africa,pop,13327079
+Malawi,2007,Africa,lifeExp,48.303
+Malawi,2007,Africa,gdpPercap,759.3499101
+Malaysia,1952,Asia,pop,6748378
+Malaysia,1952,Asia,lifeExp,48.463
+Malaysia,1952,Asia,gdpPercap,1831.132894
+Malaysia,1957,Asia,pop,7739235
+Malaysia,1957,Asia,lifeExp,52.102
+Malaysia,1957,Asia,gdpPercap,1810.066992
+Malaysia,1962,Asia,pop,8906385
+Malaysia,1962,Asia,lifeExp,55.737
+Malaysia,1962,Asia,gdpPercap,2036.884944
+Malaysia,1967,Asia,pop,10154878
+Malaysia,1967,Asia,lifeExp,59.371
+Malaysia,1967,Asia,gdpPercap,2277.742396
+Malaysia,1972,Asia,pop,11441462
+Malaysia,1972,Asia,lifeExp,63.01
+Malaysia,1972,Asia,gdpPercap,2849.09478
+Malaysia,1977,Asia,pop,12845381
+Malaysia,1977,Asia,lifeExp,65.256
+Malaysia,1977,Asia,gdpPercap,3827.921571
+Malaysia,1982,Asia,pop,14441916
+Malaysia,1982,Asia,lifeExp,68
+Malaysia,1982,Asia,gdpPercap,4920.355951
+Malaysia,1987,Asia,pop,16331785
+Malaysia,1987,Asia,lifeExp,69.5
+Malaysia,1987,Asia,gdpPercap,5249.802653
+Malaysia,1992,Asia,pop,18319502
+Malaysia,1992,Asia,lifeExp,70.693
+Malaysia,1992,Asia,gdpPercap,7277.912802
+Malaysia,1997,Asia,pop,20476091
+Malaysia,1997,Asia,lifeExp,71.938
+Malaysia,1997,Asia,gdpPercap,10132.90964
+Malaysia,2002,Asia,pop,22662365
+Malaysia,2002,Asia,lifeExp,73.044
+Malaysia,2002,Asia,gdpPercap,10206.97794
+Malaysia,2007,Asia,pop,24821286
+Malaysia,2007,Asia,lifeExp,74.241
+Malaysia,2007,Asia,gdpPercap,12451.6558
+Mali,1952,Africa,pop,3838168
+Mali,1952,Africa,lifeExp,33.685
+Mali,1952,Africa,gdpPercap,452.3369807
+Mali,1957,Africa,pop,4241884
+Mali,1957,Africa,lifeExp,35.307
+Mali,1957,Africa,gdpPercap,490.3821867
+Mali,1962,Africa,pop,4690372
+Mali,1962,Africa,lifeExp,36.936
+Mali,1962,Africa,gdpPercap,496.1743428
+Mali,1967,Africa,pop,5212416
+Mali,1967,Africa,lifeExp,38.487
+Mali,1967,Africa,gdpPercap,545.0098873
+Mali,1972,Africa,pop,5828158
+Mali,1972,Africa,lifeExp,39.977
+Mali,1972,Africa,gdpPercap,581.3688761
+Mali,1977,Africa,pop,6491649
+Mali,1977,Africa,lifeExp,41.714
+Mali,1977,Africa,gdpPercap,686.3952693
+Mali,1982,Africa,pop,6998256
+Mali,1982,Africa,lifeExp,43.916
+Mali,1982,Africa,gdpPercap,618.0140641
+Mali,1987,Africa,pop,7634008
+Mali,1987,Africa,lifeExp,46.364
+Mali,1987,Africa,gdpPercap,684.1715576
+Mali,1992,Africa,pop,8416215
+Mali,1992,Africa,lifeExp,48.388
+Mali,1992,Africa,gdpPercap,739.014375
+Mali,1997,Africa,pop,9384984
+Mali,1997,Africa,lifeExp,49.903
+Mali,1997,Africa,gdpPercap,790.2579846
+Mali,2002,Africa,pop,10580176
+Mali,2002,Africa,lifeExp,51.818
+Mali,2002,Africa,gdpPercap,951.4097518
+Mali,2007,Africa,pop,12031795
+Mali,2007,Africa,lifeExp,54.467
+Mali,2007,Africa,gdpPercap,1042.581557
+Mauritania,1952,Africa,pop,1022556
+Mauritania,1952,Africa,lifeExp,40.543
+Mauritania,1952,Africa,gdpPercap,743.1159097
+Mauritania,1957,Africa,pop,1076852
+Mauritania,1957,Africa,lifeExp,42.338
+Mauritania,1957,Africa,gdpPercap,846.1202613
+Mauritania,1962,Africa,pop,1146757
+Mauritania,1962,Africa,lifeExp,44.248
+Mauritania,1962,Africa,gdpPercap,1055.896036
+Mauritania,1967,Africa,pop,1230542
+Mauritania,1967,Africa,lifeExp,46.289
+Mauritania,1967,Africa,gdpPercap,1421.145193
+Mauritania,1972,Africa,pop,1332786
+Mauritania,1972,Africa,lifeExp,48.437
+Mauritania,1972,Africa,gdpPercap,1586.851781
+Mauritania,1977,Africa,pop,1456688
+Mauritania,1977,Africa,lifeExp,50.852
+Mauritania,1977,Africa,gdpPercap,1497.492223
+Mauritania,1982,Africa,pop,1622136
+Mauritania,1982,Africa,lifeExp,53.599
+Mauritania,1982,Africa,gdpPercap,1481.150189
+Mauritania,1987,Africa,pop,1841240
+Mauritania,1987,Africa,lifeExp,56.145
+Mauritania,1987,Africa,gdpPercap,1421.603576
+Mauritania,1992,Africa,pop,2119465
+Mauritania,1992,Africa,lifeExp,58.333
+Mauritania,1992,Africa,gdpPercap,1361.369784
+Mauritania,1997,Africa,pop,2444741
+Mauritania,1997,Africa,lifeExp,60.43
+Mauritania,1997,Africa,gdpPercap,1483.136136
+Mauritania,2002,Africa,pop,2828858
+Mauritania,2002,Africa,lifeExp,62.247
+Mauritania,2002,Africa,gdpPercap,1579.019543
+Mauritania,2007,Africa,pop,3270065
+Mauritania,2007,Africa,lifeExp,64.164
+Mauritania,2007,Africa,gdpPercap,1803.151496
+Mauritius,1952,Africa,pop,516556
+Mauritius,1952,Africa,lifeExp,50.986
+Mauritius,1952,Africa,gdpPercap,1967.955707
+Mauritius,1957,Africa,pop,609816
+Mauritius,1957,Africa,lifeExp,58.089
+Mauritius,1957,Africa,gdpPercap,2034.037981
+Mauritius,1962,Africa,pop,701016
+Mauritius,1962,Africa,lifeExp,60.246
+Mauritius,1962,Africa,gdpPercap,2529.067487
+Mauritius,1967,Africa,pop,789309
+Mauritius,1967,Africa,lifeExp,61.557
+Mauritius,1967,Africa,gdpPercap,2475.387562
+Mauritius,1972,Africa,pop,851334
+Mauritius,1972,Africa,lifeExp,62.944
+Mauritius,1972,Africa,gdpPercap,2575.484158
+Mauritius,1977,Africa,pop,913025
+Mauritius,1977,Africa,lifeExp,64.93
+Mauritius,1977,Africa,gdpPercap,3710.982963
+Mauritius,1982,Africa,pop,992040
+Mauritius,1982,Africa,lifeExp,66.711
+Mauritius,1982,Africa,gdpPercap,3688.037739
+Mauritius,1987,Africa,pop,1042663
+Mauritius,1987,Africa,lifeExp,68.74
+Mauritius,1987,Africa,gdpPercap,4783.586903
+Mauritius,1992,Africa,pop,1096202
+Mauritius,1992,Africa,lifeExp,69.745
+Mauritius,1992,Africa,gdpPercap,6058.253846
+Mauritius,1997,Africa,pop,1149818
+Mauritius,1997,Africa,lifeExp,70.736
+Mauritius,1997,Africa,gdpPercap,7425.705295
+Mauritius,2002,Africa,pop,1200206
+Mauritius,2002,Africa,lifeExp,71.954
+Mauritius,2002,Africa,gdpPercap,9021.815894
+Mauritius,2007,Africa,pop,1250882
+Mauritius,2007,Africa,lifeExp,72.801
+Mauritius,2007,Africa,gdpPercap,10956.99112
+Mexico,1952,Americas,pop,30144317
+Mexico,1952,Americas,lifeExp,50.789
+Mexico,1952,Americas,gdpPercap,3478.125529
+Mexico,1957,Americas,pop,35015548
+Mexico,1957,Americas,lifeExp,55.19
+Mexico,1957,Americas,gdpPercap,4131.546641
+Mexico,1962,Americas,pop,41121485
+Mexico,1962,Americas,lifeExp,58.299
+Mexico,1962,Americas,gdpPercap,4581.609385
+Mexico,1967,Americas,pop,47995559
+Mexico,1967,Americas,lifeExp,60.11
+Mexico,1967,Americas,gdpPercap,5754.733883
+Mexico,1972,Americas,pop,55984294
+Mexico,1972,Americas,lifeExp,62.361
+Mexico,1972,Americas,gdpPercap,6809.40669
+Mexico,1977,Americas,pop,63759976
+Mexico,1977,Americas,lifeExp,65.032
+Mexico,1977,Americas,gdpPercap,7674.929108
+Mexico,1982,Americas,pop,71640904
+Mexico,1982,Americas,lifeExp,67.405
+Mexico,1982,Americas,gdpPercap,9611.147541
+Mexico,1987,Americas,pop,80122492
+Mexico,1987,Americas,lifeExp,69.498
+Mexico,1987,Americas,gdpPercap,8688.156003
+Mexico,1992,Americas,pop,88111030
+Mexico,1992,Americas,lifeExp,71.455
+Mexico,1992,Americas,gdpPercap,9472.384295
+Mexico,1997,Americas,pop,95895146
+Mexico,1997,Americas,lifeExp,73.67
+Mexico,1997,Americas,gdpPercap,9767.29753
+Mexico,2002,Americas,pop,102479927
+Mexico,2002,Americas,lifeExp,74.902
+Mexico,2002,Americas,gdpPercap,10742.44053
+Mexico,2007,Americas,pop,108700891
+Mexico,2007,Americas,lifeExp,76.195
+Mexico,2007,Americas,gdpPercap,11977.57496
+Mongolia,1952,Asia,pop,800663
+Mongolia,1952,Asia,lifeExp,42.244
+Mongolia,1952,Asia,gdpPercap,786.5668575
+Mongolia,1957,Asia,pop,882134
+Mongolia,1957,Asia,lifeExp,45.248
+Mongolia,1957,Asia,gdpPercap,912.6626085
+Mongolia,1962,Asia,pop,1010280
+Mongolia,1962,Asia,lifeExp,48.251
+Mongolia,1962,Asia,gdpPercap,1056.353958
+Mongolia,1967,Asia,pop,1149500
+Mongolia,1967,Asia,lifeExp,51.253
+Mongolia,1967,Asia,gdpPercap,1226.04113
+Mongolia,1972,Asia,pop,1320500
+Mongolia,1972,Asia,lifeExp,53.754
+Mongolia,1972,Asia,gdpPercap,1421.741975
+Mongolia,1977,Asia,pop,1528000
+Mongolia,1977,Asia,lifeExp,55.491
+Mongolia,1977,Asia,gdpPercap,1647.511665
+Mongolia,1982,Asia,pop,1756032
+Mongolia,1982,Asia,lifeExp,57.489
+Mongolia,1982,Asia,gdpPercap,2000.603139
+Mongolia,1987,Asia,pop,2015133
+Mongolia,1987,Asia,lifeExp,60.222
+Mongolia,1987,Asia,gdpPercap,2338.008304
+Mongolia,1992,Asia,pop,2312802
+Mongolia,1992,Asia,lifeExp,61.271
+Mongolia,1992,Asia,gdpPercap,1785.402016
+Mongolia,1997,Asia,pop,2494803
+Mongolia,1997,Asia,lifeExp,63.625
+Mongolia,1997,Asia,gdpPercap,1902.2521
+Mongolia,2002,Asia,pop,2674234
+Mongolia,2002,Asia,lifeExp,65.033
+Mongolia,2002,Asia,gdpPercap,2140.739323
+Mongolia,2007,Asia,pop,2874127
+Mongolia,2007,Asia,lifeExp,66.803
+Mongolia,2007,Asia,gdpPercap,3095.772271
+Montenegro,1952,Europe,pop,413834
+Montenegro,1952,Europe,lifeExp,59.164
+Montenegro,1952,Europe,gdpPercap,2647.585601
+Montenegro,1957,Europe,pop,442829
+Montenegro,1957,Europe,lifeExp,61.448
+Montenegro,1957,Europe,gdpPercap,3682.259903
+Montenegro,1962,Europe,pop,474528
+Montenegro,1962,Europe,lifeExp,63.728
+Montenegro,1962,Europe,gdpPercap,4649.593785
+Montenegro,1967,Europe,pop,501035
+Montenegro,1967,Europe,lifeExp,67.178
+Montenegro,1967,Europe,gdpPercap,5907.850937
+Montenegro,1972,Europe,pop,527678
+Montenegro,1972,Europe,lifeExp,70.636
+Montenegro,1972,Europe,gdpPercap,7778.414017
+Montenegro,1977,Europe,pop,560073
+Montenegro,1977,Europe,lifeExp,73.066
+Montenegro,1977,Europe,gdpPercap,9595.929905
+Montenegro,1982,Europe,pop,562548
+Montenegro,1982,Europe,lifeExp,74.101
+Montenegro,1982,Europe,gdpPercap,11222.58762
+Montenegro,1987,Europe,pop,569473
+Montenegro,1987,Europe,lifeExp,74.865
+Montenegro,1987,Europe,gdpPercap,11732.51017
+Montenegro,1992,Europe,pop,621621
+Montenegro,1992,Europe,lifeExp,75.435
+Montenegro,1992,Europe,gdpPercap,7003.339037
+Montenegro,1997,Europe,pop,692651
+Montenegro,1997,Europe,lifeExp,75.445
+Montenegro,1997,Europe,gdpPercap,6465.613349
+Montenegro,2002,Europe,pop,720230
+Montenegro,2002,Europe,lifeExp,73.981
+Montenegro,2002,Europe,gdpPercap,6557.194282
+Montenegro,2007,Europe,pop,684736
+Montenegro,2007,Europe,lifeExp,74.543
+Montenegro,2007,Europe,gdpPercap,9253.896111
+Morocco,1952,Africa,pop,9939217
+Morocco,1952,Africa,lifeExp,42.873
+Morocco,1952,Africa,gdpPercap,1688.20357
+Morocco,1957,Africa,pop,11406350
+Morocco,1957,Africa,lifeExp,45.423
+Morocco,1957,Africa,gdpPercap,1642.002314
+Morocco,1962,Africa,pop,13056604
+Morocco,1962,Africa,lifeExp,47.924
+Morocco,1962,Africa,gdpPercap,1566.353493
+Morocco,1967,Africa,pop,14770296
+Morocco,1967,Africa,lifeExp,50.335
+Morocco,1967,Africa,gdpPercap,1711.04477
+Morocco,1972,Africa,pop,16660670
+Morocco,1972,Africa,lifeExp,52.862
+Morocco,1972,Africa,gdpPercap,1930.194975
+Morocco,1977,Africa,pop,18396941
+Morocco,1977,Africa,lifeExp,55.73
+Morocco,1977,Africa,gdpPercap,2370.619976
+Morocco,1982,Africa,pop,20198730
+Morocco,1982,Africa,lifeExp,59.65
+Morocco,1982,Africa,gdpPercap,2702.620356
+Morocco,1987,Africa,pop,22987397
+Morocco,1987,Africa,lifeExp,62.677
+Morocco,1987,Africa,gdpPercap,2755.046991
+Morocco,1992,Africa,pop,25798239
+Morocco,1992,Africa,lifeExp,65.393
+Morocco,1992,Africa,gdpPercap,2948.047252
+Morocco,1997,Africa,pop,28529501
+Morocco,1997,Africa,lifeExp,67.66
+Morocco,1997,Africa,gdpPercap,2982.101858
+Morocco,2002,Africa,pop,31167783
+Morocco,2002,Africa,lifeExp,69.615
+Morocco,2002,Africa,gdpPercap,3258.495584
+Morocco,2007,Africa,pop,33757175
+Morocco,2007,Africa,lifeExp,71.164
+Morocco,2007,Africa,gdpPercap,3820.17523
+Mozambique,1952,Africa,pop,6446316
+Mozambique,1952,Africa,lifeExp,31.286
+Mozambique,1952,Africa,gdpPercap,468.5260381
+Mozambique,1957,Africa,pop,7038035
+Mozambique,1957,Africa,lifeExp,33.779
+Mozambique,1957,Africa,gdpPercap,495.5868333
+Mozambique,1962,Africa,pop,7788944
+Mozambique,1962,Africa,lifeExp,36.161
+Mozambique,1962,Africa,gdpPercap,556.6863539
+Mozambique,1967,Africa,pop,8680909
+Mozambique,1967,Africa,lifeExp,38.113
+Mozambique,1967,Africa,gdpPercap,566.6691539
+Mozambique,1972,Africa,pop,9809596
+Mozambique,1972,Africa,lifeExp,40.328
+Mozambique,1972,Africa,gdpPercap,724.9178037
+Mozambique,1977,Africa,pop,11127868
+Mozambique,1977,Africa,lifeExp,42.495
+Mozambique,1977,Africa,gdpPercap,502.3197334
+Mozambique,1982,Africa,pop,12587223
+Mozambique,1982,Africa,lifeExp,42.795
+Mozambique,1982,Africa,gdpPercap,462.2114149
+Mozambique,1987,Africa,pop,12891952
+Mozambique,1987,Africa,lifeExp,42.861
+Mozambique,1987,Africa,gdpPercap,389.8761846
+Mozambique,1992,Africa,pop,13160731
+Mozambique,1992,Africa,lifeExp,44.284
+Mozambique,1992,Africa,gdpPercap,410.8968239
+Mozambique,1997,Africa,pop,16603334
+Mozambique,1997,Africa,lifeExp,46.344
+Mozambique,1997,Africa,gdpPercap,472.3460771
+Mozambique,2002,Africa,pop,18473780
+Mozambique,2002,Africa,lifeExp,44.026
+Mozambique,2002,Africa,gdpPercap,633.6179466
+Mozambique,2007,Africa,pop,19951656
+Mozambique,2007,Africa,lifeExp,42.082
+Mozambique,2007,Africa,gdpPercap,823.6856205
+Myanmar,1952,Asia,pop,20092996
+Myanmar,1952,Asia,lifeExp,36.319
+Myanmar,1952,Asia,gdpPercap,331
+Myanmar,1957,Asia,pop,21731844
+Myanmar,1957,Asia,lifeExp,41.905
+Myanmar,1957,Asia,gdpPercap,350
+Myanmar,1962,Asia,pop,23634436
+Myanmar,1962,Asia,lifeExp,45.108
+Myanmar,1962,Asia,gdpPercap,388
+Myanmar,1967,Asia,pop,25870271
+Myanmar,1967,Asia,lifeExp,49.379
+Myanmar,1967,Asia,gdpPercap,349
+Myanmar,1972,Asia,pop,28466390
+Myanmar,1972,Asia,lifeExp,53.07
+Myanmar,1972,Asia,gdpPercap,357
+Myanmar,1977,Asia,pop,31528087
+Myanmar,1977,Asia,lifeExp,56.059
+Myanmar,1977,Asia,gdpPercap,371
+Myanmar,1982,Asia,pop,34680442
+Myanmar,1982,Asia,lifeExp,58.056
+Myanmar,1982,Asia,gdpPercap,424
+Myanmar,1987,Asia,pop,38028578
+Myanmar,1987,Asia,lifeExp,58.339
+Myanmar,1987,Asia,gdpPercap,385
+Myanmar,1992,Asia,pop,40546538
+Myanmar,1992,Asia,lifeExp,59.32
+Myanmar,1992,Asia,gdpPercap,347
+Myanmar,1997,Asia,pop,43247867
+Myanmar,1997,Asia,lifeExp,60.328
+Myanmar,1997,Asia,gdpPercap,415
+Myanmar,2002,Asia,pop,45598081
+Myanmar,2002,Asia,lifeExp,59.908
+Myanmar,2002,Asia,gdpPercap,611
+Myanmar,2007,Asia,pop,47761980
+Myanmar,2007,Asia,lifeExp,62.069
+Myanmar,2007,Asia,gdpPercap,944
+Namibia,1952,Africa,pop,485831
+Namibia,1952,Africa,lifeExp,41.725
+Namibia,1952,Africa,gdpPercap,2423.780443
+Namibia,1957,Africa,pop,548080
+Namibia,1957,Africa,lifeExp,45.226
+Namibia,1957,Africa,gdpPercap,2621.448058
+Namibia,1962,Africa,pop,621392
+Namibia,1962,Africa,lifeExp,48.386
+Namibia,1962,Africa,gdpPercap,3173.215595
+Namibia,1967,Africa,pop,706640
+Namibia,1967,Africa,lifeExp,51.159
+Namibia,1967,Africa,gdpPercap,3793.694753
+Namibia,1972,Africa,pop,821782
+Namibia,1972,Africa,lifeExp,53.867
+Namibia,1972,Africa,gdpPercap,3746.080948
+Namibia,1977,Africa,pop,977026
+Namibia,1977,Africa,lifeExp,56.437
+Namibia,1977,Africa,gdpPercap,3876.485958
+Namibia,1982,Africa,pop,1099010
+Namibia,1982,Africa,lifeExp,58.968
+Namibia,1982,Africa,gdpPercap,4191.100511
+Namibia,1987,Africa,pop,1278184
+Namibia,1987,Africa,lifeExp,60.835
+Namibia,1987,Africa,gdpPercap,3693.731337
+Namibia,1992,Africa,pop,1554253
+Namibia,1992,Africa,lifeExp,61.999
+Namibia,1992,Africa,gdpPercap,3804.537999
+Namibia,1997,Africa,pop,1774766
+Namibia,1997,Africa,lifeExp,58.909
+Namibia,1997,Africa,gdpPercap,3899.52426
+Namibia,2002,Africa,pop,1972153
+Namibia,2002,Africa,lifeExp,51.479
+Namibia,2002,Africa,gdpPercap,4072.324751
+Namibia,2007,Africa,pop,2055080
+Namibia,2007,Africa,lifeExp,52.906
+Namibia,2007,Africa,gdpPercap,4811.060429
+Nepal,1952,Asia,pop,9182536
+Nepal,1952,Asia,lifeExp,36.157
+Nepal,1952,Asia,gdpPercap,545.8657229
+Nepal,1957,Asia,pop,9682338
+Nepal,1957,Asia,lifeExp,37.686
+Nepal,1957,Asia,gdpPercap,597.9363558
+Nepal,1962,Asia,pop,10332057
+Nepal,1962,Asia,lifeExp,39.393
+Nepal,1962,Asia,gdpPercap,652.3968593
+Nepal,1967,Asia,pop,11261690
+Nepal,1967,Asia,lifeExp,41.472
+Nepal,1967,Asia,gdpPercap,676.4422254
+Nepal,1972,Asia,pop,12412593
+Nepal,1972,Asia,lifeExp,43.971
+Nepal,1972,Asia,gdpPercap,674.7881296
+Nepal,1977,Asia,pop,13933198
+Nepal,1977,Asia,lifeExp,46.748
+Nepal,1977,Asia,gdpPercap,694.1124398
+Nepal,1982,Asia,pop,15796314
+Nepal,1982,Asia,lifeExp,49.594
+Nepal,1982,Asia,gdpPercap,718.3730947
+Nepal,1987,Asia,pop,17917180
+Nepal,1987,Asia,lifeExp,52.537
+Nepal,1987,Asia,gdpPercap,775.6324501
+Nepal,1992,Asia,pop,20326209
+Nepal,1992,Asia,lifeExp,55.727
+Nepal,1992,Asia,gdpPercap,897.7403604
+Nepal,1997,Asia,pop,23001113
+Nepal,1997,Asia,lifeExp,59.426
+Nepal,1997,Asia,gdpPercap,1010.892138
+Nepal,2002,Asia,pop,25873917
+Nepal,2002,Asia,lifeExp,61.34
+Nepal,2002,Asia,gdpPercap,1057.206311
+Nepal,2007,Asia,pop,28901790
+Nepal,2007,Asia,lifeExp,63.785
+Nepal,2007,Asia,gdpPercap,1091.359778
+Netherlands,1952,Europe,pop,10381988
+Netherlands,1952,Europe,lifeExp,72.13
+Netherlands,1952,Europe,gdpPercap,8941.571858
+Netherlands,1957,Europe,pop,11026383
+Netherlands,1957,Europe,lifeExp,72.99
+Netherlands,1957,Europe,gdpPercap,11276.19344
+Netherlands,1962,Europe,pop,11805689
+Netherlands,1962,Europe,lifeExp,73.23
+Netherlands,1962,Europe,gdpPercap,12790.84956
+Netherlands,1967,Europe,pop,12596822
+Netherlands,1967,Europe,lifeExp,73.82
+Netherlands,1967,Europe,gdpPercap,15363.25136
+Netherlands,1972,Europe,pop,13329874
+Netherlands,1972,Europe,lifeExp,73.75
+Netherlands,1972,Europe,gdpPercap,18794.74567
+Netherlands,1977,Europe,pop,13852989
+Netherlands,1977,Europe,lifeExp,75.24
+Netherlands,1977,Europe,gdpPercap,21209.0592
+Netherlands,1982,Europe,pop,14310401
+Netherlands,1982,Europe,lifeExp,76.05
+Netherlands,1982,Europe,gdpPercap,21399.46046
+Netherlands,1987,Europe,pop,14665278
+Netherlands,1987,Europe,lifeExp,76.83
+Netherlands,1987,Europe,gdpPercap,23651.32361
+Netherlands,1992,Europe,pop,15174244
+Netherlands,1992,Europe,lifeExp,77.42
+Netherlands,1992,Europe,gdpPercap,26790.94961
+Netherlands,1997,Europe,pop,15604464
+Netherlands,1997,Europe,lifeExp,78.03
+Netherlands,1997,Europe,gdpPercap,30246.13063
+Netherlands,2002,Europe,pop,16122830
+Netherlands,2002,Europe,lifeExp,78.53
+Netherlands,2002,Europe,gdpPercap,33724.75778
+Netherlands,2007,Europe,pop,16570613
+Netherlands,2007,Europe,lifeExp,79.762
+Netherlands,2007,Europe,gdpPercap,36797.93332
+New Zealand,1952,Oceania,pop,1994794
+New Zealand,1952,Oceania,lifeExp,69.39
+New Zealand,1952,Oceania,gdpPercap,10556.57566
+New Zealand,1957,Oceania,pop,2229407
+New Zealand,1957,Oceania,lifeExp,70.26
+New Zealand,1957,Oceania,gdpPercap,12247.39532
+New Zealand,1962,Oceania,pop,2488550
+New Zealand,1962,Oceania,lifeExp,71.24
+New Zealand,1962,Oceania,gdpPercap,13175.678
+New Zealand,1967,Oceania,pop,2728150
+New Zealand,1967,Oceania,lifeExp,71.52
+New Zealand,1967,Oceania,gdpPercap,14463.91893
+New Zealand,1972,Oceania,pop,2929100
+New Zealand,1972,Oceania,lifeExp,71.89
+New Zealand,1972,Oceania,gdpPercap,16046.03728
+New Zealand,1977,Oceania,pop,3164900
+New Zealand,1977,Oceania,lifeExp,72.22
+New Zealand,1977,Oceania,gdpPercap,16233.7177
+New Zealand,1982,Oceania,pop,3210650
+New Zealand,1982,Oceania,lifeExp,73.84
+New Zealand,1982,Oceania,gdpPercap,17632.4104
+New Zealand,1987,Oceania,pop,3317166
+New Zealand,1987,Oceania,lifeExp,74.32
+New Zealand,1987,Oceania,gdpPercap,19007.19129
+New Zealand,1992,Oceania,pop,3437674
+New Zealand,1992,Oceania,lifeExp,76.33
+New Zealand,1992,Oceania,gdpPercap,18363.32494
+New Zealand,1997,Oceania,pop,3676187
+New Zealand,1997,Oceania,lifeExp,77.55
+New Zealand,1997,Oceania,gdpPercap,21050.41377
+New Zealand,2002,Oceania,pop,3908037
+New Zealand,2002,Oceania,lifeExp,79.11
+New Zealand,2002,Oceania,gdpPercap,23189.80135
+New Zealand,2007,Oceania,pop,4115771
+New Zealand,2007,Oceania,lifeExp,80.204
+New Zealand,2007,Oceania,gdpPercap,25185.00911
+Nicaragua,1952,Americas,pop,1165790
+Nicaragua,1952,Americas,lifeExp,42.314
+Nicaragua,1952,Americas,gdpPercap,3112.363948
+Nicaragua,1957,Americas,pop,1358828
+Nicaragua,1957,Americas,lifeExp,45.432
+Nicaragua,1957,Americas,gdpPercap,3457.415947
+Nicaragua,1962,Americas,pop,1590597
+Nicaragua,1962,Americas,lifeExp,48.632
+Nicaragua,1962,Americas,gdpPercap,3634.364406
+Nicaragua,1967,Americas,pop,1865490
+Nicaragua,1967,Americas,lifeExp,51.884
+Nicaragua,1967,Americas,gdpPercap,4643.393534
+Nicaragua,1972,Americas,pop,2182908
+Nicaragua,1972,Americas,lifeExp,55.151
+Nicaragua,1972,Americas,gdpPercap,4688.593267
+Nicaragua,1977,Americas,pop,2554598
+Nicaragua,1977,Americas,lifeExp,57.47
+Nicaragua,1977,Americas,gdpPercap,5486.371089
+Nicaragua,1982,Americas,pop,2979423
+Nicaragua,1982,Americas,lifeExp,59.298
+Nicaragua,1982,Americas,gdpPercap,3470.338156
+Nicaragua,1987,Americas,pop,3344353
+Nicaragua,1987,Americas,lifeExp,62.008
+Nicaragua,1987,Americas,gdpPercap,2955.984375
+Nicaragua,1992,Americas,pop,4017939
+Nicaragua,1992,Americas,lifeExp,65.843
+Nicaragua,1992,Americas,gdpPercap,2170.151724
+Nicaragua,1997,Americas,pop,4609572
+Nicaragua,1997,Americas,lifeExp,68.426
+Nicaragua,1997,Americas,gdpPercap,2253.023004
+Nicaragua,2002,Americas,pop,5146848
+Nicaragua,2002,Americas,lifeExp,70.836
+Nicaragua,2002,Americas,gdpPercap,2474.548819
+Nicaragua,2007,Americas,pop,5675356
+Nicaragua,2007,Americas,lifeExp,72.899
+Nicaragua,2007,Americas,gdpPercap,2749.320965
+Niger,1952,Africa,pop,3379468
+Niger,1952,Africa,lifeExp,37.444
+Niger,1952,Africa,gdpPercap,761.879376
+Niger,1957,Africa,pop,3692184
+Niger,1957,Africa,lifeExp,38.598
+Niger,1957,Africa,gdpPercap,835.5234025
+Niger,1962,Africa,pop,4076008
+Niger,1962,Africa,lifeExp,39.487
+Niger,1962,Africa,gdpPercap,997.7661127
+Niger,1967,Africa,pop,4534062
+Niger,1967,Africa,lifeExp,40.118
+Niger,1967,Africa,gdpPercap,1054.384891
+Niger,1972,Africa,pop,5060262
+Niger,1972,Africa,lifeExp,40.546
+Niger,1972,Africa,gdpPercap,954.2092363
+Niger,1977,Africa,pop,5682086
+Niger,1977,Africa,lifeExp,41.291
+Niger,1977,Africa,gdpPercap,808.8970728
+Niger,1982,Africa,pop,6437188
+Niger,1982,Africa,lifeExp,42.598
+Niger,1982,Africa,gdpPercap,909.7221354
+Niger,1987,Africa,pop,7332638
+Niger,1987,Africa,lifeExp,44.555
+Niger,1987,Africa,gdpPercap,668.3000228
+Niger,1992,Africa,pop,8392818
+Niger,1992,Africa,lifeExp,47.391
+Niger,1992,Africa,gdpPercap,581.182725
+Niger,1997,Africa,pop,9666252
+Niger,1997,Africa,lifeExp,51.313
+Niger,1997,Africa,gdpPercap,580.3052092
+Niger,2002,Africa,pop,11140655
+Niger,2002,Africa,lifeExp,54.496
+Niger,2002,Africa,gdpPercap,601.0745012
+Niger,2007,Africa,pop,12894865
+Niger,2007,Africa,lifeExp,56.867
+Niger,2007,Africa,gdpPercap,619.6768924
+Nigeria,1952,Africa,pop,33119096
+Nigeria,1952,Africa,lifeExp,36.324
+Nigeria,1952,Africa,gdpPercap,1077.281856
+Nigeria,1957,Africa,pop,37173340
+Nigeria,1957,Africa,lifeExp,37.802
+Nigeria,1957,Africa,gdpPercap,1100.592563
+Nigeria,1962,Africa,pop,41871351
+Nigeria,1962,Africa,lifeExp,39.36
+Nigeria,1962,Africa,gdpPercap,1150.927478
+Nigeria,1967,Africa,pop,47287752
+Nigeria,1967,Africa,lifeExp,41.04
+Nigeria,1967,Africa,gdpPercap,1014.514104
+Nigeria,1972,Africa,pop,53740085
+Nigeria,1972,Africa,lifeExp,42.821
+Nigeria,1972,Africa,gdpPercap,1698.388838
+Nigeria,1977,Africa,pop,62209173
+Nigeria,1977,Africa,lifeExp,44.514
+Nigeria,1977,Africa,gdpPercap,1981.951806
+Nigeria,1982,Africa,pop,73039376
+Nigeria,1982,Africa,lifeExp,45.826
+Nigeria,1982,Africa,gdpPercap,1576.97375
+Nigeria,1987,Africa,pop,81551520
+Nigeria,1987,Africa,lifeExp,46.886
+Nigeria,1987,Africa,gdpPercap,1385.029563
+Nigeria,1992,Africa,pop,93364244
+Nigeria,1992,Africa,lifeExp,47.472
+Nigeria,1992,Africa,gdpPercap,1619.848217
+Nigeria,1997,Africa,pop,106207839
+Nigeria,1997,Africa,lifeExp,47.464
+Nigeria,1997,Africa,gdpPercap,1624.941275
+Nigeria,2002,Africa,pop,119901274
+Nigeria,2002,Africa,lifeExp,46.608
+Nigeria,2002,Africa,gdpPercap,1615.286395
+Nigeria,2007,Africa,pop,135031164
+Nigeria,2007,Africa,lifeExp,46.859
+Nigeria,2007,Africa,gdpPercap,2013.977305
+Norway,1952,Europe,pop,3327728
+Norway,1952,Europe,lifeExp,72.67
+Norway,1952,Europe,gdpPercap,10095.42172
+Norway,1957,Europe,pop,3491938
+Norway,1957,Europe,lifeExp,73.44
+Norway,1957,Europe,gdpPercap,11653.97304
+Norway,1962,Europe,pop,3638919
+Norway,1962,Europe,lifeExp,73.47
+Norway,1962,Europe,gdpPercap,13450.40151
+Norway,1967,Europe,pop,3786019
+Norway,1967,Europe,lifeExp,74.08
+Norway,1967,Europe,gdpPercap,16361.87647
+Norway,1972,Europe,pop,3933004
+Norway,1972,Europe,lifeExp,74.34
+Norway,1972,Europe,gdpPercap,18965.05551
+Norway,1977,Europe,pop,4043205
+Norway,1977,Europe,lifeExp,75.37
+Norway,1977,Europe,gdpPercap,23311.34939
+Norway,1982,Europe,pop,4114787
+Norway,1982,Europe,lifeExp,75.97
+Norway,1982,Europe,gdpPercap,26298.63531
+Norway,1987,Europe,pop,4186147
+Norway,1987,Europe,lifeExp,75.89
+Norway,1987,Europe,gdpPercap,31540.9748
+Norway,1992,Europe,pop,4286357
+Norway,1992,Europe,lifeExp,77.32
+Norway,1992,Europe,gdpPercap,33965.66115
+Norway,1997,Europe,pop,4405672
+Norway,1997,Europe,lifeExp,78.32
+Norway,1997,Europe,gdpPercap,41283.16433
+Norway,2002,Europe,pop,4535591
+Norway,2002,Europe,lifeExp,79.05
+Norway,2002,Europe,gdpPercap,44683.97525
+Norway,2007,Europe,pop,4627926
+Norway,2007,Europe,lifeExp,80.196
+Norway,2007,Europe,gdpPercap,49357.19017
+Oman,1952,Asia,pop,507833
+Oman,1952,Asia,lifeExp,37.578
+Oman,1952,Asia,gdpPercap,1828.230307
+Oman,1957,Asia,pop,561977
+Oman,1957,Asia,lifeExp,40.08
+Oman,1957,Asia,gdpPercap,2242.746551
+Oman,1962,Asia,pop,628164
+Oman,1962,Asia,lifeExp,43.165
+Oman,1962,Asia,gdpPercap,2924.638113
+Oman,1967,Asia,pop,714775
+Oman,1967,Asia,lifeExp,46.988
+Oman,1967,Asia,gdpPercap,4720.942687
+Oman,1972,Asia,pop,829050
+Oman,1972,Asia,lifeExp,52.143
+Oman,1972,Asia,gdpPercap,10618.03855
+Oman,1977,Asia,pop,1004533
+Oman,1977,Asia,lifeExp,57.367
+Oman,1977,Asia,gdpPercap,11848.34392
+Oman,1982,Asia,pop,1301048
+Oman,1982,Asia,lifeExp,62.728
+Oman,1982,Asia,gdpPercap,12954.79101
+Oman,1987,Asia,pop,1593882
+Oman,1987,Asia,lifeExp,67.734
+Oman,1987,Asia,gdpPercap,18115.22313
+Oman,1992,Asia,pop,1915208
+Oman,1992,Asia,lifeExp,71.197
+Oman,1992,Asia,gdpPercap,18616.70691
+Oman,1997,Asia,pop,2283635
+Oman,1997,Asia,lifeExp,72.499
+Oman,1997,Asia,gdpPercap,19702.05581
+Oman,2002,Asia,pop,2713462
+Oman,2002,Asia,lifeExp,74.193
+Oman,2002,Asia,gdpPercap,19774.83687
+Oman,2007,Asia,pop,3204897
+Oman,2007,Asia,lifeExp,75.64
+Oman,2007,Asia,gdpPercap,22316.19287
+Pakistan,1952,Asia,pop,41346560
+Pakistan,1952,Asia,lifeExp,43.436
+Pakistan,1952,Asia,gdpPercap,684.5971438
+Pakistan,1957,Asia,pop,46679944
+Pakistan,1957,Asia,lifeExp,45.557
+Pakistan,1957,Asia,gdpPercap,747.0835292
+Pakistan,1962,Asia,pop,53100671
+Pakistan,1962,Asia,lifeExp,47.67
+Pakistan,1962,Asia,gdpPercap,803.3427418
+Pakistan,1967,Asia,pop,60641899
+Pakistan,1967,Asia,lifeExp,49.8
+Pakistan,1967,Asia,gdpPercap,942.4082588
+Pakistan,1972,Asia,pop,69325921
+Pakistan,1972,Asia,lifeExp,51.929
+Pakistan,1972,Asia,gdpPercap,1049.938981
+Pakistan,1977,Asia,pop,78152686
+Pakistan,1977,Asia,lifeExp,54.043
+Pakistan,1977,Asia,gdpPercap,1175.921193
+Pakistan,1982,Asia,pop,91462088
+Pakistan,1982,Asia,lifeExp,56.158
+Pakistan,1982,Asia,gdpPercap,1443.429832
+Pakistan,1987,Asia,pop,105186881
+Pakistan,1987,Asia,lifeExp,58.245
+Pakistan,1987,Asia,gdpPercap,1704.686583
+Pakistan,1992,Asia,pop,120065004
+Pakistan,1992,Asia,lifeExp,60.838
+Pakistan,1992,Asia,gdpPercap,1971.829464
+Pakistan,1997,Asia,pop,135564834
+Pakistan,1997,Asia,lifeExp,61.818
+Pakistan,1997,Asia,gdpPercap,2049.350521
+Pakistan,2002,Asia,pop,153403524
+Pakistan,2002,Asia,lifeExp,63.61
+Pakistan,2002,Asia,gdpPercap,2092.712441
+Pakistan,2007,Asia,pop,169270617
+Pakistan,2007,Asia,lifeExp,65.483
+Pakistan,2007,Asia,gdpPercap,2605.94758
+Panama,1952,Americas,pop,940080
+Panama,1952,Americas,lifeExp,55.191
+Panama,1952,Americas,gdpPercap,2480.380334
+Panama,1957,Americas,pop,1063506
+Panama,1957,Americas,lifeExp,59.201
+Panama,1957,Americas,gdpPercap,2961.800905
+Panama,1962,Americas,pop,1215725
+Panama,1962,Americas,lifeExp,61.817
+Panama,1962,Americas,gdpPercap,3536.540301
+Panama,1967,Americas,pop,1405486
+Panama,1967,Americas,lifeExp,64.071
+Panama,1967,Americas,gdpPercap,4421.009084
+Panama,1972,Americas,pop,1616384
+Panama,1972,Americas,lifeExp,66.216
+Panama,1972,Americas,gdpPercap,5364.249663
+Panama,1977,Americas,pop,1839782
+Panama,1977,Americas,lifeExp,68.681
+Panama,1977,Americas,gdpPercap,5351.912144
+Panama,1982,Americas,pop,2036305
+Panama,1982,Americas,lifeExp,70.472
+Panama,1982,Americas,gdpPercap,7009.601598
+Panama,1987,Americas,pop,2253639
+Panama,1987,Americas,lifeExp,71.523
+Panama,1987,Americas,gdpPercap,7034.779161
+Panama,1992,Americas,pop,2484997
+Panama,1992,Americas,lifeExp,72.462
+Panama,1992,Americas,gdpPercap,6618.74305
+Panama,1997,Americas,pop,2734531
+Panama,1997,Americas,lifeExp,73.738
+Panama,1997,Americas,gdpPercap,7113.692252
+Panama,2002,Americas,pop,2990875
+Panama,2002,Americas,lifeExp,74.712
+Panama,2002,Americas,gdpPercap,7356.031934
+Panama,2007,Americas,pop,3242173
+Panama,2007,Americas,lifeExp,75.537
+Panama,2007,Americas,gdpPercap,9809.185636
+Paraguay,1952,Americas,pop,1555876
+Paraguay,1952,Americas,lifeExp,62.649
+Paraguay,1952,Americas,gdpPercap,1952.308701
+Paraguay,1957,Americas,pop,1770902
+Paraguay,1957,Americas,lifeExp,63.196
+Paraguay,1957,Americas,gdpPercap,2046.154706
+Paraguay,1962,Americas,pop,2009813
+Paraguay,1962,Americas,lifeExp,64.361
+Paraguay,1962,Americas,gdpPercap,2148.027146
+Paraguay,1967,Americas,pop,2287985
+Paraguay,1967,Americas,lifeExp,64.951
+Paraguay,1967,Americas,gdpPercap,2299.376311
+Paraguay,1972,Americas,pop,2614104
+Paraguay,1972,Americas,lifeExp,65.815
+Paraguay,1972,Americas,gdpPercap,2523.337977
+Paraguay,1977,Americas,pop,2984494
+Paraguay,1977,Americas,lifeExp,66.353
+Paraguay,1977,Americas,gdpPercap,3248.373311
+Paraguay,1982,Americas,pop,3366439
+Paraguay,1982,Americas,lifeExp,66.874
+Paraguay,1982,Americas,gdpPercap,4258.503604
+Paraguay,1987,Americas,pop,3886512
+Paraguay,1987,Americas,lifeExp,67.378
+Paraguay,1987,Americas,gdpPercap,3998.875695
+Paraguay,1992,Americas,pop,4483945
+Paraguay,1992,Americas,lifeExp,68.225
+Paraguay,1992,Americas,gdpPercap,4196.411078
+Paraguay,1997,Americas,pop,5154123
+Paraguay,1997,Americas,lifeExp,69.4
+Paraguay,1997,Americas,gdpPercap,4247.400261
+Paraguay,2002,Americas,pop,5884491
+Paraguay,2002,Americas,lifeExp,70.755
+Paraguay,2002,Americas,gdpPercap,3783.674243
+Paraguay,2007,Americas,pop,6667147
+Paraguay,2007,Americas,lifeExp,71.752
+Paraguay,2007,Americas,gdpPercap,4172.838464
+Peru,1952,Americas,pop,8025700
+Peru,1952,Americas,lifeExp,43.902
+Peru,1952,Americas,gdpPercap,3758.523437
+Peru,1957,Americas,pop,9146100
+Peru,1957,Americas,lifeExp,46.263
+Peru,1957,Americas,gdpPercap,4245.256698
+Peru,1962,Americas,pop,10516500
+Peru,1962,Americas,lifeExp,49.096
+Peru,1962,Americas,gdpPercap,4957.037982
+Peru,1967,Americas,pop,12132200
+Peru,1967,Americas,lifeExp,51.445
+Peru,1967,Americas,gdpPercap,5788.09333
+Peru,1972,Americas,pop,13954700
+Peru,1972,Americas,lifeExp,55.448
+Peru,1972,Americas,gdpPercap,5937.827283
+Peru,1977,Americas,pop,15990099
+Peru,1977,Americas,lifeExp,58.447
+Peru,1977,Americas,gdpPercap,6281.290855
+Peru,1982,Americas,pop,18125129
+Peru,1982,Americas,lifeExp,61.406
+Peru,1982,Americas,gdpPercap,6434.501797
+Peru,1987,Americas,pop,20195924
+Peru,1987,Americas,lifeExp,64.134
+Peru,1987,Americas,gdpPercap,6360.9434440000005
+Peru,1992,Americas,pop,22430449
+Peru,1992,Americas,lifeExp,66.458
+Peru,1992,Americas,gdpPercap,4446.380924
+Peru,1997,Americas,pop,24748122
+Peru,1997,Americas,lifeExp,68.386
+Peru,1997,Americas,gdpPercap,5838.347657
+Peru,2002,Americas,pop,26769436
+Peru,2002,Americas,lifeExp,69.906
+Peru,2002,Americas,gdpPercap,5909.020073
+Peru,2007,Americas,pop,28674757
+Peru,2007,Americas,lifeExp,71.421
+Peru,2007,Americas,gdpPercap,7408.905561
+Philippines,1952,Asia,pop,22438691
+Philippines,1952,Asia,lifeExp,47.752
+Philippines,1952,Asia,gdpPercap,1272.880995
+Philippines,1957,Asia,pop,26072194
+Philippines,1957,Asia,lifeExp,51.334
+Philippines,1957,Asia,gdpPercap,1547.944844
+Philippines,1962,Asia,pop,30325264
+Philippines,1962,Asia,lifeExp,54.757
+Philippines,1962,Asia,gdpPercap,1649.552153
+Philippines,1967,Asia,pop,35356600
+Philippines,1967,Asia,lifeExp,56.393
+Philippines,1967,Asia,gdpPercap,1814.12743
+Philippines,1972,Asia,pop,40850141
+Philippines,1972,Asia,lifeExp,58.065
+Philippines,1972,Asia,gdpPercap,1989.37407
+Philippines,1977,Asia,pop,46850962
+Philippines,1977,Asia,lifeExp,60.06
+Philippines,1977,Asia,gdpPercap,2373.204287
+Philippines,1982,Asia,pop,53456774
+Philippines,1982,Asia,lifeExp,62.082
+Philippines,1982,Asia,gdpPercap,2603.273765
+Philippines,1987,Asia,pop,60017788
+Philippines,1987,Asia,lifeExp,64.151
+Philippines,1987,Asia,gdpPercap,2189.634995
+Philippines,1992,Asia,pop,67185766
+Philippines,1992,Asia,lifeExp,66.458
+Philippines,1992,Asia,gdpPercap,2279.324017
+Philippines,1997,Asia,pop,75012988
+Philippines,1997,Asia,lifeExp,68.564
+Philippines,1997,Asia,gdpPercap,2536.534925
+Philippines,2002,Asia,pop,82995088
+Philippines,2002,Asia,lifeExp,70.303
+Philippines,2002,Asia,gdpPercap,2650.921068
+Philippines,2007,Asia,pop,91077287
+Philippines,2007,Asia,lifeExp,71.688
+Philippines,2007,Asia,gdpPercap,3190.481016
+Poland,1952,Europe,pop,25730551
+Poland,1952,Europe,lifeExp,61.31
+Poland,1952,Europe,gdpPercap,4029.329699
+Poland,1957,Europe,pop,28235346
+Poland,1957,Europe,lifeExp,65.77
+Poland,1957,Europe,gdpPercap,4734.253019
+Poland,1962,Europe,pop,30329617
+Poland,1962,Europe,lifeExp,67.64
+Poland,1962,Europe,gdpPercap,5338.752143
+Poland,1967,Europe,pop,31785378
+Poland,1967,Europe,lifeExp,69.61
+Poland,1967,Europe,gdpPercap,6557.152776
+Poland,1972,Europe,pop,33039545
+Poland,1972,Europe,lifeExp,70.85
+Poland,1972,Europe,gdpPercap,8006.506993
+Poland,1977,Europe,pop,34621254
+Poland,1977,Europe,lifeExp,70.67
+Poland,1977,Europe,gdpPercap,9508.141454
+Poland,1982,Europe,pop,36227381
+Poland,1982,Europe,lifeExp,71.32
+Poland,1982,Europe,gdpPercap,8451.531004
+Poland,1987,Europe,pop,37740710
+Poland,1987,Europe,lifeExp,70.98
+Poland,1987,Europe,gdpPercap,9082.351172
+Poland,1992,Europe,pop,38370697
+Poland,1992,Europe,lifeExp,70.99
+Poland,1992,Europe,gdpPercap,7738.881247
+Poland,1997,Europe,pop,38654957
+Poland,1997,Europe,lifeExp,72.75
+Poland,1997,Europe,gdpPercap,10159.58368
+Poland,2002,Europe,pop,38625976
+Poland,2002,Europe,lifeExp,74.67
+Poland,2002,Europe,gdpPercap,12002.23908
+Poland,2007,Europe,pop,38518241
+Poland,2007,Europe,lifeExp,75.563
+Poland,2007,Europe,gdpPercap,15389.92468
+Portugal,1952,Europe,pop,8526050
+Portugal,1952,Europe,lifeExp,59.82
+Portugal,1952,Europe,gdpPercap,3068.319867
+Portugal,1957,Europe,pop,8817650
+Portugal,1957,Europe,lifeExp,61.51
+Portugal,1957,Europe,gdpPercap,3774.571743
+Portugal,1962,Europe,pop,9019800
+Portugal,1962,Europe,lifeExp,64.39
+Portugal,1962,Europe,gdpPercap,4727.954889
+Portugal,1967,Europe,pop,9103000
+Portugal,1967,Europe,lifeExp,66.6
+Portugal,1967,Europe,gdpPercap,6361.517993
+Portugal,1972,Europe,pop,8970450
+Portugal,1972,Europe,lifeExp,69.26
+Portugal,1972,Europe,gdpPercap,9022.247417
+Portugal,1977,Europe,pop,9662600
+Portugal,1977,Europe,lifeExp,70.41
+Portugal,1977,Europe,gdpPercap,10172.48572
+Portugal,1982,Europe,pop,9859650
+Portugal,1982,Europe,lifeExp,72.77
+Portugal,1982,Europe,gdpPercap,11753.84291
+Portugal,1987,Europe,pop,9915289
+Portugal,1987,Europe,lifeExp,74.06
+Portugal,1987,Europe,gdpPercap,13039.30876
+Portugal,1992,Europe,pop,9927680
+Portugal,1992,Europe,lifeExp,74.86
+Portugal,1992,Europe,gdpPercap,16207.26663
+Portugal,1997,Europe,pop,10156415
+Portugal,1997,Europe,lifeExp,75.97
+Portugal,1997,Europe,gdpPercap,17641.03156
+Portugal,2002,Europe,pop,10433867
+Portugal,2002,Europe,lifeExp,77.29
+Portugal,2002,Europe,gdpPercap,19970.90787
+Portugal,2007,Europe,pop,10642836
+Portugal,2007,Europe,lifeExp,78.098
+Portugal,2007,Europe,gdpPercap,20509.64777
+Puerto Rico,1952,Americas,pop,2227000
+Puerto Rico,1952,Americas,lifeExp,64.28
+Puerto Rico,1952,Americas,gdpPercap,3081.959785
+Puerto Rico,1957,Americas,pop,2260000
+Puerto Rico,1957,Americas,lifeExp,68.54
+Puerto Rico,1957,Americas,gdpPercap,3907.156189
+Puerto Rico,1962,Americas,pop,2448046
+Puerto Rico,1962,Americas,lifeExp,69.62
+Puerto Rico,1962,Americas,gdpPercap,5108.34463
+Puerto Rico,1967,Americas,pop,2648961
+Puerto Rico,1967,Americas,lifeExp,71.1
+Puerto Rico,1967,Americas,gdpPercap,6929.277714
+Puerto Rico,1972,Americas,pop,2847132
+Puerto Rico,1972,Americas,lifeExp,72.16
+Puerto Rico,1972,Americas,gdpPercap,9123.041742
+Puerto Rico,1977,Americas,pop,3080828
+Puerto Rico,1977,Americas,lifeExp,73.44
+Puerto Rico,1977,Americas,gdpPercap,9770.524921
+Puerto Rico,1982,Americas,pop,3279001
+Puerto Rico,1982,Americas,lifeExp,73.75
+Puerto Rico,1982,Americas,gdpPercap,10330.98915
+Puerto Rico,1987,Americas,pop,3444468
+Puerto Rico,1987,Americas,lifeExp,74.63
+Puerto Rico,1987,Americas,gdpPercap,12281.34191
+Puerto Rico,1992,Americas,pop,3585176
+Puerto Rico,1992,Americas,lifeExp,73.911
+Puerto Rico,1992,Americas,gdpPercap,14641.58711
+Puerto Rico,1997,Americas,pop,3759430
+Puerto Rico,1997,Americas,lifeExp,74.917
+Puerto Rico,1997,Americas,gdpPercap,16999.4333
+Puerto Rico,2002,Americas,pop,3859606
+Puerto Rico,2002,Americas,lifeExp,77.778
+Puerto Rico,2002,Americas,gdpPercap,18855.60618
+Puerto Rico,2007,Americas,pop,3942491
+Puerto Rico,2007,Americas,lifeExp,78.746
+Puerto Rico,2007,Americas,gdpPercap,19328.70901
+Reunion,1952,Africa,pop,257700
+Reunion,1952,Africa,lifeExp,52.724
+Reunion,1952,Africa,gdpPercap,2718.885295
+Reunion,1957,Africa,pop,308700
+Reunion,1957,Africa,lifeExp,55.09
+Reunion,1957,Africa,gdpPercap,2769.451844
+Reunion,1962,Africa,pop,358900
+Reunion,1962,Africa,lifeExp,57.666
+Reunion,1962,Africa,gdpPercap,3173.72334
+Reunion,1967,Africa,pop,414024
+Reunion,1967,Africa,lifeExp,60.542
+Reunion,1967,Africa,gdpPercap,4021.175739
+Reunion,1972,Africa,pop,461633
+Reunion,1972,Africa,lifeExp,64.274
+Reunion,1972,Africa,gdpPercap,5047.658563
+Reunion,1977,Africa,pop,492095
+Reunion,1977,Africa,lifeExp,67.064
+Reunion,1977,Africa,gdpPercap,4319.804067
+Reunion,1982,Africa,pop,517810
+Reunion,1982,Africa,lifeExp,69.885
+Reunion,1982,Africa,gdpPercap,5267.219353
+Reunion,1987,Africa,pop,562035
+Reunion,1987,Africa,lifeExp,71.913
+Reunion,1987,Africa,gdpPercap,5303.377488
+Reunion,1992,Africa,pop,622191
+Reunion,1992,Africa,lifeExp,73.615
+Reunion,1992,Africa,gdpPercap,6101.255823
+Reunion,1997,Africa,pop,684810
+Reunion,1997,Africa,lifeExp,74.772
+Reunion,1997,Africa,gdpPercap,6071.941411
+Reunion,2002,Africa,pop,743981
+Reunion,2002,Africa,lifeExp,75.744
+Reunion,2002,Africa,gdpPercap,6316.1652
+Reunion,2007,Africa,pop,798094
+Reunion,2007,Africa,lifeExp,76.442
+Reunion,2007,Africa,gdpPercap,7670.122558
+Romania,1952,Europe,pop,16630000
+Romania,1952,Europe,lifeExp,61.05
+Romania,1952,Europe,gdpPercap,3144.613186
+Romania,1957,Europe,pop,17829327
+Romania,1957,Europe,lifeExp,64.1
+Romania,1957,Europe,gdpPercap,3943.370225
+Romania,1962,Europe,pop,18680721
+Romania,1962,Europe,lifeExp,66.8
+Romania,1962,Europe,gdpPercap,4734.997586
+Romania,1967,Europe,pop,19284814
+Romania,1967,Europe,lifeExp,66.8
+Romania,1967,Europe,gdpPercap,6470.866545
+Romania,1972,Europe,pop,20662648
+Romania,1972,Europe,lifeExp,69.21
+Romania,1972,Europe,gdpPercap,8011.414402
+Romania,1977,Europe,pop,21658597
+Romania,1977,Europe,lifeExp,69.46
+Romania,1977,Europe,gdpPercap,9356.39724
+Romania,1982,Europe,pop,22356726
+Romania,1982,Europe,lifeExp,69.66
+Romania,1982,Europe,gdpPercap,9605.314053
+Romania,1987,Europe,pop,22686371
+Romania,1987,Europe,lifeExp,69.53
+Romania,1987,Europe,gdpPercap,9696.273295
+Romania,1992,Europe,pop,22797027
+Romania,1992,Europe,lifeExp,69.36
+Romania,1992,Europe,gdpPercap,6598.409903
+Romania,1997,Europe,pop,22562458
+Romania,1997,Europe,lifeExp,69.72
+Romania,1997,Europe,gdpPercap,7346.547557
+Romania,2002,Europe,pop,22404337
+Romania,2002,Europe,lifeExp,71.322
+Romania,2002,Europe,gdpPercap,7885.360081
+Romania,2007,Europe,pop,22276056
+Romania,2007,Europe,lifeExp,72.476
+Romania,2007,Europe,gdpPercap,10808.47561
+Rwanda,1952,Africa,pop,2534927
+Rwanda,1952,Africa,lifeExp,40
+Rwanda,1952,Africa,gdpPercap,493.3238752
+Rwanda,1957,Africa,pop,2822082
+Rwanda,1957,Africa,lifeExp,41.5
+Rwanda,1957,Africa,gdpPercap,540.2893983
+Rwanda,1962,Africa,pop,3051242
+Rwanda,1962,Africa,lifeExp,43
+Rwanda,1962,Africa,gdpPercap,597.4730727
+Rwanda,1967,Africa,pop,3451079
+Rwanda,1967,Africa,lifeExp,44.1
+Rwanda,1967,Africa,gdpPercap,510.9637142
+Rwanda,1972,Africa,pop,3992121
+Rwanda,1972,Africa,lifeExp,44.6
+Rwanda,1972,Africa,gdpPercap,590.5806638
+Rwanda,1977,Africa,pop,4657072
+Rwanda,1977,Africa,lifeExp,45
+Rwanda,1977,Africa,gdpPercap,670.0806011
+Rwanda,1982,Africa,pop,5507565
+Rwanda,1982,Africa,lifeExp,46.218
+Rwanda,1982,Africa,gdpPercap,881.5706467
+Rwanda,1987,Africa,pop,6349365
+Rwanda,1987,Africa,lifeExp,44.02
+Rwanda,1987,Africa,gdpPercap,847.991217
+Rwanda,1992,Africa,pop,7290203
+Rwanda,1992,Africa,lifeExp,23.599
+Rwanda,1992,Africa,gdpPercap,737.0685949
+Rwanda,1997,Africa,pop,7212583
+Rwanda,1997,Africa,lifeExp,36.087
+Rwanda,1997,Africa,gdpPercap,589.9445051
+Rwanda,2002,Africa,pop,7852401
+Rwanda,2002,Africa,lifeExp,43.413
+Rwanda,2002,Africa,gdpPercap,785.6537648
+Rwanda,2007,Africa,pop,8860588
+Rwanda,2007,Africa,lifeExp,46.242
+Rwanda,2007,Africa,gdpPercap,863.0884639
+Sao Tome and Principe,1952,Africa,pop,60011
+Sao Tome and Principe,1952,Africa,lifeExp,46.471
+Sao Tome and Principe,1952,Africa,gdpPercap,879.5835855
+Sao Tome and Principe,1957,Africa,pop,61325
+Sao Tome and Principe,1957,Africa,lifeExp,48.945
+Sao Tome and Principe,1957,Africa,gdpPercap,860.7369026
+Sao Tome and Principe,1962,Africa,pop,65345
+Sao Tome and Principe,1962,Africa,lifeExp,51.893
+Sao Tome and Principe,1962,Africa,gdpPercap,1071.551119
+Sao Tome and Principe,1967,Africa,pop,70787
+Sao Tome and Principe,1967,Africa,lifeExp,54.425
+Sao Tome and Principe,1967,Africa,gdpPercap,1384.840593
+Sao Tome and Principe,1972,Africa,pop,76595
+Sao Tome and Principe,1972,Africa,lifeExp,56.48
+Sao Tome and Principe,1972,Africa,gdpPercap,1532.985254
+Sao Tome and Principe,1977,Africa,pop,86796
+Sao Tome and Principe,1977,Africa,lifeExp,58.55
+Sao Tome and Principe,1977,Africa,gdpPercap,1737.561657
+Sao Tome and Principe,1982,Africa,pop,98593
+Sao Tome and Principe,1982,Africa,lifeExp,60.351
+Sao Tome and Principe,1982,Africa,gdpPercap,1890.218117
+Sao Tome and Principe,1987,Africa,pop,110812
+Sao Tome and Principe,1987,Africa,lifeExp,61.728
+Sao Tome and Principe,1987,Africa,gdpPercap,1516.525457
+Sao Tome and Principe,1992,Africa,pop,125911
+Sao Tome and Principe,1992,Africa,lifeExp,62.742
+Sao Tome and Principe,1992,Africa,gdpPercap,1428.777814
+Sao Tome and Principe,1997,Africa,pop,145608
+Sao Tome and Principe,1997,Africa,lifeExp,63.306
+Sao Tome and Principe,1997,Africa,gdpPercap,1339.076036
+Sao Tome and Principe,2002,Africa,pop,170372
+Sao Tome and Principe,2002,Africa,lifeExp,64.337
+Sao Tome and Principe,2002,Africa,gdpPercap,1353.09239
+Sao Tome and Principe,2007,Africa,pop,199579
+Sao Tome and Principe,2007,Africa,lifeExp,65.528
+Sao Tome and Principe,2007,Africa,gdpPercap,1598.435089
+Saudi Arabia,1952,Asia,pop,4005677
+Saudi Arabia,1952,Asia,lifeExp,39.875
+Saudi Arabia,1952,Asia,gdpPercap,6459.554823
+Saudi Arabia,1957,Asia,pop,4419650
+Saudi Arabia,1957,Asia,lifeExp,42.868
+Saudi Arabia,1957,Asia,gdpPercap,8157.591248
+Saudi Arabia,1962,Asia,pop,4943029
+Saudi Arabia,1962,Asia,lifeExp,45.914
+Saudi Arabia,1962,Asia,gdpPercap,11626.41975
+Saudi Arabia,1967,Asia,pop,5618198
+Saudi Arabia,1967,Asia,lifeExp,49.901
+Saudi Arabia,1967,Asia,gdpPercap,16903.04886
+Saudi Arabia,1972,Asia,pop,6472756
+Saudi Arabia,1972,Asia,lifeExp,53.886
+Saudi Arabia,1972,Asia,gdpPercap,24837.42865
+Saudi Arabia,1977,Asia,pop,8128505
+Saudi Arabia,1977,Asia,lifeExp,58.69
+Saudi Arabia,1977,Asia,gdpPercap,34167.7626
+Saudi Arabia,1982,Asia,pop,11254672
+Saudi Arabia,1982,Asia,lifeExp,63.012
+Saudi Arabia,1982,Asia,gdpPercap,33693.17525
+Saudi Arabia,1987,Asia,pop,14619745
+Saudi Arabia,1987,Asia,lifeExp,66.295
+Saudi Arabia,1987,Asia,gdpPercap,21198.26136
+Saudi Arabia,1992,Asia,pop,16945857
+Saudi Arabia,1992,Asia,lifeExp,68.768
+Saudi Arabia,1992,Asia,gdpPercap,24841.61777
+Saudi Arabia,1997,Asia,pop,21229759
+Saudi Arabia,1997,Asia,lifeExp,70.533
+Saudi Arabia,1997,Asia,gdpPercap,20586.69019
+Saudi Arabia,2002,Asia,pop,24501530
+Saudi Arabia,2002,Asia,lifeExp,71.626
+Saudi Arabia,2002,Asia,gdpPercap,19014.54118
+Saudi Arabia,2007,Asia,pop,27601038
+Saudi Arabia,2007,Asia,lifeExp,72.777
+Saudi Arabia,2007,Asia,gdpPercap,21654.83194
+Senegal,1952,Africa,pop,2755589
+Senegal,1952,Africa,lifeExp,37.278
+Senegal,1952,Africa,gdpPercap,1450.356983
+Senegal,1957,Africa,pop,3054547
+Senegal,1957,Africa,lifeExp,39.329
+Senegal,1957,Africa,gdpPercap,1567.653006
+Senegal,1962,Africa,pop,3430243
+Senegal,1962,Africa,lifeExp,41.454
+Senegal,1962,Africa,gdpPercap,1654.988723
+Senegal,1967,Africa,pop,3965841
+Senegal,1967,Africa,lifeExp,43.563
+Senegal,1967,Africa,gdpPercap,1612.404632
+Senegal,1972,Africa,pop,4588696
+Senegal,1972,Africa,lifeExp,45.815
+Senegal,1972,Africa,gdpPercap,1597.712056
+Senegal,1977,Africa,pop,5260855
+Senegal,1977,Africa,lifeExp,48.879
+Senegal,1977,Africa,gdpPercap,1561.769116
+Senegal,1982,Africa,pop,6147783
+Senegal,1982,Africa,lifeExp,52.379
+Senegal,1982,Africa,gdpPercap,1518.479984
+Senegal,1987,Africa,pop,7171347
+Senegal,1987,Africa,lifeExp,55.769
+Senegal,1987,Africa,gdpPercap,1441.72072
+Senegal,1992,Africa,pop,8307920
+Senegal,1992,Africa,lifeExp,58.196
+Senegal,1992,Africa,gdpPercap,1367.899369
+Senegal,1997,Africa,pop,9535314
+Senegal,1997,Africa,lifeExp,60.187
+Senegal,1997,Africa,gdpPercap,1392.368347
+Senegal,2002,Africa,pop,10870037
+Senegal,2002,Africa,lifeExp,61.6
+Senegal,2002,Africa,gdpPercap,1519.635262
+Senegal,2007,Africa,pop,12267493
+Senegal,2007,Africa,lifeExp,63.062
+Senegal,2007,Africa,gdpPercap,1712.472136
+Serbia,1952,Europe,pop,6860147
+Serbia,1952,Europe,lifeExp,57.996
+Serbia,1952,Europe,gdpPercap,3581.459448
+Serbia,1957,Europe,pop,7271135
+Serbia,1957,Europe,lifeExp,61.685
+Serbia,1957,Europe,gdpPercap,4981.090891
+Serbia,1962,Europe,pop,7616060
+Serbia,1962,Europe,lifeExp,64.531
+Serbia,1962,Europe,gdpPercap,6289.629157
+Serbia,1967,Europe,pop,7971222
+Serbia,1967,Europe,lifeExp,66.914
+Serbia,1967,Europe,gdpPercap,7991.707066
+Serbia,1972,Europe,pop,8313288
+Serbia,1972,Europe,lifeExp,68.7
+Serbia,1972,Europe,gdpPercap,10522.06749
+Serbia,1977,Europe,pop,8686367
+Serbia,1977,Europe,lifeExp,70.3
+Serbia,1977,Europe,gdpPercap,12980.66956
+Serbia,1982,Europe,pop,9032824
+Serbia,1982,Europe,lifeExp,70.162
+Serbia,1982,Europe,gdpPercap,15181.0927
+Serbia,1987,Europe,pop,9230783
+Serbia,1987,Europe,lifeExp,71.218
+Serbia,1987,Europe,gdpPercap,15870.87851
+Serbia,1992,Europe,pop,9826397
+Serbia,1992,Europe,lifeExp,71.659
+Serbia,1992,Europe,gdpPercap,9325.068238
+Serbia,1997,Europe,pop,10336594
+Serbia,1997,Europe,lifeExp,72.232
+Serbia,1997,Europe,gdpPercap,7914.320304
+Serbia,2002,Europe,pop,10111559
+Serbia,2002,Europe,lifeExp,73.213
+Serbia,2002,Europe,gdpPercap,7236.075251
+Serbia,2007,Europe,pop,10150265
+Serbia,2007,Europe,lifeExp,74.002
+Serbia,2007,Europe,gdpPercap,9786.534714
+Sierra Leone,1952,Africa,pop,2143249
+Sierra Leone,1952,Africa,lifeExp,30.331
+Sierra Leone,1952,Africa,gdpPercap,879.7877358
+Sierra Leone,1957,Africa,pop,2295678
+Sierra Leone,1957,Africa,lifeExp,31.57
+Sierra Leone,1957,Africa,gdpPercap,1004.484437
+Sierra Leone,1962,Africa,pop,2467895
+Sierra Leone,1962,Africa,lifeExp,32.767
+Sierra Leone,1962,Africa,gdpPercap,1116.639877
+Sierra Leone,1967,Africa,pop,2662190
+Sierra Leone,1967,Africa,lifeExp,34.113
+Sierra Leone,1967,Africa,gdpPercap,1206.043465
+Sierra Leone,1972,Africa,pop,2879013
+Sierra Leone,1972,Africa,lifeExp,35.4
+Sierra Leone,1972,Africa,gdpPercap,1353.759762
+Sierra Leone,1977,Africa,pop,3140897
+Sierra Leone,1977,Africa,lifeExp,36.788
+Sierra Leone,1977,Africa,gdpPercap,1348.285159
+Sierra Leone,1982,Africa,pop,3464522
+Sierra Leone,1982,Africa,lifeExp,38.445
+Sierra Leone,1982,Africa,gdpPercap,1465.010784
+Sierra Leone,1987,Africa,pop,3868905
+Sierra Leone,1987,Africa,lifeExp,40.006
+Sierra Leone,1987,Africa,gdpPercap,1294.447788
+Sierra Leone,1992,Africa,pop,4260884
+Sierra Leone,1992,Africa,lifeExp,38.333
+Sierra Leone,1992,Africa,gdpPercap,1068.696278
+Sierra Leone,1997,Africa,pop,4578212
+Sierra Leone,1997,Africa,lifeExp,39.897
+Sierra Leone,1997,Africa,gdpPercap,574.6481576
+Sierra Leone,2002,Africa,pop,5359092
+Sierra Leone,2002,Africa,lifeExp,41.012
+Sierra Leone,2002,Africa,gdpPercap,699.489713
+Sierra Leone,2007,Africa,pop,6144562
+Sierra Leone,2007,Africa,lifeExp,42.568
+Sierra Leone,2007,Africa,gdpPercap,862.5407561
+Singapore,1952,Asia,pop,1127000
+Singapore,1952,Asia,lifeExp,60.396
+Singapore,1952,Asia,gdpPercap,2315.138227
+Singapore,1957,Asia,pop,1445929
+Singapore,1957,Asia,lifeExp,63.179
+Singapore,1957,Asia,gdpPercap,2843.104409
+Singapore,1962,Asia,pop,1750200
+Singapore,1962,Asia,lifeExp,65.798
+Singapore,1962,Asia,gdpPercap,3674.735572
+Singapore,1967,Asia,pop,1977600
+Singapore,1967,Asia,lifeExp,67.946
+Singapore,1967,Asia,gdpPercap,4977.41854
+Singapore,1972,Asia,pop,2152400
+Singapore,1972,Asia,lifeExp,69.521
+Singapore,1972,Asia,gdpPercap,8597.756202
+Singapore,1977,Asia,pop,2325300
+Singapore,1977,Asia,lifeExp,70.795
+Singapore,1977,Asia,gdpPercap,11210.08948
+Singapore,1982,Asia,pop,2651869
+Singapore,1982,Asia,lifeExp,71.76
+Singapore,1982,Asia,gdpPercap,15169.16112
+Singapore,1987,Asia,pop,2794552
+Singapore,1987,Asia,lifeExp,73.56
+Singapore,1987,Asia,gdpPercap,18861.53081
+Singapore,1992,Asia,pop,3235865
+Singapore,1992,Asia,lifeExp,75.788
+Singapore,1992,Asia,gdpPercap,24769.8912
+Singapore,1997,Asia,pop,3802309
+Singapore,1997,Asia,lifeExp,77.158
+Singapore,1997,Asia,gdpPercap,33519.4766
+Singapore,2002,Asia,pop,4197776
+Singapore,2002,Asia,lifeExp,78.77
+Singapore,2002,Asia,gdpPercap,36023.1054
+Singapore,2007,Asia,pop,4553009
+Singapore,2007,Asia,lifeExp,79.972
+Singapore,2007,Asia,gdpPercap,47143.17964
+Slovak Republic,1952,Europe,pop,3558137
+Slovak Republic,1952,Europe,lifeExp,64.36
+Slovak Republic,1952,Europe,gdpPercap,5074.659104
+Slovak Republic,1957,Europe,pop,3844277
+Slovak Republic,1957,Europe,lifeExp,67.45
+Slovak Republic,1957,Europe,gdpPercap,6093.26298
+Slovak Republic,1962,Europe,pop,4237384
+Slovak Republic,1962,Europe,lifeExp,70.33
+Slovak Republic,1962,Europe,gdpPercap,7481.107598
+Slovak Republic,1967,Europe,pop,4442238
+Slovak Republic,1967,Europe,lifeExp,70.98
+Slovak Republic,1967,Europe,gdpPercap,8412.902397
+Slovak Republic,1972,Europe,pop,4593433
+Slovak Republic,1972,Europe,lifeExp,70.35
+Slovak Republic,1972,Europe,gdpPercap,9674.167626
+Slovak Republic,1977,Europe,pop,4827803
+Slovak Republic,1977,Europe,lifeExp,70.45
+Slovak Republic,1977,Europe,gdpPercap,10922.66404
+Slovak Republic,1982,Europe,pop,5048043
+Slovak Republic,1982,Europe,lifeExp,70.8
+Slovak Republic,1982,Europe,gdpPercap,11348.54585
+Slovak Republic,1987,Europe,pop,5199318
+Slovak Republic,1987,Europe,lifeExp,71.08
+Slovak Republic,1987,Europe,gdpPercap,12037.26758
+Slovak Republic,1992,Europe,pop,5302888
+Slovak Republic,1992,Europe,lifeExp,71.38
+Slovak Republic,1992,Europe,gdpPercap,9498.467723
+Slovak Republic,1997,Europe,pop,5383010
+Slovak Republic,1997,Europe,lifeExp,72.71
+Slovak Republic,1997,Europe,gdpPercap,12126.23065
+Slovak Republic,2002,Europe,pop,5410052
+Slovak Republic,2002,Europe,lifeExp,73.8
+Slovak Republic,2002,Europe,gdpPercap,13638.77837
+Slovak Republic,2007,Europe,pop,5447502
+Slovak Republic,2007,Europe,lifeExp,74.663
+Slovak Republic,2007,Europe,gdpPercap,18678.31435
+Slovenia,1952,Europe,pop,1489518
+Slovenia,1952,Europe,lifeExp,65.57
+Slovenia,1952,Europe,gdpPercap,4215.041741
+Slovenia,1957,Europe,pop,1533070
+Slovenia,1957,Europe,lifeExp,67.85
+Slovenia,1957,Europe,gdpPercap,5862.276629
+Slovenia,1962,Europe,pop,1582962
+Slovenia,1962,Europe,lifeExp,69.15
+Slovenia,1962,Europe,gdpPercap,7402.303395
+Slovenia,1967,Europe,pop,1646912
+Slovenia,1967,Europe,lifeExp,69.18
+Slovenia,1967,Europe,gdpPercap,9405.489397
+Slovenia,1972,Europe,pop,1694510
+Slovenia,1972,Europe,lifeExp,69.82
+Slovenia,1972,Europe,gdpPercap,12383.4862
+Slovenia,1977,Europe,pop,1746919
+Slovenia,1977,Europe,lifeExp,70.97
+Slovenia,1977,Europe,gdpPercap,15277.03017
+Slovenia,1982,Europe,pop,1861252
+Slovenia,1982,Europe,lifeExp,71.063
+Slovenia,1982,Europe,gdpPercap,17866.72175
+Slovenia,1987,Europe,pop,1945870
+Slovenia,1987,Europe,lifeExp,72.25
+Slovenia,1987,Europe,gdpPercap,18678.53492
+Slovenia,1992,Europe,pop,1999210
+Slovenia,1992,Europe,lifeExp,73.64
+Slovenia,1992,Europe,gdpPercap,14214.71681
+Slovenia,1997,Europe,pop,2011612
+Slovenia,1997,Europe,lifeExp,75.13
+Slovenia,1997,Europe,gdpPercap,17161.10735
+Slovenia,2002,Europe,pop,2011497
+Slovenia,2002,Europe,lifeExp,76.66
+Slovenia,2002,Europe,gdpPercap,20660.01936
+Slovenia,2007,Europe,pop,2009245
+Slovenia,2007,Europe,lifeExp,77.926
+Slovenia,2007,Europe,gdpPercap,25768.25759
+Somalia,1952,Africa,pop,2526994
+Somalia,1952,Africa,lifeExp,32.978
+Somalia,1952,Africa,gdpPercap,1135.749842
+Somalia,1957,Africa,pop,2780415
+Somalia,1957,Africa,lifeExp,34.977
+Somalia,1957,Africa,gdpPercap,1258.147413
+Somalia,1962,Africa,pop,3080153
+Somalia,1962,Africa,lifeExp,36.981
+Somalia,1962,Africa,gdpPercap,1369.488336
+Somalia,1967,Africa,pop,3428839
+Somalia,1967,Africa,lifeExp,38.977
+Somalia,1967,Africa,gdpPercap,1284.73318
+Somalia,1972,Africa,pop,3840161
+Somalia,1972,Africa,lifeExp,40.973
+Somalia,1972,Africa,gdpPercap,1254.576127
+Somalia,1977,Africa,pop,4353666
+Somalia,1977,Africa,lifeExp,41.974
+Somalia,1977,Africa,gdpPercap,1450.992513
+Somalia,1982,Africa,pop,5828892
+Somalia,1982,Africa,lifeExp,42.955
+Somalia,1982,Africa,gdpPercap,1176.807031
+Somalia,1987,Africa,pop,6921858
+Somalia,1987,Africa,lifeExp,44.501
+Somalia,1987,Africa,gdpPercap,1093.244963
+Somalia,1992,Africa,pop,6099799
+Somalia,1992,Africa,lifeExp,39.658
+Somalia,1992,Africa,gdpPercap,926.9602964
+Somalia,1997,Africa,pop,6633514
+Somalia,1997,Africa,lifeExp,43.795
+Somalia,1997,Africa,gdpPercap,930.5964284
+Somalia,2002,Africa,pop,7753310
+Somalia,2002,Africa,lifeExp,45.936
+Somalia,2002,Africa,gdpPercap,882.0818218
+Somalia,2007,Africa,pop,9118773
+Somalia,2007,Africa,lifeExp,48.159
+Somalia,2007,Africa,gdpPercap,926.1410683
+South Africa,1952,Africa,pop,14264935
+South Africa,1952,Africa,lifeExp,45.009
+South Africa,1952,Africa,gdpPercap,4725.295531
+South Africa,1957,Africa,pop,16151549
+South Africa,1957,Africa,lifeExp,47.985
+South Africa,1957,Africa,gdpPercap,5487.104219
+South Africa,1962,Africa,pop,18356657
+South Africa,1962,Africa,lifeExp,49.951
+South Africa,1962,Africa,gdpPercap,5768.729717
+South Africa,1967,Africa,pop,20997321
+South Africa,1967,Africa,lifeExp,51.927
+South Africa,1967,Africa,gdpPercap,7114.477971
+South Africa,1972,Africa,pop,23935810
+South Africa,1972,Africa,lifeExp,53.696
+South Africa,1972,Africa,gdpPercap,7765.962636
+South Africa,1977,Africa,pop,27129932
+South Africa,1977,Africa,lifeExp,55.527
+South Africa,1977,Africa,gdpPercap,8028.651439
+South Africa,1982,Africa,pop,31140029
+South Africa,1982,Africa,lifeExp,58.161
+South Africa,1982,Africa,gdpPercap,8568.266228
+South Africa,1987,Africa,pop,35933379
+South Africa,1987,Africa,lifeExp,60.834
+South Africa,1987,Africa,gdpPercap,7825.823398
+South Africa,1992,Africa,pop,39964159
+South Africa,1992,Africa,lifeExp,61.888
+South Africa,1992,Africa,gdpPercap,7225.069258
+South Africa,1997,Africa,pop,42835005
+South Africa,1997,Africa,lifeExp,60.236
+South Africa,1997,Africa,gdpPercap,7479.188244
+South Africa,2002,Africa,pop,44433622
+South Africa,2002,Africa,lifeExp,53.365
+South Africa,2002,Africa,gdpPercap,7710.946444
+South Africa,2007,Africa,pop,43997828
+South Africa,2007,Africa,lifeExp,49.339
+South Africa,2007,Africa,gdpPercap,9269.657808
+Spain,1952,Europe,pop,28549870
+Spain,1952,Europe,lifeExp,64.94
+Spain,1952,Europe,gdpPercap,3834.034742
+Spain,1957,Europe,pop,29841614
+Spain,1957,Europe,lifeExp,66.66
+Spain,1957,Europe,gdpPercap,4564.80241
+Spain,1962,Europe,pop,31158061
+Spain,1962,Europe,lifeExp,69.69
+Spain,1962,Europe,gdpPercap,5693.843879
+Spain,1967,Europe,pop,32850275
+Spain,1967,Europe,lifeExp,71.44
+Spain,1967,Europe,gdpPercap,7993.512294
+Spain,1972,Europe,pop,34513161
+Spain,1972,Europe,lifeExp,73.06
+Spain,1972,Europe,gdpPercap,10638.75131
+Spain,1977,Europe,pop,36439000
+Spain,1977,Europe,lifeExp,74.39
+Spain,1977,Europe,gdpPercap,13236.92117
+Spain,1982,Europe,pop,37983310
+Spain,1982,Europe,lifeExp,76.3
+Spain,1982,Europe,gdpPercap,13926.16997
+Spain,1987,Europe,pop,38880702
+Spain,1987,Europe,lifeExp,76.9
+Spain,1987,Europe,gdpPercap,15764.98313
+Spain,1992,Europe,pop,39549438
+Spain,1992,Europe,lifeExp,77.57
+Spain,1992,Europe,gdpPercap,18603.06452
+Spain,1997,Europe,pop,39855442
+Spain,1997,Europe,lifeExp,78.77
+Spain,1997,Europe,gdpPercap,20445.29896
+Spain,2002,Europe,pop,40152517
+Spain,2002,Europe,lifeExp,79.78
+Spain,2002,Europe,gdpPercap,24835.47166
+Spain,2007,Europe,pop,40448191
+Spain,2007,Europe,lifeExp,80.941
+Spain,2007,Europe,gdpPercap,28821.0637
+Sri Lanka,1952,Asia,pop,7982342
+Sri Lanka,1952,Asia,lifeExp,57.593
+Sri Lanka,1952,Asia,gdpPercap,1083.53203
+Sri Lanka,1957,Asia,pop,9128546
+Sri Lanka,1957,Asia,lifeExp,61.456
+Sri Lanka,1957,Asia,gdpPercap,1072.546602
+Sri Lanka,1962,Asia,pop,10421936
+Sri Lanka,1962,Asia,lifeExp,62.192
+Sri Lanka,1962,Asia,gdpPercap,1074.47196
+Sri Lanka,1967,Asia,pop,11737396
+Sri Lanka,1967,Asia,lifeExp,64.266
+Sri Lanka,1967,Asia,gdpPercap,1135.514326
+Sri Lanka,1972,Asia,pop,13016733
+Sri Lanka,1972,Asia,lifeExp,65.042
+Sri Lanka,1972,Asia,gdpPercap,1213.39553
+Sri Lanka,1977,Asia,pop,14116836
+Sri Lanka,1977,Asia,lifeExp,65.949
+Sri Lanka,1977,Asia,gdpPercap,1348.775651
+Sri Lanka,1982,Asia,pop,15410151
+Sri Lanka,1982,Asia,lifeExp,68.757
+Sri Lanka,1982,Asia,gdpPercap,1648.079789
+Sri Lanka,1987,Asia,pop,16495304
+Sri Lanka,1987,Asia,lifeExp,69.011
+Sri Lanka,1987,Asia,gdpPercap,1876.766827
+Sri Lanka,1992,Asia,pop,17587060
+Sri Lanka,1992,Asia,lifeExp,70.379
+Sri Lanka,1992,Asia,gdpPercap,2153.739222
+Sri Lanka,1997,Asia,pop,18698655
+Sri Lanka,1997,Asia,lifeExp,70.457
+Sri Lanka,1997,Asia,gdpPercap,2664.477257
+Sri Lanka,2002,Asia,pop,19576783
+Sri Lanka,2002,Asia,lifeExp,70.815
+Sri Lanka,2002,Asia,gdpPercap,3015.378833
+Sri Lanka,2007,Asia,pop,20378239
+Sri Lanka,2007,Asia,lifeExp,72.396
+Sri Lanka,2007,Asia,gdpPercap,3970.095407
+Sudan,1952,Africa,pop,8504667
+Sudan,1952,Africa,lifeExp,38.635
+Sudan,1952,Africa,gdpPercap,1615.991129
+Sudan,1957,Africa,pop,9753392
+Sudan,1957,Africa,lifeExp,39.624
+Sudan,1957,Africa,gdpPercap,1770.337074
+Sudan,1962,Africa,pop,11183227
+Sudan,1962,Africa,lifeExp,40.87
+Sudan,1962,Africa,gdpPercap,1959.593767
+Sudan,1967,Africa,pop,12716129
+Sudan,1967,Africa,lifeExp,42.858
+Sudan,1967,Africa,gdpPercap,1687.997641
+Sudan,1972,Africa,pop,14597019
+Sudan,1972,Africa,lifeExp,45.083
+Sudan,1972,Africa,gdpPercap,1659.652775
+Sudan,1977,Africa,pop,17104986
+Sudan,1977,Africa,lifeExp,47.8
+Sudan,1977,Africa,gdpPercap,2202.988423
+Sudan,1982,Africa,pop,20367053
+Sudan,1982,Africa,lifeExp,50.338
+Sudan,1982,Africa,gdpPercap,1895.544073
+Sudan,1987,Africa,pop,24725960
+Sudan,1987,Africa,lifeExp,51.744
+Sudan,1987,Africa,gdpPercap,1507.819159
+Sudan,1992,Africa,pop,28227588
+Sudan,1992,Africa,lifeExp,53.556
+Sudan,1992,Africa,gdpPercap,1492.197043
+Sudan,1997,Africa,pop,32160729
+Sudan,1997,Africa,lifeExp,55.373
+Sudan,1997,Africa,gdpPercap,1632.210764
+Sudan,2002,Africa,pop,37090298
+Sudan,2002,Africa,lifeExp,56.369
+Sudan,2002,Africa,gdpPercap,1993.398314
+Sudan,2007,Africa,pop,42292929
+Sudan,2007,Africa,lifeExp,58.556
+Sudan,2007,Africa,gdpPercap,2602.394995
+Swaziland,1952,Africa,pop,290243
+Swaziland,1952,Africa,lifeExp,41.407
+Swaziland,1952,Africa,gdpPercap,1148.376626
+Swaziland,1957,Africa,pop,326741
+Swaziland,1957,Africa,lifeExp,43.424
+Swaziland,1957,Africa,gdpPercap,1244.708364
+Swaziland,1962,Africa,pop,370006
+Swaziland,1962,Africa,lifeExp,44.992
+Swaziland,1962,Africa,gdpPercap,1856.182125
+Swaziland,1967,Africa,pop,420690
+Swaziland,1967,Africa,lifeExp,46.633
+Swaziland,1967,Africa,gdpPercap,2613.101665
+Swaziland,1972,Africa,pop,480105
+Swaziland,1972,Africa,lifeExp,49.552
+Swaziland,1972,Africa,gdpPercap,3364.836625
+Swaziland,1977,Africa,pop,551425
+Swaziland,1977,Africa,lifeExp,52.537
+Swaziland,1977,Africa,gdpPercap,3781.410618
+Swaziland,1982,Africa,pop,649901
+Swaziland,1982,Africa,lifeExp,55.561
+Swaziland,1982,Africa,gdpPercap,3895.384018
+Swaziland,1987,Africa,pop,779348
+Swaziland,1987,Africa,lifeExp,57.678
+Swaziland,1987,Africa,gdpPercap,3984.839812
+Swaziland,1992,Africa,pop,962344
+Swaziland,1992,Africa,lifeExp,58.474
+Swaziland,1992,Africa,gdpPercap,3553.0224
+Swaziland,1997,Africa,pop,1054486
+Swaziland,1997,Africa,lifeExp,54.289
+Swaziland,1997,Africa,gdpPercap,3876.76846
+Swaziland,2002,Africa,pop,1130269
+Swaziland,2002,Africa,lifeExp,43.869
+Swaziland,2002,Africa,gdpPercap,4128.116943
+Swaziland,2007,Africa,pop,1133066
+Swaziland,2007,Africa,lifeExp,39.613
+Swaziland,2007,Africa,gdpPercap,4513.480643
+Sweden,1952,Europe,pop,7124673
+Sweden,1952,Europe,lifeExp,71.86
+Sweden,1952,Europe,gdpPercap,8527.844662
+Sweden,1957,Europe,pop,7363802
+Sweden,1957,Europe,lifeExp,72.49
+Sweden,1957,Europe,gdpPercap,9911.878226
+Sweden,1962,Europe,pop,7561588
+Sweden,1962,Europe,lifeExp,73.37
+Sweden,1962,Europe,gdpPercap,12329.44192
+Sweden,1967,Europe,pop,7867931
+Sweden,1967,Europe,lifeExp,74.16
+Sweden,1967,Europe,gdpPercap,15258.29697
+Sweden,1972,Europe,pop,8122293
+Sweden,1972,Europe,lifeExp,74.72
+Sweden,1972,Europe,gdpPercap,17832.02464
+Sweden,1977,Europe,pop,8251648
+Sweden,1977,Europe,lifeExp,75.44
+Sweden,1977,Europe,gdpPercap,18855.72521
+Sweden,1982,Europe,pop,8325260
+Sweden,1982,Europe,lifeExp,76.42
+Sweden,1982,Europe,gdpPercap,20667.38125
+Sweden,1987,Europe,pop,8421403
+Sweden,1987,Europe,lifeExp,77.19
+Sweden,1987,Europe,gdpPercap,23586.92927
+Sweden,1992,Europe,pop,8718867
+Sweden,1992,Europe,lifeExp,78.16
+Sweden,1992,Europe,gdpPercap,23880.01683
+Sweden,1997,Europe,pop,8897619
+Sweden,1997,Europe,lifeExp,79.39
+Sweden,1997,Europe,gdpPercap,25266.59499
+Sweden,2002,Europe,pop,8954175
+Sweden,2002,Europe,lifeExp,80.04
+Sweden,2002,Europe,gdpPercap,29341.63093
+Sweden,2007,Europe,pop,9031088
+Sweden,2007,Europe,lifeExp,80.884
+Sweden,2007,Europe,gdpPercap,33859.74835
+Switzerland,1952,Europe,pop,4815000
+Switzerland,1952,Europe,lifeExp,69.62
+Switzerland,1952,Europe,gdpPercap,14734.23275
+Switzerland,1957,Europe,pop,5126000
+Switzerland,1957,Europe,lifeExp,70.56
+Switzerland,1957,Europe,gdpPercap,17909.48973
+Switzerland,1962,Europe,pop,5666000
+Switzerland,1962,Europe,lifeExp,71.32
+Switzerland,1962,Europe,gdpPercap,20431.0927
+Switzerland,1967,Europe,pop,6063000
+Switzerland,1967,Europe,lifeExp,72.77
+Switzerland,1967,Europe,gdpPercap,22966.14432
+Switzerland,1972,Europe,pop,6401400
+Switzerland,1972,Europe,lifeExp,73.78
+Switzerland,1972,Europe,gdpPercap,27195.11304
+Switzerland,1977,Europe,pop,6316424
+Switzerland,1977,Europe,lifeExp,75.39
+Switzerland,1977,Europe,gdpPercap,26982.29052
+Switzerland,1982,Europe,pop,6468126
+Switzerland,1982,Europe,lifeExp,76.21
+Switzerland,1982,Europe,gdpPercap,28397.71512
+Switzerland,1987,Europe,pop,6649942
+Switzerland,1987,Europe,lifeExp,77.41
+Switzerland,1987,Europe,gdpPercap,30281.70459
+Switzerland,1992,Europe,pop,6995447
+Switzerland,1992,Europe,lifeExp,78.03
+Switzerland,1992,Europe,gdpPercap,31871.5303
+Switzerland,1997,Europe,pop,7193761
+Switzerland,1997,Europe,lifeExp,79.37
+Switzerland,1997,Europe,gdpPercap,32135.32301
+Switzerland,2002,Europe,pop,7361757
+Switzerland,2002,Europe,lifeExp,80.62
+Switzerland,2002,Europe,gdpPercap,34480.95771
+Switzerland,2007,Europe,pop,7554661
+Switzerland,2007,Europe,lifeExp,81.701
+Switzerland,2007,Europe,gdpPercap,37506.41907
+Syria,1952,Asia,pop,3661549
+Syria,1952,Asia,lifeExp,45.883
+Syria,1952,Asia,gdpPercap,1643.485354
+Syria,1957,Asia,pop,4149908
+Syria,1957,Asia,lifeExp,48.284
+Syria,1957,Asia,gdpPercap,2117.234893
+Syria,1962,Asia,pop,4834621
+Syria,1962,Asia,lifeExp,50.305
+Syria,1962,Asia,gdpPercap,2193.037133
+Syria,1967,Asia,pop,5680812
+Syria,1967,Asia,lifeExp,53.655
+Syria,1967,Asia,gdpPercap,1881.923632
+Syria,1972,Asia,pop,6701172
+Syria,1972,Asia,lifeExp,57.296
+Syria,1972,Asia,gdpPercap,2571.423014
+Syria,1977,Asia,pop,7932503
+Syria,1977,Asia,lifeExp,61.195
+Syria,1977,Asia,gdpPercap,3195.484582
+Syria,1982,Asia,pop,9410494
+Syria,1982,Asia,lifeExp,64.59
+Syria,1982,Asia,gdpPercap,3761.837715
+Syria,1987,Asia,pop,11242847
+Syria,1987,Asia,lifeExp,66.974
+Syria,1987,Asia,gdpPercap,3116.774285
+Syria,1992,Asia,pop,13219062
+Syria,1992,Asia,lifeExp,69.249
+Syria,1992,Asia,gdpPercap,3340.542768
+Syria,1997,Asia,pop,15081016
+Syria,1997,Asia,lifeExp,71.527
+Syria,1997,Asia,gdpPercap,4014.238972
+Syria,2002,Asia,pop,17155814
+Syria,2002,Asia,lifeExp,73.053
+Syria,2002,Asia,gdpPercap,4090.925331
+Syria,2007,Asia,pop,19314747
+Syria,2007,Asia,lifeExp,74.143
+Syria,2007,Asia,gdpPercap,4184.548089
+Taiwan,1952,Asia,pop,8550362
+Taiwan,1952,Asia,lifeExp,58.5
+Taiwan,1952,Asia,gdpPercap,1206.947913
+Taiwan,1957,Asia,pop,10164215
+Taiwan,1957,Asia,lifeExp,62.4
+Taiwan,1957,Asia,gdpPercap,1507.86129
+Taiwan,1962,Asia,pop,11918938
+Taiwan,1962,Asia,lifeExp,65.2
+Taiwan,1962,Asia,gdpPercap,1822.879028
+Taiwan,1967,Asia,pop,13648692
+Taiwan,1967,Asia,lifeExp,67.5
+Taiwan,1967,Asia,gdpPercap,2643.858681
+Taiwan,1972,Asia,pop,15226039
+Taiwan,1972,Asia,lifeExp,69.39
+Taiwan,1972,Asia,gdpPercap,4062.523897
+Taiwan,1977,Asia,pop,16785196
+Taiwan,1977,Asia,lifeExp,70.59
+Taiwan,1977,Asia,gdpPercap,5596.519826
+Taiwan,1982,Asia,pop,18501390
+Taiwan,1982,Asia,lifeExp,72.16
+Taiwan,1982,Asia,gdpPercap,7426.354774
+Taiwan,1987,Asia,pop,19757799
+Taiwan,1987,Asia,lifeExp,73.4
+Taiwan,1987,Asia,gdpPercap,11054.56175
+Taiwan,1992,Asia,pop,20686918
+Taiwan,1992,Asia,lifeExp,74.26
+Taiwan,1992,Asia,gdpPercap,15215.6579
+Taiwan,1997,Asia,pop,21628605
+Taiwan,1997,Asia,lifeExp,75.25
+Taiwan,1997,Asia,gdpPercap,20206.82098
+Taiwan,2002,Asia,pop,22454239
+Taiwan,2002,Asia,lifeExp,76.99
+Taiwan,2002,Asia,gdpPercap,23235.42329
+Taiwan,2007,Asia,pop,23174294
+Taiwan,2007,Asia,lifeExp,78.4
+Taiwan,2007,Asia,gdpPercap,28718.27684
+Tanzania,1952,Africa,pop,8322925
+Tanzania,1952,Africa,lifeExp,41.215
+Tanzania,1952,Africa,gdpPercap,716.6500721
+Tanzania,1957,Africa,pop,9452826
+Tanzania,1957,Africa,lifeExp,42.974
+Tanzania,1957,Africa,gdpPercap,698.5356073
+Tanzania,1962,Africa,pop,10863958
+Tanzania,1962,Africa,lifeExp,44.246
+Tanzania,1962,Africa,gdpPercap,722.0038073
+Tanzania,1967,Africa,pop,12607312
+Tanzania,1967,Africa,lifeExp,45.757
+Tanzania,1967,Africa,gdpPercap,848.2186575
+Tanzania,1972,Africa,pop,14706593
+Tanzania,1972,Africa,lifeExp,47.62
+Tanzania,1972,Africa,gdpPercap,915.9850592
+Tanzania,1977,Africa,pop,17129565
+Tanzania,1977,Africa,lifeExp,49.919
+Tanzania,1977,Africa,gdpPercap,962.4922932
+Tanzania,1982,Africa,pop,19844382
+Tanzania,1982,Africa,lifeExp,50.608
+Tanzania,1982,Africa,gdpPercap,874.2426069
+Tanzania,1987,Africa,pop,23040630
+Tanzania,1987,Africa,lifeExp,51.535
+Tanzania,1987,Africa,gdpPercap,831.8220794
+Tanzania,1992,Africa,pop,26605473
+Tanzania,1992,Africa,lifeExp,50.44
+Tanzania,1992,Africa,gdpPercap,825.682454
+Tanzania,1997,Africa,pop,30686889
+Tanzania,1997,Africa,lifeExp,48.466
+Tanzania,1997,Africa,gdpPercap,789.1862231
+Tanzania,2002,Africa,pop,34593779
+Tanzania,2002,Africa,lifeExp,49.651
+Tanzania,2002,Africa,gdpPercap,899.0742111
+Tanzania,2007,Africa,pop,38139640
+Tanzania,2007,Africa,lifeExp,52.517
+Tanzania,2007,Africa,gdpPercap,1107.482182
+Thailand,1952,Asia,pop,21289402
+Thailand,1952,Asia,lifeExp,50.848
+Thailand,1952,Asia,gdpPercap,757.7974177
+Thailand,1957,Asia,pop,25041917
+Thailand,1957,Asia,lifeExp,53.63
+Thailand,1957,Asia,gdpPercap,793.5774148
+Thailand,1962,Asia,pop,29263397
+Thailand,1962,Asia,lifeExp,56.061
+Thailand,1962,Asia,gdpPercap,1002.199172
+Thailand,1967,Asia,pop,34024249
+Thailand,1967,Asia,lifeExp,58.285
+Thailand,1967,Asia,gdpPercap,1295.46066
+Thailand,1972,Asia,pop,39276153
+Thailand,1972,Asia,lifeExp,60.405
+Thailand,1972,Asia,gdpPercap,1524.358936
+Thailand,1977,Asia,pop,44148285
+Thailand,1977,Asia,lifeExp,62.494
+Thailand,1977,Asia,gdpPercap,1961.224635
+Thailand,1982,Asia,pop,48827160
+Thailand,1982,Asia,lifeExp,64.597
+Thailand,1982,Asia,gdpPercap,2393.219781
+Thailand,1987,Asia,pop,52910342
+Thailand,1987,Asia,lifeExp,66.084
+Thailand,1987,Asia,gdpPercap,2982.653773
+Thailand,1992,Asia,pop,56667095
+Thailand,1992,Asia,lifeExp,67.298
+Thailand,1992,Asia,gdpPercap,4616.896545
+Thailand,1997,Asia,pop,60216677
+Thailand,1997,Asia,lifeExp,67.521
+Thailand,1997,Asia,gdpPercap,5852.625497
+Thailand,2002,Asia,pop,62806748
+Thailand,2002,Asia,lifeExp,68.564
+Thailand,2002,Asia,gdpPercap,5913.187529
+Thailand,2007,Asia,pop,65068149
+Thailand,2007,Asia,lifeExp,70.616
+Thailand,2007,Asia,gdpPercap,7458.396327
+Togo,1952,Africa,pop,1219113
+Togo,1952,Africa,lifeExp,38.596
+Togo,1952,Africa,gdpPercap,859.8086567
+Togo,1957,Africa,pop,1357445
+Togo,1957,Africa,lifeExp,41.208
+Togo,1957,Africa,gdpPercap,925.9083202
+Togo,1962,Africa,pop,1528098
+Togo,1962,Africa,lifeExp,43.922
+Togo,1962,Africa,gdpPercap,1067.53481
+Togo,1967,Africa,pop,1735550
+Togo,1967,Africa,lifeExp,46.769
+Togo,1967,Africa,gdpPercap,1477.59676
+Togo,1972,Africa,pop,2056351
+Togo,1972,Africa,lifeExp,49.759
+Togo,1972,Africa,gdpPercap,1649.660188
+Togo,1977,Africa,pop,2308582
+Togo,1977,Africa,lifeExp,52.887
+Togo,1977,Africa,gdpPercap,1532.776998
+Togo,1982,Africa,pop,2644765
+Togo,1982,Africa,lifeExp,55.471
+Togo,1982,Africa,gdpPercap,1344.577953
+Togo,1987,Africa,pop,3154264
+Togo,1987,Africa,lifeExp,56.941
+Togo,1987,Africa,gdpPercap,1202.201361
+Togo,1992,Africa,pop,3747553
+Togo,1992,Africa,lifeExp,58.061
+Togo,1992,Africa,gdpPercap,1034.298904
+Togo,1997,Africa,pop,4320890
+Togo,1997,Africa,lifeExp,58.39
+Togo,1997,Africa,gdpPercap,982.2869243
+Togo,2002,Africa,pop,4977378
+Togo,2002,Africa,lifeExp,57.561
+Togo,2002,Africa,gdpPercap,886.2205765
+Togo,2007,Africa,pop,5701579
+Togo,2007,Africa,lifeExp,58.42
+Togo,2007,Africa,gdpPercap,882.9699438
+Trinidad and Tobago,1952,Americas,pop,662850
+Trinidad and Tobago,1952,Americas,lifeExp,59.1
+Trinidad and Tobago,1952,Americas,gdpPercap,3023.271928
+Trinidad and Tobago,1957,Americas,pop,764900
+Trinidad and Tobago,1957,Americas,lifeExp,61.8
+Trinidad and Tobago,1957,Americas,gdpPercap,4100.3934
+Trinidad and Tobago,1962,Americas,pop,887498
+Trinidad and Tobago,1962,Americas,lifeExp,64.9
+Trinidad and Tobago,1962,Americas,gdpPercap,4997.523971
+Trinidad and Tobago,1967,Americas,pop,960155
+Trinidad and Tobago,1967,Americas,lifeExp,65.4
+Trinidad and Tobago,1967,Americas,gdpPercap,5621.368472
+Trinidad and Tobago,1972,Americas,pop,975199
+Trinidad and Tobago,1972,Americas,lifeExp,65.9
+Trinidad and Tobago,1972,Americas,gdpPercap,6619.551419
+Trinidad and Tobago,1977,Americas,pop,1039009
+Trinidad and Tobago,1977,Americas,lifeExp,68.3
+Trinidad and Tobago,1977,Americas,gdpPercap,7899.554209
+Trinidad and Tobago,1982,Americas,pop,1116479
+Trinidad and Tobago,1982,Americas,lifeExp,68.832
+Trinidad and Tobago,1982,Americas,gdpPercap,9119.528607
+Trinidad and Tobago,1987,Americas,pop,1191336
+Trinidad and Tobago,1987,Americas,lifeExp,69.582
+Trinidad and Tobago,1987,Americas,gdpPercap,7388.597823
+Trinidad and Tobago,1992,Americas,pop,1183669
+Trinidad and Tobago,1992,Americas,lifeExp,69.862
+Trinidad and Tobago,1992,Americas,gdpPercap,7370.990932
+Trinidad and Tobago,1997,Americas,pop,1138101
+Trinidad and Tobago,1997,Americas,lifeExp,69.465
+Trinidad and Tobago,1997,Americas,gdpPercap,8792.573126
+Trinidad and Tobago,2002,Americas,pop,1101832
+Trinidad and Tobago,2002,Americas,lifeExp,68.976
+Trinidad and Tobago,2002,Americas,gdpPercap,11460.60023
+Trinidad and Tobago,2007,Americas,pop,1056608
+Trinidad and Tobago,2007,Americas,lifeExp,69.819
+Trinidad and Tobago,2007,Americas,gdpPercap,18008.50924
+Tunisia,1952,Africa,pop,3647735
+Tunisia,1952,Africa,lifeExp,44.6
+Tunisia,1952,Africa,gdpPercap,1468.475631
+Tunisia,1957,Africa,pop,3950849
+Tunisia,1957,Africa,lifeExp,47.1
+Tunisia,1957,Africa,gdpPercap,1395.232468
+Tunisia,1962,Africa,pop,4286552
+Tunisia,1962,Africa,lifeExp,49.579
+Tunisia,1962,Africa,gdpPercap,1660.30321
+Tunisia,1967,Africa,pop,4786986
+Tunisia,1967,Africa,lifeExp,52.053
+Tunisia,1967,Africa,gdpPercap,1932.360167
+Tunisia,1972,Africa,pop,5303507
+Tunisia,1972,Africa,lifeExp,55.602
+Tunisia,1972,Africa,gdpPercap,2753.285994
+Tunisia,1977,Africa,pop,6005061
+Tunisia,1977,Africa,lifeExp,59.837
+Tunisia,1977,Africa,gdpPercap,3120.876811
+Tunisia,1982,Africa,pop,6734098
+Tunisia,1982,Africa,lifeExp,64.048
+Tunisia,1982,Africa,gdpPercap,3560.233174
+Tunisia,1987,Africa,pop,7724976
+Tunisia,1987,Africa,lifeExp,66.894
+Tunisia,1987,Africa,gdpPercap,3810.419296
+Tunisia,1992,Africa,pop,8523077
+Tunisia,1992,Africa,lifeExp,70.001
+Tunisia,1992,Africa,gdpPercap,4332.720164
+Tunisia,1997,Africa,pop,9231669
+Tunisia,1997,Africa,lifeExp,71.973
+Tunisia,1997,Africa,gdpPercap,4876.798614
+Tunisia,2002,Africa,pop,9770575
+Tunisia,2002,Africa,lifeExp,73.042
+Tunisia,2002,Africa,gdpPercap,5722.895655
+Tunisia,2007,Africa,pop,10276158
+Tunisia,2007,Africa,lifeExp,73.923
+Tunisia,2007,Africa,gdpPercap,7092.923025
+Turkey,1952,Europe,pop,22235677
+Turkey,1952,Europe,lifeExp,43.585
+Turkey,1952,Europe,gdpPercap,1969.10098
+Turkey,1957,Europe,pop,25670939
+Turkey,1957,Europe,lifeExp,48.079
+Turkey,1957,Europe,gdpPercap,2218.754257
+Turkey,1962,Europe,pop,29788695
+Turkey,1962,Europe,lifeExp,52.098
+Turkey,1962,Europe,gdpPercap,2322.869908
+Turkey,1967,Europe,pop,33411317
+Turkey,1967,Europe,lifeExp,54.336
+Turkey,1967,Europe,gdpPercap,2826.356387
+Turkey,1972,Europe,pop,37492953
+Turkey,1972,Europe,lifeExp,57.005
+Turkey,1972,Europe,gdpPercap,3450.69638
+Turkey,1977,Europe,pop,42404033
+Turkey,1977,Europe,lifeExp,59.507
+Turkey,1977,Europe,gdpPercap,4269.122326
+Turkey,1982,Europe,pop,47328791
+Turkey,1982,Europe,lifeExp,61.036
+Turkey,1982,Europe,gdpPercap,4241.356344
+Turkey,1987,Europe,pop,52881328
+Turkey,1987,Europe,lifeExp,63.108
+Turkey,1987,Europe,gdpPercap,5089.043686
+Turkey,1992,Europe,pop,58179144
+Turkey,1992,Europe,lifeExp,66.146
+Turkey,1992,Europe,gdpPercap,5678.348271
+Turkey,1997,Europe,pop,63047647
+Turkey,1997,Europe,lifeExp,68.835
+Turkey,1997,Europe,gdpPercap,6601.429915
+Turkey,2002,Europe,pop,67308928
+Turkey,2002,Europe,lifeExp,70.845
+Turkey,2002,Europe,gdpPercap,6508.085718
+Turkey,2007,Europe,pop,71158647
+Turkey,2007,Europe,lifeExp,71.777
+Turkey,2007,Europe,gdpPercap,8458.276384
+Uganda,1952,Africa,pop,5824797
+Uganda,1952,Africa,lifeExp,39.978
+Uganda,1952,Africa,gdpPercap,734.753484
+Uganda,1957,Africa,pop,6675501
+Uganda,1957,Africa,lifeExp,42.571
+Uganda,1957,Africa,gdpPercap,774.3710692
+Uganda,1962,Africa,pop,7688797
+Uganda,1962,Africa,lifeExp,45.344
+Uganda,1962,Africa,gdpPercap,767.2717398
+Uganda,1967,Africa,pop,8900294
+Uganda,1967,Africa,lifeExp,48.051
+Uganda,1967,Africa,gdpPercap,908.9185217
+Uganda,1972,Africa,pop,10190285
+Uganda,1972,Africa,lifeExp,51.016
+Uganda,1972,Africa,gdpPercap,950.735869
+Uganda,1977,Africa,pop,11457758
+Uganda,1977,Africa,lifeExp,50.35
+Uganda,1977,Africa,gdpPercap,843.7331372
+Uganda,1982,Africa,pop,12939400
+Uganda,1982,Africa,lifeExp,49.849
+Uganda,1982,Africa,gdpPercap,682.2662268
+Uganda,1987,Africa,pop,15283050
+Uganda,1987,Africa,lifeExp,51.509
+Uganda,1987,Africa,gdpPercap,617.7244065
+Uganda,1992,Africa,pop,18252190
+Uganda,1992,Africa,lifeExp,48.825
+Uganda,1992,Africa,gdpPercap,644.1707969
+Uganda,1997,Africa,pop,21210254
+Uganda,1997,Africa,lifeExp,44.578
+Uganda,1997,Africa,gdpPercap,816.559081
+Uganda,2002,Africa,pop,24739869
+Uganda,2002,Africa,lifeExp,47.813
+Uganda,2002,Africa,gdpPercap,927.7210018
+Uganda,2007,Africa,pop,29170398
+Uganda,2007,Africa,lifeExp,51.542
+Uganda,2007,Africa,gdpPercap,1056.380121
+United Kingdom,1952,Europe,pop,50430000
+United Kingdom,1952,Europe,lifeExp,69.18
+United Kingdom,1952,Europe,gdpPercap,9979.508487
+United Kingdom,1957,Europe,pop,51430000
+United Kingdom,1957,Europe,lifeExp,70.42
+United Kingdom,1957,Europe,gdpPercap,11283.17795
+United Kingdom,1962,Europe,pop,53292000
+United Kingdom,1962,Europe,lifeExp,70.76
+United Kingdom,1962,Europe,gdpPercap,12477.17707
+United Kingdom,1967,Europe,pop,54959000
+United Kingdom,1967,Europe,lifeExp,71.36
+United Kingdom,1967,Europe,gdpPercap,14142.85089
+United Kingdom,1972,Europe,pop,56079000
+United Kingdom,1972,Europe,lifeExp,72.01
+United Kingdom,1972,Europe,gdpPercap,15895.11641
+United Kingdom,1977,Europe,pop,56179000
+United Kingdom,1977,Europe,lifeExp,72.76
+United Kingdom,1977,Europe,gdpPercap,17428.74846
+United Kingdom,1982,Europe,pop,56339704
+United Kingdom,1982,Europe,lifeExp,74.04
+United Kingdom,1982,Europe,gdpPercap,18232.42452
+United Kingdom,1987,Europe,pop,56981620
+United Kingdom,1987,Europe,lifeExp,75.007
+United Kingdom,1987,Europe,gdpPercap,21664.78767
+United Kingdom,1992,Europe,pop,57866349
+United Kingdom,1992,Europe,lifeExp,76.42
+United Kingdom,1992,Europe,gdpPercap,22705.09254
+United Kingdom,1997,Europe,pop,58808266
+United Kingdom,1997,Europe,lifeExp,77.218
+United Kingdom,1997,Europe,gdpPercap,26074.53136
+United Kingdom,2002,Europe,pop,59912431
+United Kingdom,2002,Europe,lifeExp,78.471
+United Kingdom,2002,Europe,gdpPercap,29478.99919
+United Kingdom,2007,Europe,pop,60776238
+United Kingdom,2007,Europe,lifeExp,79.425
+United Kingdom,2007,Europe,gdpPercap,33203.26128
+United States,1952,Americas,pop,157553000
+United States,1952,Americas,lifeExp,68.44
+United States,1952,Americas,gdpPercap,13990.48208
+United States,1957,Americas,pop,171984000
+United States,1957,Americas,lifeExp,69.49
+United States,1957,Americas,gdpPercap,14847.12712
+United States,1962,Americas,pop,186538000
+United States,1962,Americas,lifeExp,70.21
+United States,1962,Americas,gdpPercap,16173.14586
+United States,1967,Americas,pop,198712000
+United States,1967,Americas,lifeExp,70.76
+United States,1967,Americas,gdpPercap,19530.36557
+United States,1972,Americas,pop,209896000
+United States,1972,Americas,lifeExp,71.34
+United States,1972,Americas,gdpPercap,21806.03594
+United States,1977,Americas,pop,220239000
+United States,1977,Americas,lifeExp,73.38
+United States,1977,Americas,gdpPercap,24072.63213
+United States,1982,Americas,pop,232187835
+United States,1982,Americas,lifeExp,74.65
+United States,1982,Americas,gdpPercap,25009.55914
+United States,1987,Americas,pop,242803533
+United States,1987,Americas,lifeExp,75.02
+United States,1987,Americas,gdpPercap,29884.35041
+United States,1992,Americas,pop,256894189
+United States,1992,Americas,lifeExp,76.09
+United States,1992,Americas,gdpPercap,32003.93224
+United States,1997,Americas,pop,272911760
+United States,1997,Americas,lifeExp,76.81
+United States,1997,Americas,gdpPercap,35767.43303
+United States,2002,Americas,pop,287675526
+United States,2002,Americas,lifeExp,77.31
+United States,2002,Americas,gdpPercap,39097.09955
+United States,2007,Americas,pop,301139947
+United States,2007,Americas,lifeExp,78.242
+United States,2007,Americas,gdpPercap,42951.65309
+Uruguay,1952,Americas,pop,2252965
+Uruguay,1952,Americas,lifeExp,66.071
+Uruguay,1952,Americas,gdpPercap,5716.766744
+Uruguay,1957,Americas,pop,2424959
+Uruguay,1957,Americas,lifeExp,67.044
+Uruguay,1957,Americas,gdpPercap,6150.772969
+Uruguay,1962,Americas,pop,2598466
+Uruguay,1962,Americas,lifeExp,68.253
+Uruguay,1962,Americas,gdpPercap,5603.357717
+Uruguay,1967,Americas,pop,2748579
+Uruguay,1967,Americas,lifeExp,68.468
+Uruguay,1967,Americas,gdpPercap,5444.61962
+Uruguay,1972,Americas,pop,2829526
+Uruguay,1972,Americas,lifeExp,68.673
+Uruguay,1972,Americas,gdpPercap,5703.408898
+Uruguay,1977,Americas,pop,2873520
+Uruguay,1977,Americas,lifeExp,69.481
+Uruguay,1977,Americas,gdpPercap,6504.339663
+Uruguay,1982,Americas,pop,2953997
+Uruguay,1982,Americas,lifeExp,70.805
+Uruguay,1982,Americas,gdpPercap,6920.223051
+Uruguay,1987,Americas,pop,3045153
+Uruguay,1987,Americas,lifeExp,71.918
+Uruguay,1987,Americas,gdpPercap,7452.398969
+Uruguay,1992,Americas,pop,3149262
+Uruguay,1992,Americas,lifeExp,72.752
+Uruguay,1992,Americas,gdpPercap,8137.004775
+Uruguay,1997,Americas,pop,3262838
+Uruguay,1997,Americas,lifeExp,74.223
+Uruguay,1997,Americas,gdpPercap,9230.240708
+Uruguay,2002,Americas,pop,3363085
+Uruguay,2002,Americas,lifeExp,75.307
+Uruguay,2002,Americas,gdpPercap,7727.002004
+Uruguay,2007,Americas,pop,3447496
+Uruguay,2007,Americas,lifeExp,76.384
+Uruguay,2007,Americas,gdpPercap,10611.46299
+Venezuela,1952,Americas,pop,5439568
+Venezuela,1952,Americas,lifeExp,55.088
+Venezuela,1952,Americas,gdpPercap,7689.799761
+Venezuela,1957,Americas,pop,6702668
+Venezuela,1957,Americas,lifeExp,57.907
+Venezuela,1957,Americas,gdpPercap,9802.466526
+Venezuela,1962,Americas,pop,8143375
+Venezuela,1962,Americas,lifeExp,60.77
+Venezuela,1962,Americas,gdpPercap,8422.974165
+Venezuela,1967,Americas,pop,9709552
+Venezuela,1967,Americas,lifeExp,63.479
+Venezuela,1967,Americas,gdpPercap,9541.474188
+Venezuela,1972,Americas,pop,11515649
+Venezuela,1972,Americas,lifeExp,65.712
+Venezuela,1972,Americas,gdpPercap,10505.25966
+Venezuela,1977,Americas,pop,13503563
+Venezuela,1977,Americas,lifeExp,67.456
+Venezuela,1977,Americas,gdpPercap,13143.95095
+Venezuela,1982,Americas,pop,15620766
+Venezuela,1982,Americas,lifeExp,68.557
+Venezuela,1982,Americas,gdpPercap,11152.41011
+Venezuela,1987,Americas,pop,17910182
+Venezuela,1987,Americas,lifeExp,70.19
+Venezuela,1987,Americas,gdpPercap,9883.584648
+Venezuela,1992,Americas,pop,20265563
+Venezuela,1992,Americas,lifeExp,71.15
+Venezuela,1992,Americas,gdpPercap,10733.92631
+Venezuela,1997,Americas,pop,22374398
+Venezuela,1997,Americas,lifeExp,72.146
+Venezuela,1997,Americas,gdpPercap,10165.49518
+Venezuela,2002,Americas,pop,24287670
+Venezuela,2002,Americas,lifeExp,72.766
+Venezuela,2002,Americas,gdpPercap,8605.047831
+Venezuela,2007,Americas,pop,26084662
+Venezuela,2007,Americas,lifeExp,73.747
+Venezuela,2007,Americas,gdpPercap,11415.80569
+Vietnam,1952,Asia,pop,26246839
+Vietnam,1952,Asia,lifeExp,40.412
+Vietnam,1952,Asia,gdpPercap,605.0664917
+Vietnam,1957,Asia,pop,28998543
+Vietnam,1957,Asia,lifeExp,42.887
+Vietnam,1957,Asia,gdpPercap,676.2854478
+Vietnam,1962,Asia,pop,33796140
+Vietnam,1962,Asia,lifeExp,45.363
+Vietnam,1962,Asia,gdpPercap,772.0491602
+Vietnam,1967,Asia,pop,39463910
+Vietnam,1967,Asia,lifeExp,47.838
+Vietnam,1967,Asia,gdpPercap,637.1232887
+Vietnam,1972,Asia,pop,44655014
+Vietnam,1972,Asia,lifeExp,50.254
+Vietnam,1972,Asia,gdpPercap,699.5016441
+Vietnam,1977,Asia,pop,50533506
+Vietnam,1977,Asia,lifeExp,55.764
+Vietnam,1977,Asia,gdpPercap,713.5371196
+Vietnam,1982,Asia,pop,56142181
+Vietnam,1982,Asia,lifeExp,58.816
+Vietnam,1982,Asia,gdpPercap,707.2357863
+Vietnam,1987,Asia,pop,62826491
+Vietnam,1987,Asia,lifeExp,62.82
+Vietnam,1987,Asia,gdpPercap,820.7994449
+Vietnam,1992,Asia,pop,69940728
+Vietnam,1992,Asia,lifeExp,67.662
+Vietnam,1992,Asia,gdpPercap,989.0231487
+Vietnam,1997,Asia,pop,76048996
+Vietnam,1997,Asia,lifeExp,70.672
+Vietnam,1997,Asia,gdpPercap,1385.896769
+Vietnam,2002,Asia,pop,80908147
+Vietnam,2002,Asia,lifeExp,73.017
+Vietnam,2002,Asia,gdpPercap,1764.456677
+Vietnam,2007,Asia,pop,85262356
+Vietnam,2007,Asia,lifeExp,74.249
+Vietnam,2007,Asia,gdpPercap,2441.576404
+West Bank and Gaza,1952,Asia,pop,1030585
+West Bank and Gaza,1952,Asia,lifeExp,43.16
+West Bank and Gaza,1952,Asia,gdpPercap,1515.592329
+West Bank and Gaza,1957,Asia,pop,1070439
+West Bank and Gaza,1957,Asia,lifeExp,45.671
+West Bank and Gaza,1957,Asia,gdpPercap,1827.067742
+West Bank and Gaza,1962,Asia,pop,1133134
+West Bank and Gaza,1962,Asia,lifeExp,48.127
+West Bank and Gaza,1962,Asia,gdpPercap,2198.956312
+West Bank and Gaza,1967,Asia,pop,1142636
+West Bank and Gaza,1967,Asia,lifeExp,51.631
+West Bank and Gaza,1967,Asia,gdpPercap,2649.715007
+West Bank and Gaza,1972,Asia,pop,1089572
+West Bank and Gaza,1972,Asia,lifeExp,56.532
+West Bank and Gaza,1972,Asia,gdpPercap,3133.409277
+West Bank and Gaza,1977,Asia,pop,1261091
+West Bank and Gaza,1977,Asia,lifeExp,60.765
+West Bank and Gaza,1977,Asia,gdpPercap,3682.831494
+West Bank and Gaza,1982,Asia,pop,1425876
+West Bank and Gaza,1982,Asia,lifeExp,64.406
+West Bank and Gaza,1982,Asia,gdpPercap,4336.032082
+West Bank and Gaza,1987,Asia,pop,1691210
+West Bank and Gaza,1987,Asia,lifeExp,67.046
+West Bank and Gaza,1987,Asia,gdpPercap,5107.197384
+West Bank and Gaza,1992,Asia,pop,2104779
+West Bank and Gaza,1992,Asia,lifeExp,69.718
+West Bank and Gaza,1992,Asia,gdpPercap,6017.654756
+West Bank and Gaza,1997,Asia,pop,2826046
+West Bank and Gaza,1997,Asia,lifeExp,71.096
+West Bank and Gaza,1997,Asia,gdpPercap,7110.667619
+West Bank and Gaza,2002,Asia,pop,3389578
+West Bank and Gaza,2002,Asia,lifeExp,72.37
+West Bank and Gaza,2002,Asia,gdpPercap,4515.487575
+West Bank and Gaza,2007,Asia,pop,4018332
+West Bank and Gaza,2007,Asia,lifeExp,73.422
+West Bank and Gaza,2007,Asia,gdpPercap,3025.349798
+Yemen Rep.,1952,Asia,pop,4963829
+Yemen Rep.,1952,Asia,lifeExp,32.548
+Yemen Rep.,1952,Asia,gdpPercap,781.7175761
+Yemen Rep.,1957,Asia,pop,5498090
+Yemen Rep.,1957,Asia,lifeExp,33.97
+Yemen Rep.,1957,Asia,gdpPercap,804.8304547
+Yemen Rep.,1962,Asia,pop,6120081
+Yemen Rep.,1962,Asia,lifeExp,35.18
+Yemen Rep.,1962,Asia,gdpPercap,825.6232006
+Yemen Rep.,1967,Asia,pop,6740785
+Yemen Rep.,1967,Asia,lifeExp,36.984
+Yemen Rep.,1967,Asia,gdpPercap,862.4421463
+Yemen Rep.,1972,Asia,pop,7407075
+Yemen Rep.,1972,Asia,lifeExp,39.848
+Yemen Rep.,1972,Asia,gdpPercap,1265.047031
+Yemen Rep.,1977,Asia,pop,8403990
+Yemen Rep.,1977,Asia,lifeExp,44.175
+Yemen Rep.,1977,Asia,gdpPercap,1829.765177
+Yemen Rep.,1982,Asia,pop,9657618
+Yemen Rep.,1982,Asia,lifeExp,49.113
+Yemen Rep.,1982,Asia,gdpPercap,1977.55701
+Yemen Rep.,1987,Asia,pop,11219340
+Yemen Rep.,1987,Asia,lifeExp,52.922
+Yemen Rep.,1987,Asia,gdpPercap,1971.741538
+Yemen Rep.,1992,Asia,pop,13367997
+Yemen Rep.,1992,Asia,lifeExp,55.599
+Yemen Rep.,1992,Asia,gdpPercap,1879.496673
+Yemen Rep.,1997,Asia,pop,15826497
+Yemen Rep.,1997,Asia,lifeExp,58.02
+Yemen Rep.,1997,Asia,gdpPercap,2117.484526
+Yemen Rep.,2002,Asia,pop,18701257
+Yemen Rep.,2002,Asia,lifeExp,60.308
+Yemen Rep.,2002,Asia,gdpPercap,2234.820827
+Yemen Rep.,2007,Asia,pop,22211743
+Yemen Rep.,2007,Asia,lifeExp,62.698
+Yemen Rep.,2007,Asia,gdpPercap,2280.769906
+Zambia,1952,Africa,pop,2672000
+Zambia,1952,Africa,lifeExp,42.038
+Zambia,1952,Africa,gdpPercap,1147.388831
+Zambia,1957,Africa,pop,3016000
+Zambia,1957,Africa,lifeExp,44.077
+Zambia,1957,Africa,gdpPercap,1311.956766
+Zambia,1962,Africa,pop,3421000
+Zambia,1962,Africa,lifeExp,46.023
+Zambia,1962,Africa,gdpPercap,1452.725766
+Zambia,1967,Africa,pop,3900000
+Zambia,1967,Africa,lifeExp,47.768
+Zambia,1967,Africa,gdpPercap,1777.077318
+Zambia,1972,Africa,pop,4506497
+Zambia,1972,Africa,lifeExp,50.107
+Zambia,1972,Africa,gdpPercap,1773.498265
+Zambia,1977,Africa,pop,5216550
+Zambia,1977,Africa,lifeExp,51.386
+Zambia,1977,Africa,gdpPercap,1588.688299
+Zambia,1982,Africa,pop,6100407
+Zambia,1982,Africa,lifeExp,51.821
+Zambia,1982,Africa,gdpPercap,1408.678565
+Zambia,1987,Africa,pop,7272406
+Zambia,1987,Africa,lifeExp,50.821
+Zambia,1987,Africa,gdpPercap,1213.315116
+Zambia,1992,Africa,pop,8381163
+Zambia,1992,Africa,lifeExp,46.1
+Zambia,1992,Africa,gdpPercap,1210.884633
+Zambia,1997,Africa,pop,9417789
+Zambia,1997,Africa,lifeExp,40.238
+Zambia,1997,Africa,gdpPercap,1071.353818
+Zambia,2002,Africa,pop,10595811
+Zambia,2002,Africa,lifeExp,39.193
+Zambia,2002,Africa,gdpPercap,1071.613938
+Zambia,2007,Africa,pop,11746035
+Zambia,2007,Africa,lifeExp,42.384
+Zambia,2007,Africa,gdpPercap,1271.211593
+Zimbabwe,1952,Africa,pop,3080907
+Zimbabwe,1952,Africa,lifeExp,48.451
+Zimbabwe,1952,Africa,gdpPercap,406.8841148
+Zimbabwe,1957,Africa,pop,3646340
+Zimbabwe,1957,Africa,lifeExp,50.469
+Zimbabwe,1957,Africa,gdpPercap,518.7642681
+Zimbabwe,1962,Africa,pop,4277736
+Zimbabwe,1962,Africa,lifeExp,52.358
+Zimbabwe,1962,Africa,gdpPercap,527.2721818
+Zimbabwe,1967,Africa,pop,4995432
+Zimbabwe,1967,Africa,lifeExp,53.995
+Zimbabwe,1967,Africa,gdpPercap,569.7950712
+Zimbabwe,1972,Africa,pop,5861135
+Zimbabwe,1972,Africa,lifeExp,55.635
+Zimbabwe,1972,Africa,gdpPercap,799.3621758
+Zimbabwe,1977,Africa,pop,6642107
+Zimbabwe,1977,Africa,lifeExp,57.674
+Zimbabwe,1977,Africa,gdpPercap,685.5876821
+Zimbabwe,1982,Africa,pop,7636524
+Zimbabwe,1982,Africa,lifeExp,60.363
+Zimbabwe,1982,Africa,gdpPercap,788.8550411
+Zimbabwe,1987,Africa,pop,9216418
+Zimbabwe,1987,Africa,lifeExp,62.351
+Zimbabwe,1987,Africa,gdpPercap,706.1573059
+Zimbabwe,1992,Africa,pop,10704340
+Zimbabwe,1992,Africa,lifeExp,60.377
+Zimbabwe,1992,Africa,gdpPercap,693.4207856
+Zimbabwe,1997,Africa,pop,11404948
+Zimbabwe,1997,Africa,lifeExp,46.809
+Zimbabwe,1997,Africa,gdpPercap,792.4499603
+Zimbabwe,2002,Africa,pop,11926563
+Zimbabwe,2002,Africa,lifeExp,39.989
+Zimbabwe,2002,Africa,gdpPercap,672.0386227
+Zimbabwe,2007,Africa,pop,12311143
+Zimbabwe,2007,Africa,lifeExp,43.487
+Zimbabwe,2007,Africa,gdpPercap,469.7092981

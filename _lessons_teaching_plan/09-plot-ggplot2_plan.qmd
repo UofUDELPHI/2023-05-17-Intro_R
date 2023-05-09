@@ -6,6 +6,7 @@ editor_options:
 ---
 
 ```{r}
+#| message: false
 # load the tidyverse library (which includes dplyr and ggplot2)
 library(tidyverse) # or library(ggplot2) and library(dplyr)
 # load the gapminder dataset for this lesson

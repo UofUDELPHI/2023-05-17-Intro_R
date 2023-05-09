@@ -317,7 +317,7 @@ Your data frame should have 52 rows and 3 columns (you can check this with `dim(
 year_country_lifeExp_Africa_2002 <- gapminder |>
   filter(continent == "Africa", year == 2002) |>
   select(year, country, lifeExp)
-head(year_country_lifeExp_Africa)
+head(year_country_lifeExp_Africa_2002)
 ```
 
 ```{r}

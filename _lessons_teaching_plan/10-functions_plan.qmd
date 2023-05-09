@@ -163,6 +163,8 @@ if (condition is true) {
 You can execute alternative code if the condition is false using `else`:
 
 ```{r}
+#| eval: false
+
 # if else
 if (condition is true) {
   perform action
