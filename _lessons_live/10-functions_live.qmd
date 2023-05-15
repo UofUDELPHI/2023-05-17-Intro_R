@@ -426,7 +426,7 @@ and
 
 ```
 
-Note that the `return()` above is technically not required, since R will always return the last object that was computed in the body of the function
+Note that the `return()` above is technically not required since R will always return the last object that was computed in the body of the function
 
 
 
@@ -523,7 +523,7 @@ Or both:
 
 ::: {.callout}
 ## Challenge 5
-Test out your GDP for multiple years and countries function by calculating the GDP for New Zealand and Australia in 1987 and 1952.
+Test out your GDP function for multiple years and countries by calculating the GDP for New Zealand and Australia in 1987 and 1952.
 
 :::
 

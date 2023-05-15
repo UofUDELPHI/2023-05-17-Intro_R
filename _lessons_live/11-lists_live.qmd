@@ -69,7 +69,7 @@ cats
 
 ::: {.callout}
 ## Challenge 1
-Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like:
+Create a list of length two containing a (1) character vector containing the letters "x", "y", and "z" and (2) a data frame with two columns that looks like:
 
 ```{verbatim}
     name grade
@@ -210,7 +210,7 @@ There are several ways to do this. Compare your answer with your neighbor. Did y
 ### Data frames as a special case of a list
 
 
-It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
+It turns out that a data frame is a special kind of list. Specifically, *a data frame is a list of vectors of the same length*. 
 
 This is why you can extract vector columns from a data frame using the double brackets notation:
 

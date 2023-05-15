@@ -47,7 +47,7 @@ Make a new column in the `cats` data frame that contains a "calibrated" weight m
 
 Check the head or tail of the data frame to make sure it worked.
 
-To define the cats data frame, run
+To define the `cats` data frame, run
 
 ```{r}
 cats <- read.csv("data/feline-data.csv")
@@ -195,13 +195,13 @@ Since comparison operators (e.g. `>`, `<`, `==`) are vectorized we can use them 
 
 Several operations for combining logical vectors exist in R:
 
-* `a & b`, the "logical AND" operator: returns `TRUE` if both the `a` and `b`
+* `a & b`: the "logical AND" operator: returns `TRUE` if both the `a` and `b`
   are `TRUE`.
 
-* `a | b`, the "logical OR" operator: returns `TRUE`, if either `a` or `b`
+* `a | b`: the "logical OR" operator: returns `TRUE`, if either `a` or `b`
   (or both) are `TRUE`.
 
-* `!`, the "logical NOT" operator: converts `TRUE` to `FALSE` and `FALSE` to
+* `!`: the "logical NOT" operator: converts `TRUE` to `FALSE` and `FALSE` to
   `TRUE`. 
 
 
@@ -332,7 +332,7 @@ Write another subsetting command to return the values in x that are greater than
 
 ## Tip: Non-unique names
 
-It is possible for multiple elements in a vector to have the same name. 
+Multiple elements in a vector can have the same name. 
 
 
 Let's define the following vector:

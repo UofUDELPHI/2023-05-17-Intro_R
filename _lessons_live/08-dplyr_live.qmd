@@ -435,7 +435,7 @@ The `group_by()` function offers a nice approach for grouped operations on a dat
 `group_by()` can be used with any dplyr function. For example with mutate:
 
 ```{r}
-# use group_by() and mutate() to add a column containig the continent's 
+# use group_by() and mutate() to add a column containing the continent's 
 # average life expectancy
 
 ```
@@ -473,7 +473,7 @@ Hint: The logical condition `x == min(x)` will return `TRUE` for the value of `x
 ## Ordering the rows in a data frame using arrange()
 
 
-Another way to do complete the previous challenge is to use `arrange()`:
+Another way to complete the previous challenge is to use `arrange()`:
 
 
 ```{r}

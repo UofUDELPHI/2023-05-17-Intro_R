@@ -103,7 +103,7 @@ What does this syntax do?
 
 
 
-A blank `i` or `j` this tells R to extract *all* of the rows or columns
+A blank `i` or `j` tells R to extract *all* of the rows or columns
 
 - `df[, j]` will extract all rows for the jth column, and 
 
@@ -265,7 +265,7 @@ To subset the cats data frame to just the rows where the weight of the cats is a
 
 
 
-Task: select only the rows where the *cat's coat is tabby or calico* and returns just the values in the *"weight" column*:
+Task: select only the rows where the *cat's coat is tabby or calico* and return just the values in the *"weight" column*:
 
 ```{r}
 # subset to just the rows where the coat is "tabby" or "calico" and 
@@ -290,7 +290,7 @@ Task: select only the rows where the *cat's coat is tabby or calico* and returns
 
 ```
 
-The gapminder dataset contains information on the population, life expectency, GDP per capita for a range of country-year combinations:
+The gapminder dataset contains information on the population, life expectancy, GDP per capita for a range of country-year combinations:
 
 ```{r}
 # look at the first 6 rows of the gapminder data
@@ -354,7 +354,7 @@ Suppose we want to pull out information from Southeast Asia, which includes the 
 
 Subset the data just to the rows that include the countries in Southeast Asia by:
 
-1. Defining a logical vector that is `TRUE` for all of the countries in southeast Asia and `FALSE` otherwise. 
+1. Defining a logical vector that is `TRUE` for all of the countries in Southeast Asia and `FALSE` otherwise. 
 
 2. Using this logical vector to extract just the rows for Southeast Asia from the gapminder dataset.
 

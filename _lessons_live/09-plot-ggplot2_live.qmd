@@ -225,7 +225,7 @@ Each layer is drawn on top of the previous layer. What happens if we switch the 
 
 
 
-### Setting aesthetics to a unfiform (non-data) value
+### Setting aesthetics to a uniform (non-data) value
 
 
 To change the aesthetic of all lines/points to a value that is not dictated by the data, you may think that `aes(color="blue")` should work, but it doesn't.

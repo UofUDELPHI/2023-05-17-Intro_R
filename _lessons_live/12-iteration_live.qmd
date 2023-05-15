@@ -249,7 +249,7 @@ For each column in the gapminder dataset, compute the number of unique entries u
 
 Do this in two different ways: using a `for` loop and a `map_dbl()` function.
 
-Hint: `n_distinct()` is a dplyr function which counts the number of unique/distinct values in a vector. Try `n_distinct(c(1, 1, 4, 4, 4, 4, 1, 3))` as an example of its usage
+Hint: `n_distinct()` is a dplyr function, which counts the number of unique/distinct values in a vector. Try `n_distinct(c(1, 1, 4, 4, 4, 4, 1, 3))` as an example of its usage
 
 
 
