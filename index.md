@@ -406,9 +406,10 @@ please preview your site before committing, and make sure to run
   In addition, you will need an up-to-date web browser.
 </p>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
+  If installing R/RStudio locally, a list of common issues can be found on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+
+  We offer two setup routes for this workshop: (Option 1) Posit cloud and (Option 2) Using R/RStudio locally.
 </p>
 
 {% comment %}
