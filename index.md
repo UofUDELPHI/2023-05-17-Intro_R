@@ -408,7 +408,9 @@ please preview your site before committing, and make sure to run
 <p>
   If installing R/RStudio locally, a list of common issues can be found on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+</p>
 
+<p>
   We offer two setup routes for this workshop: (Option 1) Posit cloud and (Option 2) Using R/RStudio locally.
 </p>
 
