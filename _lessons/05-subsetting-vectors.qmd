@@ -50,13 +50,11 @@ x
 ```
 
 
-So now that we've created a toy vector to play with, how do we get at its
-contents?
+So now that we've created a toy vector to play with, how do we get at its contents?
 
 ### Accessing elements using their indices
 
-To extract elements of a vector we can give their corresponding index, starting
-from one:
+To extract elements of a vector we can give their corresponding index, starting from one:
 
 ```{r}
 x[1]
@@ -109,14 +107,12 @@ x[0]
 ::: {.callout-tip}
 ## Vector numbering in R starts at 1
 
-In many programming languages (C and Python, for example), the first
-element of a vector has an index of 0. In R, the first element is 1.
+In many programming languages (C and Python, for example), the first element of a vector has an index of 0. In R, the first element is 1.
 :::
 
 ### Skipping and removing elements
 
-If we use a negative number as the index of a vector, R will return
-every element *except* for the one specified:
+If we use a negative number as the index of a vector, R will return every element *except* for the one specified:
 
 ```{r}
 x[-2]
@@ -133,9 +129,7 @@ x[c(-1, -5)]  # or x[-c(1,5)]
 ### Order of operations
 
 
-A common trip up for novices occurs when trying to skip
-slices of a vector. It's natural to try to negate a
-sequence like so:
+A common trip-up for novices occurs when trying to skip slices of a vector. It's natural to try to negate a sequence like so:
 
 ```{r, error=TRUE, eval=FALSE}
 x[-1:3]
@@ -147,11 +141,7 @@ This gives a somewhat cryptic error:
 x[-1:3]
 ```
 
-But remember the order of operations. `:` is really a function.
-It takes its first argument as -1, and its second as 3,
-so generates the sequence of numbers: `c(-1, 0, 1, 2, 3)`.
-The correct solution is to wrap that function call in brackets, so
-that the `-` operator applies to the result:
+But remember the order of operations. `:` is really a function. It takes its first argument as -1, and its second as 3, so generates the sequence of numbers: `c(-1, 0, 1, 2, 3)`. The correct solution is to wrap that function call in brackets, so that the `-` operator applies to the result:
 
 ```{r}
 x[-(1:3)]
@@ -181,7 +171,7 @@ Come up with at least 2 different commands that will produce the following outpu
 x[2:4]
 ```
 
-After you find 2 different commands, compare notes with your neighbour. Did you have different strategies?
+After you find 2 different commands, compare notes with your neighbor. Did you have different strategies?
 
 ::: {.callout collapse=true}
 ## Solution to challenge 1
@@ -232,11 +222,7 @@ x * 2
 
 ## Names
 
-With names, we can give meaning to elements. It is the first time that we do not
-only have the **data**, but also explaining information. It is *metadata*
-that can be stuck to the object like a label. In R, this is called an
-**attribute**. Some attributes enable us to do more with our
-object, for example, like here, accessing an element by a self-defined name.
+With names, we can give meaning to elements. It is the first time that we do not only have the **data**, but also explaining information. It is *metadata* that can be stuck to the object like a label. In R, this is called an **attribute**. Some attributes enable us to do more with our object, for example, like here, accessing an element by a self-defined name.
 
 ### Accessing vectors by name
 
@@ -301,9 +287,7 @@ y[c("a", "c")]
 
 
 
-This is usually a much more reliable way to subset objects: the
-position of various elements can often change when chaining together
-subsetting operations, but the names will always remain the same!
+This is usually a much more reliable way to subset objects: the position of various elements can often change when chaining together subsetting operations, but the names will always remain the same!
 
 :::
 :::
@@ -311,16 +295,13 @@ subsetting operations, but the names will always remain the same!
 ::: {.callout}
 ## Challenge 4
 
-What is the data type of the names of `pizza_price`? You can find out 
- using the `str()` or `class()` functions.
+What is the data type of the names of `pizza_price`? You can find out using the `str()` or `class()` functions.
 
 
 ::: {.callout collapse=true}
 ## Solution to Challenge 4
 
-You get the names of an object by wrapping the object name inside
-`names(...)`. Similarly, you get the data type of the names by again 
-wrapping the whole code in `class(...)`:
+You get the names of an object by wrapping the object name inside `names(...)`. Similarly, you get the data type of the names by again wrapping the whole code in `class(...)`:
 
 ```{r}
 class(names(pizza_price))
@@ -339,8 +320,7 @@ class(names)
 
 ## Challenge 5
 
-Instead of just changing the names of each element of a vector individually, you can
-also set all names of an object by writing code like (replace ALL CAPS text):
+Instead of just changing the names of each element of a vector individually, you can also set all names of an object by writing code like (replace ALL CAPS text):
 
 ```{r}
 #| eval: false
@@ -349,12 +329,9 @@ names( OBJECT ) <-  CHARACTER_VECTOR
 
 Create a vector that gives the number for each letter in the alphabet!
 
-1. Generate a vector called `letter_no` with the sequence of numbers from 1
-  to 26
-2. R has a built-in object called `LETTERS` (type `LETTERS` in the console. It is a 26-character vector of uppercase letters from 
-  A to Z. Set the names of `letter_no` to these 26 letters
-3. Test yourself by calling `letter_no["B"]`, which should give you the number
-  2!
+1. Generate a vector called `letter_no` with the sequence of numbers from 1 to 26
+2. R has a built-in object called `LETTERS` (type `LETTERS` in the console. It is a 26-character vector of uppercase letters from A to Z. Set the names of `letter_no` to these 26 letters
+3. Test yourself by calling `letter_no["B"]`, which should give you the number 2!
   
 ::: {.callout collapse=true}
 ## Solution to Challenge 5

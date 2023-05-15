@@ -44,7 +44,7 @@ up the help file to check out the argument names and their default values.
 write.csv(x = cats, file = "data/feline-data.csv", row.names = FALSE)
 ```
 
-You should now see that you have a new file, `feline-data.csv`, in your `data/` folder, whose contents look like:
+You should now see that you have a new file, `feline-data.csv`, in your `data/` folder, whose contents look like this:
 
 ```{r, eval=FALSE}
 coat,weight,likes_string
@@ -72,15 +72,7 @@ cats
 ::: {.callout-tip}
 ## Tip: `read.table()` and delimiters
 
-The `read.table` function is used for reading in tabular data stored in a text
-file where the columns of data are separated by punctuation characters such as
-.csv files (csv = comma-separated values). Tabs and commas are the most common
-punctuation characters used to separate or delimit data points in csv files.
-For convenience R provides 2 other versions of `read.table`. These are: `read.csv`
-for files where the data are separated with commas and `read.delim` for files
-where the data are separated with tabs. Of these three functions `read.csv` is
-the most commonly used.  If needed it is possible to override the default
-delimiting punctuation marks for both `read.csv` and `read.delim`.
+The `read.table` function is used for reading tabular data stored in a text file where the columns of data are separated by punctuation characters such as .csv files (csv = comma-separated values). Tabs and commas are the most common punctuation characters used to separate or delimit data points in csv files. For convenience R provides 2 other versions of `read.table`. These are: `read.csv` for files where the data are separated with commas and `read.delim` for files where the data are separated with tabs. Of these three functions `read.csv` is the most commonly used.  If needed it is possible to override the default delimiting punctuation marks for both `read.csv` and `read.delim`.
 :::
 
 There are lots of things we can do with our `cats` data object, such as extracting individual columns using the `$` operator:
@@ -112,16 +104,13 @@ Understanding what happened here is key to successfully analyzing data in R.
 
 ## Data Types
 
-If you guessed that the last command will return an error because `2.1` plus
-`"black"` is nonsense, you're right - and you already have some intuition for an
-important concept in programming called *data types*. We can ask what type or "class" or "type" of
-data something is:
+If you guessed that the last command will return an error because `2.1` plus `"black"` is nonsense, you're right - and you already have some intuition for an important concept in programming called *data types*. We can ask what type or "class" or "type" of data something is:
 
 ```{r}
 class(cats$weight)
 ```
 
-You will typically encounter the following main types: `numeric` (which encompasses `double` and `integer`), `logical`, `character` (and `factor`, but we won't encounter these until later). There are others too (such as `complex`), but you're unlikely to encounter them in your data analysis journeys.
+You will typically encounter the following main types: `numeric` (which encompasses `double` and `integer`), `logical`, and `character` (and `factor`, but we won't encounter these until later). There are others too (such as `complex`), but you're unlikely to encounter them in your data analysis journeys.
 
 Let's identify the class of several values:
 
@@ -131,11 +120,9 @@ class(TRUE)
 class("banana")
 ```
 
-No matter how complicated our analyses become, all data in R is interpreted as one of these
-basic data types. This strictness has some really important consequences.
+No matter how complicated our analyses become, all data in R is interpreted as one of these basic data types. This strictness has some really important consequences.
 
-A user has added details of another cat. This information is in the file
-`data/feline-data_v2.csv`.
+A user has added details of another cat. This information is in the file `data/feline-data_v2.csv`.
 
 
 ```{r, eval=FALSE}
@@ -150,16 +137,14 @@ tabby,3.2,1
 tabby,2.3 or 2.4,1
 ```
 
-Load the new cats data like before, and check what type of data we find in the
-`weight` column:
+Load the new `cats` data like before, and check what type of data we find in the `weight` column:
 
 ```{r}
 cats_v2 <- read.csv(file="data/feline-data_v2.csv")
 class(cats_v2$weight)
 ```
 
-Oh no, our weights aren't the numeric class anymore! If we try to do the same math
-we did on them before, we run into trouble:
+Oh no, our weights aren't the numeric class anymore! If we try to do the same math we did on them before, we run into trouble:
 
 ```{r}
 #| error: true
@@ -168,29 +153,22 @@ cats_v2$weight + 2
 
 What happened? 
 
-The `cats` data we are working with is something called a *data frame*. Data frames
-are one of the most common and versatile types of *data structures* we will work with in R.
+The `cats` data we are working with is something called a *data frame*. Data frames are one of the most common and versatile types of *data structures* we will work with in R.
 
 A given column in a data frame can only contain one single data type (but each column can be of a different type).
 
 In this case, R does not read everything in the data frame column `weight` as *numeric* (specifically, R reads the entry `2.3 or 2.4` as a character), therefore the entire column data type changes to something that is suitable for everything in the column.
 
-When R reads a csv file, it reads it in as a *data frame*. Thus, when we loaded the `cats`
-csv file, it is stored as a data frame. We can recognize data frames by the first row that 
-is written by the `str()` function:
+When R reads a csv file, it reads it in as a *data frame*. Thus, when we loaded the `cats` csv file, it is stored as a data frame. We can recognize data frames by the first row that  is written by the `str()` function:
 
 ```{r}
 str(cats)
 ```
 
 *Data frames* are composed of rows and columns, where each column is a vector of the same length. 
-Different columns in a data frame can be made up of different 
-data types (this is what makes them so versatile), but everything in a given
-column needs to be the same type (e.g., numeric, character, logical, etc).
+Different columns in a data frame can be made up of different data types (this is what makes them so versatile), but everything in a given column needs to be the same type (e.g., numeric, character, logical, etc).
 
-Let's explore more about different data structures and how they behave. 
-For now, let's go back to working with the original `feline-data.csv` file
-while we investigate this behavior further:
+Let's explore more about different data structures and how they behave.  For now, let's go back to working with the original `feline-data.csv` file while we investigate this behavior further:
 
 `feline-data.csv`:
 
@@ -212,8 +190,7 @@ cats
 
 ## Vectors and Type Coercion
 
-To better understand this behavior, let's learn more about the *vector*. A vector in R is essentially an ordered collection of values, with the special
-condition that *everything in the vector must be the same basic data type*. 
+To better understand this behavior, let's learn more about the *vector*. A vector in R is essentially an ordered collection of values, with the special condition that *everything in the vector must be the same basic data type*. 
 
 A vector can be created with the `c()` "combine" function:
 
@@ -239,11 +216,7 @@ Because all entries in a vector must have the same type, `c()` will *coerce* the
 quiz_vector <- c(2, 6, '3')
 ```
 
-This is something called *type coercion*, and it is the source of many surprises
-and the reason why we need to be aware of the basic data types and how R will
-interpret them. When R encounters a mix of types (here numeric and character) to
-be combined into a single vector, it will force them all to be the same
-type. Consider:
+This is something called *type coercion*, and it is the source of many surprises and the reason why we need to be aware of the basic data types and how R will interpret them. When R encounters a mix of types (here numeric and character) to be combined into a single vector, it will force them all to be the same type. Consider:
 
 ```{r}
 coercion_vector <- c('a', TRUE)
@@ -254,9 +227,7 @@ another_coercion_vector
 
 ### The type hierarchy
 
-The coercion rules go: `logical` -> `numeric` -> `character`, where -> can be read as "*are transformed into*". For
-example, combining `logical` and `character` transforms the result to
-`character`:
+The coercion rules go: `logical` -> `numeric` -> `character`, where -> can be read as "*are transformed into*". For example, combining `logical` and `character` transforms the result to `character`:
 
 ```{r}
 c('a', TRUE)
@@ -363,15 +334,11 @@ print(cats)
 :::
 
 ### 2. Overview of the data types
-Use a function we saw earlier to print out the "type" of all columns of the
-`cats` table.
+Use a function we saw earlier to print out the "type" of all columns of the `cats` table.
 
 ::: {.callout-tip}
 ## Tip 1.2
-In the chapter "Data types" we saw two functions that can show data types. 
-One printed just a single word, the data type name. The other printed
-a short form of the data type, and the first few values. We recommend the second
-here. 
+In the chapter "Data types" we saw two functions that can show data types.  One printed just a single word, the data type name. The other printed a short form of the data type and the first few values. We recommend the second here. 
 :::
 
 ::: {.callout collapse=true}
@@ -382,66 +349,52 @@ str(cats)
 :::
 
 ### 3. Which data type do we need?
-The shown data type is not the right one for this data (weight of 
-a cat). Which data type do we need? 
+The shown data type is not the right one for this data (weight of a cat). Which data type do we need? 
 
 * Why did the `read.csv()` function not choose the correct data type?
 * Fill in the gap in the comment with the correct data type for cat weight!
 
 ::: {.callout-tip}
 ## Tip 1.3
-Scroll up to the section about the [type hierarchy](#the-type-hierarchy)
-to review the available data types
+Scroll up to the section about the [type hierarchy](#the-type-hierarchy) to review the available data types
 :::
 
 ::: {.callout}
 ## Solution to Challenge 1.3
 
-* Weight is expressed on a continuous scale (real numbers). The R
- data type for this is "numeric".
-* The fourth row has the value "2.3 or 2.4". That is not a number
- but two, and an english word. Therefore, the "character" data type
- is chosen. The whole column is now text, because all values in the same
- columns have to be the same data type.
+* Weight is expressed on a continuous scale (real numbers). The R data type for this is "numeric".
+
+* The fourth row has the value "2.3 or 2.4". That is not a number but two, and an English word. Therefore, the "character" data type is chosen. The whole column is now text because all values in the same columns have to be the same data type.
 :::
 
 ### 4. Correct the problematic value
-The code to assign a new weight value to the problematic fourth row is given. 
-Think first and then execute it: What will be the data type after assigning
-a number like in this example?
-You can check the data type after executing to see if you were right.
+The code to assign a new weight value to the problematic fourth row is given. Think first and then execute it: What will be the data type after assigning a number like in this example? You can check the data type after executing to see if you were right.
 
 
 ::: {.callout-tip}
 ## Tip 1.4
-Revisit the hierarchy of data types when two different data types are 
-combined.
+Revisit the hierarchy of data types when two different data types are combined.
 :::
 
 ::: {.callout collapse=true}
 ## Solution to challenge 1.4
 
-The data type of the column "weight" is "character". The assigned data
-type is "numeric". Combining two data types yields the data type that is
-higher in the following hierarchy: 
+The data type of the column "weight" is "character". The assigned data type is "numeric". Combining two data types yields the data type that is higher in the following hierarchy: 
 ```{r}
 #| eval: false
 logical < numeric < character
 ```
-Therefore, the column is still of type character! We need to manually
-convert it to "numeric".
+Therefore, the column is still of type character! We need to manually convert it to "numeric".
 :::
 
 ### 5. Convert the column "weight" to the correct data type
 
-Cat weight are numbers. But the column does not have this data type yet. 
+Cat weights are numbers. But the column does not have this data type yet. 
 Coerce the column to floating point numbers. 
 
 ::: {.callout-tip}
 ## Tip 1.5
-The functions to convert data types start with `as.`. You can look
-for the function further up in the manuscript or use the RStudio 
-auto-complete function: Type "`as.`" and then press the TAB key.
+The functions to convert data types start with `as.`. You can look for the function further up in the manuscript or use the RStudio auto-complete function: Type "`as.`" and then press the TAB key.
 :::
 
 ::: {.callout collapse=true}
@@ -467,7 +420,7 @@ combine_example <- c(ab_vector, 'z')
 combine_example
 ```
 
-You can also make series of numbers using the `:` syntax as well as the `seq()` function:
+You can also make a series of numbers using the `:` syntax as well as the `seq()` function:
 
 ```{r}
 mySeries <- 1:10
@@ -533,7 +486,7 @@ cats$coat
 It looks very similar to the character format, but now our output tells us that there are the following "levels": "black", "calico", "tabby"
 
 
-One common pitfall occurs when converting numerically coded factors to numeric type. 
+One common pitfall occurs when converting numerically coded factors to a numeric type. 
 
 If we convert a `coat` to a numeric type, it replaces each level with a number in the order that the levels are defined (the default is alphabetical order):
 
@@ -555,6 +508,6 @@ as.numeric(factor_weight)
 ```
 
 
-Fortunately, factor and character types behave fairly similarly across most applications, so it *usually* won't matter which format your categorical variables are encoded as, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.
+Fortunately, factor and character types behave fairly similarly across most applications, so it *usually* won't matter which format your categorical variables are encoded, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.
 
 

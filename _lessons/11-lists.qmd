@@ -11,7 +11,7 @@ editor_options:
 
 It's time to introduce another data structure: the *list*.
 
-List are very flexible because you can put anything you want in it: unlike a vector, the elements of a list can have different data types. For example:
+Lists are very flexible because you can put anything you want in it: unlike a vector, the elements of a list can have different data types. For example:
 
 ```{r}
 list_example <- list(1, "a", TRUE)
@@ -60,7 +60,7 @@ complicated_list
 
 ::: {.callout}
 ## Challenge 1
-Create a list of length two containing a (1) character vector containing the letters "x", "y", "z" and (2) a data frame with two columns that looks like this.
+Create a list of length two containing a (1) character vector containing the letters "x", "y", and "z" and (2) a data frame with two columns that looks like this.
 
 ```{r}
 #| echo: false
@@ -103,18 +103,13 @@ xlist[1]
 
 This returns a *list with one element*.
 
-We can subset elements of a list exactly the same way as atomic
-vectors using `[`. Comparison operations however won't work as
-they're not recursive, they will try to condition on the data structures
-in each element of the list, not the individual elements within those
-data structures.
+We can subset elements of a list the same way as atomic vectors using `[`. Comparison operations however won't work as they're not recursive, they will try to condition on the data structures in each element of the list, not the individual elements within those data structures.
 
 ```{r}
 xlist[1:2]
 ```
 
-To extract individual elements of a list, you need to use the double-square
-bracket function: `[[`.
+To extract individual elements of a list, you need to use the double-square bracket function: `[[`.
 
 ```{r}
 xlist[[1]]
@@ -156,7 +151,7 @@ xlist <- list(a = "Software Carpentry", b = 1:10, data = head(mtcars))
 xlist
 ```
 
-Using list and vector subsetting, extract the second entry in the second element of the list (i.e., extract the number `2` from the `b` entry from xlist`). There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?
+Using list and vector subsetting, extract the second entry in the second element of the list (i.e., extract the number `2` from the `b` entry from `xlist`). There are several ways to do this. Compare your answer with your neighbor. Did you do it the same way?
 
 ::: {.callout collapse=true}
 
@@ -181,7 +176,7 @@ xlist[["b"]][2]
 ### Data frames as a special case of a list
 
 
-It turns out that a data frame is a special kind of a list. Specifically, *a data frame is a list of vectors of the same length*. 
+It turns out that a data frame is a special kind of list. Specifically, *a data frame is a list of vectors of the same length*. 
 
 This is why you can extract vector columns from a data frame using the double brackets notation:
 

@@ -30,16 +30,11 @@ gapminder <- read.csv("data/gapminder_data.csv", header = TRUE, stringsAsFactors
 gapminder_long <- read.csv("data/gapminder_long.csv")
 ```
 
-Researchers often want to reshape their data frames from 'wide' to 'longer'
-layouts, or vice-versa. 
+Researchers often want to reshape their data frames from 'wide' to 'longer' layouts, or vice-versa. 
 
 In the purely 'long' (or 'longest') format, you usually have 1 column for the observed variable and the other columns are ID variables.
 
-For the 'wide' format each row is often a site/subject/patient and you have
-multiple observation variables containing the same type of data. These can be
-either repeated observations over time, or observation of multiple variables (or
-a mix of both). You may find data input may be simpler or some other
-applications may prefer the 'wide' format. 
+For the 'wide' format each row is often a site/subject/patient and you have multiple observation variables containing the same type of data. These can be either repeated observations over time or observations of multiple variables (or a mix of both). You may find data input may be simpler or some other applications may prefer the 'wide' format. 
 
 However, many of `R`'s functions have been designed assuming you have a 'tidy' formatted dataset, in which 
 
@@ -47,7 +42,7 @@ However, many of `R`'s functions have been designed assuming you have a 'tidy' f
 
 - Each column is a distinct type of measurement
 
-The "wide"-labelled format in the example below is actually tidy:
+The "wide"-labeled format in the example below is actually tidy:
 
 ![Diagram illustrating the difference between a tidy versus long layout of a data frame](figs/14-tidyr-fig1.png)
 
@@ -62,7 +57,7 @@ Load the tidyverse package
 library(tidyverse)
 ```
 
-First, lets look at the structure of our original gapminder data frame:
+First, let's look at the structure of our original gapminder data frame:
 
 ```{r}
 head(gapminder)
@@ -125,13 +120,11 @@ used to pivot into a longer format.
 
 Note: `pivot_longer()` also allows the alternative syntax of using the `-` symbol to identify which variables are not to be pivoted (i.e. ID variables).
 
-The next arguments to `pivot_longer()` are `names_to` for naming the column that
-will contain the variable names (`variable`) and `values_to` for naming the column that will contain the values of each variable. We supply these new column
-names as strings.
+The next arguments to `pivot_longer()` are `names_to` for naming the column that will contain the variable names (`variable`) and `values_to` for naming the column that will contain the values of each variable. We supply these new column names as strings.
 
 
 
-Typically, long-format is useful for when you want to plot multiple variables on the same plot, e.g., a line plot of each of the three variables (pop, lifeExp, and gdpPercap) over time.
+Typically, long-format is useful when you want to plot multiple variables on the same plot, e.g., a line plot of each of the three variables (pop, lifeExp, and gdpPercap) over time.
 
 ```{r}
 gapminder_long |>
@@ -180,9 +173,7 @@ Let's convert our long format data back to the (wider) tidy format using `pivot_
 
 The `pivot_wider()` function takes `names_from` and `values_from` arguments.
 
-To `names_from` we supply the column name whose contents will be pivoted into new
-output columns in the widened data frame. The corresponding values will be added
-from the column named in the `values_from` argument.
+To `names_from` we supply the column name whose contents will be pivoted into new output columns in the widened data frame. The corresponding values will be added from the column named in the `values_from` argument.
 
 ```{r}
 gapminder_wider <- gapminder_long |>

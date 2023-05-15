@@ -4143,7 +4143,7 @@ What is a function?
 <div class="callout-body-container callout-body">
 <p>Functions gather a sequence of operations into a whole, preserving it for ongoing use. Functions provide:</p>
 <ul>
-<li><p>a name we can remember and invoke it by</p></li>
+<li><p>a name we can remember and use to invoke it</p></li>
 <li><p>relief from the need to remember the individual operations</p></li>
 <li><p>a defined set of inputs and expected outputs</p></li>
 </ul>
@@ -4170,7 +4170,7 @@ What is a function?
 </div>
 <p>The list of arguments that the function takes are contained within the parentheses in <code>function(args)</code>.</p>
 <p>Next, the body of the function–the statements that are executed when it runs–is contained within curly braces (<code>{}</code>). The statements in the body are indented by two spaces. This makes the code easier to read but does not affect how the code operates.</p>
-<p>It is useful to think of creating functions like writing a cookbook. First you define the “ingredients” that your function needs. In this case, we only need one ingredient to use our function: “temp”. After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it.</p>
+<p>It is useful to think of creating functions like writing a cookbook. First, you define the “ingredients” that your function needs. In this case, we only need one ingredient to use our function: “temp”. After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it.</p>
 <p>When we call the function, the values we pass to it as arguments are assigned to those variables so that we can use them inside the function. Inside the function, we use a to output a result when the function is used.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -4211,7 +4211,8 @@ Challenge 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write a function called <code>kelvin_to_celsius()</code> that takes a temperature in Kelvin and returns that temperature in Celsius. Hint: To convert from Kelvin to Celsius you subtract 273.15</p>
+<p>Write a function called <code>kelvin_to_celsius()</code> that takes a temperature in Kelvin and returns that temperature in Celsius.</p>
+<p>Hint: To convert from Kelvin to Celsius you subtract 273.15</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -4239,7 +4240,7 @@ Solution to challenge 1
 </section>
 <section id="combining-functions" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="combining-functions"><span class="header-section-number">10.2</span> Combining functions</h2>
-<p>The real power of functions comes from mixing, matching and combining them into ever-larger chunks to get the effect we want.</p>
+<p>The real power of functions comes from mixing, matching, and combining them into ever-larger chunks to get the effect we want.</p>
 <p>Let’s define two functions that will convert temperature from Fahrenheit to Kelvin, and Kelvin to Celsius:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fahr_to_kelvin <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
@@ -4291,7 +4292,7 @@ Solution to challenge 2
 </section>
 <section id="interlude-defensive-programming" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="interlude-defensive-programming"><span class="header-section-number">10.3</span> Interlude: Defensive Programming</h2>
-<p>Now that we’ve begun to appreciate how writing functions provides an efficient way to make R code re-usable and modular, we should note that it is important to ensure that functions only work in their intended use-cases. Checking function parameters is related to the concept of <em>defensive programming</em>. Defensive programming encourages us to frequently check conditions and throw an error if something is wrong. These checks are referred to as assertion statements because we want to assert some condition is <code>TRUE</code> before proceeding. They make it easier to debug because they give us a better idea of where the errors originate.</p>
+<p>Now that we’ve begun to appreciate how writing functions provides an efficient way to make R code reusable and modular, we should note that it is important to ensure that functions only work in their intended use cases. Checking function parameters is related to the concept of <em>defensive programming</em>. Defensive programming encourages us to frequently check conditions and throw an error if something is wrong. These checks are referred to as assertion statements because we want to assert some condition is <code>TRUE</code> before proceeding. They make it easier to debug because they give us a better idea of where the errors originate.</p>
 <section id="checking-conditions-with-stop" class="level3" data-number="10.3.1">
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="checking-conditions-with-stop"><span class="header-section-number">10.3.1</span> Checking conditions with <code>stop()</code></h3>
 <p>Let’s start by re-examining <code>fahr_to_kelvin()</code>, our function for converting temperatures from Fahrenheit to Kelvin. It was defined like so:</p>
@@ -4430,7 +4431,7 @@ Solution to challenge 3
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Extend our previous definition of the function by adding in an explicit call to <code>stopifnot()</code>. Since <code>fahr_to_celsius()</code> is a composition of two other functions, checking inside here makes adding checks to the two component functions redundant.</p>
+<p>Extend our previous definition of the function by adding in an explicit call to <code>stopifnot()</code>. Since <code>fahr_to_celsius()</code> is a composition of two other functions, checking inside here makes adding checks to the two-component functions redundant.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fahr_to_celsius <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(temp))</span>
@@ -4513,7 +4514,7 @@ Challenge 4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says “you must provide at least two non-zero values to add”. Test your function.</p>
+<p>Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says “You must provide at least two non-zero values to add”. Test your function.</p>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -4579,7 +4580,7 @@ Solution to challenge 4
 </section>
 <section id="an-advanced-example" class="level2" data-number="10.6">
 <h2 data-number="10.6" class="anchored" data-anchor-id="an-advanced-example"><span class="header-section-number">10.6</span> An advanced example</h2>
-<p>The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.</p>
+<p>The following function takes the gapminder data frame, and computes the GDP (in billions) while filtering to a specified year and country if specified.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Takes a dataset and multiplies the population column</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with the GDP per capita column.</span></span>
@@ -4598,7 +4599,7 @@ Solution to challenge 4
 <span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dat)</span>
 <span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you’ve been writing these functions down into a separate R script (a good idea!), you can load in the functions into our R session by using the <code>source()</code> function:</p>
+<p>If you’ve been writing these functions down into a separate R script (a good idea!), you can load the functions into our R session by using the <code>source()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/functions-lesson.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -4660,7 +4661,7 @@ Solution to challenge 4
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>calcGDP <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">.year =</span> <span class="cn">NULL</span>, <span class="at">.country =</span> <span class="cn">NULL</span>) {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here we’ve added two arguments, <code>.year</code>, and <code>.country</code>. We’ve set <em>default arguments</em> for both as <code>NULL</code> using the <code>=</code> operator in the function definition. We are using a period as a prefix to these arguments <code>.year</code> and <code>.country</code> to help visually differentiate between the <em>arguemnt</em> and the column name in <code>dat</code>/<code>gapminder</code>.</p>
+<p>Here we’ve added two arguments, <code>.year</code>, and <code>.country</code>. We’ve set <em>default arguments</em> for both as <code>NULL</code> using the <code>=</code> operator in the function definition. We are using a period as a prefix to these arguments <code>.year</code> and <code>.country</code> to help visually differentiate between the <em>argument</em> and the column name in <code>dat</code>/<code>gapminder</code>.</p>
 <p>These arguments will take on those values unless the user specifies otherwise.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(.year)) {</span>
@@ -4686,7 +4687,7 @@ Solution to challenge 4
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dat)</span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Finally, we used transmute to both select <code>country</code>, <code>year</code>, and <code>gdp</code> variables and to compute the <code>gdp</code> variable itself.</p>
+<p>Finally, we used transmute to select the <code>country</code>, <code>year</code>, and <code>gdp</code> variables and to compute the <code>gdp</code> variable itself.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4712,7 +4713,7 @@ Tip: Function scope
 </div>
 <div class="callout-body-container callout-body">
 <p>Another important concept is scoping: any variables (or functions!) you create or modify inside the body of a function only exist for the lifetime of the function’s execution.</p>
-<p>When we call <code>calcGDP()</code>, the variables <code>dat</code>, <code>gdp</code> and <code>new</code> only exist inside the body of the function. Even if we have variables of the same name in our interactive R session, they are not modified in any way when executing a function.</p>
+<p>When we call <code>calcGDP()</code>, the variables <code>dat</code> and <code>gdp</code> only exist inside the body of the function. Even if we have variables of the same name in our interactive R session, they are not modified in any way when executing a function.</p>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -4821,16 +4822,7 @@ Tip: Testing and documenting
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It’s important to both test functions and document them: Documentation helps you, and others, understand what the purpose of your function is, and how to use it, and its important to make sure that your function actually does what you think.</p>
-<p>When you first start out, your workflow will probably look a lot like this:</p>
-<ol type="1">
-<li><p>Write a function</p></li>
-<li><p>Comment parts of the function to document its behaviour</p></li>
-<li><p>Load in the source file</p></li>
-<li><p>Experiment with it in the console to make sure it behaves as you expect</p></li>
-<li><p>Make any necessary bug fixes</p></li>
-<li><p>Rinse and repeat.</p></li>
-</ol>
+<p>It’s important to both test functions and document them: documentation helps you, and others, understand what the purpose of your function is and how to use it, and its important to make sure that your function actually does what you think.</p>
 <p>Formal documentation for functions, written in separate <code>.Rd</code> files, gets turned into the documentation you see in help files. The <a href="http://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html">roxygen2</a> package allows R coders to write documentation alongside the function code and then process it into the appropriate <code>.Rd</code> files. You will want to switch to this more formal method of writing documentation when you start writing more complicated R projects. In fact, packages are, in essence, bundles of functions with this formal documentation. Loading your own functions through <code>source("functions.R")</code> is equivalent to loading someone else’s functions (or your own one day!) through <code>library("package")</code>.</p>
 <p>Formal automated tests can be written using the <a href="http://r-pkgs.had.co.nz/tests.html">testthat</a> package.</p>
 </div>

@@ -4182,12 +4182,12 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>The syntax <code>df[i, j]</code> to extract the entry in the <code>i</code>th row and the <code>j</code>th column from the data frame called <code>df</code>. For example, <code>df[3, 1]</code> will extract the single entry in the third row and first column.</p>
-<p>A blank <code>i</code> or <code>j</code> this tells R to extract <em>all</em> of the rows or columns, respectively. That is, <code>df[, 1]</code> will extract all rows for the 1st column, and <code>df[2, ]</code> will extract the second row across all columns.</p>
+<p>A blank <code>i</code> or <code>j</code> tells R to extract <em>all</em> of the rows or columns, respectively. That is, <code>df[, 1]</code> will extract all rows for the 1st column, and <code>df[2, ]</code> will extract the second row across all columns.</p>
 <ul>
 <li><p><code>df[, j]</code> will extract the <code>j</code>th <em>column</em> from the data frame called <code>df</code> as a <em>vector</em>.</p></li>
 <li><p><code>df[i, ]</code> will extract the <code>i</code>th <em>row</em> from the data frame called <code>df</code> as a <em>data frame</em>.</p></li>
 </ul>
-<p>For example the following code extracts the data from the second column of <code>cats</code> as a <em>vector</em></p>
+<p>For example, the following code extracts the data from the second column of <code>cats</code> as a <em>vector</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cats[, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4295,7 +4295,7 @@ Solution to Challenge 1
 <pre><code>[1] "calico" "black"  "tabby" </code></pre>
 </div>
 </div>
-<p>Like for vectors, we can also use the single brace notation with named indexing:</p>
+<p>As for vectors, we can also use the single brace notation with named indexing:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>cats[<span class="st">"coat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4321,7 +4321,7 @@ Solution to Challenge 1
 <pre><code>[1] "calico" "black"  "tabby" </code></pre>
 </div>
 </div>
-<p>Like the previous example we use single braces and provide row and column coordinates. The row coordinate is not specified, R interprets this missing value as all the elements in this <em>column</em> and returns them as a <em>vector</em>.</p>
+<p>Like the previous example, we use single braces and provide row and column coordinates. The row coordinate is not specified, R interprets this missing value as all the elements in this <em>column</em> and returns them as a <em>vector</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cats[<span class="dv">1</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4427,7 +4427,7 @@ Tip: select and rename
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/gapminder_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The gapminder dataset contains information on the population, life expectency, GDP per capita for a range of country-year combinations:</p>
+<p>The gapminder dataset contains information on the population, life expectancy, GDP per capita for a range of country-year combinations:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

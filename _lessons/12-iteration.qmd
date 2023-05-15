@@ -22,10 +22,7 @@ gapminder <- read.csv("data/gapminder_data.csv")
 
 If you want to iterate over a set of values, when the order of iteration is important, and perform the same operation on each, one way to do this is using a `for()` loop.
 
-In general, the advice of many `R` users would be to learn about
-`for()` loops, but to avoid using `for()` loops unless the order of iteration is
-important: i.e. the calculation at each iteration depends on the results of
-previous iterations. 
+In general, the advice of many `R` users would be to learn about `for()` loops, but to avoid using `for()` loops unless the order of iteration is important: i.e. the calculation at each iteration depends on the results of previous iterations. 
 
 The basic structure of a `for()` loop is:
 
@@ -183,7 +180,7 @@ map(1:10, exp)
 
 
 
-While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the `map()` function, such as `map_dbl()` that specifies the type of your output in its name. 
+While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the `map()` function, such as `map_dbl()`, which specifies the type of your output in its name. 
 
 For instance, if you want your output to be a numeric "double" vector, you can use `map_dbl()`:
 
@@ -197,7 +194,7 @@ and if you want it to be a character vector, you can use `map_chr()`:
 map_chr(gapminder, class)
 ```
 
-Here, recall that the gapminder data frame is a list, and the `map_` function is iterating over the elements of the list, which in this case is the columns.
+Here, recall that the gapminder data frame is a list, and the `map_` function is iterating over the elements of the list, which in this case, is the columns.
 
 
 
@@ -208,7 +205,7 @@ Note that the output of the function you are applying must match the `map_` func
 map_dbl(1:10, class)
 ```
 
-The true power from the map functions really comes once you learn how to write your own functions.
+The true power of the map functions really comes once you learn how to write your own functions.
 
 
 For example, we could conduct the following transformation to each entry in `1:10`:
@@ -263,7 +260,7 @@ data.frame(old_number = .x,
 
 
 
-As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns and then computes a data frame for each column/variable containing the mean and sd.
+As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns, and then computes a data frame for each column/variable containing the mean and sd.
 
 
 ```{r}

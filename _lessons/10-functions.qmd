@@ -13,31 +13,23 @@ library(tidyverse)
 ```
 
 
-If we only had one data set to analyze, it would probably be faster to load the
-file into a spreadsheet and use that to plot simple statistics. However, the
-gapminder data is updated periodically, and we may want to pull in that new
-information later and re-run our analysis again. We may also obtain similar data
-from a different source in the future.
+If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot simple statistics. However, the gapminder data is updated periodically, and we may want to pull in that new information later and re-run our analysis again. We may also obtain similar data from a different source in the future.
 
-In this lesson, we'll learn how to write a function so that we can repeat
-several operations with a single command.
+In this lesson, we'll learn how to write a function so that we can repeat several operations with a single command.
 
 
 ::: {.callout-tip}
 ## What is a function?
 
-Functions gather a sequence of operations into a whole, preserving it for
-ongoing use. Functions provide:
+Functions gather a sequence of operations into a whole, preserving it for ongoing use. Functions provide:
 
-* a name we can remember and invoke it by
+* a name we can remember and use to invoke it
 
 * relief from the need to remember the individual operations
 
 * a defined set of inputs and expected outputs
 
-As the basic building block of most programming languages, user-defined
-functions constitute "programming" as much as any single abstraction can. If
-you have written a function, you are a computer programmer.
+As the basic building block of most programming languages, user-defined functions constitute "programming" as much as any single abstraction can. If you have written a function, you are a computer programmer.
 :::
 
 ## Defining a function
@@ -55,8 +47,7 @@ my_function <- function(parameters) {
 }
 ```
 
-Let's define a function `fahr_to_kelvin()` that converts temperatures from
-Fahrenheit to Kelvin:
+Let's define a function `fahr_to_kelvin()` that converts temperatures from Fahrenheit to Kelvin:
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
@@ -67,30 +58,22 @@ fahr_to_kelvin <- function(temp) {
 
 The list of arguments that the function takes are contained within the parentheses in `function(args)`.   
 
-Next, the body of the function--the statements that are executed when it runs--is contained within curly braces
-(`{}`). The statements in the body are indented by two spaces. This makes the
-code easier to read but does not affect how the code operates.
+Next, the body of the function--the statements that are executed when it runs--is contained within curly braces (`{}`). The statements in the body are indented by two spaces. This makes the code easier to read but does not affect how the code operates.
 
-It is useful to think of creating functions like writing a cookbook. 
-First you define the "ingredients" that your function needs. In this case, we only need one ingredient to use our function: "temp". After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it.
+It is useful to think of creating functions like writing a cookbook. First, you define the "ingredients" that your function needs. In this case, we only need one ingredient to use our function: "temp". After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it.
 
-When we call the function, the values we pass to it as arguments are assigned to
-those variables so that we can use them inside the function. Inside the
-function, we use a to output a result when the function is used.
+When we call the function, the values we pass to it as arguments are assigned to those variables so that we can use them inside the function. Inside the function, we use a to output a result when the function is used.
 
 ::: {.callout-tip}
 ## Return statements
 
 One feature unique to R is that the return statement is not required.
 
-R automatically returns whichever variable is on the last line of the body
-of the function. But for clarity, we will explicitly define the
-return statement.
+R automatically returns whichever variable is on the last line of the body of the function. But for clarity, we will explicitly define the return statement.
 :::
 
 
-Let's try running our function.
-Calling our own function is no different from calling any other function:
+Let's try running our function. Calling our own function is no different from calling any other function:
 
 ```{r}
 # freezing point of water
@@ -106,15 +89,14 @@ fahr_to_kelvin(212)
 ::: {.callout}
 ## Challenge 1
 
-Write a function called `kelvin_to_celsius()` that takes a temperature in
-Kelvin and returns that temperature in Celsius.
+Write a function called `kelvin_to_celsius()` that takes a temperature in Kelvin and returns that temperature in Celsius. 
+
 Hint: To convert from Kelvin to Celsius you subtract 273.15
 
 ::: {.callout collapse=true}
 ## Solution to challenge 1
 
-Write a function called `kelvin_to_celsius` that takes a temperature in Kelvin
-and returns that temperature in Celsius
+Write a function called `kelvin_to_celsius` that takes a temperature in Kelvin and returns that temperature in Celsius
 
 ```{r}
 kelvin_to_celsius <- function(temp) {
@@ -127,11 +109,9 @@ return(celsius)
 
 ## Combining functions
 
-The real power of functions comes from mixing, matching and combining them
-into ever-larger chunks to get the effect we want.
+The real power of functions comes from mixing, matching, and combining them into ever-larger chunks to get the effect we want.
 
-Let's define two functions that will convert temperature from Fahrenheit to
-Kelvin, and Kelvin to Celsius:
+Let's define two functions that will convert temperature from Fahrenheit to Kelvin, and Kelvin to Celsius:
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
@@ -155,8 +135,7 @@ Define the function to convert directly from Fahrenheit to Celsius, using the tw
 
 ## Solution to challenge 2
 
-Define the function to convert directly from Fahrenheit to Celsius,
-by reusing these two functions above
+Define the function to convert directly from Fahrenheit to Celsius, by reusing these two functions above
 
 ```{r}
 fahr_to_celsius <- function(temp) {
@@ -171,20 +150,11 @@ fahr_to_celsius <- function(temp) {
 
 ## Interlude: Defensive Programming
 
-Now that we've begun to appreciate how writing functions provides an efficient
-way to make R code re-usable and modular, we should note that it is important
-to ensure that functions only work in their intended use-cases. Checking
-function parameters is related to the concept of _defensive programming_.
-Defensive programming encourages us to frequently check conditions and throw an
-error if something is wrong. These checks are referred to as assertion
-statements because we want to assert some condition is `TRUE` before proceeding.
-They make it easier to debug because they give us a better idea of where the
-errors originate.
+Now that we've begun to appreciate how writing functions provides an efficient way to make R code reusable and modular, we should note that it is important to ensure that functions only work in their intended use cases. Checking function parameters is related to the concept of _defensive programming_. Defensive programming encourages us to frequently check conditions and throw an error if something is wrong. These checks are referred to as assertion statements because we want to assert some condition is `TRUE` before proceeding. They make it easier to debug because they give us a better idea of where the errors originate.
 
 ### Checking conditions with `stop()`
 
-Let's start by re-examining `fahr_to_kelvin()`, our function for converting
-temperatures from Fahrenheit to Kelvin. It was defined like so:
+Let's start by re-examining `fahr_to_kelvin()`, our function for converting temperatures from Fahrenheit to Kelvin. It was defined like so:
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
@@ -193,13 +163,9 @@ fahr_to_kelvin <- function(temp) {
 }
 ```
 
-For this function to work as intended, the argument `temp` must be a `numeric`
-value; otherwise, the mathematical procedure for converting between the two
-temperature scales will not work. 
+For this function to work as intended, the argument `temp` must be a `numeric` value; otherwise, the mathematical procedure for converting between the two temperature scales will not work. 
 
-To create an error, we can use the function `stop()`. For example, since the argument `temp` must be a `numeric` vector, we
-could check for this condition with an `if` statement and throw an error if the
-condition was violated. We could augment our function above like so:
+To create an error, we can use the function `stop()`. For example, since the argument `temp` must be a `numeric` vector, we could check for this condition with an `if` statement and throw an error if the condition was violated. We could augment our function above like so:
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
@@ -222,8 +188,7 @@ fahr_to_kelvin("one")
 
 ## "If" statements
 
-There are several ways you can control flow in R.
-For conditional statements, the most commonly used approaches are the constructs:
+There are several ways you can control flow in R. For conditional statements, the most commonly used approaches are the constructs:
 
 ```{r}
 #| eval: false
@@ -277,26 +242,18 @@ if (x >= 10) {
 }
 ```
 
-**Important:** when R evaluates the condition inside `if()` statements, it is
-looking for a logical value (`TRUE` or `FALSE`).
+**Important:** when R evaluates the condition inside `if()` statements, it is looking for a logical value (`TRUE` or `FALSE`).
 
 :::
 
 
 
 
-If we had multiple conditions or arguments to check, it would take many lines
-of code to check all of them. Luckily R provides the convenience function
-`stopifnot()`. We can list as many requirements that should evaluate to `TRUE`;
-`stopifnot()` throws an error if it finds one that is `FALSE`. Listing these
-conditions also serves a secondary purpose as extra documentation for the
-function.
+If we had multiple conditions or arguments to check, it would take many lines of code to check all of them. Luckily R provides the convenience function `stopifnot()`. We can list as many requirements that should evaluate to `TRUE`; `stopifnot()` throws an error if it finds one that is `FALSE`. Listing these conditions also serves a secondary purpose as extra documentation for the function.
 
-Let's try out defensive programming with `stopifnot()` by adding assertions to
-check the input to our function `fahr_to_kelvin()`.
+Let's try out defensive programming with `stopifnot()` by adding assertions to check the input to our function `fahr_to_kelvin()`.
 
-We want to assert the following: `temp` is a numeric vector. We may do that like
-so:
+We want to assert the following: `temp` is a numeric vector. We may do that like so:
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
@@ -330,10 +287,7 @@ Edit our `fahr_to_celsius()` function so that it throws an error immediately if 
 ::: {.callout collapse=true}
 ## Solution to challenge 3
 
-Extend our previous definition of the function by adding in an explicit call
-to `stopifnot()`. Since `fahr_to_celsius()` is a composition of two other
-functions, checking inside here makes adding checks to the two component
-functions redundant.
+Extend our previous definition of the function by adding in an explicit call to `stopifnot()`. Since `fahr_to_celsius()` is a composition of two other functions, checking inside here makes adding checks to the two-component functions redundant.
 
 ```{r}
 fahr_to_celsius <- function(temp) {
@@ -428,7 +382,7 @@ add(a = 1, c = 3)
 ::: {.callout}
 ## Challenge 4
 
-Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says "you must provide at least two non-zero values to add". Test your function.
+Add an error message that will return an error if at least two of a, b, c, are not equal to zero that says "You must provide at least two non-zero values to add". Test your function.
 
 ::: {.callout collapse=true}
 ## Solution to challenge 4
@@ -500,7 +454,7 @@ add_v3(1, 5, 4)
 
 ## An advanced example
 
-The following function takes the gapminder data frame, and computes the GDP (in billions), while filtering to a specified year and country if specified.
+The following function takes the gapminder data frame, and computes the GDP (in billions) while filtering to a specified year and country if specified.
 
 
 ```{r}
@@ -522,9 +476,7 @@ calcGDP <- function(dat, .year = NULL, .country = NULL) {
 }
 ```
 
-If you've been writing these functions down into a separate R script
-(a good idea!), you can load in the functions into our R session by using the
-`source()` function:
+If you've been writing these functions down into a separate R script (a good idea!), you can load the functions into our R session by using the `source()` function:
 
 ```{r}
 #| eval: false
@@ -564,9 +516,7 @@ Let's walk through the body of the function:
 calcGDP <- function(dat, .year = NULL, .country = NULL) {
 ```
 
-Here we've added two arguments, `.year`, and `.country`. We've set
-*default arguments* for both as `NULL` using the `=` operator
-in the function definition. We are using a period as a prefix to these arguments `.year` and `.country` to help visually differentiate between the *arguemnt* and the column name in `dat`/`gapminder`. 
+Here we've added two arguments, `.year`, and `.country`. We've set *default arguments* for both as `NULL` using the `=` operator in the function definition. We are using a period as a prefix to these arguments `.year` and `.country` to help visually differentiate between the *argument* and the column name in `dat`/`gapminder`. 
 
 These arguments will take on those values unless the user specifies otherwise.
 
@@ -580,20 +530,16 @@ These arguments will take on those values unless the user specifies otherwise.
   }
 ```
 
-Here, we check whether each additional argument is set to `null`, and whenever
-they're not `null` overwrite the dataset stored in `dat` with the subset computed in
-body of the `if` statement.
+Here, we check whether each additional argument is set to `null`, and whenever they're not `null` overwrite the dataset stored in `dat` with the subset computed in body of the `if` statement.
 
-Building these conditionals into the function makes it more flexible for later.
-Now, we can use it to calculate the GDP for:
+Building these conditionals into the function makes it more flexible for later. Now, we can use it to calculate the GDP for:
 
  * The whole dataset;
  * A single year;
  * A single country;
  * A single combination of year and country.
 
-By using `%in%` instead, we can also give multiple years or countries to those
-arguments.
+By using `%in%` instead, we can also give multiple years or countries to those arguments.
 
 
 ```{r}
@@ -605,34 +551,24 @@ arguments.
 }
 ```
 
-Finally, we used transmute to both select `country`, `year`, and `gdp` variables and to compute the `gdp` variable itself.
+Finally, we used transmute to select the `country`, `year`, and `gdp` variables and to compute the `gdp` variable itself.
 
 
 ::: {.callout-tip}
 ## Tip: Pass by value
 
-Functions in R almost always make copies of the data to operate on
-inside of a function body. When we modify `dat` inside the function
-we are modifying the copy of the gapminder dataset stored in `dat`,
-not the original `gapminder` variable.
+Functions in R almost always make copies of the data to operate on inside of a function body. When we modify `dat` inside the function we are modifying the copy of the gapminder dataset stored in `dat`, not the original `gapminder` variable.
 
-This is called "pass-by-value" and it makes writing code much safer:
-you can always be sure that whatever changes you make within the
-body of the function, stay inside the body of the function.
+This is called "pass-by-value" and it makes writing code much safer: you can always be sure that whatever changes you make within the body of the function, stay inside the body of the function.
 :::
 
 
 ::: {.callout-tip}
 ## Tip: Function scope
 
-Another important concept is scoping: any variables (or functions!) you
-create or modify inside the body of a function only exist for the lifetime
-of the function's execution. 
+Another important concept is scoping: any variables (or functions!) you create or modify inside the body of a function only exist for the lifetime of the function's execution. 
 
-When we call `calcGDP()`, the variables `dat`,
-`gdp` and `new` only exist inside the body of the function. Even if we
-have variables of the same name in our interactive R session, they are
-not modified in any way when executing a function.
+When we call `calcGDP()`, the variables `dat` and `gdp` only exist inside the body of the function. Even if we have variables of the same name in our interactive R session, they are not modified in any way when executing a function.
 :::
 
 ::: {.callout}
@@ -661,8 +597,7 @@ best_practice <- c("Write", "programs", "for", "people", "not", "computers")
 paste(best_practice, collapse=" ")
 ```
 
-Write a function called `fence()` that takes two vectors as arguments, called
-`text` and `wrapper`, and prints out the text wrapped with the `wrapper`:
+Write a function called `fence()` that takes two vectors as arguments, called `text` and `wrapper`, and prints out the text wrapped with the `wrapper`:
 
 
 ```{r}
@@ -681,9 +616,7 @@ The output of the following code should be:
 fence(text = best_practice, wrapper="***")
 ```
 
-*Note:* the `paste()` function has an argument called `sep`, which specifies
-the separator between text. The default is a space: " ". The default for
-`paste0()` is no space "".
+*Note:* the `paste()` function has an argument called `sep`, which specifies the separator between text. The default is a space: " ". The default for `paste0()` is no space "".
 
 ::: {.callout collapse=true}
 ## Solution to challenge 6
@@ -705,38 +638,11 @@ fence(text=best_practice, wrapper="***")
 ::: {.callout-tip}
 ## Tip: Testing and documenting
 
-It's important to both test functions and document them:
-Documentation helps you, and others, understand what the
-purpose of your function is, and how to use it, and its
-important to make sure that your function actually does
-what you think.
+It's important to both test functions and document them: documentation helps you, and others, understand what the purpose of your function is and how to use it, and its
+important to make sure that your function actually does what you think.
 
-When you first start out, your workflow will probably look a lot
-like this:
 
-1. Write a function
-
-2. Comment parts of the function to document its behaviour
-
-3. Load in the source file
-
-4. Experiment with it in the console to make sure it behaves
-   as you expect
-
-5. Make any necessary bug fixes
-
-6. Rinse and repeat.
-
-Formal documentation for functions, written in separate `.Rd`
-files, gets turned into the documentation you see in help
-files. The [roxygen2][] package allows R coders to write documentation
-alongside the function code and then process it into the appropriate `.Rd`
-files. You will want to switch to this more formal method of writing
-documentation when you start writing more complicated R projects. In fact, 
-packages are, in essence, bundles of functions with this formal documentation. 
-Loading your own functions through `source("functions.R")` is equivalent to 
-loading someone else's functions (or your own one day!) through
-`library("package")`.
+Formal documentation for functions, written in separate `.Rd` files, gets turned into the documentation you see in help files. The [roxygen2][] package allows R coders to write documentation alongside the function code and then process it into the appropriate `.Rd` files. You will want to switch to this more formal method of writing documentation when you start writing more complicated R projects. In fact, packages are, in essence, bundles of functions with this formal documentation.  Loading your own functions through `source("functions.R")` is equivalent to loading someone else's functions (or your own one day!) through `library("package")`.
 
 Formal automated tests can be written using the [testthat][] package.
 :::

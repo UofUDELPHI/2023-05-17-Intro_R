@@ -26,8 +26,7 @@ cats <- cats_orig
 
 # Data frames
 
-Data frames represent
-a table of data. Recall our `cats` data frame:
+Data frames represent a table of data. Recall our `cats` data frame:
 
 ```{r}
 cats <-  data.frame(coat = c("calico", "black", "tabby"),
@@ -37,11 +36,9 @@ cats
 ```
 
 
-Columns of a data frame are vectors of different types, *each of the same length*, that are organized 
-by belonging to the same table.
+Columns of a data frame are vectors of different types, *each of the same length*, that are organized by belonging to the same table.
 
-In our `cats` example, we have a character, a numeric, and a logical column/variable. As
-we have seen already, each column of data.frame is a vector.
+In our `cats` example, we have a character, a numeric, and a logical column/variable. As we have seen already, each column of data.frame is a vector.
 
 ## Extracting columns from a data frame
 
@@ -66,13 +63,13 @@ cats[, 1]
 
 The syntax `df[i, j]` to extract the entry in the `i`th row and the `j`th column from the data frame called `df`.  For example, `df[3, 1]` will extract the single entry in the third row and first column.
 
-A blank `i` or `j` this tells R to extract *all* of the rows or columns, respectively. That is, `df[, 1]` will extract all rows for the 1st column, and `df[2, ]` will extract the second row across all columns.
+A blank `i` or `j` tells R to extract *all* of the rows or columns, respectively. That is, `df[, 1]` will extract all rows for the 1st column, and `df[2, ]` will extract the second row across all columns.
 
 - `df[, j]` will extract the `j`th *column* from the data frame called `df` as a *vector*.
 
 - `df[i, ]` will extract the `i`th *row* from the data frame called `df` as a *data frame*.
 
-For example the following code extracts the data from the second column of `cats` as a *vector*
+For example, the following code extracts the data from the second column of `cats` as a *vector*
 
 ```{r}
 cats[, 2]
@@ -128,8 +125,7 @@ The double bracket syntax `[[]]` returns the column as a vector, whereas the sin
 
 ## Challenge 1
 
-There are several subtly different ways to extract observations and
-elements from data.frames:
+There are several subtly different ways to extract observations and elements from data.frames:
 
 - `cats[1]`
 - `cats$coat`
@@ -158,14 +154,13 @@ cats$coat
 ```
 
 
-Like for vectors, we can also use the single brace notation with named indexing:
+As for vectors, we can also use the single brace notation with named indexing:
 
 ```{r, eval=TRUE, echo=TRUE}
 cats["coat"]
 ```
 
-Here we are using a single brace `["coat"]` replacing the index number with
-the column name. Like example 1, the returned object is a data frame.
+Here we are using a single brace `["coat"]` replacing the index number with the column name. Like example 1, the returned object is a data frame.
 
 Next,
 
@@ -173,9 +168,7 @@ Next,
 cats[1, 1]
 ```
 
-This example uses a single brace, but this time we provide row and column
-coordinates. The returned object is the value in row 1, column 1. The object
-is a _vector_ of type _character_.
+This example uses a single brace, but this time we provide row and column coordinates. The returned object is the value in row 1, column 1. The object is a _vector_ of type _character_.
 
 
 What about:
@@ -184,17 +177,13 @@ What about:
 cats[, 1]
 ```
 
-Like the previous example we use single braces and provide row and column
-coordinates. The row coordinate is not specified, R interprets this missing
-value as all the elements in this _column_ and returns them as a _vector_.
+Like the previous example, we use single braces and provide row and column coordinates. The row coordinate is not specified, R interprets this missing value as all the elements in this _column_ and returns them as a _vector_.
 
 ```{r, eval=TRUE, echo=TRUE}
 cats[1, ]
 ```
 
-Again we use the single brace with row and column coordinates. The column
-coordinate is not specified. The return value is a _list_ containing all the
-values in the first row.
+Again we use the single brace with row and column coordinates. The column coordinate is not specified. The return value is a _list_ containing all the values in the first row.
 :::
 :::
 
@@ -257,7 +246,7 @@ cats[cats$coat %in% c("tabby", "calico"), "weight"]
 
 
 ```{r, include=FALSE}
-# reverting cats back to original version
+# reverting cats back to the original version
 cats <- cats_orig
 ```
 
@@ -271,7 +260,7 @@ Let's move away from `cats` to a more interesting data example: gapminder
 gapminder <- read.csv("data/gapminder_data.csv")
 ```
 
-The gapminder dataset contains information on the population, life expectency, GDP per capita for a range of country-year combinations:
+The gapminder dataset contains information on the population, life expectancy, GDP per capita for a range of country-year combinations:
 
 ```{r}
 head(gapminder)
@@ -365,8 +354,7 @@ gapminder[gapminder$year %in% c(2002, 2007), ]
 ::: {.callout}
 
 ## Challenge 3
-Selecting elements of a vector that match "any of" a list of components
-is a very common data analysis task. 
+Selecting elements of a vector that match "any of" a list of components is a very common data analysis task. 
 
 Suppose we want to pull out information from Southeast Asia, which includes the countries of Myanmar, Thailand, Cambodia, Vietnam, and Laos. 
 

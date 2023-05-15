@@ -11,10 +11,7 @@ editor_options:
 gapminder <- read.csv("data/gapminder_data.csv", header=TRUE)
 ```
 
-Manipulation of data frames means many things to many researchers, we often
-select certain observations (rows) or variables (columns), we often group the
-data by a certain variable(s), or we even calculate summary statistics. We can
-do these operations using the normal base R operations:
+Manipulation of data frames means many things to many researchers, we often select certain observations (rows) or variables (columns), we often group the data by a certain variable(s), or we even calculate summary statistics. We can do these operations using the normal base R operations:
 
 ```{r}
 mean(gapminder[gapminder$continent == "Africa", "gdpPercap"])
@@ -22,50 +19,26 @@ mean(gapminder[gapminder$continent == "Americas", "gdpPercap"])
 mean(gapminder[gapminder$continent == "Asia", "gdpPercap"])
 ```
 
-But this isn't very *nice* because there is a fair bit of repetition. Repeating
-yourself will cost you time, both now and later, and potentially introduce some
-nasty bugs.
+But this isn't very *nice* because there is a fair bit of repetition. Repeating yourself will cost you time, both now and later, and potentially introduce some nasty bugs.
 
 ## The `dplyr` package
 
-Luckily, the [`dplyr`](https://cran.r-project.org/package=dplyr)
-package provides a number of very useful functions for manipulating data frames
-in a way that will reduce the above repetition, reduce the probability of making
-errors, and probably even save you some typing. As an added bonus, you might
-even find the `dplyr` grammar easier to read.
+Luckily, the [`dplyr`](https://cran.r-project.org/package=dplyr) package provides several very useful functions for manipulating data frames in a way that will reduce the above repetition, reduce the probability of making errors, and probably even save you some typing. As an added bonus, you might even find the `dplyr` grammar easier to read.
 
 ::: {.callout-tip}
 ## Tip: Tidyverse
 
-`dplyr` package belongs to a broader family of opinionated R packages
-designed for data science called the "Tidyverse". These 
-packages are specifically designed to work harmoniously together.
-Some of these packages will be covered along this course, but you can find more 
-complete information here: [https://www.tidyverse.org/](https://www.tidyverse.org/).
+`dplyr` package belongs to a broader family of opinionated R packages designed for data science called the "Tidyverse". These packages are specifically designed to work harmoniously together.
+Some of these packages will be covered along this course, but you can find more complete information here: [https://www.tidyverse.org/](https://www.tidyverse.org/).
 :::
 
-Here we're going to cover 5 of the most commonly used functions as well as using
-pipes (`|>`) to combine them.
+Here we're going to cover 5 of the most commonly used functions as well as using pipes (`|>`) to combine them.
 
 1. `select()`
 2. `filter()`
 3. `group_by()`
 4. `summarize()`
 5. `mutate()`
-
-<!-- If you have have not installed this package earlier, please do so: -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- install.packages('dplyr') -->
-<!-- ``` -->
-
-<!-- Now let's load the package: -->
-
-<!-- ```{r} -->
-<!-- #| message: false -->
-<!-- library(dplyr) -->
-<!-- ``` -->
 
 You will need to install (if you have not already) and load the tidyverse package, which will also install dplyr, ggplot2, and other related packages:
 
@@ -85,8 +58,7 @@ Recall that you only need to install a package once (so you should not include t
 
 ## Extracting columns using select()
 
-If, for example, we wanted to move forward with only a few of the variables in
-our data frame we could use the `select()` function. The first argument is the data frame and the remaining argument are the names of the columns that you want to keep. 
+If, for example, we wanted to move forward with only a few of the variables in our data frame we could use the `select()` function. The first argument is the data frame and the remaining arguments are the names of the columns that you want to keep. 
 
 ```{r}
 year_country_gdp <- select(gapminder, year, country, gdpPercap)
@@ -101,7 +73,7 @@ Unlike the base R code, `df["var"]`, you usually do not need to enclose the vari
 :::
 
 
-You can also use the `select()` function to rename columns, for example, the following code will rename the `gdpPercap` column to `gdp_per_cap`, while selecting only the `year`, `country`, and `gdp_per_cap` columns:
+You can also use the `select()` function to rename columns, for example, the following code will rename the `gdpPercap` column to `gdp_per_cap` while selecting only the `year`, `country`, and `gdp_per_cap` columns:
 
 ```{r}
 gapminder_selected <- select(gapminder, year, country, gdp_per_cap = gdpPercap)
@@ -111,33 +83,29 @@ head(gapminder_selected)
 
 
 
-If we want to remove one column only from the `gapminder` data, we can use the `-var` syntax. For example, the code below
-removes the `continent` column:
+If we want to remove one column only from the `gapminder` data, we can use the `-var` syntax. For example, the code below removes the `continent` column:
 
 
 ```{r}
 smaller_gapminder_data <- select(gapminder, -continent)
 ```
 
-Above we used 'normal' grammar, which places the data frame in the first argument of the dplyr function `select()`, but the real strength of
-`dplyr` lies in combining several functions using *pipes*. 
+Above we used 'normal' grammar, which places the data frame in the first argument of the dplyr function `select()`, but the real strength of `dplyr` lies in combining several functions using *pipes*. 
 
 
 
 
 ## The pipe `|>`
 
-Since the pipes grammar is unlike anything we've seen in R before, let's repeat what we've done above
-using pipes.
+Since the pipe's grammar is unlike anything we've seen in R before, let's repeat what we've done above using pipes.
 
 ```{r}
 year_country_gdp <- gapminder |> select(year, country, gdpPercap)
 ```
 
-To help you understand why we wrote that in that way, let's walk through it step
-by step. 
+To help you understand why we wrote that in that way, let's walk through it step by step. 
 
-First we summon the gapminder data frame and pass it on, using the pipe symbol `|>`, to the *first argument* in the function on the right hand side of the pipe, which is the `select()` function. 
+First, we summon the gapminder data frame and pass it on, using the pipe symbol `|>`, to the *first argument* in the function on the right-hand side of the pipe, which is the `select()` function. 
 
 
 So the two pieces of code are equivalent.
@@ -282,9 +250,9 @@ year_country_gdp_euro <- gapminder |>
 head(year_country_gdp_euro)
 ```
 
-You can supply multiple conditions to `filter()` using a comma. This is equivalent to "and" `&`, as in only rows where both conditions are satisfied will be returned.
+You can supply multiple conditions to `filter()` using a comma. This is equivalent to "and" `&`, as only rows where both conditions are satisfied will be returned.
 
-For example, if we now want to show life expectancy of European countries but only for a specific year (e.g., 2007), we can do as below.
+For example, if we now want to show the life expectancy of European countries but only for a specific year (e.g., 2007), we can do as below.
 
 ```{r}
 europe_lifeExp_2007 <- gapminder |>
@@ -295,8 +263,7 @@ europe_lifeExp_2007 <- gapminder |>
 ::: {.callout}
 ## Challenge 2
 
-Use piping to produce a data frame that contains values for `lifeExp`, `country`
-and `year` for Africa but not for other Continents.  
+Use piping to produce a data frame that contains values for `lifeExp`, `country` and `year` for Africa but not for other Continents.  
 
 Your data frame should have 624 rows and 3 columns (you can check this with `dim()`).
 
@@ -318,11 +285,7 @@ dim(year_country_lifeExp_Africa)
 :::
 
 
-In the challenge above, first we pass the gapminder data frame to the `filter()`
-function, then we pass the filtered version of the gapminder data frame to the
-`select()` function. **Note:** The order of operations is very important in this
-case. If we used 'select' first, filter would not be able to find the variable
-continent since we would have removed it in the previous step.
+In the challenge above, first, we pass the gapminder data frame to the `filter()` function, then we pass the filtered version of the gapminder data frame to the `select()` function. **Note:** The order of operations is very important in this case. If we used `select()` first, `filter()` would not be able to find the variable `continent` since we would have removed it in the previous step.
 
 
 ## Adding and modifying columns using mutate()
@@ -431,9 +394,7 @@ gapminder |>
 
 ## Grouped computations with group_by()
 
-Now, we were supposed to be reducing the error prone repetitiveness of what can
-be done with base R, but up to now we haven't done that since we would have to
-repeat the above for each continent. 
+Now, we were supposed to be reducing the error-prone repetitiveness of what can be done with base R, but up to now, we haven't done that since we would have to repeat the above for each continent. 
 
 One way to compute the mean lifeExp for each continent using dplyr functions would be:
 
@@ -480,7 +441,7 @@ Note that it is good practice to follow any grouped operation with `ungroup()` s
 ::: {.callout-tip}
 ## Tip: tibbles
 
-You might have noticed that the object above is a "tibble". A tibble is the tidyverse's version of a data frame. For all intents and purposes, tibbles and data frames are completely equivalent. It is only once you get into very advanced tidyverse programming will you start to see the features that tibbles possess that data frames don't, such as list columns.
+You might have noticed that the object above is a "tibble". A tibble is the tidyverse's version of a data frame. For our purposes, tibbles and data frames are completely equivalent. It is only once you get into very advanced tidyverse programming will you start to see the features that tibbles possess that data frames don't, such as list columns.
 :::
 
 ### Grouping by multiple variables
@@ -523,13 +484,9 @@ gapminder |>
 ## Ordering the rows in a data frame using arrange()
 
 
-Another way to do complete the previous challenge is to use the dplyr function `arrange()`, which
-arranges the rows in a data frame according to the order of one or more
-variables from the data frame.  It has similar syntax to other functions from
-the `dplyr` package. You can use `desc()` inside `arrange()` to sort in
-descending order.
+Another way to complete the previous challenge is to use the dplyr function `arrange()`, which arranges the rows in a data frame according to the order of one or more variables from the data frame.  It has a similar syntax to other functions from the `dplyr` package. You can use `desc()` inside `arrange()` to sort in descending order.
 
-First we can compute the average life expectancy for each country
+First, we can compute the average life expectancy for each country
 
 ```{r}
 lifeExp_bycountry <- gapminder |>
@@ -565,13 +522,9 @@ Applying `arrange()` to a character variable will present the rows in alphabetic
 
 ## count() and n()
 
-A very common operation is to count the number of observations for each
-group. The `dplyr` package comes with two related functions that help with this.
+A very common operation is to count the number of observations for each group. The `dplyr` package comes with two related functions that help with this.
 
-For instance, if we wanted to check the number of countries included in the
-dataset for the year 2002, we can use the `count()` function. It takes the name
-of one or more columns that contain the groups we are interested in, and we can
-optionally sort the results in descending order by adding `sort=TRUE`:
+For instance, if we wanted to check the number of countries included in the dataset for the year 2002, we can use the `count()` function. It takes the name of one or more columns that contain the groups we are interested in, and we can optionally sort the results in descending order by adding `sort=TRUE`:
 
 ```{r}
 gapminder |>
@@ -579,8 +532,7 @@ gapminder |>
   count(continent, sort = TRUE)
 ```
 
-If we need to use the number of observations/rows in calculations, the `n()` function
-is useful. It will return the total number of observations in the current group rather than counting the number of observations in each group within a specific column. 
+If we need to use the number of observations/rows in calculations, the `n()` function is useful. It will return the total number of observations in the current group rather than counting the number of observations in each group within a specific column. 
 
 For instance, if we wanted to get the standard error of the life expectancy per continent:
 
@@ -596,7 +548,7 @@ gapminder |>
 ::: {.callout}
 ## Advanced Challenge
 
-Calculate the total GDP in billions (`gdpPercap * pop / 1e9`) for each continent in the year 2002 and in 2007. Which continent had the largest GDP in 2002? which had the smallest? What about in 2007?
+Calculate the total GDP in billions (`gdpPercap * pop / 1e9`) for each continent in the year 2002 and 2007. Which continent had the largest GDP in 2002? which had the smallest? What about in 2007?
 
 
 ::: {.callout collapse=true}

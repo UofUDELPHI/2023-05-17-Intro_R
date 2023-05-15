@@ -4299,7 +4299,7 @@ vertical-align: -.125em;
 [1] 22026.47</code></pre>
 </div>
 </div>
-<p>While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the <code>map()</code> function, such as <code>map_dbl()</code> that specifies the type of your output in its name.</p>
+<p>While the list output format offers maximal flexibility, we typically want to create a vector or a data frame. This can be done using alternative versions of the <code>map()</code> function, such as <code>map_dbl()</code>, which specifies the type of your output in its name.</p>
 <p>For instance, if you want your output to be a numeric “double” vector, you can use <code>map_dbl()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4316,7 +4316,7 @@ vertical-align: -.125em;
 "character"   "integer"   "numeric" "character"   "numeric"   "numeric" </code></pre>
 </div>
 </div>
-<p>Here, recall that the gapminder data frame is a list, and the <code>map_</code> function is iterating over the elements of the list, which in this case is the columns.</p>
+<p>Here, recall that the gapminder data frame is a list, and the <code>map_</code> function is iterating over the elements of the list, which in this case, is the columns.</p>
 <p>Note that the output of the function you are applying must match the <code>map_</code> function that you use, else you will get an error:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4327,7 +4327,7 @@ Caused by error:
 ! Can't coerce from a string to a double vector.</code></pre>
 </div>
 </div>
-<p>The true power from the map functions really comes once you learn how to write your own functions.</p>
+<p>The true power of the map functions really comes once you learn how to write your own functions.</p>
 <p>For example, we could conduct the following transformation to each entry in <code>1:10</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) (x <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">^</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4373,7 +4373,7 @@ Caused by error:
 1          1         11</code></pre>
 </div>
 </div>
-<p>As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns and then computes a data frame for each column/variable containing the mean and sd.</p>
+<p>As another example, the following code takes the gapminder dataset selects the pop, gdpPercap, and lifeExp columns, and then computes a data frame for each column/variable containing the mean and sd.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pop, gdpPercap, lifeExp) <span class="sc">|&gt;</span></span>

@@ -4139,7 +4139,7 @@ vertical-align: -.125em;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> cats, <span class="at">file =</span> <span class="st">"data/feline-data.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You should now see that you have a new file, <code>feline-data.csv</code>, in your <code>data/</code> folder, whose contents look like:</p>
+<p>You should now see that you have a new file, <code>feline-data.csv</code>, in your <code>data/</code> folder, whose contents look like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>coat,weight,likes_string</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>calico,<span class="fl">2.1</span>,<span class="dv">1</span></span>
@@ -4180,7 +4180,7 @@ Tip: <code>read.table()</code> and delimiters
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>read.table</code> function is used for reading in tabular data stored in a text file where the columns of data are separated by punctuation characters such as .csv files (csv = comma-separated values). Tabs and commas are the most common punctuation characters used to separate or delimit data points in csv files. For convenience R provides 2 other versions of <code>read.table</code>. These are: <code>read.csv</code> for files where the data are separated with commas and <code>read.delim</code> for files where the data are separated with tabs. Of these three functions <code>read.csv</code> is the most commonly used. If needed it is possible to override the default delimiting punctuation marks for both <code>read.csv</code> and <code>read.delim</code>.</p>
+<p>The <code>read.table</code> function is used for reading tabular data stored in a text file where the columns of data are separated by punctuation characters such as .csv files (csv = comma-separated values). Tabs and commas are the most common punctuation characters used to separate or delimit data points in csv files. For convenience R provides 2 other versions of <code>read.table</code>. These are: <code>read.csv</code> for files where the data are separated with commas and <code>read.delim</code> for files where the data are separated with tabs. Of these three functions <code>read.csv</code> is the most commonly used. If needed it is possible to override the default delimiting punctuation marks for both <code>read.csv</code> and <code>read.delim</code>.</p>
 </div>
 </div>
 <p>There are lots of things we can do with our <code>cats</code> data object, such as extracting individual columns using the <code>$</code> operator:</p>
@@ -4224,7 +4224,7 @@ Tip: <code>read.table()</code> and delimiters
 <pre><code>[1] "numeric"</code></pre>
 </div>
 </div>
-<p>You will typically encounter the following main types: <code>numeric</code> (which encompasses <code>double</code> and <code>integer</code>), <code>logical</code>, <code>character</code> (and <code>factor</code>, but we won’t encounter these until later). There are others too (such as <code>complex</code>), but you’re unlikely to encounter them in your data analysis journeys.</p>
+<p>You will typically encounter the following main types: <code>numeric</code> (which encompasses <code>double</code> and <code>integer</code>), <code>logical</code>, and <code>character</code> (and <code>factor</code>, but we won’t encounter these until later). There are others too (such as <code>complex</code>), but you’re unlikely to encounter them in your data analysis journeys.</p>
 <p>Let’s identify the class of several values:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">3.14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4252,7 +4252,7 @@ Tip: <code>read.table()</code> and delimiters
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>tabby,<span class="fl">3.2</span>,<span class="dv">1</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>tabby,<span class="fl">2.3</span> or <span class="fl">2.4</span>,<span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Load the new cats data like before, and check what type of data we find in the <code>weight</code> column:</p>
+<p>Load the new <code>cats</code> data like before, and check what type of data we find in the <code>weight</code> column:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cats_v2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"data/feline-data_v2.csv"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cats_v2<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4495,7 +4495,7 @@ Tip 1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the chapter “Data types” we saw two functions that can show data types. One printed just a single word, the data type name. The other printed a short form of the data type, and the first few values. We recommend the second here.</p>
+<p>In the chapter “Data types” we saw two functions that can show data types. One printed just a single word, the data type name. The other printed a short form of the data type and the first few values. We recommend the second here.</p>
 </div>
 </div>
 <div class="callout callout callout-style-simple no-icon callout-captioned">
@@ -4554,8 +4554,8 @@ Solution to Challenge 1.3
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Weight is expressed on a continuous scale (real numbers). The R data type for this is “numeric”.</li>
-<li>The fourth row has the value “2.3 or 2.4”. That is not a number but two, and an english word. Therefore, the “character” data type is chosen. The whole column is now text, because all values in the same columns have to be the same data type.</li>
+<li><p>Weight is expressed on a continuous scale (real numbers). The R data type for this is “numeric”.</p></li>
+<li><p>The fourth row has the value “2.3 or 2.4”. That is not a number but two, and an English word. Therefore, the “character” data type is chosen. The whole column is now text because all values in the same columns have to be the same data type.</p></li>
 </ul>
 </div>
 </div>
@@ -4599,7 +4599,7 @@ Solution to challenge 1.4
 </section>
 <section id="convert-the-column-weight-to-the-correct-data-type" class="level3" data-number="4.3.5">
 <h3 data-number="4.3.5" class="anchored" data-anchor-id="convert-the-column-weight-to-the-correct-data-type"><span class="header-section-number">4.3.5</span> 5. Convert the column “weight” to the correct data type</h3>
-<p>Cat weight are numbers. But the column does not have this data type yet. Coerce the column to floating point numbers.</p>
+<p>Cat weights are numbers. But the column does not have this data type yet. Coerce the column to floating point numbers.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4652,7 +4652,7 @@ Solution to Challenge 1.5
 <pre><code>[1] "a" "b" "z"</code></pre>
 </div>
 </div>
-<p>You can also make series of numbers using the <code>:</code> syntax as well as the <code>seq()</code> function:</p>
+<p>You can also make a series of numbers using the <code>:</code> syntax as well as the <code>seq()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>mySeries <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>mySeries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4736,7 +4736,7 @@ Levels: black calico tabby</code></pre>
 </div>
 </div>
 <p>It looks very similar to the character format, but now our output tells us that there are the following “levels”: “black”, “calico”, “tabby”</p>
-<p>One common pitfall occurs when converting numerically coded factors to numeric type.</p>
+<p>One common pitfall occurs when converting numerically coded factors to a numeric type.</p>
 <p>If we convert a <code>coat</code> to a numeric type, it replaces each level with a number in the order that the levels are defined (the default is alphabetical order):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(cats<span class="sc">$</span>coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4760,7 +4760,7 @@ Levels: 2.1 3.2 5</code></pre>
 <pre><code>[1] 1 3 2</code></pre>
 </div>
 </div>
-<p>Fortunately, factor and character types behave fairly similarly across most applications, so it <em>usually</em> won’t matter which format your categorical variables are encoded as, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.</p>
+<p>Fortunately, factor and character types behave fairly similarly across most applications, so it <em>usually</em> won’t matter which format your categorical variables are encoded, but it is important to be aware of factors as you will undoubtedly encounter them in your R journey.</p>
 
 
 </section>

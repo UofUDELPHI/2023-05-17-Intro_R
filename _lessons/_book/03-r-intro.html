@@ -4545,7 +4545,7 @@ Solution to Challenge 4
     }
     else all.names
 }
-&lt;bytecode: 0x131f23a48&gt;
+&lt;bytecode: 0x15355c648&gt;
 &lt;environment: namespace:base&gt;</code></pre>
 </div>
 </div>
@@ -4568,7 +4568,7 @@ Solution to Challenge 4
 </div>
 <p>In this case, we’ve combined the two. Like the order of operations, anything inside the innermost parentheses is evaluated first, and so on.</p>
 <p>In this case, we’ve specified that the results of <code>ls</code> should be used for the <code>list</code> argument in <code>rm</code>. When assigning values to arguments by name, you <em>must</em> use the <code>=</code> operator!!</p>
-<p>If instead we use <code>&lt;-</code>, there will be unintended side effects, or you may get an error message:</p>
+<p>If, instead, we use <code>&lt;-</code>, there will be unintended side effects, or you may get an error message:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(list <span class="ot">&lt;-</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
