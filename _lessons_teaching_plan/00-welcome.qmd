@@ -1,0 +1,27 @@
+---
+title: "Introduction to RStudio and quarto"
+output: html
+embed-resources: true
+---
+
+## Introductions:
+
+- Rebecca, George & helpers
+
+## Code of conduct:
+
+- https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html 
+
+
+## RStudio cloud
+
+- Introduce RStudio cloud (and compare with local)
+
+## Etherpad: 
+
+- Communal notetaking and discussion: https://pad.carpentries.org/intro-r-05-17 
+
+
+## Sticky note system
+
+- Introduce the sticky note system
