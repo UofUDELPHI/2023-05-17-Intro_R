@@ -11,6 +11,7 @@
 {% endcomment %}
 
 {% if site.flavor == "r" %}
+{% include install_instructions/posit_cloud.html %}
 {% include install_instructions/r.html %}
 {% include install_instructions/quarto.html %}
 {% elsif site.flavor == "python" %}
