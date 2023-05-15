@@ -23,15 +23,15 @@ gapminder_long <- read.csv("data/gapminder_long.csv")
 Our original gapminder data:
 
 ```{r}
-head(gapminder)
-dim(gapminder)
+# look at the original gapminder data (head and dim)
+
 ```
 
 A long-form version of the gapminder data:
 
 ```{r}
-head(gapminder_long)
-dim(gapminder_long)
+# look at the long-form gapminder data (head and dim)
+
 ```
 
 Many of `R`'s functions have been designed assuming you have a **tidy** dataset, in which:
@@ -68,13 +68,13 @@ Are either of the datasets above in a tidy format?
 
 
 ```{r}
-# use pivot_longer() to convert gapminder into a longer format
-gapminder_long <- gapminder |>
-  pivot_longer(cols = c(pop, lifeExp, gdpPercap),
-               names_to = "variable", 
-               values_to = "value")
-gapminder_long
+# use pivot_longer() to convert gapminder into a longer format 
+
 ```
+
+
+
+
 
 
 
@@ -85,18 +85,9 @@ gapminder_long
 Long-format is useful for when you want to plot multiple variables on the same plot:
 
 ```{r}
-# use ggplot2 to create a line plot for the United States showing the 
+# Use ggplot2 to create a line plot for the United States showing the 
 # SD-scaled population, gdpPercap, and lifeExp variables over time 
-gapminder_long |>
-  # filter to just the data for the US
-  filter(country == "United States") |>
-  # scale each variable's value to a common scale between 0 (min) and 1
-  group_by(variable) |>
-  mutate(value_scaled = value / sd(value)) |>
-  ungroup() |>
-  # plot a line plot of each variable over time
-  ggplot() +
-  geom_line(aes(x = year, y = value_scaled, color = variable))
+
 ```
 
 
@@ -109,15 +100,6 @@ Using `gapminder_long`, calculate the mean life expectancy, population, and gdpP
 
 *Hint:** use the `group_by()` and `summarize()` functions we learned in the `dplyr` lesson
 
-::: {.callout collapse=true}
-## Solution to Challenge 2
-
-```{r}
-gapminder_long |> 
-  group_by(continent, variable) |>
-  summarize(means = mean(value))
-```
-:::
 :::
 
 
@@ -134,23 +116,20 @@ Let's convert our long format data back to the (wider) tidy format using `pivot_
 
 ```{r}
 # use pivot_wider() to create gapminder_wider from gapminder_long 
-gapminder_wider <- gapminder_long |>
-  pivot_wider(names_from = variable, values_from = value)
+
 ```
 
 
 ```{r}
 # look at the gapminder_wider object (head and dim)
-head(gapminder_wider)
-dim(gapminder_wider)
+
 ```
 
 
 
 ```{r}
 # compare with the gapminder object (head and dim)
-head(gapminder)
-dim(gapminder)
+
 ```
 
 
@@ -173,18 +152,6 @@ Convert `mtcars` to a longer format using `pivot_longer()` (Hint: the `car` vari
 
 Use `pivot_wider()` to convert your result back to the original `mtcars` dataset.
 
-::: {.callout collapse=true}
-## Solution to Challenge 3
 
-```{r}
-mtcars_long <- mtcars_data |>
-  pivot_longer(-car)
-mtcars_long
-
-mtcars_wide <- mtcars_long |>
-  pivot_wider(names_from = "name", values_from = "value")
-mtcars_wide
-```
-:::
 :::
 
