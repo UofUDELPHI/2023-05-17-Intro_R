@@ -2836,12 +2836,12 @@ Challenge 1
 <p>To subset the cats data frame to just the rows where the weight of the cats is at least 3:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a logical vector to identify which rows correspond to weight &gt; 3</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>weight <span class="sc">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>cats<span class="sc">$</span>weight_kg <span class="sc">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE  TRUE  TRUE</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use this logical vector to subset the cats data</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>cats[cats<span class="sc">$</span>weight <span class="sc">&gt;</span> <span class="dv">3</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>cats[cats<span class="sc">$</span>weight_kg <span class="sc">&gt;</span> <span class="dv">3</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   coat weight_kg likes_string
 2 black       5.0            0
@@ -2852,9 +2852,9 @@ Challenge 1
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset to just the rows where the coat is &quot;tabby&quot; or &quot;calico&quot; and </span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print the values in the &quot;weight&quot; column</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>cats[cats<span class="sc">$</span>coat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;tabby&quot;</span>, <span class="st">&quot;calico&quot;</span>), <span class="st">&quot;weight&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>cats[cats<span class="sc">$</span>coat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;tabby&quot;</span>, <span class="st">&quot;calico&quot;</span>), <span class="st">&quot;weight_kg&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>[1] 2.1 3.2</code></pre>
 </div>
 </div>
 </section>

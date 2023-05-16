@@ -255,9 +255,9 @@ To subset the cats data frame to just the rows where the weight of the cats is a
 
 ```{r}
 # compute a logical vector to identify which rows correspond to weight > 3
-cats$weight > 3
+cats$weight_kg > 3
 # use this logical vector to subset the cats data
-cats[cats$weight > 3, ]
+cats[cats$weight_kg > 3, ]
 ```
 
 
@@ -270,7 +270,7 @@ Task: select only the rows where the *cat's coat is tabby or calico* and returns
 ```{r}
 # subset to just the rows where the coat is "tabby" or "calico" and 
 # print the values in the "weight" column
-cats[cats$coat %in% c("tabby", "calico"), "weight"]
+cats[cats$coat %in% c("tabby", "calico"), "weight_kg"]
 ```
 
 

@@ -233,22 +233,17 @@ Like for vectors, we can also subset using logical operations:
 The following code will select only the rows where the cat's weight is at least 3
 
 ```{r}
-cats$weight > 3
-cats[cats$weight > 3, ]
+cats$weight_kg > 3
+cats[cats$weight_kg > 3, ]
 ```
 
 The following code will select only the rows where the cat's coat is tabby or calico and returns just the values in the "weight" column:
 
 ```{r}
-cats[cats$coat %in% c("tabby", "calico"), "weight"]
+cats[cats$coat %in% c("tabby", "calico"), "weight_kg"]
 ```
 
 
-
-```{r, include=FALSE}
-# reverting cats back to the original version
-cats <- cats_orig
-```
 
 
 ## Gapminder example
