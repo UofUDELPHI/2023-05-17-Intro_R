@@ -203,35 +203,6 @@ We can also make comparisons in R:
 
 
 
-::: {.callout} 
-## Challenge 3
-What will be the value of each variable after each line in the following code?
-
-```{r}
-mass <- 47.5
-age <- 122
-mass <- mass * 2.3
-age <- age - 20
-```
-
-:::
-
-
-
-::: {.callout} 
-## Challenge 4
-Run the code from the previous challenge, and write a command to compare mass to age. Is mass larger than age?
-
-::: {.callout collapse="true"} 
-## Solution to Challenge 4
-```{r}
-mass > age
-```
-:::
-:::
-
-
-
 
 
 
@@ -361,6 +332,35 @@ The following creates a hidden variable:
 
 
 
+
+
+
+::: {.callout} 
+## Challenge 3
+What will be the value of each variable after each line in the following code?
+
+```{r}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+:::
+
+
+
+::: {.callout} 
+## Challenge 4
+Run the code from the previous challenge, and write a command to compare mass to age. Is mass larger than age?
+
+::: {.callout collapse="true"} 
+## Solution to Challenge 4
+```{r}
+mass > age
+```
+:::
+:::
 
 
 

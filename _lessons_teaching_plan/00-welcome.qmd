@@ -13,9 +13,9 @@ embed-resources: true
 - https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html 
 
 
-## RStudio cloud
+## Posit cloud
 
-- Introduce RStudio cloud (and compare with local)
+- Introduce posit cloud (and compare with local)
 
 ## Etherpad: 
 
